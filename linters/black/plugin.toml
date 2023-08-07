@@ -1,0 +1,19 @@
+config_version = 1
+
+[plugins.definitions.black]
+runtime = "python"
+package = "black"       # TODO: black[python2,jupyter]
+file_types = ["python"] # TODO: jupyter
+recommended = true
+
+[plugins.definitions.black.drivers.format]
+script = "black -q ${target}"
+success_codes = [0]
+output = "rewrite"
+cache_results = true
+batch = true
+driver_type = "formatter"
+
+# in_place: true
+# allow_empty_files: false
+# affects_cache: [pyproject.toml]

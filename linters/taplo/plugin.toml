@@ -1,0 +1,37 @@
+config_version = 1
+
+[plugins.downloads.taplo]
+url = "https://github.com/tamasfe/taplo/releases/download/0.8.0/taplo-linux-x86_64.gz"
+file_name = "taplo.gz"
+file_type = "gz"
+
+[plugins.definitions.taplo]
+runtime = "linux"
+downloads = ["taplo"]
+file_types = ["toml"]
+recommended = true
+# direct_configs:
+#         - .taplo.toml
+#         - taplo.toml
+#       environment:
+#         - name: PATH
+#           list: ["${linter}"]
+
+# TODO: add support for taplo lint
+# taplo has a hard to parse output format :(
+#
+# [plugins.definitions.taplo.drivers.lint]
+# output = "stdout"
+# output_format = "taplo"
+# script = "/tmp/qlty/taplo lint ${target}"
+# success_codes = [0, 1]
+# batch = true
+# cache_results = true
+
+[plugins.definitions.taplo.drivers.format]
+script = "/tmp/qlty/taplo format ${target}"
+success_codes = [0]
+output = "rewrite"
+batch = true
+driver_type = "formatter"
+cache_results = true

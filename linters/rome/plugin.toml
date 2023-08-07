@@ -1,0 +1,29 @@
+config_version = 1
+
+[plugins.definitions.rome]
+runtime = "node"
+package = "rome"
+file_types = ["javascript", "typescript"]
+recommended = true
+# direct_configs:
+#         - .rome.json
+# affects_cache:
+#         - package.json
+#         - .editorconfig # Undocumented config file
+
+[plugins.definitions.rome.drivers.lint]
+output_regex = " *(?P<path>.*?):(?P<line>\\d+):(?P<col>\\d+) (?P<code>[^ ]+)(?:[^×]*\\n).*× (?P<message>.*)\\n"
+script = "rome check ${target}"
+success_codes = [0, 1]
+output = "stderr"
+output_format = "regex"
+batch = true
+cache_results = true
+
+[plugins.definitions.rome.drivers.format]
+script = "rome format --write ${target}"
+success_codes = [0, 1]
+output = "rewrite"
+batch = true
+cache_results = true
+driver_type = "formatter"

@@ -1,0 +1,15 @@
+config_version = 1
+
+[plugins.definitions.pylint]
+runtime = "python"
+package = "pylint"
+file_types = ["python"]
+recommended = true
+
+[plugins.definitions.pylint.drivers.lint]
+script = "pylint --exit-zero --output ${tmpfile} --output-format json ${target}"
+success_codes = [0]
+output = "tmpfile"
+output_format = "pylint"
+cache_results = true
+batch = true

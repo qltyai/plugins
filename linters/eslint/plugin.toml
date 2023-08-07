@@ -1,0 +1,34 @@
+config_version = 1
+
+[plugins.definitions.eslint]
+runtime = "node"
+package = "eslint"
+file_types = ["javascript", "typescript"]
+config_files = [
+  ".eslintrc",
+  ".eslintrc.cjs",
+  ".eslintrc.js",
+  ".eslintrc.json",
+  ".eslintrc.yaml",
+  ".eslintrc.yml",
+]
+# direct_configs:
+#   - 
+#   - 
+#   - 
+#   - 
+#   - .eslintrc.yaml
+#   - .eslintrc.yml
+# affects_cache:
+#   - .eslintignore
+#   - package.json
+#   - tsconfig.json
+
+[plugins.definitions.eslint.drivers.lint]
+script = "eslint --output-file ${tmpfile} --format json ${target}"
+error_codes = [2]
+output = "tmpfile"
+output_format = "eslint"
+batch = true
+cache_results = true
+max_batch = 40

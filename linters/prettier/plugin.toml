@@ -1,0 +1,41 @@
+config_version = 1
+
+[plugins.definitions.prettier]
+runtime = "node"
+package = "prettier"
+file_types = [
+  "typescript",
+  "javascript",
+  "css",
+  "yaml",
+  "html",
+  "sass",
+  "markdown",
+  "json",
+  "graphql",
+]
+# - prettier_supported_configs
+recommended = true
+# direct_configs:
+#   - .prettierrc
+#   - .prettierrc.json
+#   - .prettierrc.yml
+#   - .prettierrc.yaml
+#   - .prettierrc.json5
+#   - .prettierrc.js
+#   - .prettierrc.cjs
+#   - prettier.config.js
+#   - prettier.config.cjs
+#   - .prettierrc.toml
+#   - .prettierignore
+# affects_cache:
+#   - package.json
+#   - .editorconfig # Undocumented config file
+
+
+[plugins.definitions.prettier.drivers.format]
+script = "prettier -w ${target}"
+success_codes = [0]
+output = "rewrite"
+batch = true
+driver_type = "formatter"

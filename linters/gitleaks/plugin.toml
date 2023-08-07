@@ -1,0 +1,49 @@
+config_version = 1
+
+[plugins.downloads.gitleaks]
+url = "https://github.com/zricethezav/gitleaks/releases/download/v8.15.3/gitleaks_8.15.3_linux_x64.tar.gz"
+file_name = "gitleaks_8.15.3_linux_x64.tar.gz"
+file_type = "targz"
+
+[plugins.definitions.gitleaks]
+runtime = "linux"
+downloads = ["gitleaks"]
+file_types = ["ALL"]
+# direct_configs:
+#   - .gitleaks.config
+#   - .gitleaks.toml
+recommended = true
+
+[plugins.definitions.gitleaks.drivers.lint]
+script = "/tmp/qlty/gitleaks detect --no-git --source=${target} --exit-code=101 -f sarif -r \"${tmpfile}\""
+success_codes = [0, 101]
+output = "tmpfile"
+output_format = "sarif"
+cache_results = true
+
+
+# go install github.com/zricethezav/gitleaks/v8@latest
+
+#           in_place: true
+#           allow_empty_files: false
+#       good_without_config: true
+
+# command: |
+#   /Users/bhelmkamp/.cache/trunk/tools/gitleaks/8.15.3-c1dbd612f1f0afce9acce42880abca07/bin/gitleaks detect --no-git --source=.qlty/cache/355ce035f61c6bcd81aae993596d6987.protos --exit-code=101 -f sarif -r /var/folders/tp/5b1zg2jj6819c6x8c81zncc40000gn/T/trunk-501/iaaJGA/wfkc38SIT8U5
+# stdin_path: (none)
+# run_from: /private/var/folders/tp/5b1zg2jj6819c6x8c81zncc40000gn/T/trunk-501/OzIdqU
+# timeout: 10m
+# rerun: (cd /private/var/folders/tp/5b1zg2jj6819c6x8c81zncc40000gn/T/trunk-501/OzIdqU; env -i PATH=/Users/bhelmkamp/.cache/trunk/tools/gitleaks/8.15.3-c1dbd612f1f0afce9acce42880abca07/bin:/Users/bhelmkamp/.cache/trunk/tools/go/1.18.3-4eacd594d802731f224bd625049975db/bin GOROOT=/Users/bhelmkamp/.cache/trunk/tools/go/1.18.3-4eacd594d802731f224bd625049975db GOPATH=/Users/bhelmkamp/.cache/trunk/tools/gitleaks/8.15.3-c1dbd612f1f0afce9acce42880abca07 CGO_ENABLED=0 HOME=/Users/bhelmkamp GO111MODULE=on /Users/bhelmkamp/.cache/trunk/tools/gitleaks/8.15.3-c1dbd612f1f0afce9acce42880abca07/bin/gitleaks detect --no-git --source=.qlty/cache/355ce035f61c6bcd81aae993596d6987.protos --exit-code=101 -f sarif -r /var/folders/tp/5b1zg2jj6819c6x8c81zncc40000gn/T/trunk-501/iaaJGA/wfkc38SIT8U5)
+# exit_status: exited
+# exit_code: 0
+# stdout: (none)
+
+
+# cd /private/var/folders/tp/5b1zg2jj6819c6x8c81zncc40000gn/T/trunk-501/OzIdqU;
+# env -i PATH=/Users/bhelmkamp/.cache/trunk/tools/gitleaks/8.15.3-c1dbd612f1f0afce9acce42880abca07/bin:/Users/bhelmkamp/.cache/trunk/tools/go/1.18.3-4eacd594d802731f224bd625049975db/bin \
+# GOROOT=/Users/bhelmkamp/.cache/trunk/tools/go/1.18.3-4eacd594d802731f224bd625049975db \
+# GOPATH=/Users/bhelmkamp/.cache/trunk/tools/gitleaks/8.15.3-c1dbd612f1f0afce9acce42880abca07 \
+# CGO_ENABLED=0 \
+# HOME=/Users/bhelmkamp \
+# GO111MODULE=on \
+# /Users/bhelmkamp/.cache/trunk/tools/gitleaks/8.15.3-c1dbd612f1f0afce9acce42880abca07/bin/gitleaks detect --no-git --source=.qlty/cache/355ce035f61c6bcd81aae993596d6987.protos --exit-code=101 -f sarif -r /var/folders/tp/5b1zg2jj6819c6x8c81zncc40000gn/T/trunk-501/iaaJGA/wfkc38SIT8U5
