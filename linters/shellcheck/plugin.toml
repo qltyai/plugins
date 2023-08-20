@@ -1,0 +1,23 @@
+config_version = 1
+
+[plugins.downloads.shellcheck]
+url = "https://github.com/koalaman/shellcheck/releases/download/v0.9.0/shellcheck-v0.9.0.linux.x86_64.tar.xz"
+file_name = "shellcheck-v0.9.0.linux.x86_64.tar.xz"
+file_type = "tarxz"
+
+[plugins.definitions.shellcheck]
+runtime = "linux"
+downloads = ["shellcheck"]
+file_types = ["shell"]
+config_files = [
+  ".shellcheckrc",
+  "shellcheckrc",
+]
+recommended = true
+
+[plugins.definitions.shellcheck.drivers.lint]
+script = "/tmp/qlty/shellcheck -f json ${target}"
+error_codes = [2]
+output = "stdout"
+output_format = "shellcheck"
+cache_results = true
