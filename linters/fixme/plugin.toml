@@ -13,3 +13,4 @@ cache_results = true
 driver_type = "linter"
 output = "stdout"
 output_format = "sarif"
+batch = true
