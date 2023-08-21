@@ -1,0 +1,15 @@
+config_version = 1
+
+[plugins.definitions.fixme]
+runtime = "node"
+package = "codeclimate-fixme"
+file_types = ["ALL"]
+recommended = false
+
+[plugins.definitions.fixme.drivers.linter]
+script = "fixme --sarif ${target}"
+success_codes = [0]
+cache_results = true
+driver_type = "linter"
+output = "stdout"
+output_format = "sarif"
