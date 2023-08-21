@@ -1,0 +1,6 @@
+{
+  "preset": "ts-jest",
+  "modulePaths": [
+    "<rootDir>"
+  ]
+}
