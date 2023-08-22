@@ -18,7 +18,7 @@ recommended = true
 [plugins.definitions.shellcheck.drivers.lint]
 script = "/tmp/qlty/shellcheck -f json ${target}"
 success_codes = [0, 1]
-error_codes = [2]
+error_codes = [2, 3, 4]
 output = "stdout"
 output_format = "shellcheck"
 cache_results = true
