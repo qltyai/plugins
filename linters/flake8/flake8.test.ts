@@ -187,7 +187,7 @@ lint:
 
 const runLinterTest = ({ linterName, testTarget, linterVersion }: { linterName: string, testTarget: string, linterVersion: string }) => {
   const driver = new QltyDriver(".", linterName, linterVersion);
-  driver.setUp();
+  // driver.setUp();
 
   // const testRunResult = await driver.runCheck({ args, linter: linterName });
   // expect(testRunResult).toMatchObject({
