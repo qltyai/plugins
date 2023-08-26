@@ -155,7 +155,7 @@ class QltyDriver {
   tearDown() {
     if (this.sandboxPath) {
       this.debug("Cleaning up %s", this.sandboxPath);
-      // fs.rmSync(this.sandboxPath, { recursive: true });
+      fs.rmSync(this.sandboxPath, { recursive: true });
     }
   }
 
@@ -267,117 +267,18 @@ python = "3.11.2"
 ruby = "3.2.1"
 
 [plugins.enabled]
-flake8 = "6.0.0"
 `;
   }
 }
-
-const runLinterTest = async ({ linterName, testTarget, linterVersion }: { linterName: string, testTarget: string, linterVersion: string }) => {
-  const driver = new QltyDriver(__dirname, linterName, linterVersion);
-  await driver.setUp();
-
-  // const fullArgs = `check --output-file=${resultJsonPath} --no-progress --filter=${linterName}`;
-  // const { stdout, stderr } = await driver.runQltyCmd(fullArgs);
-  // const output = fs.readFileSync(resultJsonPath, { encoding: "utf-8" });
-
-  // try {
-  //   const { stdout, stderr } = await this.runTrunkCmd(fullArgs);
-  //   // Used for debugging only
-  //   if (args.includes("--debug")) {
-  //     console.log(stdout);
-  //     console.log(stderr);
-  //   }
-  //   const output = fs.readFileSync(resultJsonPath, { encoding: "utf-8" });
-  //   if (linter == "eslint") {
-  //     console.log(output);
-  //   }
-  //   return this.parseRunResult(
-  //     {
-  //       exitCode: 0,
-  //       stdout,
-  //       stderr,
-  //       outputJson: JSON.parse(output),
-  //     },
-  //     "Check",
-  //     targetAbsPath,
-  //   );
-  // } catch (error: any) {
-  //   // trunk-ignore-begin(eslint/@typescript-eslint/no-unsafe-member-access)
-  //   // If critical failure occurs, JSON file might be empty
-  //   let jsonContents = fs.readFileSync(resultJsonPath, { encoding: "utf-8" });
-  //   if (!jsonContents) {
-  //     jsonContents = "{}";
-  //     console.log(error.stdout as string);
-  //     console.log(error.stderr as string);
-  //   }
-
-  //   const trunkRunResult: TrunkRunResult = {
-  //     exitCode: error.code as number,
-  //     stdout: error.stdout as string,
-  //     stderr: error.stderr as string,
-  //     outputJson: JSON.parse(jsonContents),
-  //     error: error as Error,
-  //   };
-  //   if (trunkRunResult.exitCode != 1) {
-  //     console.log(`${error.code as number} Failure running 'trunk check'`, error);
-  //   }
-  //   // trunk-ignore-end(eslint/@typescript-eslint/no-unsafe-member-access)
-  //   return this.parseRunResult(trunkRunResult, "Check", targetAbsPath);
-  // }
-
-  // const testRunResult = await driver.runCheck({ args });
-
-  // expect(testRunResult).toMatchObject({
-  //   success: true,
-  // });
-
-  // const snapshotDir = path.resolve(dirname, TEST_DATA);
-  // const primarySnapshotPath = getSnapshotPathForAssert(
-  //   snapshotDir,
-  //   linterName,
-  //   testName,
-  //   "check",
-  //   driver.enabledVersion,
-  //   versionGreaterThanOrEqual,
-  // );
-  // debug(
-  //   "Using snapshot (for dir: %s, linter: %s, version: %s) %s",
-  //   snapshotDir,
-  //   linterName,
-  //   driver.enabledVersion ?? "no version",
-  //   primarySnapshotPath,
-  // );
-
-  // expect(testRunResult.landingState).toMatchSpecificSnapshot(
-  //   primarySnapshotPath,
-  //   landingStateWrapper(testRunResult.landingState, primarySnapshotPath),
-  // );
-
-  await driver.tearDown();
-};
 
 const linterName = "flake8";
 const linterTestTargets = detectTestTargets();
 
 describe(`Testing ${linterName} `, () => {
-  // linterTestTargets.forEach((testTarget) => {
-  //   const linterVersions = getVersionsForTest(linterName, testTarget);
-
-  //   linterVersions.forEach((linterVersion) => {
-  //     const testTitle = `${testTarget} with ${linterVersion} `;
-  //     test(testTitle, async () => {
-  //       await runLinterTest({
-  //         linterName,
-  //         testTarget,
-  //         linterVersion,
-  //       });
-  //     });
-  //   });
-  // });
-
   test("v1", async () => {
     const driver = new QltyDriver(__dirname, "flake8", "v1");
     await driver.setUp();
+    await driver.runQltyCmd("plugins enable flake8=6.0.0");
 
     const testRunResult = await driver.runCheck();
     expect(testRunResult).toMatchObject({
@@ -393,6 +294,7 @@ describe(`Testing ${linterName} `, () => {
     //   driver.enabledVersion,
     //   versionGreaterThanOrEqual,
     // );
+
     // debug(
     //   "Using snapshot (for dir: %s, linter: %s, version: %s) %s",
     //   snapshotDir,
@@ -400,8 +302,6 @@ describe(`Testing ${linterName} `, () => {
     //   driver.enabledVersion ?? "no version",
     //   primarySnapshotPath,
     // );
-
-    // console.log(testRunResult.deterministicResults);
 
     expect(testRunResult.deterministicResults).toMatchSnapshot();
 
