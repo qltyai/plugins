@@ -317,7 +317,7 @@ describe(`Testing ${linterName} `, () => {
     //   primarySnapshotPath,
     // );
 
-    expect(testRunResult.deterministicResults).toMatchSnapshot();
+    expect(testRunResult.deterministicResults).toMatchSpecificSnapshot(snapshotPath);
 
     await driver.tearDown();
   });
