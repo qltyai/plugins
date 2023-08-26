@@ -9,6 +9,7 @@ const getTargetCases = () => {
 };
 
 let targetCases = getTargetCases();
+
 Object.entries(targetCases).forEach(([linterName, targetVersions]) => {
   describe(`linter=${linterName}`, () => {
     targetVersions.forEach(({ target, linterVersions }) => {
