@@ -10,7 +10,7 @@ import specific_snapshot = require("jest-specific-snapshot");
 // import { ChildProcess, execFile, execFileSync, ExecOptions, execSync } from "child_process";
 
 // const execFilePromise = util.promisify(execFile);
-// const toMatchSpecificSnapshot = specific_snapshot.toMatchSpecificSnapshot;
+const toMatchSpecificSnapshot = specific_snapshot.toMatchSpecificSnapshot;
 
 // const TESTS_DIR = "tests";
 const SNAPSHOTS_DIR = "__snapshots__";
