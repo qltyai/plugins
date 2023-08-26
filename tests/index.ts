@@ -68,6 +68,7 @@ export class QltyDriver {
       .commit("first commit");
 
     await this.runQlty(["--help"]);
+    await this.runQltyCmd(`plugins enable ${this.linterName}=${this.linterVersion}`);
   }
 
   tearDown() {
@@ -79,6 +80,11 @@ export class QltyDriver {
 
   testTargets(): string[] {
     return fs.readdirSync(this.testDir).sort().filter((target) => !target.includes(SNAPSHOTS_DIR));
+  }
+
+  snapshotPath(testTargetName: string): string {
+    const snapshotName = `${testTargetName}_v${this.linterVersion}.shot`;
+    return path.resolve(this.testDir, SNAPSHOTS_DIR, snapshotName);
   }
 
   async runCheck() {
@@ -192,7 +198,3 @@ ruby = "3.2.1"
 `;
   }
 }
-
-export const linterCheckTest = ({ linterName }: { linterName: string }) => {
-  // console.log(linterName);
-};

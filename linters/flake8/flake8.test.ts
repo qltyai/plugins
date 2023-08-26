@@ -1,22 +1,6 @@
-import { QltyDriver, linterCheckTest } from "tests";
-// import * as fs from "fs";
-// import * as os from "os";
-import path from "path";
-// import Debug from "debug";
+import { QltyDriver } from "tests";
 import specific_snapshot = require("jest-specific-snapshot");
-// import { Debugger } from "debug";
-// import * as util from "util";
-// import * as git from "simple-git";
-// import { ChildProcess, execFile, execFileSync, ExecOptions, execSync } from "child_process";
-
-// const execFilePromise = util.promisify(execFile);
 const toMatchSpecificSnapshot = specific_snapshot.toMatchSpecificSnapshot;
-
-// const TESTS_DIR = "tests";
-const SNAPSHOTS_DIR = "__snapshots__";
-// const TEMP_PREFIX = "plugins_";
-// const TEMP_SUBDIR = "tmp";
-// const REPO_ROOT = path.resolve(__dirname, "../..");
 
 const linterName = "flake8";
 
@@ -24,7 +8,7 @@ const getVersionsForTest = (linterName: string): string[] => {
   return ["6.0.0"];
 };
 
-describe(`Testing ${linterName} `, () => {
+describe(linterName, () => {
   const linterVersions = getVersionsForTest(linterName);
 
   linterVersions.forEach((linterVersion) => {
@@ -36,7 +20,6 @@ describe(`Testing ${linterName} `, () => {
 
       beforeAll(async () => {
         await driver.setUp();
-        await driver.runQltyCmd(`plugins enable ${linterName}=${linterVersion}`);
       });
 
       test(`${testTargetName}_v${linterVersion}`, async () => {
@@ -45,10 +28,8 @@ describe(`Testing ${linterName} `, () => {
           success: true,
         });
 
-        const snapshotName = `${testTargetName}_v${linterVersion}.shot`;
-        const snapshotPath = path.resolve(driver.testDir, SNAPSHOTS_DIR, snapshotName);
+        const snapshotPath = driver.snapshotPath(testTargetName);
         driver.debug("Using snapshot: %s", snapshotPath);
-
         expect(testRunResult.deterministicResults).toMatchSpecificSnapshot(snapshotPath);
       });
 
@@ -58,6 +39,3 @@ describe(`Testing ${linterName} `, () => {
     });
   });
 });
-
-
-linterCheckTest({ linterName: "flake8" });
