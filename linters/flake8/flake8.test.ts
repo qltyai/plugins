@@ -215,16 +215,13 @@ describe(`Testing ${linterName} `, () => {
         await driver.runQltyCmd(`plugins enable ${linterName}=${linterVersion}`);
       });
 
-      test(`version ${linterVersion}`, async () => {
-        const testTargets = driver.testTargets();
-        expect(testTargets).toEqual(["foo.py"]);
-
+      test(`${testTarget}_v${linterVersion}`, async () => {
         const testRunResult = await driver.runCheck();
         expect(testRunResult).toMatchObject({
           success: true,
         });
 
-        const snapshotName = `${linterName}_v${linterVersion}.shot`;
+        const snapshotName = `${testTarget}_v${linterVersion}.shot`;
         const snapshotPath = path.resolve(driver.testDir, SNAPSHOTS_DIR, snapshotName);
         driver.debug("Using snapshot: %s", snapshotPath);
 

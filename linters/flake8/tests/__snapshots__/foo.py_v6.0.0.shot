@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing flake8  foo.py_v6.0.0 1`] = `
+{
+  "issues": [
+    {
+      "driver_name": "lint",
+      "issue": {
+        "level": "MEDIUM",
+        "message": "'foo' imported but unused",
+        "path": "foo.py",
+        "plugin": "flake8",
+        "ruleKey": "F401",
+        "startColumn": 1,
+        "startLine": 1,
+      },
+      "plugin_name": "flake8",
+    },
+  ],
+}
+`;
