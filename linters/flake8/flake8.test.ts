@@ -3,11 +3,11 @@ import { linterCheckTest } from "tests";
 linterCheckTest({ linterName: "flake8" });
 
 const detectTestTargets = (): string[] => {
-  return ["testA", "testB"];
+  return ["testA"];
 };
 
 const getVersionsForTest = (linterName: string, testTarget: string): string[] => {
-  return ["version1", "version2"];
+  return ["version1"];
 };
 
 /**
@@ -88,6 +88,7 @@ import path from "path";
 import Debug from "debug";
 import { Debugger } from "debug";
 import * as util from "util";
+import * as git from "simple-git";
 import { ChildProcess, execFile, execFileSync, ExecOptions, execSync } from "child_process";
 
 const execFilePromise = util.promisify(execFile);
@@ -107,7 +108,7 @@ export const executionEnv = (sandbox: string) => {
 
 class QltyDriver {
   testDir: string;
-  sandboxPath?: string;
+  sandboxPath: string;
   linterName: string;
   linterVersion: string;
   debug: Debugger;
@@ -116,13 +117,13 @@ class QltyDriver {
     this.testDir = testDir;
     this.linterName = linterName;
     this.linterVersion = linterVersion;
+    this.sandboxPath = fs.realpathSync(fs.mkdtempSync(path.resolve(os.tmpdir(), TEMP_PREFIX)));
     this.debug = Debug(`qlty:${linterName}`);
   }
 
   async setUp() {
-    this.sandboxPath = fs.realpathSync(fs.mkdtempSync(path.resolve(os.tmpdir(), TEMP_PREFIX)));
     fs.mkdirSync(path.resolve(this.sandboxPath, TEMP_SUBDIR));
-    this.debug("Created sandbox path %s from %s", this.sandboxPath, this.testDir);
+    this.debug("Created sandbox %s from %s", this.sandboxPath, this.testDir);
 
     fs.cpSync(this.testDir, this.sandboxPath, {
       recursive: true,
@@ -132,10 +133,21 @@ class QltyDriver {
     if (!fs.existsSync(path.resolve(path.resolve(this.sandboxPath, ".qlty")))) {
       fs.mkdirSync(path.resolve(this.sandboxPath, ".qlty"), {});
     }
+
     fs.writeFileSync(
       path.resolve(this.sandboxPath, ".qlty/qlty.toml"),
       this.getQltyTomlContents(),
     );
+
+    const gitDriver = git.simpleGit(this.sandboxPath);
+    await gitDriver
+      .init({ "--initial-branch": "main" })
+      .add(".")
+      .addConfig("user.name", "User")
+      .addConfig("user.email", "user@example.com")
+      .addConfig("commit.gpgsign", "false")
+      .addConfig("core.autocrlf", "input")
+      .commit("first commit");
 
     await this.runQlty(["--help"]);
   }
@@ -143,8 +155,71 @@ class QltyDriver {
   tearDown() {
     if (this.sandboxPath) {
       this.debug("Cleaning up %s", this.sandboxPath);
-      fs.rmSync(this.sandboxPath, { recursive: true });
+      // fs.rmSync(this.sandboxPath, { recursive: true });
     }
+  }
+
+  async runCheck() {
+    const resultJsonPath = path.resolve(this.sandboxPath, "result.json");
+    const fullArgs = `check --all --output-file=${resultJsonPath} --no-progress --filter=${linterName}`;
+
+    try {
+      const { stdout, stderr } = await this.runQltyCmd(fullArgs);
+      const output = fs.readFileSync(resultJsonPath, { encoding: "utf-8" });
+
+      return this.parseRunResult(
+        {
+          exitCode: 0,
+          stdout,
+          stderr,
+          outputJson: JSON.parse(output),
+        }
+      );
+    } catch (error: any) {
+      let jsonContents;
+
+      if (fs.existsSync(resultJsonPath)) {
+        jsonContents = fs.readFileSync(resultJsonPath, { encoding: "utf-8" });
+      };
+
+      if (!jsonContents) {
+        jsonContents = "{}";
+        console.log(error.stdout as string);
+        console.log(error.stderr as string);
+      }
+
+      const runResult = {
+        exitCode: error.code as number,
+        stdout: error.stdout as string,
+        stderr: error.stderr as string,
+        outputJson: JSON.parse(jsonContents),
+        error: error as Error,
+      };
+
+      if (runResult.exitCode != 1) {
+        console.log(`${error.code as number} Failure running 'qlty check'`, error);
+      }
+
+      return this.parseRunResult(runResult);
+    }
+  }
+
+  async runQltyCmd(
+    argStr: string,
+    execOptions?: ExecOptions,
+  ): Promise<{ stdout: string; stderr: string }> {
+    this.debug("Running qlty %s", argStr);
+    return await this.runQlty(
+      argStr.split(" ").filter((arg) => arg.length > 0),
+      execOptions,
+    );
+  }
+
+  async runQlty(
+    args: string[],
+    execOptions?: ExecOptions,
+  ): Promise<{ stdout: string; stderr: string }> {
+    return await execFilePromise(...this.buildExecArgs(args, execOptions));
   }
 
   buildExecArgs(args: string[], execOptions?: ExecOptions): [string, string[], ExecOptions] {
@@ -160,36 +235,98 @@ class QltyDriver {
     ];
   }
 
-  async runQlty(
-    args: string[],
-    execOptions?: ExecOptions,
-  ): Promise<{ stdout: string; stderr: string }> {
-    return await execFilePromise(...this.buildExecArgs(args, execOptions));
+  parseRunResult(runResult: any) {
+    return {
+      success: [0, 1].includes(runResult.exitCode),
+      runResult,
+      deterministicResults: this.tryParseDeterministicResults(this.sandboxPath, runResult.outputJson),
+    };
+  }
+
+  tryParseDeterministicResults(sandboxPath: string, outputJson: any) {
+    if (!outputJson) {
+      return undefined;
+    }
+
+    return {
+      issues: outputJson.issues
+    };
   }
 
   getQltyTomlContents(): string {
-    return `version: 0.1
-plugins:
-  sources:
-  - id: default
-    directory: ${REPO_ROOT}
-lint:
-  ignore:
-    - linters: [ALL]
-      paths:
-        - tmp/**
-        - node_modules/**
-        - .trunk/configs/**
-        - .gitattributes
+    return `config_version = 1
+
+[sources.default]
+directory = "${REPO_ROOT}"
+
+[runtimes.enabled]
+linux = "3.17.1"
+node = "19.6.0"
+go = "1.20.0"
+python = "3.11.2"
+ruby = "3.2.1"
+
+[plugins.enabled]
+flake8 = "6.0.0"
 `;
   }
 }
 
-const runLinterTest = ({ linterName, testTarget, linterVersion }: { linterName: string, testTarget: string, linterVersion: string }) => {
-  const driver = new QltyDriver(".", linterName, linterVersion);
-  // driver.setUp();
+const runLinterTest = async ({ linterName, testTarget, linterVersion }: { linterName: string, testTarget: string, linterVersion: string }) => {
+  const driver = new QltyDriver(__dirname, linterName, linterVersion);
+  await driver.setUp();
 
-  // const testRunResult = await driver.runCheck({ args, linter: linterName });
+  // const fullArgs = `check --output-file=${resultJsonPath} --no-progress --filter=${linterName}`;
+  // const { stdout, stderr } = await driver.runQltyCmd(fullArgs);
+  // const output = fs.readFileSync(resultJsonPath, { encoding: "utf-8" });
+
+  // try {
+  //   const { stdout, stderr } = await this.runTrunkCmd(fullArgs);
+  //   // Used for debugging only
+  //   if (args.includes("--debug")) {
+  //     console.log(stdout);
+  //     console.log(stderr);
+  //   }
+  //   const output = fs.readFileSync(resultJsonPath, { encoding: "utf-8" });
+  //   if (linter == "eslint") {
+  //     console.log(output);
+  //   }
+  //   return this.parseRunResult(
+  //     {
+  //       exitCode: 0,
+  //       stdout,
+  //       stderr,
+  //       outputJson: JSON.parse(output),
+  //     },
+  //     "Check",
+  //     targetAbsPath,
+  //   );
+  // } catch (error: any) {
+  //   // trunk-ignore-begin(eslint/@typescript-eslint/no-unsafe-member-access)
+  //   // If critical failure occurs, JSON file might be empty
+  //   let jsonContents = fs.readFileSync(resultJsonPath, { encoding: "utf-8" });
+  //   if (!jsonContents) {
+  //     jsonContents = "{}";
+  //     console.log(error.stdout as string);
+  //     console.log(error.stderr as string);
+  //   }
+
+  //   const trunkRunResult: TrunkRunResult = {
+  //     exitCode: error.code as number,
+  //     stdout: error.stdout as string,
+  //     stderr: error.stderr as string,
+  //     outputJson: JSON.parse(jsonContents),
+  //     error: error as Error,
+  //   };
+  //   if (trunkRunResult.exitCode != 1) {
+  //     console.log(`${error.code as number} Failure running 'trunk check'`, error);
+  //   }
+  //   // trunk-ignore-end(eslint/@typescript-eslint/no-unsafe-member-access)
+  //   return this.parseRunResult(trunkRunResult, "Check", targetAbsPath);
+  // }
+
+  // const testRunResult = await driver.runCheck({ args });
+
   // expect(testRunResult).toMatchObject({
   //   success: true,
   // });
@@ -216,25 +353,59 @@ const runLinterTest = ({ linterName, testTarget, linterVersion }: { linterName: 
   //   landingStateWrapper(testRunResult.landingState, primarySnapshotPath),
   // );
 
-  driver.tearDown();
+  await driver.tearDown();
 };
 
 const linterName = "flake8";
 const linterTestTargets = detectTestTargets();
 
 describe(`Testing ${linterName} `, () => {
-  linterTestTargets.forEach((testTarget) => {
-    const linterVersions = getVersionsForTest(linterName, testTarget);
+  // linterTestTargets.forEach((testTarget) => {
+  //   const linterVersions = getVersionsForTest(linterName, testTarget);
 
-    linterVersions.forEach((linterVersion) => {
-      const testTitle = `${testTarget} with ${linterVersion} `;
-      test(testTitle, () => {
-        runLinterTest({
-          linterName,
-          testTarget,
-          linterVersion,
-        });
-      });
+  //   linterVersions.forEach((linterVersion) => {
+  //     const testTitle = `${testTarget} with ${linterVersion} `;
+  //     test(testTitle, async () => {
+  //       await runLinterTest({
+  //         linterName,
+  //         testTarget,
+  //         linterVersion,
+  //       });
+  //     });
+  //   });
+  // });
+
+  test("v1", async () => {
+    const driver = new QltyDriver(__dirname, "flake8", "v1");
+    await driver.setUp();
+
+    const testRunResult = await driver.runCheck();
+    expect(testRunResult).toMatchObject({
+      success: true,
     });
+
+    // const snapshotDir = path.resolve(dirname, TEST_DATA);
+    // const primarySnapshotPath = getSnapshotPathForAssert(
+    //   snapshotDir,
+    //   linterName,
+    //   testName,
+    //   "check",
+    //   driver.enabledVersion,
+    //   versionGreaterThanOrEqual,
+    // );
+    // debug(
+    //   "Using snapshot (for dir: %s, linter: %s, version: %s) %s",
+    //   snapshotDir,
+    //   linterName,
+    //   driver.enabledVersion ?? "no version",
+    //   primarySnapshotPath,
+    // );
+
+    // console.log(testRunResult.deterministicResults);
+
+    expect(testRunResult.deterministicResults).toMatchSnapshot();
+
+    await driver.tearDown();
   });
 });
+

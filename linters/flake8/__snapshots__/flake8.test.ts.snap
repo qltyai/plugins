@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing flake8  v1 1`] = `
+{
+  "issues": [
+    {
+      "driver_name": "lint",
+      "issue": {
+        "level": "MEDIUM",
+        "message": "no newline at end of file",
+        "path": "foo.py",
+        "plugin": "flake8",
+        "ruleKey": "W292",
+        "startColumn": 12,
+        "startLine": 1,
+      },
+      "plugin_name": "flake8",
+    },
+  ],
+}
+`;
