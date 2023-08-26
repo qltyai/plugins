@@ -210,18 +210,20 @@ describe(`Testing ${linterName} `, () => {
     const testTargets = driver.testTargets();
 
     testTargets.forEach((testTarget) => {
+      const testTargetName = testTarget.split(".")[0];
+
       beforeAll(async () => {
         await driver.setUp();
         await driver.runQltyCmd(`plugins enable ${linterName}=${linterVersion}`);
       });
 
-      test(`${testTarget}_v${linterVersion}`, async () => {
+      test(`${testTargetName}_v${linterVersion}`, async () => {
         const testRunResult = await driver.runCheck();
         expect(testRunResult).toMatchObject({
           success: true,
         });
 
-        const snapshotName = `${testTarget}_v${linterVersion}.shot`;
+        const snapshotName = `${testTargetName}_v${linterVersion}.shot`;
         const snapshotPath = path.resolve(driver.testDir, SNAPSHOTS_DIR, snapshotName);
         driver.debug("Using snapshot: %s", snapshotPath);
 
