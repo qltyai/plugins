@@ -1,6 +1,7 @@
 import { linterCheckTest } from "tests";
 
 const TESTS_DIR = "tests";
+const SNAPSHOTS_DIR = "__snapshots__";
 
 linterCheckTest({ linterName: "flake8" });
 
@@ -84,12 +85,14 @@ import * as fs from "fs";
 import * as os from "os";
 import path from "path";
 import Debug from "debug";
+import specific_snapshot = require("jest-specific-snapshot");
 import { Debugger } from "debug";
 import * as util from "util";
 import * as git from "simple-git";
 import { ChildProcess, execFile, execFileSync, ExecOptions, execSync } from "child_process";
 
 const execFilePromise = util.promisify(execFile);
+const toMatchSpecificSnapshot = specific_snapshot.toMatchSpecificSnapshot;
 
 const TEMP_PREFIX = "plugins_";
 const TEMP_SUBDIR = "tmp";
@@ -158,7 +161,7 @@ class QltyDriver {
   }
 
   testTargets(): string[] {
-    return fs.readdirSync(this.testDir).sort().filter((target) => !target.includes("__snapshots__"));
+    return fs.readdirSync(this.testDir).sort().filter((target) => !target.includes(SNAPSHOTS_DIR));
   }
 
   async runCheck() {
@@ -290,6 +293,11 @@ describe(`Testing ${linterName} `, () => {
     expect(testRunResult).toMatchObject({
       success: true,
     });
+
+    const snapshotName = `${linterName}_v${linterVersion}.shot`;
+    const snapshotPath = path.resolve(driver.testDir, SNAPSHOTS_DIR, snapshotName);
+    // expect(snapshotPath).toEqual("path");
+    // const snapshotPath = driver.getSnapshotPathForAssert(testName);
 
     // const snapshotDir = path.resolve(dirname, TEST_DATA);
     // const primarySnapshotPath = getSnapshotPathForAssert(
