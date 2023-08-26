@@ -79,7 +79,8 @@ export class QltyDriver {
   }
 
   testTargets(): string[] {
-    return fs.readdirSync(this.fixturesDir).sort().filter((target) => !target.includes(SNAPSHOTS_DIR));
+    return fs.readdirSync(this.fixturesDir).sort().
+      filter((target) => !target.includes(SNAPSHOTS_DIR) && !target.startsWith("."));
   }
 
   snapshotPath(testTargetName: string): string {
