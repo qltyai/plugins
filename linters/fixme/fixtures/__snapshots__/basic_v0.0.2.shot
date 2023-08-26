@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=fixme fixture=basic version=0.0.2 1`] = `
+{
+  "issues": [
+    {
+      "driver_name": "linter",
+      "issue": {
+        "endColumn": 1,
+        "endLine": 1,
+        "level": "LOW",
+        "message": "FIXME found",
+        "path": "another.rb",
+        "plugin": "fixme",
+        "ruleKey": "FIXME",
+        "startColumn": 1,
+        "startLine": 1,
+      },
+      "plugin_name": "fixme",
+    },
+    {
+      "driver_name": "linter",
+      "issue": {
+        "endColumn": 1,
+        "endLine": 1,
+        "level": "LOW",
+        "message": "FIXME found",
+        "path": "basic.py",
+        "plugin": "fixme",
+        "ruleKey": "FIXME",
+        "startColumn": 1,
+        "startLine": 1,
+      },
+      "plugin_name": "fixme",
+    },
+  ],
+}
+`;
