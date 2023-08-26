@@ -1,4 +1,4 @@
-import { QltyDriver } from "tests";
+import { linterCheckTest, QltyDriver } from "tests";
 import specific_snapshot = require("jest-specific-snapshot");
 const toMatchSpecificSnapshot = specific_snapshot.toMatchSpecificSnapshot;
 
@@ -43,3 +43,4 @@ Object.entries(targetCases).forEach(([linterName, targetVersions]) => {
   });
 });
 
+linterCheckTest();
