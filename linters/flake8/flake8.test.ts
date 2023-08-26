@@ -198,39 +198,42 @@ ruby = "3.2.1"
 
 const linterName = "flake8";
 
-const getVersionsForTest = (linterName: string, testTarget: string): string[] => {
+const getVersionsForTest = (linterName: string): string[] => {
   return ["6.0.0"];
 };
 
 describe(`Testing ${linterName} `, () => {
-  const linterVersion = "6.0.0";
-  const driver = new QltyDriver(__dirname, linterName, linterVersion);
-  const testTargets = driver.testTargets();
+  const linterVersions = getVersionsForTest(linterName);
 
-  testTargets.forEach((testTarget) => {
-    beforeAll(async () => {
-      await driver.setUp();
-      await driver.runQltyCmd(`plugins enable ${linterName}=${linterVersion}`);
-    });
+  linterVersions.forEach((linterVersion) => {
+    const driver = new QltyDriver(__dirname, linterName, linterVersion);
+    const testTargets = driver.testTargets();
 
-    test(`version ${linterVersion}`, async () => {
-      const testTargets = driver.testTargets();
-      expect(testTargets).toEqual(["foo.py"]);
-
-      const testRunResult = await driver.runCheck();
-      expect(testRunResult).toMatchObject({
-        success: true,
+    testTargets.forEach((testTarget) => {
+      beforeAll(async () => {
+        await driver.setUp();
+        await driver.runQltyCmd(`plugins enable ${linterName}=${linterVersion}`);
       });
 
-      const snapshotName = `${linterName}_v${linterVersion}.shot`;
-      const snapshotPath = path.resolve(driver.testDir, SNAPSHOTS_DIR, snapshotName);
-      driver.debug("Using snapshot: %s", snapshotPath);
+      test(`version ${linterVersion}`, async () => {
+        const testTargets = driver.testTargets();
+        expect(testTargets).toEqual(["foo.py"]);
 
-      expect(testRunResult.deterministicResults).toMatchSpecificSnapshot(snapshotPath);
-    });
+        const testRunResult = await driver.runCheck();
+        expect(testRunResult).toMatchObject({
+          success: true,
+        });
 
-    afterAll(async () => {
-      await driver.tearDown();
+        const snapshotName = `${linterName}_v${linterVersion}.shot`;
+        const snapshotPath = path.resolve(driver.testDir, SNAPSHOTS_DIR, snapshotName);
+        driver.debug("Using snapshot: %s", snapshotPath);
+
+        expect(testRunResult.deterministicResults).toMatchSpecificSnapshot(snapshotPath);
+      });
+
+      afterAll(async () => {
+        await driver.tearDown();
+      });
     });
   });
 });
