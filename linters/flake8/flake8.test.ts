@@ -1,13 +1,11 @@
 import { linterCheckTest } from "tests";
 
+const TESTS_DIR = "tests";
+
 linterCheckTest({ linterName: "flake8" });
 
-const detectTestTargets = (): string[] => {
-  return ["testA"];
-};
-
 const getVersionsForTest = (linterName: string, testTarget: string): string[] => {
-  return ["version1"];
+  return ["6.0.0"];
 };
 
 /**
@@ -113,8 +111,8 @@ class QltyDriver {
   linterVersion: string;
   debug: Debugger;
 
-  constructor(testDir: string, linterName: string, linterVersion: string) {
-    this.testDir = testDir;
+  constructor(pluginDir: string, linterName: string, linterVersion: string) {
+    this.testDir = path.resolve(pluginDir, TESTS_DIR);
     this.linterName = linterName;
     this.linterVersion = linterVersion;
     this.sandboxPath = fs.realpathSync(fs.mkdtempSync(path.resolve(os.tmpdir(), TEMP_PREFIX)));
@@ -157,6 +155,10 @@ class QltyDriver {
       this.debug("Cleaning up %s", this.sandboxPath);
       fs.rmSync(this.sandboxPath, { recursive: true });
     }
+  }
+
+  testTargets(): string[] {
+    return fs.readdirSync(this.testDir).sort().filter((target) => !target.includes("__snapshots__"));
   }
 
   async runCheck() {
@@ -272,13 +274,17 @@ ruby = "3.2.1"
 }
 
 const linterName = "flake8";
-const linterTestTargets = detectTestTargets();
 
 describe(`Testing ${linterName} `, () => {
-  test("v1", async () => {
-    const driver = new QltyDriver(__dirname, "flake8", "v1");
+  const linterVersion = "6.0.0";
+
+  test(`version ${linterVersion}`, async () => {
+    const driver = new QltyDriver(__dirname, linterName, linterVersion);
     await driver.setUp();
-    await driver.runQltyCmd("plugins enable flake8=6.0.0");
+    await driver.runQltyCmd(`plugins enable ${linterName}=${linterVersion}`);
+
+    const testTargets = driver.testTargets();
+    expect(testTargets).toEqual(["foo.py"]);
 
     const testRunResult = await driver.runCheck();
     expect(testRunResult).toMatchObject({

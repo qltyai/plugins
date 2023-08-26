@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing flake8  v1 1`] = `
+exports[`Testing flake8  version 6.0.0 1`] = `
 {
   "issues": [
     {
