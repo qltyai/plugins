@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rubocop basic_v1.45.1 1`] = `
+{
+  "issues": [],
+}
+`;

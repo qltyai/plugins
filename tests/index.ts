@@ -9,7 +9,7 @@ import { ChildProcess, execFile, execFileSync, ExecOptions, execSync } from "chi
 
 const execFilePromise = util.promisify(execFile);
 
-const TESTS_DIR = "tests";
+const FIXTURES_DIR = "fixtures";
 const TEMP_PREFIX = "plugins_";
 const TEMP_SUBDIR = "tmp";
 const SNAPSHOTS_DIR = "__snapshots__";
@@ -25,14 +25,14 @@ export const executionEnv = (sandbox: string) => {
 };
 
 export class QltyDriver {
-  testDir: string;
+  fixturesDir: string;
   sandboxPath: string;
   linterName: string;
   linterVersion: string;
   debug: Debugger;
 
   constructor(pluginDir: string, linterName: string, linterVersion: string) {
-    this.testDir = path.resolve(pluginDir, TESTS_DIR);
+    this.fixturesDir = path.resolve(pluginDir, FIXTURES_DIR);
     this.linterName = linterName;
     this.linterVersion = linterVersion;
     this.sandboxPath = fs.realpathSync(fs.mkdtempSync(path.resolve(os.tmpdir(), TEMP_PREFIX)));
@@ -41,11 +41,11 @@ export class QltyDriver {
 
   async setUp() {
     fs.mkdirSync(path.resolve(this.sandboxPath, TEMP_SUBDIR));
-    this.debug("Created sandbox %s from %s", this.sandboxPath, this.testDir);
+    this.debug("Created sandbox %s from %s", this.sandboxPath, this.fixturesDir);
 
-    fs.cpSync(this.testDir, this.sandboxPath, {
+    fs.cpSync(this.fixturesDir, this.sandboxPath, {
       recursive: true,
-      // filter: testCreationFilter(this.testDir),
+      // filter: testCreationFilter(this.fixturesDir),
     });
 
     if (!fs.existsSync(path.resolve(path.resolve(this.sandboxPath, ".qlty")))) {
@@ -79,12 +79,12 @@ export class QltyDriver {
   }
 
   testTargets(): string[] {
-    return fs.readdirSync(this.testDir).sort().filter((target) => !target.includes(SNAPSHOTS_DIR));
+    return fs.readdirSync(this.fixturesDir).sort().filter((target) => !target.includes(SNAPSHOTS_DIR));
   }
 
   snapshotPath(testTargetName: string): string {
     const snapshotName = `${testTargetName}_v${this.linterVersion}.shot`;
-    return path.resolve(this.testDir, SNAPSHOTS_DIR, snapshotName);
+    return path.resolve(this.fixturesDir, SNAPSHOTS_DIR, snapshotName);
   }
 
   async runCheck() {
