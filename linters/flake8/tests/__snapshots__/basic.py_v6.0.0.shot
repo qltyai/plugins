@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing flake8  basic.py_v6.0.0 1`] = `
+{
+  "issues": [
+    {
+      "driver_name": "lint",
+      "issue": {
+        "level": "MEDIUM",
+        "message": "'foo' imported but unused",
+        "path": "basic.py",
+        "plugin": "flake8",
+        "ruleKey": "F401",
+        "startColumn": 1,
+        "startLine": 4,
+      },
+      "plugin_name": "flake8",
+    },
+    {
+      "driver_name": "lint",
+      "issue": {
+        "level": "MEDIUM",
+        "message": "expected 2 blank lines after class or function definition, found 1",
+        "path": "basic.py",
+        "plugin": "flake8",
+        "ruleKey": "E305",
+        "startColumn": 1,
+        "startLine": 4,
+      },
+      "plugin_name": "flake8",
+    },
+    {
+      "driver_name": "lint",
+      "issue": {
+        "level": "MEDIUM",
+        "message": "module level import not at top of file",
+        "path": "basic.py",
+        "plugin": "flake8",
+        "ruleKey": "E402",
+        "startColumn": 1,
+        "startLine": 4,
+      },
+      "plugin_name": "flake8",
+    },
+  ],
+}
+`;
