@@ -13,7 +13,7 @@ const FIXTURES_DIR = "fixtures";
 const TEMP_PREFIX = "plugins_";
 const TEMP_SUBDIR = "tmp";
 const SNAPSHOTS_DIR = "__snapshots__";
-const REPO_ROOT = path.resolve(__dirname, "..");
+export const REPO_ROOT = path.resolve(__dirname, "..");
 
 export const executionEnv = (sandbox: string) => {
   const { PWD, INIT_CWD, ...strippedEnv } = process.env;
@@ -31,7 +31,8 @@ export class QltyDriver {
   linterVersion: string;
   debug: Debugger;
 
-  constructor(pluginDir: string, linterName: string, linterVersion: string) {
+  constructor(linterName: string, linterVersion: string) {
+    const pluginDir = path.resolve(REPO_ROOT, "linters", linterName);
     this.fixturesDir = path.resolve(pluginDir, FIXTURES_DIR);
     this.linterName = linterName;
     this.linterVersion = linterVersion;
