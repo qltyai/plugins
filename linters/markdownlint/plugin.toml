@@ -1,0 +1,22 @@
+config_version = 1
+
+[plugins.definitions.markdownlint]
+runtime = "node"
+package = "markdownlint-cli"
+file_types = ["markdown"]
+recommended = true
+
+[plugins.definitions.markdownlint.drivers.linter]
+script = "markdownlint --json ${target}"
+success_codes = [0, 1]
+cache_results = true
+driver_type = "linter"
+output = "stderr"
+output_format = "markdownlint"
+
+[plugins.definitions.markdownlint.drivers.format]
+script = "markdownlint --fix ${target}"
+success_codes = [0, 1]
+output = "rewrite"
+cache_results = true
+driver_type = "formatter"
