@@ -8,10 +8,6 @@ export interface EnvOptions {
   /** Version of linters to enable and test against. */
   linterVersion?: LinterVersion | string;
 
-  /** Whether tests should create new snapshot files if snapshots already exist
-   * even if a match is found. */
-  dumpSnapshots: boolean;
-
   /** Prevents the deletion of sandbox test dirs. */
   sandboxDebug: boolean;
 }
@@ -25,7 +21,6 @@ const parseLinterVersion = (value: string): LinterVersion | undefined => {
 
 export const OPTIONS: EnvOptions = {
   linterVersion: parseLinterVersion(process.env.QLTY_PLUGINS_LINTER_VERSION ?? ""),
-  dumpSnapshots: Boolean(process.env.QLTY_PLUGINS_DUMP_SNAPSHOTS),
   sandboxDebug: Boolean(process.env.QLTY_PLUGINS_SANDBOX_DEBUG),
 };
 
