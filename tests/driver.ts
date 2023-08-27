@@ -24,6 +24,15 @@ export const executionEnv = (sandbox: string) => {
   };
 };
 
+const testCreationFilter = (topLevelDir: string) => (file: string) => {
+  // Don't copy snapshot files
+  if (file.endsWith(".shot")) {
+    return false;
+  }
+
+  return true;
+};
+
 export class QltyDriver {
   fixturesDir: string;
   sandboxPath: string;
@@ -46,7 +55,7 @@ export class QltyDriver {
 
     fs.cpSync(this.fixturesDir, this.sandboxPath, {
       recursive: true,
-      // filter: testCreationFilter(this.fixturesDir),
+      filter: testCreationFilter(this.fixturesDir),
     });
 
     if (!fs.existsSync(path.resolve(path.resolve(this.sandboxPath, ".qlty")))) {
