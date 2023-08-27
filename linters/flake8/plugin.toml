@@ -5,6 +5,7 @@ runtime = "python"
 package = "flake8"
 file_types = ["python"]
 config_files = [".flake8"]
+version_command = "flake8 --version"
 recommended = true
 
 [plugins.definitions.flake8.drivers.lint]
