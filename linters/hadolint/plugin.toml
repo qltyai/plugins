@@ -11,6 +11,7 @@ runtime = "linux"
 downloads = ["hadolint"]
 file_types = ["docker"]
 config_files = [".hadolint.yaml", ".hadolint.yml"]
+version_command = "hadolint --version"
 recommended = true
 
 [plugins.definitions.hadolint.drivers.lint]

@@ -9,10 +9,8 @@ file_type = "tarxz"
 runtime = "linux"
 downloads = ["shellcheck"]
 file_types = ["shell"]
-config_files = [
-  ".shellcheckrc",
-  "shellcheckrc",
-]
+config_files = [".shellcheckrc", "shellcheckrc"]
+version_command = "shellcheck --version"
 recommended = true
 
 [plugins.definitions.shellcheck.drivers.lint]

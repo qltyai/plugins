@@ -4,6 +4,7 @@ config_version = 1
 runtime = "node"
 package = "rome"
 file_types = ["javascript", "typescript"]
+version_command = "rome --version"
 recommended = true
 # direct_configs:
 #         - .rome.json

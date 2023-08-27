@@ -4,6 +4,7 @@ config_version = 1
 runtime = "ruby"
 package = "rubocop"
 file_types = ["ruby", "gemspec"]
+version_command = "rubocop --version"
 recommended = true
 
 [plugins.definitions.rubocop.drivers.lint]
