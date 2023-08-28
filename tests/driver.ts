@@ -176,7 +176,7 @@ export class QltyDriver {
 
   parseRunResult(runResult: any) {
     return {
-      success: [0, 1].includes(runResult.exitCode),
+      success: [0].includes(runResult.exitCode),
       runResult,
       deterministicResults: this.tryParseDeterministicResults(this.sandboxPath, runResult.outputJson),
     };
