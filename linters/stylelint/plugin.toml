@@ -17,6 +17,7 @@ version_command = "stylelint --version"
 [plugins.definitions.stylelint.drivers.lint]
 script = "stylelint --formatter json ${target}"
 success_codes = [0, 2]
+error_codes = [1, 78]
 output = "stdout"
 output_format = "stylelint"
 cache_results = true
@@ -26,6 +27,7 @@ max_batch = 100
 [plugins.definitions.stylelint.drivers.format]
 script = "stylelint --fix ${target}"
 success_codes = [0, 2]
+error_codes = [1, 78]
 output = "rewrite"
 batch = true
 driver_type = "formatter"
