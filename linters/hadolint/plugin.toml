@@ -2,9 +2,8 @@ config_version = 1
 
 [plugins.downloads.hadolint]
 url = "https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-arm64"
-file_name = "hadolint"
 # https://github.com/hadolint/hadolint/releases/download/v2.8.0/hadolint-Darwin-x86_64
-file_type = "executable"
+file_type = "Executable"
 
 [plugins.definitions.hadolint]
 runtime = "linux"
