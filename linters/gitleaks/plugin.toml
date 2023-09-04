@@ -2,20 +2,20 @@ config_version = 1
 
 [plugins.downloads.gitleaks]
 url = "https://github.com/zricethezav/gitleaks/releases/download/v8.15.3/gitleaks_8.15.3_linux_x64.tar.gz"
-file_name = "gitleaks_8.15.3_linux_x64.tar.gz"
-file_type = "targz"
+download_type = "targz"
 
 [plugins.definitions.gitleaks]
 runtime = "linux"
 downloads = ["gitleaks"]
 file_types = ["ALL"]
+version_command = "gitleaks version"
 # direct_configs:
 #   - .gitleaks.config
 #   - .gitleaks.toml
 recommended = true
 
 [plugins.definitions.gitleaks.drivers.lint]
-script = "/tmp/qlty/gitleaks detect --no-git --source=${target} --exit-code=101 -f sarif -r \"${tmpfile}\""
+script = "gitleaks detect --no-git --source=${target} --exit-code=101 -f sarif -r \"${tmpfile}\""
 success_codes = [0, 101]
 output = "tmpfile"
 output_format = "sarif"

@@ -2,8 +2,7 @@ config_version = 1
 
 [plugins.downloads.taplo]
 url = "https://github.com/tamasfe/taplo/releases/download/0.8.0/taplo-linux-x86_64.gz"
-file_name = "taplo.gz"
-file_type = "gz"
+download_type = "gz"
 
 [plugins.definitions.taplo]
 runtime = "linux"
