@@ -2,7 +2,7 @@ config_version = 1
 
 [plugins.downloads.shellcheck]
 url = "https://github.com/koalaman/shellcheck/releases/download/v0.9.0/shellcheck-v0.9.0.linux.x86_64.tar.xz"
-file_type = "TarXz"
+download_type = "tarxz"
 
 [plugins.definitions.shellcheck]
 runtime = "linux"

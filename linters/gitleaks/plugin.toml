@@ -2,7 +2,7 @@ config_version = 1
 
 [plugins.downloads.gitleaks]
 url = "https://github.com/zricethezav/gitleaks/releases/download/v8.15.3/gitleaks_8.15.3_linux_x64.tar.gz"
-file_type = "TarGz"
+download_type = "targz"
 
 [plugins.definitions.gitleaks]
 runtime = "linux"
