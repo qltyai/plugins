@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`linter=flake8 fixture=basic version=6.0.0 1`] = `
+exports[`linter=flake8 fixture=basic version=6.1.0 1`] = `
 {
   "issues": [
     {
