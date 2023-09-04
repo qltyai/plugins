@@ -6,6 +6,7 @@ import path from "path";
 import * as git from "simple-git";
 import * as util from "util";
 import { ChildProcess, execFile, execFileSync, ExecOptions, execSync } from "child_process";
+import { OPTIONS } from "./utils";
 
 const execFilePromise = util.promisify(execFile);
 
@@ -82,7 +83,7 @@ export class QltyDriver {
   }
 
   tearDown() {
-    if (this.sandboxPath) {
+    if (this.sandboxPath && !OPTIONS.sandboxDebug) {
       this.debug("Cleaning up %s", this.sandboxPath);
       fs.rmSync(this.sandboxPath, { recursive: true });
     }
