@@ -14,7 +14,7 @@ version_command = "hadolint --version"
 recommended = true
 
 [plugins.definitions.hadolint.drivers.lint]
-script = "/tmp/qlty/hadolint ${target} -f json --no-fail"
+script = "hadolint ${target} -f json --no-fail"
 success_codes = [0]
 output = "stdout"
 output_format = "hadolint"

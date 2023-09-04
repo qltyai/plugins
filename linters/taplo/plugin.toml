@@ -29,7 +29,7 @@ recommended = true
 # cache_results = true
 
 [plugins.definitions.taplo.drivers.format]
-script = "/tmp/qlty/taplo format ${target}"
+script = "taplo format ${target}"
 success_codes = [0]
 output = "rewrite"
 batch = true
