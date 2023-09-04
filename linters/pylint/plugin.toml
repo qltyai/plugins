@@ -4,6 +4,7 @@ config_version = 1
 runtime = "python"
 package = "pylint"
 file_types = ["python"]
+version_command = "pylint --version"
 recommended = true
 
 [plugins.definitions.pylint.drivers.lint]

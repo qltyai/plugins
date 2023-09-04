@@ -2,8 +2,9 @@ config_version = 1
 
 [plugins.definitions.black]
 runtime = "python"
-package = "black"       # TODO: black[python2,jupyter]
-file_types = ["python"] # TODO: jupyter
+package = "black"                   # TODO: black[python2,jupyter]
+file_types = ["python"]             # TODO: jupyter
+version_command = "black --version"
 recommended = true
 
 [plugins.definitions.black.drivers.format]

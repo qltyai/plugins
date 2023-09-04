@@ -9,6 +9,7 @@ file_type = "gz"
 runtime = "linux"
 downloads = ["taplo"]
 file_types = ["toml"]
+version_command = "taplo --version"
 recommended = true
 # direct_configs:
 #         - .taplo.toml
