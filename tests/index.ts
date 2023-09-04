@@ -63,24 +63,18 @@ export const getVersionsForTarget = (
 
   const uniqueVersionsList = Array.from(new Set(versionsList)).sort();
 
-  // // Check if no snapshots exist yet. If this is the case, run with KnownGoodVersion and Latest, and print advisory text.
-  // if (!matchExists && !OPTIONS.linterVersion) {
-  //   console.log(
-  //     `No snapshots detected for ${linterName} ${prefix} test. Running test against KnownGoodVersion. See tests/readme.md for more information.`,
-  //   );
-  //   return ["KnownGoodVersion"];
-  // }
-
-  // Versionless linters must return a non-empty array, so check the list's length here.
-  // if (OPTIONS.linterVersion === "Snapshots" && uniqueVersionsList.length > 0) {
-  return uniqueVersionsList;
-  // }
-
-  // // Enabled version logic will be handled later in the pipeline if ARGS.linterVersion is KnownGoodVersion|Latest|string
-  // if (OPTIONS.linterVersion) {
-  //   return [OPTIONS.linterVersion];
-  // }
-  // return [undefined];
+  if (OPTIONS.linterVersion) {
+    return [OPTIONS.linterVersion];
+  } else {
+    // // Check if no snapshots exist yet. If this is the case, run with KnownGoodVersion and Latest, and print advisory text.
+    // if (!matchExists && !OPTIONS.linterVersion) {
+    //   console.log(
+    //     `No snapshots detected for ${linterName} ${prefix} test. Running test against KnownGoodVersion. See tests/readme.md for more information.`,
+    //   );
+    //   return ["KnownGoodVersion"];
+    // }
+    return uniqueVersionsList;
+  }
 };
 
 export const getSnapshotRegex = (prefix: string) =>
