@@ -94,8 +94,8 @@ export class QltyDriver {
       filter((target) => !target.includes(SNAPSHOTS_DIR) && !target.startsWith("."));
   }
 
-  snapshotPath(testTargetName: string): string {
-    const snapshotName = `${testTargetName}_v${this.linterVersion}.shot`;
+  snapshotPath(prefix: string): string {
+    const snapshotName = `${prefix}_v${this.linterVersion}.shot`;
     return path.resolve(this.fixturesDir, SNAPSHOTS_DIR, snapshotName);
   }
 
