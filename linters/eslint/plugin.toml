@@ -28,6 +28,7 @@ version_command = "eslint --version"
 [plugins.definitions.eslint.drivers.lint]
 script = "eslint --output-file ${tmpfile} --format json ${target}"
 error_codes = [2]
+success_codes = [0, 1]
 output = "tmpfile"
 output_format = "eslint"
 batch = true
