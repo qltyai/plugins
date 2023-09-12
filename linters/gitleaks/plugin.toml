@@ -5,11 +5,11 @@ download_type = "targz"
 
 [[plugins.downloads.gitleaks.system]]
 cpu = "x86_64"
-url = "https://github.com/zricethezav/gitleaks/releases/download/v8.15.3/gitleaks_8.15.3_linux_x64.tar.gz"
+url = "https://github.com/zricethezav/gitleaks/releases/download/v${version}/gitleaks_${version}_linux_x64.tar.gz"
 
 [[plugins.downloads.gitleaks.system]]
 cpu = "aarch64"
-url = "https://github.com/zricethezav/gitleaks/releases/download/v8.15.3/gitleaks_8.15.3_linux_arm64.tar.gz"
+url = "https://github.com/zricethezav/gitleaks/releases/download/v${version}/gitleaks_${version}_linux_arm64.tar.gz"
 
 [plugins.definitions.gitleaks]
 runtime = "linux"

@@ -5,11 +5,11 @@ download_type = "tarxz"
 
 [[plugins.downloads.shellcheck.system]]
 cpu = "x86_64"
-url = "https://github.com/koalaman/shellcheck/releases/download/v0.9.0/shellcheck-v0.9.0.linux.x86_64.tar.xz"
+url = "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.linux.x86_64.tar.xz"
 
 [[plugins.downloads.shellcheck.system]]
 cpu = "aarch64"
-url = "https://github.com/koalaman/shellcheck/releases/download/v0.9.0/shellcheck-v0.9.0.linux.aarch64.tar.xz"
+url = "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.linux.aarch64.tar.xz"
 
 [plugins.definitions.shellcheck]
 runtime = "linux"
