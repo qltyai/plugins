@@ -5,11 +5,11 @@ download_type = "executable"
 
 [[plugins.downloads.hadolint.system]]
 cpu = "x86_64"
-url = "https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64"
+url = "https://github.com/hadolint/hadolint/releases/download/v${version}/hadolint-Linux-x86_64"
 
 [[plugins.downloads.hadolint.system]]
 cpu = "aarch64"
-url = "https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-arm64"
+url = "https://github.com/hadolint/hadolint/releases/download/v${version}/hadolint-Linux-arm64"
 
 [plugins.definitions.hadolint]
 runtime = "linux"
