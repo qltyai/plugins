@@ -1,0 +1,20 @@
+config_version = 1
+
+[plugins.definitions.semgrep]
+runtime = "python"
+package = "semgrep"
+file_types = ["ALL"]
+config_files = [".semgrep.yaml"]
+#       affects_cache:
+#         - .semgrepignore
+#         - .semgrep
+version_command = "semgrep --version"
+recommended = true
+
+[plugins.definitions.semgrep.drivers.lint]
+script = "semgrep --config .semgrep.yaml --sarif --output=${tmpfile} --include=${target}"
+success_codes = [0]
+output = "tmpfile"
+output_format = "sarif"
+cache_results = true
+batch = true
