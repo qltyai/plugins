@@ -9,7 +9,7 @@ config_files = [".semgrep.yaml"]
 #         - .semgrepignore
 #         - .semgrep
 version_command = "semgrep --version"
-recommended = true
+recommended = false
 
 [plugins.definitions.semgrep.drivers.lint]
 script = "semgrep --config .semgrep.yaml --sarif --output=${tmpfile} --include=${target}"
