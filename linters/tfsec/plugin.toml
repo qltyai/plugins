@@ -1,0 +1,26 @@
+config_version = 1
+
+[plugins.downloads.tfsec]
+download_type = "targz"
+
+[[plugins.downloads.tfsec.system]]
+cpu = "x86_64"
+url = "https://github.com/aquasecurity/tfsec/releases/download/v${version}/tfsec_1.28.4_linux_amd64.tar.gz"
+
+[[plugins.downloads.tfsec.system]]
+cpu = "aarch64"
+url = "https://github.com/aquasecurity/tfsec/releases/download/v${version}/tfsec_1.28.4_linux_arm64.tar.gz"
+
+[plugins.definitions.tfsec]
+runtime = "linux"
+downloads = ["tfsec"]
+file_types = ["terraform"]
+version_command = "tfsec --version"
+recommended = false
+
+[plugins.definitions.tfsec.drivers.lint]
+script = "tfsec -f sarif ${target}"
+success_codes = [0, 1]
+output = "stdout"
+output_format = "sarif"
+cache_results = true
