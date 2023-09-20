@@ -37,6 +37,7 @@ recommended = true
 [plugins.definitions.prettier.drivers.format]
 script = "prettier -w ${target}"
 success_codes = [0]
+cache_results = true
 output = "rewrite"
 batch = true
 driver_type = "formatter"
