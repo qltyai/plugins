@@ -20,6 +20,7 @@ max_batch = 100
 [plugins.definitions.rubocop.drivers.format]
 script = "rubocop --fix-layout ${target}"
 success_codes = [0, 1, 2]
+cache_results = true
 output = "rewrite"
 batch = true
 driver_type = "formatter"
