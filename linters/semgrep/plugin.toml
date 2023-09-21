@@ -3,7 +3,7 @@ config_version = "0"
 [plugins.definitions.semgrep]
 runtime = "python"
 package = "semgrep"
-file_types = ["ALL"]
+file_types = []
 config_files = [".semgrep.yaml"]
 #       affects_cache:
 #         - .semgrepignore
