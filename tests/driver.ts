@@ -194,7 +194,7 @@ export class QltyDriver {
   }
 
   getQltyTomlContents(): string {
-    return `config_version = 1
+    return `config_version = "1"
 
 [sources.default]
 directory = "${REPO_ROOT}"

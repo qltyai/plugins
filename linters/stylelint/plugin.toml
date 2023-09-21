@@ -1,4 +1,4 @@
-config_version = 1
+config_version = "1"
 
 [plugins.definitions.stylelint]
 runtime = "node"
@@ -31,4 +31,3 @@ error_codes = [1, 78]
 output = "rewrite"
 batch = true
 driver_type = "formatter"
-

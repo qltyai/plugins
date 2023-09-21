@@ -1,4 +1,4 @@
-config_version = 1
+config_version = "1"
 
 [plugins.downloads.shellcheck]
 download_type = "tarxz"
