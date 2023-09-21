@@ -1,4 +1,4 @@
-config_version = "1"
+config_version = "0"
 
 [plugins.definitions.prettier]
 runtime = "node"
