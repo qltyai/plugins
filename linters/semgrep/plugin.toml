@@ -12,7 +12,7 @@ version_command = "semgrep --version"
 recommended = false
 
 [plugins.definitions.semgrep.drivers.lint]
-script = "semgrep --config .semgrep.yaml --sarif --output=${tmpfile} --include=${target}"
+script = "semgrep --metrics=off --disable-version-check --config .semgrep.yaml --sarif --output=${tmpfile} --include=${target}"
 success_codes = [0]
 output = "tmpfile"
 output_format = "sarif"
