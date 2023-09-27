@@ -27,6 +27,8 @@ success_codes = [0, 101]
 output = "tmpfile"
 output_format = "sarif"
 cache_results = true
+batch = true
+max_bach = 200
 
 
 # go install github.com/zricethezav/gitleaks/v8@latest
