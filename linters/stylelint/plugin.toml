@@ -28,6 +28,7 @@ max_batch = 100
 script = "stylelint --fix ${target}"
 success_codes = [0, 2]
 error_codes = [1, 78]
+cache_results = true
 output = "rewrite"
 batch = true
 driver_type = "formatter"
