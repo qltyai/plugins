@@ -6,7 +6,7 @@ package = "codeclimate-fixme"
 file_types = ["ALL"]
 recommended = true
 
-[plugins.definitions.fixme.drivers.linter]
+[plugins.definitions.fixme.drivers.lint]
 script = "fixme --sarif ${target}"
 success_codes = [0]
 cache_results = true

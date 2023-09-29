@@ -7,7 +7,7 @@ file_types = ["markdown"]
 version_command = "markdownlint --version"
 recommended = true
 
-[plugins.definitions.markdownlint.drivers.linter]
+[plugins.definitions.markdownlint.drivers.lint]
 script = "markdownlint --json ${target}"
 success_codes = [0, 1]
 cache_results = true
