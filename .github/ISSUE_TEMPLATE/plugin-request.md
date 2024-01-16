@@ -9,11 +9,13 @@ assignees: ''
 
 **Plugin name:** [NAME]
 **Source code:** [URL]
+**License:** [LICENSE]
 **Package:** [URL]
 **Documentation:** [URL]
 **Language:** [LANGUAGE]
 **Categories:** [Bug Risk / Style / Type Check / Anti-Pattern / Security / Performance / Documentation]
-**License:** [LICENSE]
+**Current usage:** [X%]
+
 
 ### Output formats
 
