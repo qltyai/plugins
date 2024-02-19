@@ -12,7 +12,6 @@ cpu = "aarch64"
 url = "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-linux-aarch64.gz"
 
 [plugins.definitions.taplo]
-runtime = "linux"
 downloads = ["taplo"]
 file_types = ["toml"]
 version_command = "taplo --version"

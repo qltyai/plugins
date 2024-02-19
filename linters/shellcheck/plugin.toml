@@ -12,7 +12,6 @@ cpu = "aarch64"
 url = "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.linux.aarch64.tar.xz"
 
 [plugins.definitions.shellcheck]
-runtime = "linux"
 downloads = ["shellcheck"]
 file_types = ["shell"]
 config_files = [".shellcheckrc", "shellcheckrc"]

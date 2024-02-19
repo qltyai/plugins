@@ -12,7 +12,6 @@ cpu = "aarch64"
 url = "https://github.com/hadolint/hadolint/releases/download/v${version}/hadolint-Linux-arm64"
 
 [plugins.definitions.hadolint]
-runtime = "linux"
 downloads = ["hadolint"]
 file_types = ["docker"]
 config_files = [".hadolint.yaml", ".hadolint.yml"]

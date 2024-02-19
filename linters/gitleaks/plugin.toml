@@ -12,7 +12,6 @@ cpu = "aarch64"
 url = "https://github.com/zricethezav/gitleaks/releases/download/v${version}/gitleaks_${version}_linux_arm64.tar.gz"
 
 [plugins.definitions.gitleaks]
-runtime = "linux"
 downloads = ["gitleaks"]
 file_types = ["ALL"]
 version_command = "gitleaks version"
