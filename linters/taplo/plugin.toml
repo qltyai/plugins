@@ -5,10 +5,12 @@ download_type = "gz"
 
 [[plugins.downloads.taplo.system]]
 cpu = "x86_64"
+os = "linux"
 url = "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-linux-x86_64.gz"
 
 [[plugins.downloads.taplo.system]]
 cpu = "aarch64"
+os = "linux"
 url = "https://github.com/tamasfe/taplo/releases/download/${version}/taplo-linux-aarch64.gz"
 
 [plugins.definitions.taplo]
