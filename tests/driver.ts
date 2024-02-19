@@ -100,33 +100,23 @@ export class QltyDriver {
   }
 
   async runCheck() {
-    const resultJsonPath = path.resolve(this.sandboxPath, "result.json");
-    const fullArgs = `check --all --output-file=${resultJsonPath} --no-progress --filter=${this.linterName}`;
+    const fullArgs = `check --all --format=json --no-fail --no-cache --no-progress --filter=${this.linterName}`;
 
     try {
       const { stdout, stderr } = await this.runQltyCmd(fullArgs);
-      const output = fs.readFileSync(resultJsonPath, { encoding: "utf-8" });
 
       return this.parseRunResult(
         {
           exitCode: 0,
           stdout,
           stderr,
-          outputJson: JSON.parse(output),
+          outputJson: JSON.parse(stdout),
         }
       );
     } catch (error: any) {
-      let jsonContents;
-
-      if (fs.existsSync(resultJsonPath)) {
-        jsonContents = fs.readFileSync(resultJsonPath, { encoding: "utf-8" });
-      };
-
-      if (!jsonContents) {
-        jsonContents = "{}";
-        console.log(error.stdout as string);
-        console.log(error.stderr as string);
-      }
+      let jsonContents = "{}";
+      console.log(error.stdout as string);
+      console.log(error.stderr as string);
 
       const runResult = {
         exitCode: error.code as number,
@@ -189,7 +179,7 @@ export class QltyDriver {
     }
 
     return {
-      issues: outputJson.issues
+      issues: outputJson
     };
   }
 
@@ -200,10 +190,9 @@ export class QltyDriver {
 directory = "${REPO_ROOT}"
 
 [runtimes.enabled]
-linux = "3.17.1"
 node = "19.6.0"
 go = "1.20.0"
-python = "3.11.2"
+python = "3.11.7"
 ruby = "3.2.1"
 
 [plugins.enabled]

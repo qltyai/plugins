@@ -4,19 +4,20 @@ exports[`linter=fixme fixture=basic version=0.0.2 1`] = `
 {
   "issues": [
     {
-      "driver_name": "linter",
-      "issue": {
-        "endColumn": 1,
-        "endLine": 1,
-        "level": "LOW",
-        "message": "FIXME found",
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_LOW",
+      "location": {
         "path": "basic.in.py",
-        "plugin": "fixme",
-        "ruleKey": "FIXME",
-        "startColumn": 1,
-        "startLine": 1,
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
       },
-      "plugin_name": "fixme",
+      "message": "FIXME found",
+      "ruleKey": "FIXME",
+      "tool": "fixme",
     },
   ],
 }
