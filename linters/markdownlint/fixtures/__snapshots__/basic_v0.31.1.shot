@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=markdownlint fixture=basic version=0.31.1 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_STYLE",
+      "level": "LEVEL_FMT",
+      "location": {
+        "path": "basic.in.md",
+        "range": {
+          "startLine": 1,
+        },
+      },
+      "message": "First line in a file should be a top-level heading (https://github.com/DavidAnson/markdownlint/blob/v0.25.1/doc/Rules.md#md041)",
+      "ruleKey": "MD041 - first-line-heading - first-line-h1",
+      "tool": "markdownlint",
+    },
+    {
+      "category": "CATEGORY_STYLE",
+      "level": "LEVEL_FMT",
+      "location": {
+        "path": "basic.in.md",
+        "range": {
+          "startLine": 5,
+        },
+      },
+      "message": "Files should end with a single newline character (https://github.com/DavidAnson/markdownlint/blob/v0.25.1/doc/Rules.md#md047)",
+      "ruleKey": "MD047 - single-trailing-newline",
+      "tool": "markdownlint",
+    },
+    {
+      "category": "CATEGORY_STYLE",
+      "level": "LEVEL_FMT",
+      "location": {
+        "path": "basic.in.md",
+        "range": {
+          "startLine": 5,
+        },
+      },
+      "message": "Heading levels should only increment by one level at a time (https://github.com/DavidAnson/markdownlint/blob/v0.25.1/doc/Rules.md#md001)",
+      "ruleKey": "MD001 - heading-increment - header-increment",
+      "tool": "markdownlint",
+    },
+    {
+      "category": "CATEGORY_STYLE",
+      "level": "LEVEL_FMT",
+      "location": {
+        "path": "basic.in.md",
+      },
+      "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
+      "tool": "markdownlint",
+    },
+  ],
+}
+`;
