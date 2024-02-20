@@ -2,6 +2,7 @@ config_version = "0"
 
 [plugins.downloads.gitleaks]
 download_type = "targz"
+strip_components = 0
 
 [[plugins.downloads.gitleaks.system]]
 cpu = "x86_64"
