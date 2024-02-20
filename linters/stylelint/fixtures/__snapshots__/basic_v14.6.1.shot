@@ -2,6 +2,23 @@
 
 exports[`linter=stylelint fixture=basic version=14.6.1 1`] = `
 {
-  "issues": [],
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic.in.css",
+        "range": {
+          "endColumn": 3,
+          "endLine": 1,
+          "startColumn": 3,
+          "startLine": 1,
+        },
+      },
+      "message": "Unexpected empty block (block-no-empty)",
+      "ruleKey": "block-no-empty",
+      "tool": "stylelint",
+    },
+  ],
 }
 `;
