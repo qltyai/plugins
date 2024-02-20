@@ -185,6 +185,35 @@ export class QltyDriver {
       return undefined;
     }
 
+    // Sort outputJson array by .tool .ruleKey and .path:
+    outputJson.sort((a: any, b: any) => {
+      if (a.tool < b.tool) {
+        return -1;
+      }
+      if (a.tool > b.tool) {
+        return 1;
+      }
+      if (a.ruleKey < b.ruleKey) {
+        return -1;
+      }
+      if (a.ruleKey > b.ruleKey) {
+        return 1;
+      }
+      if (a.path < b.path) {
+        return -1;
+      }
+      if (a.path > b.path) {
+        return 1;
+      }
+      if (a.message < b.message) {
+        return -1;
+      }
+      if (a.message > b.message) {
+        return 1;
+      }
+      return 0;
+    });
+
     return {
       issues: outputJson
     };
