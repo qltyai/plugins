@@ -2,6 +2,55 @@
 
 exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
 {
-  "issues": [],
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic.in.js",
+        "range": {
+          "endColumn": 10,
+          "endLine": 3,
+          "startColumn": 3,
+          "startLine": 3,
+        },
+      },
+      "message": "Expected a conditional expression and instead saw an assignment.",
+      "ruleKey": "no-cond-assign",
+      "tool": "eslint",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic.in.js",
+        "range": {
+          "endColumn": 10,
+          "endLine": 3,
+          "startColumn": 3,
+          "startLine": 3,
+        },
+      },
+      "message": "Unexpected constant condition.",
+      "ruleKey": "no-constant-condition",
+      "tool": "eslint",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic.in.js",
+        "range": {
+          "endColumn": 6,
+          "endLine": 3,
+          "startColumn": 3,
+          "startLine": 3,
+        },
+      },
+      "message": "'x' is assigned a value but never used.",
+      "ruleKey": "no-unused-vars",
+      "tool": "eslint",
+    },
+  ],
 }
 `;
