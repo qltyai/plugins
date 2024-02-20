@@ -185,7 +185,6 @@ export class QltyDriver {
       return undefined;
     }
 
-    // Sort outputJson array by .tool .ruleKey and .path:
     outputJson.sort((a: any, b: any) => {
       if (a.tool < b.tool) {
         return -1;
