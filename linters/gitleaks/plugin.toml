@@ -13,6 +13,16 @@ cpu = "aarch64"
 os = "linux"
 url = "https://github.com/zricethezav/gitleaks/releases/download/v${version}/gitleaks_${version}_linux_arm64.tar.gz"
 
+[[plugins.downloads.gitleaks.system]]
+cpu = "aarch64"
+os = "macos"
+url = "https://github.com/zricethezav/gitleaks/releases/download/v${version}/gitleaks_${version}_darwin_arm64.tar.gz"
+
+[[plugins.downloads.gitleaks.system]]
+cpu = "x86_64"
+os = "macos"
+url = "https://github.com/zricethezav/gitleaks/releases/download/v${version}/gitleaks_${version}_darwin_x64.tar.gz"
+
 [plugins.definitions.gitleaks]
 downloads = ["gitleaks"]
 file_types = ["ALL"]

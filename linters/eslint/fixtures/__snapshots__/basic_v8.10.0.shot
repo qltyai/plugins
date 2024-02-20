@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
+{
+  "issues": [],
+}
+`;

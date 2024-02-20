@@ -48,9 +48,14 @@ export const getVersionsForTarget = (
   prefix: string,
 ) => {
   let matchExists = false;
+  const snapshotsDir = path.resolve(dirname, FIXTURES_DIR, SNAPSHOTS_DIR);
+
+  if (!fs.existsSync(snapshotsDir)) {
+    fs.mkdirSync(snapshotsDir);
+  }
 
   const versionsList = fs
-    .readdirSync(path.resolve(dirname, FIXTURES_DIR, SNAPSHOTS_DIR))
+    .readdirSync(snapshotsDir)
     .map((file) => {
       const fileMatch = file.match(getSnapshotRegex(prefix));
 

@@ -86,6 +86,8 @@ export class QltyDriver {
     if (this.sandboxPath && !OPTIONS.sandboxDebug) {
       this.debug("Cleaning up %s", this.sandboxPath);
       fs.rmSync(this.sandboxPath, { recursive: true });
+    } else {
+      this.debug("Leaving sandbox %s", this.sandboxPath);
     }
   }
 
