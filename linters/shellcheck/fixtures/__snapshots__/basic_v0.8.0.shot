@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=shellcheck fixture=basic version=0.8.0 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "basic.in.sh",
+        "range": {
+          "endColumn": 8,
+          "endLine": 4,
+          "startColumn": 6,
+          "startLine": 4,
+        },
+      },
+      "message": "Double quote to prevent globbing and word splitting.",
+      "ruleKey": "2086",
+      "tool": "shellcheck",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic.in.sh",
+        "range": {
+          "endColumn": 8,
+          "endLine": 4,
+          "startColumn": 6,
+          "startLine": 4,
+        },
+      },
+      "message": "x is referenced but not assigned.",
+      "ruleKey": "2154",
+      "tool": "shellcheck",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "basic.in.sh",
+        "range": {
+          "endColumn": 4,
+          "endLine": 3,
+          "startColumn": 3,
+          "startLine": 3,
+        },
+      },
+      "message": "Remove spaces around = to assign (or use [ ] to compare, or quote '=' if literal).",
+      "ruleKey": "2283",
+      "tool": "shellcheck",
+    },
+  ],
+}
+`;

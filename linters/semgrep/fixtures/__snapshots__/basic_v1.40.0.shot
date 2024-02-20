@@ -2,6 +2,23 @@
 
 exports[`linter=semgrep fixture=basic version=1.40.0 1`] = `
 {
-  "issues": [],
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "basic.in.rs",
+        "range": {
+          "endColumn": 3,
+          "endLine": 3,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Derive the \`Clone\` trait for struct Foo if possible",
+      "ruleKey": "derive-clone",
+      "tool": "semgrep",
+    },
+  ],
 }
 `;
