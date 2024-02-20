@@ -5,6 +5,7 @@ runtime = "node"
 package = "prettier"
 file_types = [
   "typescript",
+  "tsx",
   "javascript",
   "css",
   "yaml",
