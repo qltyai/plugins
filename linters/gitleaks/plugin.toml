@@ -31,7 +31,7 @@ version_command = "gitleaks version"
 # direct_configs:
 #   - .gitleaks.config
 #   - .gitleaks.toml
-recommended = true
+recommended = false
 
 [plugins.definitions.gitleaks.drivers.lint]
 script = "gitleaks detect --no-git --source=${target} --exit-code=101 -f sarif -r \"${tmpfile}\""
