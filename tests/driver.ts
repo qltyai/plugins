@@ -68,6 +68,11 @@ export class QltyDriver {
       this.getQltyTomlContents(),
     );
 
+    fs.writeFileSync(
+      path.resolve(this.sandboxPath, ".gitignore"),
+      this.getGitIgnoreContents(),
+    );
+
     const gitDriver = git.simpleGit(this.sandboxPath);
     await gitDriver
       .init({ "--initial-branch": "main" })
@@ -86,6 +91,8 @@ export class QltyDriver {
     if (this.sandboxPath && !OPTIONS.sandboxDebug) {
       this.debug("Cleaning up %s", this.sandboxPath);
       fs.rmSync(this.sandboxPath, { recursive: true });
+    } else {
+      this.debug("Leaving sandbox %s", this.sandboxPath);
     }
   }
 
@@ -100,33 +107,23 @@ export class QltyDriver {
   }
 
   async runCheck() {
-    const resultJsonPath = path.resolve(this.sandboxPath, "result.json");
-    const fullArgs = `check --all --output-file=${resultJsonPath} --no-progress --filter=${this.linterName}`;
+    const fullArgs = `check --all --format=json --no-fail --no-cache --no-progress --filter=${this.linterName}`;
 
     try {
       const { stdout, stderr } = await this.runQltyCmd(fullArgs);
-      const output = fs.readFileSync(resultJsonPath, { encoding: "utf-8" });
 
       return this.parseRunResult(
         {
           exitCode: 0,
           stdout,
           stderr,
-          outputJson: JSON.parse(output),
+          outputJson: JSON.parse(stdout),
         }
       );
     } catch (error: any) {
-      let jsonContents;
-
-      if (fs.existsSync(resultJsonPath)) {
-        jsonContents = fs.readFileSync(resultJsonPath, { encoding: "utf-8" });
-      };
-
-      if (!jsonContents) {
-        jsonContents = "{}";
-        console.log(error.stdout as string);
-        console.log(error.stderr as string);
-      }
+      let jsonContents = "{}";
+      console.log(error.stdout as string);
+      console.log(error.stderr as string);
 
       const runResult = {
         exitCode: error.code as number,
@@ -188,8 +185,36 @@ export class QltyDriver {
       return undefined;
     }
 
+    outputJson.sort((a: any, b: any) => {
+      if (a.tool < b.tool) {
+        return -1;
+      }
+      if (a.tool > b.tool) {
+        return 1;
+      }
+      if (a.ruleKey < b.ruleKey) {
+        return -1;
+      }
+      if (a.ruleKey > b.ruleKey) {
+        return 1;
+      }
+      if (a.path < b.path) {
+        return -1;
+      }
+      if (a.path > b.path) {
+        return 1;
+      }
+      if (a.message < b.message) {
+        return -1;
+      }
+      if (a.message > b.message) {
+        return 1;
+      }
+      return 0;
+    });
+
     return {
-      issues: outputJson.issues
+      issues: outputJson
     };
   }
 
@@ -200,13 +225,18 @@ export class QltyDriver {
 directory = "${REPO_ROOT}"
 
 [runtimes.enabled]
-linux = "3.17.1"
 node = "19.6.0"
 go = "1.20.0"
-python = "3.11.2"
+python = "3.11.7"
 ruby = "3.2.1"
 
 [plugins.enabled]
+`;
+  }
+
+  getGitIgnoreContents(): string {
+    return `.qlty
+tmp
 `;
   }
 }

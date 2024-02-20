@@ -2,17 +2,29 @@ config_version = "0"
 
 [plugins.downloads.gitleaks]
 download_type = "targz"
+strip_components = 0
 
 [[plugins.downloads.gitleaks.system]]
 cpu = "x86_64"
+os = "linux"
 url = "https://github.com/zricethezav/gitleaks/releases/download/v${version}/gitleaks_${version}_linux_x64.tar.gz"
 
 [[plugins.downloads.gitleaks.system]]
 cpu = "aarch64"
+os = "linux"
 url = "https://github.com/zricethezav/gitleaks/releases/download/v${version}/gitleaks_${version}_linux_arm64.tar.gz"
 
+[[plugins.downloads.gitleaks.system]]
+cpu = "aarch64"
+os = "macos"
+url = "https://github.com/zricethezav/gitleaks/releases/download/v${version}/gitleaks_${version}_darwin_arm64.tar.gz"
+
+[[plugins.downloads.gitleaks.system]]
+cpu = "x86_64"
+os = "macos"
+url = "https://github.com/zricethezav/gitleaks/releases/download/v${version}/gitleaks_${version}_darwin_x64.tar.gz"
+
 [plugins.definitions.gitleaks]
-runtime = "linux"
 downloads = ["gitleaks"]
 file_types = ["ALL"]
 version_command = "gitleaks version"

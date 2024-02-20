@@ -5,14 +5,26 @@ download_type = "tarxz"
 
 [[plugins.downloads.shellcheck.system]]
 cpu = "x86_64"
+os = "linux"
 url = "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.linux.x86_64.tar.xz"
 
 [[plugins.downloads.shellcheck.system]]
 cpu = "aarch64"
+os = "linux"
 url = "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.linux.aarch64.tar.xz"
 
+[[plugins.downloads.shellcheck.system]]
+cpu = "x86_64"
+os = "macos"
+url = "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.darwin.x86_64.tar.xz"
+
+# Rosetta
+[[plugins.downloads.shellcheck.system]]
+cpu = "aarch64"
+os = "macos"
+url = "https://github.com/koalaman/shellcheck/releases/download/v${version}/shellcheck-v${version}.darwin.x86_64.tar.xz"
+
 [plugins.definitions.shellcheck]
-runtime = "linux"
 downloads = ["shellcheck"]
 file_types = ["shell"]
 config_files = [".shellcheckrc", "shellcheckrc"]
