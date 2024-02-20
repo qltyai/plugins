@@ -68,6 +68,11 @@ export class QltyDriver {
       this.getQltyTomlContents(),
     );
 
+    fs.writeFileSync(
+      path.resolve(this.sandboxPath, ".gitignore"),
+      this.getGitIgnoreContents(),
+    );
+
     const gitDriver = git.simpleGit(this.sandboxPath);
     await gitDriver
       .init({ "--initial-branch": "main" })
@@ -198,6 +203,12 @@ python = "3.11.7"
 ruby = "3.2.1"
 
 [plugins.enabled]
+`;
+  }
+
+  getGitIgnoreContents(): string {
+    return `.qlty
+tmp
 `;
   }
 }
