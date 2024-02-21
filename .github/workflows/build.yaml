@@ -29,8 +29,8 @@ jobs:
       run:
         cd /tmp &&
         gh --repo qltyai/qlty release download --pattern ${{ matrix.download }} &&
-        tar -xf --strip-components=1 ${{ matrix.download }} &&
-        mv qlty /usr/local/bin &&
+        tar -xf ${{ matrix.download }} &&
+        mv */qlty /usr/local/bin &&
         qlty --version
     - run: npm ci
     - run: npm test
