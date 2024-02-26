@@ -1,6 +1,6 @@
 config_version = "0"
 
-[plugins.downloads.shellcheck]
+[plugins.releases.shellcheck]
 github = "koalaman/shellcheck"
 download_type = "tarxz"
 strip_components = 1
