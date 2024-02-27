@@ -4,40 +4,37 @@ config_version = "0"
 runtime = "node"
 package = "prettier"
 file_types = [
-  "typescript",
-  "tsx",
-  "javascript",
   "css",
-  "yaml",
-  "html",
-  "sass",
-  "markdown",
-  "json",
   "graphql",
+  "html",
+  "javascript",
+  "json",
+  "markdown",
+  "sass",
+  "tsx",
+  "typescript",
+  "yaml",
 ]
-# - prettier_supported_configs
 version_command = "prettier --version"
 recommended = true
-# direct_configs:
-#   - .prettierrc
-#   - .prettierrc.json
-#   - .prettierrc.yml
-#   - .prettierrc.yaml
-#   - .prettierrc.json5
-#   - .prettierrc.js
-#   - .prettierrc.cjs
-#   - prettier.config.js
-#   - prettier.config.cjs
-#   - .prettierrc.toml
-#   - .prettierignore
-# affects_cache:
-#   - package.json
-#   - .editorconfig # Undocumented config file
-
+config_files = [
+  ".prettierignore",
+  ".prettierrc.cjs",
+  ".prettierrc.js",
+  ".prettierrc.json",
+  ".prettierrc.json5",
+  ".prettierrc.toml",
+  ".prettierrc.yaml",
+  ".prettierrc.yml",
+  ".prettierrc",
+  "prettier.config.cjs",
+  "prettier.config.js",
+]
+affects_cache = ["package.json", ".editorconfig"]
 
 [plugins.definitions.prettier.drivers.format]
 script = "prettier -w ${target}"
-success_codes = [0]
+success_codes = [0, 2]
 cache_results = true
 output = "rewrite"
 batch = true
