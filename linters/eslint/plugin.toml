@@ -3,7 +3,7 @@ config_version = "0"
 [plugins.definitions.eslint]
 runtime = "node"
 package = "eslint"
-file_types = ["javascript", "typescript"]
+file_types = ["javascript", "typescript", "tsx"]
 config_files = [
   ".eslintrc",
   ".eslintrc.cjs",
