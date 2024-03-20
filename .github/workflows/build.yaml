@@ -26,6 +26,11 @@ jobs:
           chmod +x ./install.sh
           ./install.sh
           source ~/.bashrc
+
+    - name: Check qlty CLI
+      run: |
+          echo $PATH
+          cat ~/.bashrc
           qlty help
 
     - run: npm ci
