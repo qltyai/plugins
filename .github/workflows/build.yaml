@@ -25,6 +25,7 @@ jobs:
       run: |
           chmod +x ./install.sh
           ./install.sh
+          echo "~/.qlty/bin" >> $GITHUB_PATH
           source ~/.bashrc
 
     - name: Check qlty CLI
