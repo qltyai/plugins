@@ -23,8 +23,7 @@ jobs:
 
     - name: Install qlty CLI
       run: |
-          chmod +x ./install.sh
-          ./install.sh
+          curl https://qlty-releases.s3.amazonaws.com/qlty/install.sh | bash
           cp ~/.qlty/bin/qlty /usr/local/bin
 
     - run: npm ci
