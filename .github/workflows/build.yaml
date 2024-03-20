@@ -25,7 +25,7 @@ jobs:
       run: |
           chmod +x ./install.sh
           ./install.sh
-          source /Users/runner/.bashrc
+          source ~/.bashrc
           qlty help
 
     - run: npm ci
