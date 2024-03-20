@@ -11,26 +11,20 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest-16-cores, macos-latest-xlarge]
-        include:
-          - os: ubuntu-latest-16-cores
-            download: qlty-x86_64-unknown-linux-gnu.tar.xz
-          - os: macos-latest-xlarge
-            download: qlty-aarch64-apple-darwin.tar.xz
     runs-on: ${{ matrix.os }}
     steps:
+
     - uses: actions/checkout@v4
+
     - name: Use Node.js
       uses: actions/setup-node@v4
       with:
         cache: 'npm'
+
     - name: Install qlty CLI
-      env:
-        GITHUB_TOKEN: ${{ secrets.QLTY_RELEASES_GITHUB_TOKEN }}
-      run:
-        cd /tmp &&
-        gh --repo qltyai/qlty release download --pattern ${{ matrix.download }} &&
-        tar -xf ${{ matrix.download }} &&
-        mv */qlty /usr/local/bin &&
-        qlty --version
+      run: |
+          chmod +x ./install.sh
+          ./install.sh
+
     - run: npm ci
     - run: npm test
