@@ -25,17 +25,6 @@ jobs:
       run: |
           chmod +x ./install.sh
           ./install.sh
-          echo "~/.qlty/bin" >> $GITHUB_PATH
-          source ~/.bashrc
-
-    - name: Check qlty CLI
-      run: |
-          echo $PATH
-          cat ~/.bashrc
-          qlty help
-
-    - name: debug, cp to different path
-      run: |
           cp ~/.qlty/bin/qlty /usr/local/bin
 
     - run: npm ci
