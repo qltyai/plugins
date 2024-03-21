@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "basic.in.py",
+        "range": {
+          "endColumn": 7,
+          "endLine": 7,
+          "startColumn": 1,
+          "startLine": 7,
+        },
+      },
+      "message": "ModuleImportNotAtTopOfFile",
+      "ruleKey": "E402",
+      "tool": "ruff",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "basic.in.py",
+        "range": {
+          "endColumn": 9,
+          "endLine": 9,
+          "startColumn": 1,
+          "startLine": 9,
+        },
+      },
+      "message": "ModuleImportNotAtTopOfFile",
+      "ruleKey": "E402",
+      "tool": "ruff",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "basic.in.py",
+        "range": {
+          "endColumn": 7,
+          "endLine": 7,
+          "startColumn": 8,
+          "startLine": 7,
+        },
+      },
+      "message": "UnusedImport",
+      "ruleKey": "F401",
+      "tool": "ruff",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "basic.in.py",
+        "range": {
+          "endColumn": 9,
+          "endLine": 9,
+          "startColumn": 8,
+          "startLine": 9,
+        },
+      },
+      "message": "UnusedImport",
+      "ruleKey": "F401",
+      "tool": "ruff",
+    },
+  ],
+}
+`;
