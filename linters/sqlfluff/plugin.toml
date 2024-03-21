@@ -1,19 +1,15 @@
 config_version = "0"
 
-[plugins.releases.sqlfluff]
+[plugins.definitions.sqlfluff]
 package = "sqlfluff"
 runtime = "python"
-github = "sqlfluff/sqlfluff"
-
-[plugins.definitions.sqlfluff]
-releases = ["sqlfluff"]
-file_types = ["sql", "sql-j2", "dml", "ddl"]
+file_types = ["sql"]
 version_command = "sqlfluff --version"
 config_files = [".sqlfluff"]
 recommended = false
 
 [plugins.definitions.sqlfluff.drivers.lint]
-script = "sqlfluff lint ${target} --format json --nofail"
+script = "sqlfluff lint ${target} --format json --nofail --dialect ansi"
 success_codes = [0]
 output = "stdout"
 output_format = "sarif"
