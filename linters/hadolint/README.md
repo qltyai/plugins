@@ -40,4 +40,4 @@ To keep your project tidy, you can move configuration files into `.qlty/configs`
 
 ## License
 
-[GNU General Public License v3.0](https://github.com/hadolint/hadolint/blob/master/LICENSE)
+Hadolint is licensed under the [GNU General Public License v3.0](https://github.com/hadolint/hadolint/blob/master/LICENSE).
