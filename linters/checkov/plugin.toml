@@ -1,0 +1,16 @@
+config_version = "0"
+
+[plugins.definitions.checkov]
+runtime = "python"
+package = "checkov"
+file_types = ["docker", "terraform", "yaml", "*.json"]
+version_command = "checkov --version"
+recommended = false
+
+[plugins.definitions.checkov.drivers.format]
+# The coma after ${tmpfile} is absolutely necessary
+script = "checkov -o sarif --output-file-path ${tmpfile}, --soft-fail --quiet --compact -f ${target}"
+success_codes = [0]
+output = "tmpfile"
+output_format = "sarif"
+batch = false
