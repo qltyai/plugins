@@ -2,7 +2,7 @@
 
 [Hadolint](https://github.com/hadolint/hadolint) is a Dockerfile linter written in Haskell.
 
-## Enabling the Hadolint plugin
+## Enabling Hadolint
 
 Enabling with the `qlty` CLI:
 
@@ -13,13 +13,28 @@ qlty plugins enable hadolint
 Or by editing `qlty.toml`:
 
 ```toml
+# Always use the latest version
 [plugins.enabled]
 hadolint = "latest"
+
+# OR enable a specific version
+[plugins.enabled]
+hadolint = "X.Y.Z"
 ```
+
+## Auto-enabling
+
+Hadolint will be automatically enabled by `qlty init` if a `.hadolint.yaml` configuration file is present.
 
 ## Configuration files
 
 - [`.hadolint.yaml`](https://github.com/hadolint/hadolint?tab=readme-ov-file#configure)
+
+## Links
+
+- [Hadolint on GitHub](https://github.com/hadolint/hadolint)
+- [Hadolint plugin definition](https://github.com/qltyai/plugins/tree/main/linters/hadolint)
+- [Qlty's open source plugin definitions](https://github.com/qltyai/plugins)
 
 ## License
 
