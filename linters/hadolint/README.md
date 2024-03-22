@@ -30,6 +30,8 @@ Hadolint will be automatically enabled by `qlty init` if a `.hadolint.yaml` conf
 
 - [`.hadolint.yaml`](https://github.com/hadolint/hadolint?tab=readme-ov-file#configure)
 
+To keep your project tidy, you can move configuration files into `.qlty/configs` and Qlty will find and use them when running Hadolint.
+
 ## Links
 
 - [Hadolint on GitHub](https://github.com/hadolint/hadolint)
