@@ -5,5 +5,8 @@
   ],
   "setupFilesAfterEnv": [
     "<rootDir>/tests/jest_setup.ts"
+  ],
+  "modulePathIgnorePatterns": [
+    "<rootDir>/.qlty/"
   ]
 }
