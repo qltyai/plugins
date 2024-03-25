@@ -4,6 +4,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
 {
   "issues": [
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_check.in.sql",
@@ -19,6 +20,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_check.in.sql",
@@ -34,6 +36,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_check.in.sql",
@@ -49,6 +52,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_check.in.sql",
@@ -64,6 +68,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_check.in.sql",
@@ -79,6 +84,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_check.in.sql",
@@ -94,6 +100,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_check.in.sql",
@@ -109,6 +116,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_check.in.sql",
@@ -124,6 +132,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_fmt.in.sql",
@@ -139,6 +148,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_fmt.in.sql",
@@ -154,6 +164,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_check.in.sql",
@@ -169,6 +180,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_fmt.in.sql",
@@ -184,6 +196,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_check.in.sql",
@@ -199,6 +212,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_check.in.sql",
@@ -214,6 +228,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_fmt.in.sql",
@@ -229,6 +244,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_fmt.in.sql",
@@ -244,6 +260,25 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       "tool": "sqlfluff",
     },
     {
+      "category": "CATEGORY_STYLE",
+      "level": "LEVEL_FMT",
+      "location": {
+        "path": "basic_fmt.in.sql",
+      },
+      "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
+      "tool": "sqlfluff",
+    },
+    {
+      "category": "CATEGORY_STYLE",
+      "level": "LEVEL_FMT",
+      "location": {
+        "path": "basic_check.in.sql",
+      },
+      "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
+      "tool": "sqlfluff",
+    },
+    {
+      "category": "CATEGORY_BUG",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_check.in.sql",
