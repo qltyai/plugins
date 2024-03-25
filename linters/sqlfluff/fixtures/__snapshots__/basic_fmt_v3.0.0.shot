@@ -1,21 +1,263 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Testing formatter sqlfluff test basic_fmt 1`] = `
-"SELECT
-    col_a,
-    col_b,
-    COUNT(*) AS num,
-    SUM(num) OVER (
-        PARTITION BY col_a
-        ORDER BY col_b
-    ) AS an_aggregate_function
-FROM tbl_a
-GROUP BY 1, 2
-"
-`;
-
 exports[`linter=sqlfluff fixture=basic_fmt version=3.0.0 1`] = `
 {
-  "issues": [],
+  "issues": [
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_check.in.sql",
+        "range": {
+          "endColumn": 13,
+          "endLine": 1,
+          "startColumn": 12,
+          "startLine": 1,
+        },
+      },
+      "message": "Column expression without alias. Use explicit \`AS\` clause.",
+      "ruleKey": "AL03",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_check.in.sql",
+        "range": {
+          "endColumn": 50,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Query produces an unknown number of result columns.",
+      "ruleKey": "AM04",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_check.in.sql",
+        "range": {
+          "endColumn": 7,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Keywords must be consistently upper case.",
+      "ruleKey": "CP01",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_check.in.sql",
+        "range": {
+          "endColumn": 22,
+          "endLine": 1,
+          "startColumn": 20,
+          "startLine": 1,
+        },
+      },
+      "message": "Keywords must be consistently upper case.",
+      "ruleKey": "CP01",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_check.in.sql",
+        "range": {
+          "endColumn": 33,
+          "endLine": 1,
+          "startColumn": 29,
+          "startLine": 1,
+        },
+      },
+      "message": "Keywords must be consistently upper case.",
+      "ruleKey": "CP01",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_check.in.sql",
+        "range": {
+          "endColumn": 27,
+          "endLine": 1,
+          "startColumn": 24,
+          "startLine": 1,
+        },
+      },
+      "message": "Unquoted identifiers must be consistently lower case.",
+      "ruleKey": "CP02",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_check.in.sql",
+        "range": {
+          "endColumn": 42,
+          "endLine": 1,
+          "startColumn": 34,
+          "startLine": 1,
+        },
+      },
+      "message": "Unquoted identifiers must be consistently lower case.",
+      "ruleKey": "CP02",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_check.in.sql",
+        "range": {
+          "endColumn": 50,
+          "endLine": 1,
+          "startColumn": 43,
+          "startLine": 1,
+        },
+      },
+      "message": "Unquoted identifiers must be consistently lower case.",
+      "ruleKey": "CP02",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_fmt.in.sql",
+        "range": {
+          "endColumn": 16,
+          "endLine": 4,
+          "startColumn": 13,
+          "startLine": 4,
+        },
+      },
+      "message": "Expected only single space before 'AS' keyword. Found '   '.",
+      "ruleKey": "LT01",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_fmt.in.sql",
+        "range": {
+          "endColumn": 16,
+          "endLine": 5,
+          "startColumn": 13,
+          "startLine": 5,
+        },
+      },
+      "message": "Expected only single space before 'OVER' keyword. Found '   '.",
+      "ruleKey": "LT01",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_check.in.sql",
+        "range": {
+          "endColumn": 29,
+          "endLine": 1,
+          "startColumn": 27,
+          "startLine": 1,
+        },
+      },
+      "message": "Expected only single space before 'from' keyword. Found '  '.",
+      "ruleKey": "LT01",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_fmt.in.sql",
+        "range": {
+          "endColumn": 21,
+          "endLine": 4,
+          "startColumn": 18,
+          "startLine": 4,
+        },
+      },
+      "message": "Expected only single space before naked identifier. Found '   '.",
+      "ruleKey": "LT01",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_check.in.sql",
+        "range": {
+          "endColumn": 24,
+          "endLine": 1,
+          "startColumn": 22,
+          "startLine": 1,
+        },
+      },
+      "message": "Expected only single space before naked identifier. Found '  '.",
+      "ruleKey": "LT01",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_check.in.sql",
+        "range": {
+          "endColumn": 9,
+          "endLine": 1,
+          "startColumn": 7,
+          "startLine": 1,
+        },
+      },
+      "message": "Expected only single space before star '*'. Found '  '.",
+      "ruleKey": "LT01",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_fmt.in.sql",
+        "range": {
+          "endColumn": 23,
+          "endLine": 5,
+          "startColumn": 20,
+          "startLine": 5,
+        },
+      },
+      "message": "Expected only single space before start bracket '('. Found '   '.",
+      "ruleKey": "LT01",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_fmt.in.sql",
+        "range": {
+          "endColumn": 7,
+          "endLine": 3,
+          "startColumn": 1,
+          "startLine": 3,
+        },
+      },
+      "message": "Expected indent of 4 spaces.",
+      "ruleKey": "LT02",
+      "tool": "sqlfluff",
+    },
+    {
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_check.in.sql",
+        "range": {
+          "endColumn": 27,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Select targets should be on a new line unless there is only one select target.",
+      "ruleKey": "LT09",
+      "tool": "sqlfluff",
+    },
+  ],
 }
 `;

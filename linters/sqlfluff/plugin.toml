@@ -12,5 +12,5 @@ recommended = false
 script = "sqlfluff lint ${target} --format json --nofail --dialect ansi"
 success_codes = [0]
 output = "stdout"
-output_format = "sarif"
+output_format = "sqlfluff"
 batch = true
