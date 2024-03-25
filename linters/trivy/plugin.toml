@@ -1,0 +1,38 @@
+config_version = "0"
+
+[plugins.downloads.trivy]
+binary_name = "trivy"
+download_type = "targz"
+# THIS IS IMPORTANT!
+strip_components = 0
+# Can't get this working with [[system]] syntax
+system = [
+  { url = "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_Linux-64bit.tar.gz", cpu = "x86_64", os = "linux"},
+  { url = "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_macOS-64bit.tar.gz", cpu = "x86_64", os = "macos"},
+  { url = "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_Linux-ARM64.tar.gz", cpu = "aarch64", os = "linux"},
+  { url = "https://github.com/aquasecurity/trivy/releases/download/v${version}/trivy_${version}_macOS-ARM64.tar.gz", cpu = "aarch64", os = "macos"}
+]
+
+[plugins.definitions.trivy]
+downloads = ["trivy"]
+file_types = ["ALL"]
+config_files = ["trivy.yaml", "trivy-secret.yaml"]
+version_command = "trivy --version"
+
+[plugins.definitions.trivy.drivers.lint]
+script = "trivy fs ${target} --format sarif --output ${tmpfile} --no-progress "
+success_codes = [0]
+error_codes = [2, 3, 4]
+output = "tmpfile"
+output_format = "sarif"
+cache_results = true
+batch = false
+
+[plugins.definitions.trivy.drivers.config]
+script = "trivy config ${target} --format sarif --output ${tmpfile}"
+success_codes = [0]
+error_codes = [2, 3, 4]
+output = "tmpfile"
+output_format = "sarif"
+cache_results = true
+batch = false
