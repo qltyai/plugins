@@ -7,6 +7,7 @@ file_types = ["sql", "sql-j2", "dml", "ddl"]
 version_command = "sqlfluff --version"
 config_files = [".sqlfluff"]
 recommended = false
+affects_cache = ["pyproject.toml"]
 
 [plugins.definitions.sqlfluff.drivers.lint]
 script = "sqlfluff lint ${target} --format json --nofail --dialect ansi"
