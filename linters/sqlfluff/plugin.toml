@@ -1,0 +1,24 @@
+config_version = "0"
+
+[plugins.definitions.sqlfluff]
+package = "sqlfluff"
+runtime = "python"
+file_types = ["sql", "sql-j2", "dml", "ddl"]
+version_command = "sqlfluff --version"
+config_files = [".sqlfluff"]
+recommended = false
+affects_cache = ["pyproject.toml"]
+
+[plugins.definitions.sqlfluff.drivers.lint]
+script = "sqlfluff lint ${target} --format json --nofail --dialect ansi"
+success_codes = [0]
+output = "stdout"
+output_format = "sqlfluff"
+batch = true
+
+[plugins.definitions.sqlfluff.drivers.fix]
+script = "sqlfluff fix --disable-progress-bar --quiet --dialect ansi ${target}"
+success_codes = [0]
+output = "rewrite"
+batch = true
+driver_type = "formatter"
