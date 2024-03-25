@@ -36,6 +36,7 @@ To keep your project tidy, you can move configuration files into `.qlty/configs`
 
 - [Hadolint on GitHub](https://github.com/hadolint/hadolint)
 - [Hadolint plugin definition](https://github.com/qltyai/plugins/tree/main/linters/hadolint)
+- [Hadolint releases](https://github.com/hadolint/hadolint/releases)
 - [Qlty's open source plugin definitions](https://github.com/qltyai/plugins)
 
 ## License
