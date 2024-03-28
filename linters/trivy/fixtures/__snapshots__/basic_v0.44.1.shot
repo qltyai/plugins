@@ -1937,7 +1937,7 @@ Link: [KSV013](https://avd.aquasec.com/misconfig/ksv013)",
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "level": "LEVEL_LOW",
       "location": {
         "path": "basic.in.yaml",
         "range": {
@@ -1950,7 +1950,7 @@ Link: [KSV013](https://avd.aquasec.com/misconfig/ksv013)",
       "message": "Artifact: basic.in.yaml
 Type: kubernetes
 Vulnerability KSV014
-Severity: HIGH
+Severity: LOW
 Message: Container 'sec-ctx-demo' of Pod 'security-context-demo' should set 'securityContext.readOnlyRootFilesystem' to true
 Link: [KSV014](https://avd.aquasec.com/misconfig/ksv014)",
       "ruleKey": "KSV014",
@@ -2056,7 +2056,7 @@ Link: [KSV030](https://avd.aquasec.com/misconfig/ksv030)",
 Type: kubernetes
 Vulnerability KSV104
 Severity: MEDIUM
-Message: container "sec-ctx-demo" of pod "security-context-demo" in "default" namespace should specify a seccomp profile
+Message: container sec-ctx-demo of pod security-context-demo in default namespace should specify a seccomp profile
 Link: [KSV104](https://avd.aquasec.com/misconfig/ksv104)",
       "ruleKey": "KSV104",
       "tool": "trivy",
@@ -2080,6 +2080,27 @@ Severity: LOW
 Message: container should drop all
 Link: [KSV106](https://avd.aquasec.com/misconfig/ksv106)",
       "ruleKey": "KSV106",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "basic.in.yaml",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Artifact: basic.in.yaml
+Type: kubernetes
+Vulnerability KSV116
+Severity: LOW
+Message: pod security-context-demo in default namespace should set spec.securityContext.runAsGroup, spec.securityContext.supplementalGroups[*] and spec.securityContext.fsGroup to integer greater than 0
+Link: [KSV116](https://avd.aquasec.com/misconfig/ksv116)",
+      "ruleKey": "KSV116",
       "tool": "trivy",
     },
     {
