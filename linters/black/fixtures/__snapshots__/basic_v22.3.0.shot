@@ -10,6 +10,7 @@ exports[`linter=black fixture=basic version=22.3.0 1`] = `
         "path": "basic.in.py",
       },
       "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
+      "ruleKey": "fmt",
       "tool": "black",
     },
   ],

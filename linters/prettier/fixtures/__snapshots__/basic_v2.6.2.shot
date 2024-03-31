@@ -10,6 +10,7 @@ exports[`linter=prettier fixture=basic version=2.6.2 1`] = `
         "path": "basic.in.js",
       },
       "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
+      "ruleKey": "fmt",
       "tool": "prettier",
     },
   ],

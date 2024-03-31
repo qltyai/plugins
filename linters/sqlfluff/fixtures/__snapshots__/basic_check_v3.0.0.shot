@@ -266,6 +266,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
         "path": "basic_fmt.in.sql",
       },
       "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
+      "ruleKey": "fmt",
       "tool": "sqlfluff",
     },
     {
@@ -275,6 +276,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
         "path": "basic_check.in.sql",
       },
       "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
+      "ruleKey": "fmt",
       "tool": "sqlfluff",
     },
     {
