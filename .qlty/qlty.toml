@@ -1,0 +1,20 @@
+config_version = "0"
+
+[sources.default]
+directory = "/Users/arslan/work/code_climate/plugins"
+
+[runtimes.enabled]
+node = "19.6.0"
+python = "3.11.7"
+
+[plugins.enabled]
+black = "23.1.0"
+flake8 = "6.0.0"
+hadolint = "2.12.0"
+markdownlint = "0.35.0"
+prettier = "2.8.4"
+shellcheck = "0.9.0"
+
+[[ignores]]
+plugins = ["ALL"]
+globs = ["**/fixtures/**", "**/tests/**"]
