@@ -212,41 +212,44 @@ export class QltyDriver {
   }
 
   tryParseDeterministicResults(sandboxPath: string, outputJson: any) {
-    if (!outputJson) {
-      return undefined;
+    // return function to lazy evaluate sorting and skip if not needed
+    return () => {
+      if (!outputJson) {
+        return undefined;
+      }
+
+      outputJson.sort((a: any, b: any) => {
+        if (a.tool < b.tool) {
+          return -1;
+        }
+        if (a.tool > b.tool) {
+          return 1;
+        }
+        if (a.ruleKey < b.ruleKey) {
+          return -1;
+        }
+        if (a.ruleKey > b.ruleKey) {
+          return 1;
+        }
+        if (a.path < b.path) {
+          return -1;
+        }
+        if (a.path > b.path) {
+          return 1;
+        }
+        if (a.message < b.message) {
+          return -1;
+        }
+        if (a.message > b.message) {
+          return 1;
+        }
+        return 0;
+      });
+
+      return {
+        issues: outputJson,
+      };
     }
-
-    outputJson.sort((a: any, b: any) => {
-      if (a.tool < b.tool) {
-        return -1;
-      }
-      if (a.tool > b.tool) {
-        return 1;
-      }
-      if (a.ruleKey < b.ruleKey) {
-        return -1;
-      }
-      if (a.ruleKey > b.ruleKey) {
-        return 1;
-      }
-      if (a.path < b.path) {
-        return -1;
-      }
-      if (a.path > b.path) {
-        return 1;
-      }
-      if (a.message < b.message) {
-        return -1;
-      }
-      if (a.message > b.message) {
-        return 1;
-      }
-      return 0;
-    });
-
-    return {
-      issues: outputJson,
-    };
   }
 
   getQltyTomlContents(): string {

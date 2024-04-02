@@ -129,7 +129,7 @@ export const linterCheckTest = (
               ).toMatchSpecificSnapshot(snapshotPath);
             } else {
               expect(
-                testRunResult.deterministicResults
+                testRunResult.deterministicResults()
               ).toMatchSpecificSnapshot(snapshotPath);
             }
           });
