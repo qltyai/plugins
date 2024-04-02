@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=trivy fixture=basic_yaml version=0.50.1 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv003",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "basic_yaml.in.yaml",
+        "range": {
+          "endColumn": 25,
+          "endLine": 25,
+          "startColumn": 1,
+          "startLine": 14,
+        },
+      },
+      "message": "Container 'sec-ctx-demo' of Pod 'security-context-demo' should add 'ALL' to 'securityContext.capabilities.drop'",
+      "ruleKey": "KSV003",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv011",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "basic_yaml.in.yaml",
+        "range": {
+          "endColumn": 25,
+          "endLine": 25,
+          "startColumn": 1,
+          "startLine": 14,
+        },
+      },
+      "message": "Container 'sec-ctx-demo' of Pod 'security-context-demo' should set 'resources.limits.cpu'",
+      "ruleKey": "KSV011",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv012",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_yaml.in.yaml",
+        "range": {
+          "endColumn": 25,
+          "endLine": 25,
+          "startColumn": 1,
+          "startLine": 14,
+        },
+      },
+      "message": "Container 'sec-ctx-demo' of Pod 'security-context-demo' should set 'securityContext.runAsNonRoot' to true",
+      "ruleKey": "KSV012",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv013",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_yaml.in.yaml",
+        "range": {
+          "endColumn": 25,
+          "endLine": 25,
+          "startColumn": 1,
+          "startLine": 14,
+        },
+      },
+      "message": "Container 'sec-ctx-demo' of Pod 'security-context-demo' should specify an image tag",
+      "ruleKey": "KSV013",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv014",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "basic_yaml.in.yaml",
+        "range": {
+          "endColumn": 25,
+          "endLine": 25,
+          "startColumn": 1,
+          "startLine": 14,
+        },
+      },
+      "message": "Container 'sec-ctx-demo' of Pod 'security-context-demo' should set 'securityContext.readOnlyRootFilesystem' to true",
+      "ruleKey": "KSV014",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv018",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "basic_yaml.in.yaml",
+        "range": {
+          "endColumn": 25,
+          "endLine": 25,
+          "startColumn": 1,
+          "startLine": 14,
+        },
+      },
+      "message": "Container 'sec-ctx-demo' of Pod 'security-context-demo' should set 'resources.limits.memory'",
+      "ruleKey": "KSV018",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv020",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "basic_yaml.in.yaml",
+        "range": {
+          "endColumn": 25,
+          "endLine": 25,
+          "startColumn": 1,
+          "startLine": 14,
+        },
+      },
+      "message": "Container 'sec-ctx-demo' of Pod 'security-context-demo' should set 'securityContext.runAsUser' > 10000",
+      "ruleKey": "KSV020",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv021",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "basic_yaml.in.yaml",
+        "range": {
+          "endColumn": 25,
+          "endLine": 25,
+          "startColumn": 1,
+          "startLine": 14,
+        },
+      },
+      "message": "Container 'sec-ctx-demo' of Pod 'security-context-demo' should set 'securityContext.runAsGroup' > 10000",
+      "ruleKey": "KSV021",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv030",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "basic_yaml.in.yaml",
+        "range": {
+          "endColumn": 25,
+          "endLine": 25,
+          "startColumn": 1,
+          "startLine": 14,
+        },
+      },
+      "message": "Either Pod or Container should set 'securityContext.seccompProfile.type' to 'RuntimeDefault'",
+      "ruleKey": "KSV030",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv104",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic_yaml.in.yaml",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "container sec-ctx-demo of pod security-context-demo in default namespace should specify a seccomp profile",
+      "ruleKey": "KSV104",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv106",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "basic_yaml.in.yaml",
+        "range": {
+          "endColumn": 25,
+          "endLine": 25,
+          "startColumn": 1,
+          "startLine": 14,
+        },
+      },
+      "message": "container should drop all",
+      "ruleKey": "KSV106",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv116",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "basic_yaml.in.yaml",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "pod security-context-demo in default namespace should set spec.securityContext.runAsGroup, spec.securityContext.supplementalGroups[*] and spec.securityContext.fsGroup to integer greater than 0",
+      "ruleKey": "KSV116",
+      "tool": "trivy",
+    },
+  ],
+}
+`;

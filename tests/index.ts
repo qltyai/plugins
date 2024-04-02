@@ -21,8 +21,8 @@ const detectTargets = (linterName: string, dirname: string): Target[] => {
     .readdirSync(testDataDir)
     .sort()
     .reduce((accumulator: Map<string, Target>, file: string) => {
-      // Check if this is an input file. If so, set it in the accumulator.
-      const inFileRegex = /(?<prefix>.+)\.in\.(?<extension>.+)$/;
+      // Check if this is an input file/directory. If so, set it in the accumulator.
+      const inFileRegex = /(?<prefix>.+)\.in/;
       const foundIn = file.match(inFileRegex);
       const prefix = foundIn?.groups?.prefix;
 
@@ -97,7 +97,7 @@ export const linterCheckTest = (linterName: string, dirname: string) => {
           const driver = new QltyDriver(linterName, linterVersion);
 
           beforeAll(async () => {
-            await driver.setUp();
+            await driver.setUp(filename);
           });
 
           test(`version=${linterVersion}`, async () => {
