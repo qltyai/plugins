@@ -28,10 +28,13 @@ const detectTargets = (linterName: string, dirname: string): Target[] => {
 
       if (foundIn && prefix) {
         if (prefix) {
-          const input= dir_content;
-          const linterVersions = getVersionsForTarget(dirname, linterName, prefix);
+          const input = dir_content;
+          const linterVersions = getVersionsForTarget(
+            dirname,
+            linterName,
+            prefix
+          );
           accumulator.set(prefix, { prefix, input, linterVersions });
-          return accumulator;
         }
       }
       return accumulator;
@@ -45,7 +48,7 @@ const SNAPSHOTS_DIR = "__snapshots__";
 export const getVersionsForTarget = (
   dirname: string,
   linterName: string,
-  prefix: string,
+  prefix: string
 ) => {
   let matchExists = false;
   const snapshotsDir = path.resolve(dirname, FIXTURES_DIR, SNAPSHOTS_DIR);
@@ -108,7 +111,9 @@ export const linterCheckTest = (linterName: string, dirname: string) => {
 
             const snapshotPath = driver.snapshotPath(prefix);
             driver.debug("Using snapshot: %s", snapshotPath);
-            expect(testRunResult.deterministicResults).toMatchSpecificSnapshot(snapshotPath);
+            expect(testRunResult.deterministicResults).toMatchSpecificSnapshot(
+              snapshotPath
+            );
           });
 
           afterAll(async () => {
