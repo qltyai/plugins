@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=trivy fixture=aws version=0.50.1 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/avd-aws-0028",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "aws.in.tf",
+        "range": {
+          "endColumn": 3,
+          "endLine": 3,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Instance does not require IMDS access to require a token",
+      "ruleKey": "AVD-AWS-0028",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/misconfig/avd-aws-0131",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "aws.in.tf",
+        "range": {
+          "endColumn": 3,
+          "endLine": 3,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Root block device is not encrypted.",
+      "ruleKey": "AVD-AWS-0131",
+      "tool": "trivy",
+    },
+  ],
+}
+`;

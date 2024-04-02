@@ -52,3 +52,5 @@ The tests are run in sandboxes and they contain plenty of information required t
 - You can check the output from invocation in the `sandbox/tmp/invocation-FINGERPRINT.txt` file and verify the raw output from the plugin against your test case.
 
 - If the output in invocations txt file is correct and something is still broken, you may want to check the CLI and parser of the plugin's output.
+
+- Some plugins such as `Trivy` download their own specific databases independent of their versions which can cause conflict in local tests (which may be using an older db) and github action tests (which doesn't cache them).

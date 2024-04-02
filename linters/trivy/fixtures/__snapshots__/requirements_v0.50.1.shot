@@ -1,0 +1,388 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=trivy fixture=requirements version=0.50.1 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2022-45198",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: pillow
+Installed Version: 9.1.1
+Fixed Version: 9.2.0",
+      "ruleKey": "CVE-2022-45198",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-32786",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.0.329",
+      "ruleKey": "CVE-2023-32786",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-34540",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.0.225",
+      "ruleKey": "CVE-2023-34540",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-34541",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.0.247",
+      "ruleKey": "CVE-2023-34541",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-36095",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.0.236",
+      "ruleKey": "CVE-2023-36095",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-36188",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.0.236",
+      "ruleKey": "CVE-2023-36188",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-36189",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: ",
+      "ruleKey": "CVE-2023-36189",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-36258",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.0.247",
+      "ruleKey": "CVE-2023-36258",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-36281",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.0.312",
+      "ruleKey": "CVE-2023-36281",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-38860",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: ",
+      "ruleKey": "CVE-2023-38860",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-38896",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.0.236",
+      "ruleKey": "CVE-2023-38896",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-39631",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.0.308",
+      "ruleKey": "CVE-2023-39631",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-39659",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.0.325",
+      "ruleKey": "CVE-2023-39659",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-44271",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: pillow
+Installed Version: 9.1.1
+Fixed Version: 10.0.0",
+      "ruleKey": "CVE-2023-44271",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-46229",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.0.317",
+      "ruleKey": "CVE-2023-46229",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-4863",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: pillow
+Installed Version: 9.1.1
+Fixed Version: 10.0.1",
+      "ruleKey": "CVE-2023-4863",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2023-50447",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: pillow
+Installed Version: 9.1.1
+Fixed Version: 10.2.0",
+      "ruleKey": "CVE-2023-50447",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2024-0243",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.1.0",
+      "ruleKey": "CVE-2024-0243",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://avd.aquasec.com/nvd/cve-2024-28088",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: langchain
+Installed Version: 0.0.171
+Fixed Version: 0.0.339",
+      "ruleKey": "CVE-2024-28088",
+      "tool": "trivy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://github.com/advisories/GHSA-56pw-mpj4-fxww",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "requirements.in/requirements.txt",
+        "range": {
+          "endColumn": 1,
+          "endLine": 1,
+          "startColumn": 1,
+          "startLine": 1,
+        },
+      },
+      "message": "Package: pillow
+Installed Version: 9.1.1
+Fixed Version: 10.0.1",
+      "ruleKey": "GHSA-56pw-mpj4-fxww",
+      "tool": "trivy",
+    },
+  ],
+}
+`;

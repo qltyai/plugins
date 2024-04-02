@@ -5,7 +5,13 @@ import Debug from "debug";
 import path from "path";
 import * as git from "simple-git";
 import * as util from "util";
-import { ChildProcess, execFile, execFileSync, ExecOptions, execSync } from "child_process";
+import {
+  ChildProcess,
+  execFile,
+  execFileSync,
+  ExecOptions,
+  execSync,
+} from "child_process";
 import { OPTIONS } from "./utils";
 
 const execFilePromise = util.promisify(execFile);
@@ -25,9 +31,15 @@ export const executionEnv = (sandbox: string) => {
   };
 };
 
-const testCreationFilter = (topLevelDir: string) => (file: string) => {
+const testCreationFilter = (input: string) => (file: string) => {
   // Don't copy snapshot files
   if (file.endsWith(".shot")) {
+    return false;
+  }
+
+  // Only copy the input file if it matches the target
+  const name = file.split('/').pop() || "";
+  if (name.includes(".in") && input != file.split('/').pop()) {
     return false;
   }
 
@@ -46,17 +58,23 @@ export class QltyDriver {
     this.fixturesDir = path.resolve(pluginDir, FIXTURES_DIR);
     this.linterName = linterName;
     this.linterVersion = linterVersion;
-    this.sandboxPath = fs.realpathSync(fs.mkdtempSync(path.resolve(os.tmpdir(), TEMP_PREFIX)));
+    this.sandboxPath = fs.realpathSync(
+      fs.mkdtempSync(path.resolve(os.tmpdir(), TEMP_PREFIX))
+    );
     this.debug = Debug(`qlty:${linterName}`);
   }
 
-  async setUp() {
+  async setUp(input: string) {
     fs.mkdirSync(path.resolve(this.sandboxPath, TEMP_SUBDIR));
-    this.debug("Created sandbox %s from %s", this.sandboxPath, this.fixturesDir);
+    this.debug(
+      "Created sandbox %s from %s",
+      this.sandboxPath,
+      this.fixturesDir
+    );
 
     fs.cpSync(this.fixturesDir, this.sandboxPath, {
       recursive: true,
-      filter: testCreationFilter(this.fixturesDir),
+      filter: testCreationFilter(input),
     });
 
     if (!fs.existsSync(path.resolve(path.resolve(this.sandboxPath, ".qlty")))) {
@@ -65,12 +83,12 @@ export class QltyDriver {
 
     fs.writeFileSync(
       path.resolve(this.sandboxPath, ".qlty/qlty.toml"),
-      this.getQltyTomlContents(),
+      this.getQltyTomlContents()
     );
 
     fs.writeFileSync(
       path.resolve(this.sandboxPath, ".gitignore"),
-      this.getGitIgnoreContents(),
+      this.getGitIgnoreContents()
     );
 
     const gitDriver = git.simpleGit(this.sandboxPath);
@@ -84,7 +102,9 @@ export class QltyDriver {
       .commit("first commit");
 
     await this.runQlty(["--help"]);
-    await this.runQltyCmd(`plugins enable ${this.linterName}=${this.linterVersion}`);
+    await this.runQltyCmd(
+      `plugins enable ${this.linterName}=${this.linterVersion}`
+    );
   }
 
   tearDown() {
@@ -97,8 +117,12 @@ export class QltyDriver {
   }
 
   testTargets(): string[] {
-    return fs.readdirSync(this.fixturesDir).sort().
-      filter((target) => !target.includes(SNAPSHOTS_DIR) && !target.startsWith("."));
+    return fs
+      .readdirSync(this.fixturesDir)
+      .sort()
+      .filter(
+        (target) => !target.includes(SNAPSHOTS_DIR) && !target.startsWith(".")
+      );
   }
 
   snapshotPath(prefix: string): string {
@@ -112,14 +136,12 @@ export class QltyDriver {
     try {
       const { stdout, stderr } = await this.runQltyCmd(fullArgs);
 
-      return this.parseRunResult(
-        {
-          exitCode: 0,
-          stdout,
-          stderr,
-          outputJson: JSON.parse(stdout),
-        }
-      );
+      return this.parseRunResult({
+        exitCode: 0,
+        stdout,
+        stderr,
+        outputJson: JSON.parse(stdout),
+      });
     } catch (error: any) {
       let jsonContents = "{}";
       console.log(error.stdout as string);
@@ -134,7 +156,10 @@ export class QltyDriver {
       };
 
       if (runResult.exitCode != 1) {
-        console.log(`${error.code as number} Failure running 'qlty check'`, error);
+        console.log(
+          `${error.code as number} Failure running 'qlty check'`,
+          error
+        );
       }
 
       return this.parseRunResult(runResult);
@@ -143,23 +168,26 @@ export class QltyDriver {
 
   async runQltyCmd(
     argStr: string,
-    execOptions?: ExecOptions,
+    execOptions?: ExecOptions
   ): Promise<{ stdout: string; stderr: string }> {
     this.debug("Running qlty %s", argStr);
     return await this.runQlty(
       argStr.split(" ").filter((arg) => arg.length > 0),
-      execOptions,
+      execOptions
     );
   }
 
   async runQlty(
     args: string[],
-    execOptions?: ExecOptions,
+    execOptions?: ExecOptions
   ): Promise<{ stdout: string; stderr: string }> {
     return await execFilePromise(...this.buildExecArgs(args, execOptions));
   }
 
-  buildExecArgs(args: string[], execOptions?: ExecOptions): [string, string[], ExecOptions] {
+  buildExecArgs(
+    args: string[],
+    execOptions?: ExecOptions
+  ): [string, string[], ExecOptions] {
     return [
       "qlty",
       args.filter((arg) => arg.length > 0),
@@ -176,7 +204,10 @@ export class QltyDriver {
     return {
       success: [0].includes(runResult.exitCode),
       runResult,
-      deterministicResults: this.tryParseDeterministicResults(this.sandboxPath, runResult.outputJson),
+      deterministicResults: this.tryParseDeterministicResults(
+        this.sandboxPath,
+        runResult.outputJson
+      ),
     };
   }
 
@@ -214,7 +245,7 @@ export class QltyDriver {
     });
 
     return {
-      issues: outputJson
+      issues: outputJson,
     };
   }
 
