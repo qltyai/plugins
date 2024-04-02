@@ -2,9 +2,10 @@ import { QltyDriver } from "./driver";
 import specific_snapshot = require("jest-specific-snapshot");
 import path from "path";
 import * as fs from "fs";
-import { OPTIONS } from "./utils";
+import { OPTIONS, serializeStructure } from "./utils";
 
 const toMatchSpecificSnapshot = specific_snapshot.toMatchSpecificSnapshot;
+const addSerializer = specific_snapshot.addSerializer;
 
 export type Target = {
   prefix: string;
@@ -88,7 +89,11 @@ export const getVersionsForTarget = (
 export const getSnapshotRegex = (prefix: string) =>
   `${prefix}(_v(?<version>[^_]+))?.shot`;
 
-export const linterCheckTest = (linterName: string, dirname: string) => {
+export const linterCheckTest = (
+  linterName: string,
+  dirname: string,
+  structure_test?: boolean
+) => {
   const targets = detectTargets(linterName, dirname);
 
   describe(`linter=${linterName}`, () => {
@@ -111,9 +116,22 @@ export const linterCheckTest = (linterName: string, dirname: string) => {
 
             const snapshotPath = driver.snapshotPath(prefix);
             driver.debug("Using snapshot: %s", snapshotPath);
-            expect(testRunResult.deterministicResults).toMatchSpecificSnapshot(
-              snapshotPath
-            );
+
+            if (structure_test) {
+              addSerializer({
+                test: () => true,
+                print: (val: any) =>
+                  `Child Object Structure: ${serializeStructure(val[0])}`,
+              });
+
+              expect(
+                testRunResult.runResult.outputJson
+              ).toMatchSpecificSnapshot(snapshotPath);
+            } else {
+              expect(
+                testRunResult.deterministicResults
+              ).toMatchSpecificSnapshot(snapshotPath);
+            }
           });
 
           afterAll(async () => {

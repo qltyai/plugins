@@ -1,42 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`linter=trivy fixture=basic_dockerfile version=0.50.1 1`] = `
-{
-  "issues": [
-    {
-      "category": "CATEGORY_BUG",
-      "documentationUrl": "https://avd.aquasec.com/misconfig/ds002",
-      "level": "LEVEL_HIGH",
-      "location": {
-        "path": "basic_dockerfile.in.Dockerfile",
-        "range": {
-          "endColumn": 1,
-          "endLine": 1,
-          "startColumn": 1,
-          "startLine": 1,
-        },
-      },
-      "message": "Specify at least 1 USER command in Dockerfile with non-root user as argument",
-      "ruleKey": "DS002",
-      "tool": "trivy",
-    },
-    {
-      "category": "CATEGORY_BUG",
-      "documentationUrl": "https://avd.aquasec.com/misconfig/ds026",
-      "level": "LEVEL_LOW",
-      "location": {
-        "path": "basic_dockerfile.in.Dockerfile",
-        "range": {
-          "endColumn": 1,
-          "endLine": 1,
-          "startColumn": 1,
-          "startLine": 1,
-        },
-      },
-      "message": "Add HEALTHCHECK instruction in your Dockerfile",
-      "ruleKey": "DS026",
-      "tool": "trivy",
-    },
-  ],
+Child Object Structure: {
+  "tool": "string",
+  "ruleKey": "string",
+  "message": "string",
+  "level": "string",
+  "category": "string",
+  "documentationUrl": "string",
+  "location": {
+    "path": "string",
+    "range": {
+      "startLine": "number",
+      "startColumn": "number",
+      "endLine": "number",
+      "endColumn": "number"
+    }
+  }
 }
 `;

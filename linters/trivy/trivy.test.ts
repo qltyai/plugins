@@ -1,3 +1,3 @@
 import { linterCheckTest } from "tests";
 
-linterCheckTest("trivy", __dirname);
+linterCheckTest("trivy", __dirname, true);
