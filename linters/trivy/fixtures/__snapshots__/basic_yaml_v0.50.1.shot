@@ -74,7 +74,7 @@ exports[`linter=trivy fixture=basic_yaml version=0.50.1 1`] = `
     {
       "category": "CATEGORY_BUG",
       "documentationUrl": "https://avd.aquasec.com/misconfig/ksv014",
-      "level": "LEVEL_LOW",
+      "level": "LEVEL_HIGH",
       "location": {
         "path": "basic_yaml.in.yaml",
         "range": {
@@ -169,7 +169,7 @@ exports[`linter=trivy fixture=basic_yaml version=0.50.1 1`] = `
           "startLine": 1,
         },
       },
-      "message": "container sec-ctx-demo of pod security-context-demo in default namespace should specify a seccomp profile",
+      "message": "container "sec-ctx-demo" of pod "security-context-demo" in "default" namespace should specify a seccomp profile",
       "ruleKey": "KSV104",
       "tool": "trivy",
     },
@@ -188,23 +188,6 @@ exports[`linter=trivy fixture=basic_yaml version=0.50.1 1`] = `
       },
       "message": "container should drop all",
       "ruleKey": "KSV106",
-      "tool": "trivy",
-    },
-    {
-      "category": "CATEGORY_BUG",
-      "documentationUrl": "https://avd.aquasec.com/misconfig/ksv116",
-      "level": "LEVEL_LOW",
-      "location": {
-        "path": "basic_yaml.in.yaml",
-        "range": {
-          "endColumn": 1,
-          "endLine": 1,
-          "startColumn": 1,
-          "startLine": 1,
-        },
-      },
-      "message": "pod security-context-demo in default namespace should set spec.securityContext.runAsGroup, spec.securityContext.supplementalGroups[*] and spec.securityContext.fsGroup to integer greater than 0",
-      "ruleKey": "KSV116",
       "tool": "trivy",
     },
   ],
