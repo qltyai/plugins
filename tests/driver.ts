@@ -25,7 +25,7 @@ export const executionEnv = (sandbox: string) => {
   };
 };
 
-const testCreationFilter = (filename: string) => (file: string) => {
+const testCreationFilter = (input: string) => (file: string) => {
   // Don't copy snapshot files
   if (file.endsWith(".shot")) {
     return false;
@@ -33,7 +33,7 @@ const testCreationFilter = (filename: string) => (file: string) => {
 
   // Only copy the input file if it matches the target
   const name = file.split('/').pop() || "";
-  if (name.includes(".in") && filename != file.split('/').pop()) {
+  if (name.includes(".in") && input != file.split('/').pop()) {
     return false;
   }
 
@@ -56,13 +56,13 @@ export class QltyDriver {
     this.debug = Debug(`qlty:${linterName}`);
   }
 
-  async setUp(filename: string) {
+  async setUp(input: string) {
     fs.mkdirSync(path.resolve(this.sandboxPath, TEMP_SUBDIR));
     this.debug("Created sandbox %s from %s", this.sandboxPath, this.fixturesDir);
 
     fs.cpSync(this.fixturesDir, this.sandboxPath, {
       recursive: true,
-      filter: testCreationFilter(filename),
+      filter: testCreationFilter(input),
     });
 
     if (!fs.existsSync(path.resolve(path.resolve(this.sandboxPath, ".qlty")))) {

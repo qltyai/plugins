@@ -8,7 +8,7 @@ const toMatchSpecificSnapshot = specific_snapshot.toMatchSpecificSnapshot;
 
 export type Target = {
   prefix: string;
-  filename: string;
+  input: string;
   linterVersions: any[];
 };
 
@@ -20,17 +20,17 @@ const detectTargets = (linterName: string, dirname: string): Target[] => {
   const testTargets = fs
     .readdirSync(testDataDir)
     .sort()
-    .reduce((accumulator: Map<string, Target>, file: string) => {
+    .reduce((accumulator: Map<string, Target>, dir_content: string) => {
       // Check if this is an input file/directory. If so, set it in the accumulator.
-      const inFileRegex = /(?<prefix>.+)\.in/;
-      const foundIn = file.match(inFileRegex);
+      const inputRegex = /(?<prefix>.+)\.in/;
+      const foundIn = dir_content.match(inputRegex);
       const prefix = foundIn?.groups?.prefix;
 
       if (foundIn && prefix) {
         if (prefix) {
-          const filename = file;
+          const input= dir_content;
           const linterVersions = getVersionsForTarget(dirname, linterName, prefix);
-          accumulator.set(prefix, { prefix, filename, linterVersions });
+          accumulator.set(prefix, { prefix, input, linterVersions });
           return accumulator;
         }
       }
@@ -89,15 +89,15 @@ export const linterCheckTest = (linterName: string, dirname: string) => {
   const targets = detectTargets(linterName, dirname);
 
   describe(`linter=${linterName}`, () => {
-    targets.forEach(({ prefix, filename, linterVersions }) => {
-      const fixtureBasename = filename.split(".")[0];
+    targets.forEach(({ prefix, input, linterVersions }) => {
+      const fixtureBasename = input.split(".")[0];
 
       describe(`fixture=${fixtureBasename}`, () => {
         linterVersions.forEach((linterVersion) => {
           const driver = new QltyDriver(linterName, linterVersion);
 
           beforeAll(async () => {
-            await driver.setUp(filename);
+            await driver.setUp(input);
           });
 
           test(`version=${linterVersion}`, async () => {
