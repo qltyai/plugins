@@ -1,7 +1,8 @@
 config_version = "0"
 
 [sources.default]
-directory = "/Users/arslan/work/code_climate/plugins"
+repository = "https://github.com/qltyai/plugins.git"
+ref = "v0.18.0-pre"
 
 [runtimes.enabled]
 node = "19.6.0"
