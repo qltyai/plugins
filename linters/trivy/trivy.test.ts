@@ -1,3 +1,3 @@
-import { linterCheckTest } from "tests";
+import { linterStructureTest } from "tests";
 
-linterCheckTest("trivy", __dirname);
+linterStructureTest("trivy", __dirname);
