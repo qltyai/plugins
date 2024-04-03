@@ -9,6 +9,7 @@ strip_components = 0
 releases = ["trivy"]
 config_files = ["trivy.yaml", "trivy-secret.yaml"]
 version_command = "trivy --version"
+issue_url_format = "https://avd.aquasec.com/${}/${}"
 
 [plugins.definitions.trivy.drivers.fs-vuln]
 file_types = ["lockfile"]

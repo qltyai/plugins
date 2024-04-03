@@ -7,6 +7,7 @@ file_types = ["python"]
 config_files = [".flake8"]
 version_command = "flake8 --version"
 recommended = true
+issue_url_format = "https://flake8.pycqa.org/en/latest/user/error-codes.html"
 
 [plugins.definitions.flake8.drivers.lint]
 script = "flake8 ${target} --output-file \"${tmpfile}\" --exit-zero"
