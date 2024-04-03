@@ -1,0 +1,29 @@
+config_version = "0"
+
+[plugins.definitions.remarklint]
+runtime = "node"
+package = "remark-cli"
+config_files = [".remarkrc", ".remarkrc.cjs", ".remarkrc.js", ".remarkrc.json", ".remarkrc.mjs", ".remarkrc.yaml", ".remarkrc.yml"]
+# skip remark version which is 15 at the moment and get cli version only
+version_command = "remark --version | awk -F, '{print $2}'"
+file_types = ["markdown"]
+extra_packages = ["remark-preset-lint-consistent@5.1.2", "remark-preset-lint-recommended@6.1.3", "remark-lint-list-item-indent@3.1.2", "vfile-reporter-json@4.0.0"]
+
+[plugins.definitions.remarklint.drivers.lint]
+script = "remark ${target} --frail --output --report=vfile-reporter-json"
+success_codes = [0, 1]
+output = "stdout"
+output_format = "sarif"
+cache_results = true
+batch = false
+
+[plugins.definitions.remarklint.drivers.fmt]
+script = "remark ${target} --output"
+success_codes = [0]
+output = "rewrite"
+cache_results = true
+batch = true
+driver_type = "formatter"
+
+## need to add symlinks somehow
+## https://github.com/trunk-io/plugins/blob/e1744adde1407d0da1e560825a6a45d8ab529a32/linters/remark-lint/plugin.yaml#L44
