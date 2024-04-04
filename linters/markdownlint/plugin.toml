@@ -7,6 +7,7 @@ file_types = ["markdown"]
 config_files = [".markdownlint.json"]
 version_command = "markdownlint --version"
 recommended = true
+issue_url_format = "https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#${rule}"
 
 [plugins.definitions.markdownlint.drivers.lint]
 script = "markdownlint --json ${target}"

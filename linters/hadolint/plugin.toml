@@ -10,6 +10,7 @@ file_types = ["docker"]
 config_files = [".hadolint.yaml", ".hadolint.yml"]
 version_command = "hadolint --version"
 recommended = true
+issue_url_format = "https://github.com/hadolint/hadolint/wiki/${rule}"
 
 [plugins.definitions.hadolint.drivers.lint]
 script = "hadolint ${target} -f json --no-fail"

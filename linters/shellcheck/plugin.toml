@@ -11,6 +11,7 @@ file_types = ["shell"]
 config_files = [".shellcheckrc", "shellcheckrc"]
 version_command = "shellcheck --version"
 recommended = true
+issue_url_format = "https://github.com/koalaman/shellcheck/wiki/SC${rule}"
 
 [plugins.definitions.shellcheck.drivers.lint]
 script = "shellcheck -f json ${target}"
