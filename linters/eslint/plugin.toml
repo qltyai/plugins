@@ -13,7 +13,6 @@ config_files = [
   ".eslintrc.yml",
 ]
 version_command = "eslint --version"
-issue_url_format = "https://eslint.org/docs/rules/${rule}"
 
 # direct_configs:
 #   - 

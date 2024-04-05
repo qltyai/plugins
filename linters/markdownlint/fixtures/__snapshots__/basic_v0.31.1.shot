@@ -5,6 +5,7 @@ exports[`linter=markdownlint fixture=basic version=0.31.1 1`] = `
   "issues": [
     {
       "category": "CATEGORY_STYLE",
+      "documentationUrl": "https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#MD001",
       "level": "LEVEL_FMT",
       "location": {
         "path": "basic.in.md",
@@ -18,6 +19,7 @@ exports[`linter=markdownlint fixture=basic version=0.31.1 1`] = `
     },
     {
       "category": "CATEGORY_STYLE",
+      "documentationUrl": "https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md#MD041",
       "level": "LEVEL_FMT",
       "location": {
         "path": "basic.in.md",

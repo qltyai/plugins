@@ -5,6 +5,7 @@ exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
   "issues": [
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://eslint.org/docs/rules/no-cond-assign",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.js",
@@ -21,6 +22,7 @@ exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
     },
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://eslint.org/docs/rules/no-constant-condition",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.js",
@@ -37,6 +39,7 @@ exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
     },
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://eslint.org/docs/rules/no-unused-vars",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.js",

@@ -5,6 +5,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
   "issues": [
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://docs.astral.sh/ruff/rules/E402",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.py",
@@ -21,6 +22,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
     },
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://docs.astral.sh/ruff/rules/E402",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.py",
@@ -37,6 +39,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
     },
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://docs.astral.sh/ruff/rules/F401",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.py",
@@ -53,6 +56,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
     },
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://docs.astral.sh/ruff/rules/F401",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.py",
