@@ -5,6 +5,7 @@ exports[`linter=shellcheck fixture=basic version=0.8.0 1`] = `
   "issues": [
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://github.com/koalaman/shellcheck/wiki/SC2086",
       "level": "LEVEL_LOW",
       "location": {
         "path": "basic.in.sh",
@@ -21,6 +22,7 @@ exports[`linter=shellcheck fixture=basic version=0.8.0 1`] = `
     },
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://github.com/koalaman/shellcheck/wiki/SC2154",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.sh",
@@ -37,6 +39,7 @@ exports[`linter=shellcheck fixture=basic version=0.8.0 1`] = `
     },
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://github.com/koalaman/shellcheck/wiki/SC2283",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.sh",
