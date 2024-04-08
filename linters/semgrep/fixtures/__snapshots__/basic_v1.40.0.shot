@@ -9,7 +9,7 @@ exports[`linter=semgrep fixture=basic version=1.40.0 1`] = `
       "location": {
         "path": "basic.in.rs",
         "range": {
-          "endColumn": 3,
+          "endColumn": 2,
           "endLine": 3,
           "startColumn": 1,
           "startLine": 1,

@@ -9,7 +9,7 @@ exports[`linter=gitleaks fixture=basic version=8.8.7 1`] = `
       "location": {
         "path": "basic.in.py",
         "range": {
-          "endColumn": 2,
+          "endColumn": 34,
           "endLine": 2,
           "startColumn": 15,
           "startLine": 2,

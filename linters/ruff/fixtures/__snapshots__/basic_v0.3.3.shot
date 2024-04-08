@@ -10,7 +10,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
       "location": {
         "path": "basic.in.py",
         "range": {
-          "endColumn": 7,
+          "endColumn": 11,
           "endLine": 7,
           "startColumn": 1,
           "startLine": 7,
@@ -27,7 +27,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
       "location": {
         "path": "basic.in.py",
         "range": {
-          "endColumn": 9,
+          "endColumn": 12,
           "endLine": 9,
           "startColumn": 1,
           "startLine": 9,
@@ -44,7 +44,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
       "location": {
         "path": "basic.in.py",
         "range": {
-          "endColumn": 7,
+          "endColumn": 11,
           "endLine": 7,
           "startColumn": 8,
           "startLine": 7,
@@ -61,7 +61,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
       "location": {
         "path": "basic.in.py",
         "range": {
-          "endColumn": 9,
+          "endColumn": 12,
           "endLine": 9,
           "startColumn": 8,
           "startLine": 9,
