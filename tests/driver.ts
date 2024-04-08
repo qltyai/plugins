@@ -72,9 +72,20 @@ export class QltyDriver {
       this.fixturesDir
     );
 
-    fs.cpSync(this.fixturesDir, this.sandboxPath, {
-      recursive: true,
-      filter: testCreationFilter(input),
+    const input_path = `${this.fixturesDir}/${input}`;
+
+    // Copy contents of input if it is a directory, otherwise copy the input file
+    fs.stat(input_path, (_, stats) => {
+      if (stats.isDirectory()) {
+        fs.cpSync(input_path, this.sandboxPath, {
+          recursive: true,
+        });
+      } else {
+        fs.cpSync(this.fixturesDir, this.sandboxPath, {
+          recursive: true,
+          filter: testCreationFilter(input),
+        });
+      }
     });
 
     if (!fs.existsSync(path.resolve(path.resolve(this.sandboxPath, ".qlty")))) {
