@@ -9,9 +9,7 @@ strip_components = 0
 releases = ["gitleaks"]
 file_types = ["ALL"]
 version_command = "gitleaks version"
-# direct_configs:
-#   - .gitleaks.config
-#   - .gitleaks.toml
+config_files = [".gitleaks.toml", ".gitleaks.config"]
 recommended = false
 
 [plugins.definitions.gitleaks.drivers.lint]
