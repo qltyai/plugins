@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=osv-scanner fixture=cargo version=1.7.0 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2024-27308",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Cargo.lock",
+      },
+      "message": "Package 'mio@0.8.10' is vulnerable to 'CVE-2024-27308' (also known as 'RUSTSEC-2024-0019', 'GHSA-r8w9-5wcg-vfj7').",
+      "ruleKey": "CVE-2024-27308",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2024-27308",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Cargo.lock",
+      },
+      "message": "Package 'mio@0.8.10' is vulnerable to 'CVE-2024-27308' (also known as 'RUSTSEC-2024-0019', 'GHSA-r8w9-5wcg-vfj7').",
+      "ruleKey": "CVE-2024-27308",
+      "tool": "osv-scanner",
+    },
+  ],
+}
+`;

@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=osv-scanner fixture=cargo version=1.7.0 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2024-27308",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Cargo.lock",
+      },
+      "message": "Package 'mio@0.8.10' is vulnerable to 'CVE-2024-27308' (also known as 'RUSTSEC-2024-0019', 'GHSA-r8w9-5wcg-vfj7').",
+      "ruleKey": "CVE-2024-27308",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2024-27308",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Cargo.lock",
+      },
+      "message": "Package 'mio@0.8.10' is vulnerable to 'CVE-2024-27308' (also known as 'RUSTSEC-2024-0019', 'GHSA-r8w9-5wcg-vfj7').",
+      "ruleKey": "CVE-2024-27308",
+      "tool": "osv-scanner",
+    },
+  ],
+}
+`;
+
+exports[`linter=osv-scanner fixture=gemfile version=1.7.0 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2022-44566",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'activerecord@5.2.8.1' is vulnerable to 'CVE-2022-44566' (also known as 'GHSA-579w-22j4-4749').",
+      "ruleKey": "CVE-2022-44566",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2023-22792",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'actionpack@5.2.8.1' is vulnerable to 'CVE-2023-22792' (also known as 'GHSA-p84v-45xj-wwqj').",
+      "ruleKey": "CVE-2023-22792",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2023-22795",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'actionpack@5.2.8.1' is vulnerable to 'CVE-2023-22795' (also known as 'GHSA-8xww-x3g3-6jcv').",
+      "ruleKey": "CVE-2023-22795",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2023-22796",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'activesupport@5.2.8.1' is vulnerable to 'CVE-2023-22796' (also known as 'GHSA-j6gc-792m-qgm2').",
+      "ruleKey": "CVE-2023-22796",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2023-23913",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'actionview@5.2.8.1' is vulnerable to 'CVE-2023-23913' (also known as 'GHSA-xp5h-f8jf-rc8q').",
+      "ruleKey": "CVE-2023-23913",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2023-27530",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'rack@2.2.6.2' is vulnerable to 'CVE-2023-27530' (also known as 'GHSA-3h57-hmj3-gj3p').",
+      "ruleKey": "CVE-2023-27530",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2023-27539",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'rack@2.2.6.2' is vulnerable to 'CVE-2023-27539' (also known as 'GHSA-c6qg-cjj8-47qp').",
+      "ruleKey": "CVE-2023-27539",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2023-28120",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'activesupport@5.2.8.1' is vulnerable to 'CVE-2023-28120' (also known as 'GHSA-pj73-v5mw-pm9j').",
+      "ruleKey": "CVE-2023-28120",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2023-28362",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'actionpack@5.2.8.1' is vulnerable to 'CVE-2023-28362' (also known as 'GHSA-4g8v-vg43-wpgf').",
+      "ruleKey": "CVE-2023-28362",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2023-38037",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'activesupport@5.2.8.1' is vulnerable to 'CVE-2023-38037' (also known as 'GHSA-cr5q-6q9f-rq6q').",
+      "ruleKey": "CVE-2023-38037",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2023-40175",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'puma@4.3.12' is vulnerable to 'CVE-2023-40175' (also known as 'GHSA-68xg-gqqm-vgj8').",
+      "ruleKey": "CVE-2023-40175",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2024-21647",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'puma@4.3.12' is vulnerable to 'CVE-2024-21647' (also known as 'GHSA-c2f4-cvqm-65w2').",
+      "ruleKey": "CVE-2024-21647",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2024-25126",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'rack@2.2.6.2' is vulnerable to 'CVE-2024-25126' (also known as 'GHSA-22f2-v57c-j9cx').",
+      "ruleKey": "CVE-2024-25126",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2024-26141",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'rack@2.2.6.2' is vulnerable to 'CVE-2024-26141' (also known as 'GHSA-xj5v-6v4g-jfw6').",
+      "ruleKey": "CVE-2024-26141",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2024-26144",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'activestorage@5.2.8.1' is vulnerable to 'CVE-2024-26144' (also known as 'GHSA-8h22-8cf7-hq6g').",
+      "ruleKey": "CVE-2024-26144",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/CVE-2024-26146",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'rack@2.2.6.2' is vulnerable to 'CVE-2024-26146' (also known as 'GHSA-54rr-7fvw-6x8f').",
+      "ruleKey": "CVE-2024-26146",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/GHSA-pxvg-2qj5-37jq",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'nokogiri@1.14.1' is vulnerable to 'GHSA-pxvg-2qj5-37jq'.",
+      "ruleKey": "GHSA-pxvg-2qj5-37jq",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/GHSA-vcc3-rw6f-jv97",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'nokogiri@1.14.1' is vulnerable to 'GHSA-vcc3-rw6f-jv97'.",
+      "ruleKey": "GHSA-vcc3-rw6f-jv97",
+      "tool": "osv-scanner",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://osv.dev/GHSA-xc9x-jj77-9p9j",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "Gemfile.lock",
+      },
+      "message": "Package 'nokogiri@1.14.1' is vulnerable to 'GHSA-xc9x-jj77-9p9j'.",
+      "ruleKey": "GHSA-xc9x-jj77-9p9j",
+      "tool": "osv-scanner",
+    },
+  ],
+}
+`;
