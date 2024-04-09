@@ -9,7 +9,6 @@ exports[`linter=dotenv-linter fixture=basic version=3.3.0 1`] = `
       "location": {
         "path": "basic.in.env",
         "range": {
-          "startColumn": 1,
           "startLine": 4,
         },
       },
@@ -23,7 +22,6 @@ exports[`linter=dotenv-linter fixture=basic version=3.3.0 1`] = `
       "location": {
         "path": "basic.in.env",
         "range": {
-          "startColumn": 1,
           "startLine": 1,
         },
       },
@@ -37,7 +35,6 @@ exports[`linter=dotenv-linter fixture=basic version=3.3.0 1`] = `
       "location": {
         "path": "basic.in.env",
         "range": {
-          "startColumn": 1,
           "startLine": 2,
         },
       },
@@ -51,7 +48,6 @@ exports[`linter=dotenv-linter fixture=basic version=3.3.0 1`] = `
       "location": {
         "path": "basic.in.env",
         "range": {
-          "startColumn": 1,
           "startLine": 4,
         },
       },
@@ -65,7 +61,6 @@ exports[`linter=dotenv-linter fixture=basic version=3.3.0 1`] = `
       "location": {
         "path": "basic.in.env",
         "range": {
-          "startColumn": 1,
           "startLine": 3,
         },
       },
