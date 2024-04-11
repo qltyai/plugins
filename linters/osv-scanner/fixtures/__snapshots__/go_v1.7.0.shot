@@ -1,39 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`linter=osv-scanner fixture=cargo version=1.7.0 1`] = `
-{
-  "issues": [
-    {
-      "category": "CATEGORY_BUG",
-      "documentationUrl": "https://osv.dev/CVE-2024-27308",
-      "level": "LEVEL_MEDIUM",
-      "location": {
-        "path": "Cargo.lock",
-      },
-      "message": "Package 'mio@0.8.10' is vulnerable to 'CVE-2024-27308' (also known as 'RUSTSEC-2024-0019', 'GHSA-r8w9-5wcg-vfj7').",
-      "ruleKey": "CVE-2024-27308",
-      "tool": "osv-scanner",
-    },
-    {
-      "category": "CATEGORY_BUG",
-      "documentationUrl": "https://osv.dev/CVE-2024-27308",
-      "level": "LEVEL_MEDIUM",
-      "location": {
-        "path": "Cargo.lock",
-      },
-      "message": "Package 'mio@0.8.10' is vulnerable to 'CVE-2024-27308' (also known as 'RUSTSEC-2024-0019', 'GHSA-r8w9-5wcg-vfj7').",
-      "ruleKey": "CVE-2024-27308",
-      "tool": "osv-scanner",
-    },
-  ],
-}
-`;
-
 exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2018-1000803",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -44,7 +15,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2018-15192",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -55,7 +26,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2019-0210",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -66,7 +37,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2019-0210",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -77,7 +48,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2019-11228",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -88,7 +59,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2019-11229",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -99,7 +70,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2019-11840",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -110,7 +81,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2019-11840",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -121,7 +92,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2019-11841",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -132,7 +103,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2019-11841",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -143,7 +114,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2019-16146",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -154,7 +125,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-13246",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -165,7 +136,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-24553",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -176,7 +147,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-24710",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -187,7 +158,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-26160",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -198,7 +169,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-26160",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -209,7 +180,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-29652",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -220,7 +191,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-29652",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -231,7 +202,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-7664",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -242,7 +213,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-7664",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -253,7 +224,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-7668",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -264,7 +235,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-7668",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -275,7 +246,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-7919",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -286,7 +257,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-7919",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -297,7 +268,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-9283",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -308,7 +279,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2020-9283",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -319,7 +290,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-20329",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -330,7 +301,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-20329",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -341,7 +312,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-20329",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -352,7 +323,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-27918",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -363,7 +334,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-28378",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -374,7 +345,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-29134",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -385,7 +356,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-29272",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -396,7 +367,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-29272",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -407,7 +378,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-3114",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -418,7 +389,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-31525",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -429,7 +400,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-31525",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -440,7 +411,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-31525",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -451,7 +422,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-31525",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -462,7 +433,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-33194",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -473,7 +444,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-33194",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -484,7 +455,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-33195",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -495,7 +466,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-33196",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -506,7 +477,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-33197",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -517,7 +488,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-33198",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -528,7 +499,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-34558",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -539,7 +510,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-36221",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -550,7 +521,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-39293",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -561,7 +532,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-41771",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -572,7 +543,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-41772",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -583,7 +554,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-42576",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -594,7 +565,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-42576",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -605,7 +576,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-43565",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -616,7 +587,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-43565",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -627,7 +598,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-44716",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -638,7 +609,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-44716",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -649,7 +620,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-44717",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -660,7 +631,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-45325",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -671,7 +642,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-45326",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -682,7 +653,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-45327",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -693,7 +664,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-45328",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -704,7 +675,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2021-45329",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -715,7 +686,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-0905",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -726,7 +697,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-1705",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -737,7 +708,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-1928",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -748,7 +719,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-1962",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -759,7 +730,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-21698",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -770,7 +741,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-21698",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -781,7 +752,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-23772",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -792,7 +763,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-23806",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -803,7 +774,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-24675",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -814,7 +785,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-24921",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -825,7 +796,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-25295",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -836,7 +807,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-27191",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -847,7 +818,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-27191",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -858,7 +829,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-27313",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -869,7 +840,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-27664",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -880,7 +851,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-27664",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -891,7 +862,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-27664",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -902,7 +873,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-27664",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -913,7 +884,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-28131",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -924,7 +895,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-28327",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -935,7 +906,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-2879",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -946,7 +917,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-2880",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -957,7 +928,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-29526",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -968,7 +939,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-29526",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -979,7 +950,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-29526",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -990,7 +961,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-29526",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1001,7 +972,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-29804",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1012,7 +983,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-30580",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1023,7 +994,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-30629",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1034,7 +1005,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-30630",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1045,7 +1016,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-30631",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1056,7 +1027,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-30632",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1067,7 +1038,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-30633",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1078,7 +1049,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-30634",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1089,7 +1060,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-30635",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1100,7 +1071,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-30781",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1111,7 +1082,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-31022",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1122,7 +1093,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-31022",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1133,7 +1104,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-32148",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1144,7 +1115,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-32189",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1155,7 +1126,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-38795",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1166,7 +1137,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41715",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1177,7 +1148,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41716",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1188,7 +1159,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41717",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1199,7 +1170,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41717",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1210,7 +1181,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41720",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1221,7 +1192,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41722",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1232,7 +1203,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41723",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1243,7 +1214,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41723",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1254,7 +1225,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41723",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1265,7 +1236,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41723",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1276,7 +1247,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41724",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1287,7 +1258,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41725",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1298,7 +1269,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41727",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1309,7 +1280,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-41727",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1320,7 +1291,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-42968",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1331,7 +1302,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-45003",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1342,7 +1313,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2022-45004",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1353,7 +1324,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-24532",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1364,7 +1335,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-24534",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1375,7 +1346,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-24536",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1386,7 +1357,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-24537",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1397,7 +1368,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-24538",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1408,7 +1379,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-24539",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1419,7 +1390,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-24540",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1430,7 +1401,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-29400",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1441,7 +1412,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-29403",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1452,7 +1423,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-29406",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1463,7 +1434,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-29407",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1474,7 +1445,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-29407",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1485,7 +1456,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-29408",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1496,7 +1467,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-29408",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1507,7 +1478,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-29409",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1518,7 +1489,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-3515",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1529,7 +1500,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-39318",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1540,7 +1511,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-39319",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1551,7 +1522,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-39325",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1562,7 +1533,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-39325",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1573,7 +1544,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-39325",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1584,7 +1555,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-39325",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1595,7 +1566,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-39326",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1606,7 +1577,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-3978",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1617,7 +1588,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-3978",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1628,7 +1599,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-44487",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1639,7 +1610,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-44487",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1650,7 +1621,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-45283",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1661,7 +1632,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-45284",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1672,7 +1643,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-45287",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1683,29 +1654,29 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-45288",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "go.mod",
       },
-      "message": "Package 'golang.org/x/net@0.0.0-20200324143707-d3edc9973b7e' is vulnerable to 'CVE-2023-45288' (also known as 'BIT-golang-2023-45288', 'GO-2024-2687').",
+      "message": "Package 'golang.org/x/net@0.0.0-20200324143707-d3edc9973b7e' is vulnerable to 'CVE-2023-45288' (also known as 'BIT-golang-2023-45288', 'GO-2024-2687', 'GHSA-4v7x-pqxf-cx7m').",
       "ruleKey": "CVE-2023-45288",
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-45288",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "go.mod",
       },
-      "message": "Package 'stdlib@1.13' is vulnerable to 'CVE-2023-45288' (also known as 'BIT-golang-2023-45288', 'GO-2024-2687').",
+      "message": "Package 'stdlib@1.13' is vulnerable to 'CVE-2023-45288' (also known as 'BIT-golang-2023-45288', 'GO-2024-2687', 'GHSA-4v7x-pqxf-cx7m').",
       "ruleKey": "CVE-2023-45288",
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-45289",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1716,7 +1687,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-45290",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1727,7 +1698,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-48795",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1738,7 +1709,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-48795",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1749,7 +1720,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-49568",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1760,7 +1731,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-49568",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1771,7 +1742,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-49569",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1782,7 +1753,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2023-49569",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1793,7 +1764,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2024-24783",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1804,7 +1775,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2024-24784",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1815,7 +1786,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2024-24785",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1826,7 +1797,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2024-27289",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1837,7 +1808,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2024-27304",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1848,7 +1819,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2024-28180",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1859,7 +1830,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/GO-2023-2153",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -1870,7 +1841,7 @@ exports[`linter=osv-scanner fixture=go version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/GO-2023-2153",
       "level": "LEVEL_MEDIUM",
       "location": {

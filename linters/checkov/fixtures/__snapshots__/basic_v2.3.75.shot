@@ -4,8 +4,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -20,8 +20,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -36,8 +36,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -52,8 +52,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -68,8 +68,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -84,8 +84,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -100,8 +100,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -116,8 +116,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -132,8 +132,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -148,8 +148,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -164,8 +164,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -180,8 +180,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -196,8 +196,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -212,8 +212,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
@@ -228,8 +228,8 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       "tool": "checkov",
     },
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
         "range": {
