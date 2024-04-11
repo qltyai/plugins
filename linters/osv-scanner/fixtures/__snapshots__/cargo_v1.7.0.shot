@@ -4,7 +4,7 @@ exports[`linter=osv-scanner fixture=cargo version=1.7.0 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2024-27308",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -15,7 +15,7 @@ exports[`linter=osv-scanner fixture=cargo version=1.7.0 1`] = `
       "tool": "osv-scanner",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_VULNERABILITY",
       "documentationUrl": "https://osv.dev/CVE-2024-27308",
       "level": "LEVEL_MEDIUM",
       "location": {

@@ -4,8 +4,8 @@ exports[`linter=gitleaks fixture=basic version=8.8.7 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_LOW",
+      "category": "CATEGORY_VULNERABILITY",
+      "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.py",
         "range": {
