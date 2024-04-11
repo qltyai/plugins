@@ -60,5 +60,6 @@ script = "osv-scanner --lockfile=${target} --format sarif"
 success_codes = [0, 1, 128]
 output = "stdout"
 output_format = "sarif"
+output_category = "vulnerability"
 cache_results = true
 batch = false

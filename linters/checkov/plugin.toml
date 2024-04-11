@@ -14,4 +14,6 @@ script = "checkov --output sarif --output-file-path ${tmpfile}, --soft-fail --qu
 success_codes = [0]
 output = "tmpfile"
 output_format = "sarif"
+output_category = "vulnerability"
+output_level = "medium"
 batch = false
