@@ -9,15 +9,15 @@ strip_components = 0
 releases = ["dotenv-linter"]
 version_command = "dotenv-linter --version"
 
-[plugins.definitions.dotenv-linter.drivers.lint]
-file_types = ["dotenv"]
-script = "dotenv-linter --quiet ${target}"
-success_codes = [0,1]
-output = "stdout"
-output_format = "regex"
-output_regex = "((?P<path>.*):(?P<line>-?\\d+) (?P<code>\\S+): (?P<message>.+))\n"
-cache_results = true
-batch = true
+# [plugins.definitions.dotenv-linter.drivers.lint]
+# file_types = ["dotenv"]
+# script = "dotenv-linter --quiet ${target}"
+# success_codes = [0,1]
+# output = "stdout"
+# output_format = "regex"
+# output_regex = "((?P<path>.*):(?P<line>-?\\d+) (?P<code>\\S+): (?P<message>.+))\n"
+# cache_results = true
+# batch = true
 
 [plugins.definitions.dotenv-linter.drivers.format]
 file_types = ["dotenv"]
