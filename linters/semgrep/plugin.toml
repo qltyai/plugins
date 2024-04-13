@@ -8,6 +8,8 @@ config_files = [".semgrep.yaml"]
 #       affects_cache:
 #         - .semgrepignore
 #         - .semgrep
+latest_version = "1.68.0"
+known_good_version = "1.40.0"
 version_command = "semgrep --version"
 recommended = false
 

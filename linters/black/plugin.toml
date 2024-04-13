@@ -4,6 +4,8 @@ config_version = "0"
 runtime = "python"
 package = "black"                   # TODO: black[python2,jupyter]
 file_types = ["python"]             # TODO: jupyter
+latest_version = "24.4.0"
+known_good_version = "22.3.0"
 version_command = "black --version"
 recommended = true
 
