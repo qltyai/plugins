@@ -8,7 +8,7 @@ strip_components = 0
 [plugins.definitions.trivy]
 releases = ["trivy"]
 config_files = ["trivy.yaml", "trivy-secret.yaml"]
-suggested = "files"
+suggested = "targets"
 latest_version = "0.50.1"
 known_good_version = "0.50.1"
 version_command = "trivy --version"
