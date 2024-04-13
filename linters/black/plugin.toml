@@ -2,8 +2,10 @@ config_version = "0"
 
 [plugins.definitions.black]
 runtime = "python"
-package = "black"                   # TODO: black[python2,jupyter]
-file_types = ["python"]             # TODO: jupyter
+package = "black"
+file_types = ["python"]
+affects_cache = ["pyproject.toml"]
+suggested = "never"
 latest_version = "24.4.0"
 known_good_version = "22.3.0"
 version_command = "black --version"
@@ -17,6 +19,4 @@ cache_results = true
 batch = true
 driver_type = "formatter"
 
-# in_place: true
-# allow_empty_files: false
-# affects_cache: [pyproject.toml]
+# TODO: allow_empty_files: false

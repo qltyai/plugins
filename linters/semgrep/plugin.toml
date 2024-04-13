@@ -4,10 +4,8 @@ config_version = "0"
 runtime = "python"
 package = "semgrep"
 file_types = ["ALL"]
-config_files = [".semgrep.yaml"]
-#       affects_cache:
-#         - .semgrepignore
-#         - .semgrep
+config_files = [".semgrep.yaml", ".semgrepignore", ".semgrep"]
+suggested = "config"
 latest_version = "1.68.0"
 known_good_version = "1.40.0"
 version_command = "semgrep --version"

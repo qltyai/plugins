@@ -4,6 +4,7 @@ config_version = "0"
 runtime = "python"
 package = "checkov"
 file_types = ["docker", "terraform", "yaml", "json"]
+suggested = "targets"
 latest_version = "3.2.60"
 known_good_version = "3.2.49"
 version_command = "checkov --version"

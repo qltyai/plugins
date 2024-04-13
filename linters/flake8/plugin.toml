@@ -5,6 +5,8 @@ runtime = "python"
 package = "flake8"
 file_types = ["python"]
 config_files = [".flake8"]
+affects_cache = ["setup.cfg", "tox.ini"]
+suggested = "configs"
 latest_version = "7.0.0"
 known_good_version = "6.1.0"
 version_command = "flake8 --version"
@@ -19,7 +21,5 @@ output_format = "regex"
 output_regex = "((?P<path>.*):(?P<line>-?\\d+):(?P<col>-?\\d+): (?P<code>\\S+) (?P<message>.+))\n"
 cache_results = true
 batch = true
-# run_linter_from: parent_directory
-#   affects_cache:
-#     - setup.cfg
-#     - tox.ini
+
+# TODO: run_linter_from: parent_directory

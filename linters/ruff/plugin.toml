@@ -4,6 +4,7 @@ config_version = "0"
 runtime = "python"
 package = "ruff"
 file_types = ["python"]
+suggested = "targets"
 latest_version = "0.3.7"
 known_good_version = "0.3.3"
 version_command = "ruff version"
