@@ -8,6 +8,7 @@ strip_components = 0
 [plugins.definitions.actionlint]
 releases = ["actionlint"]
 config_files = [".github/actionlint.yaml", ".github/actionlint.yml"]
+suggested = "targets"
 latest_version = "1.6.27"
 known_good_version = "1.6.27"
 version_command = "actionlint --version"
