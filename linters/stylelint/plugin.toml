@@ -12,6 +12,8 @@ config_files = [
   ".stylelintrc.yaml",
   ".stylelintrc.yml",
 ]
+latest_version = "16.3.1"
+known_good_version = "14.6.1"
 version_command = "stylelint --version"
 
 [plugins.definitions.stylelint.drivers.lint]

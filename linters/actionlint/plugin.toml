@@ -8,6 +8,8 @@ strip_components = 0
 [plugins.definitions.actionlint]
 releases = ["actionlint"]
 config_files = [".github/actionlint.yaml", ".github/actionlint.yml"]
+latest_version = "1.6.27"
+known_good_version = "1.6.27"
 version_command = "actionlint --version"
 issue_url_format = "https://github.com/rhysd/actionlint/blob/main/docs/checks.md"
 

@@ -12,6 +12,8 @@ config_files = [
   ".eslintrc.yaml",
   ".eslintrc.yml",
 ]
+latest_version = "9.0.0"
+known_good_version = "8.57.0"
 version_command = "eslint --version"
 
 # direct_configs:

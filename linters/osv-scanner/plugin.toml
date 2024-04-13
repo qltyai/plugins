@@ -51,6 +51,8 @@ strip_components = 0
 [plugins.definitions.osv-scanner]
 releases = ["osv-scanner"]
 config_files = ["osv-scanner.toml"]
+latest_version = "1.7.0"
+known_good_version = "1.7.0"
 version_command = "osv-scanner --version"
 issue_url_format = "https://osv.dev/${rule}"
 
