@@ -12,7 +12,7 @@ exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
         "range": {
           "endColumn": 10,
           "endLine": 3,
-          "startColumn": 3,
+          "startColumn": 5,
           "startLine": 3,
         },
       },
@@ -29,7 +29,7 @@ exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
         "range": {
           "endColumn": 10,
           "endLine": 3,
-          "startColumn": 3,
+          "startColumn": 5,
           "startLine": 3,
         },
       },
@@ -46,7 +46,7 @@ exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
         "range": {
           "endColumn": 6,
           "endLine": 3,
-          "startColumn": 3,
+          "startColumn": 5,
           "startLine": 3,
         },
       },
