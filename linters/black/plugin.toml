@@ -9,7 +9,6 @@ suggested = "never"
 latest_version = "24.4.0"
 known_good_version = "22.3.0"
 version_command = "black --version"
-recommended = true
 
 [plugins.definitions.black.drivers.format]
 script = "black -q ${target}"

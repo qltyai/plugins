@@ -9,7 +9,6 @@ latest_version = "3.0.4"
 known_good_version = "3.0.0"
 version_command = "sqlfluff --version"
 config_files = [".sqlfluff"]
-recommended = false
 affects_cache = ["pyproject.toml"]
 
 [plugins.definitions.sqlfluff.drivers.lint]

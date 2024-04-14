@@ -13,7 +13,6 @@ latest_version = "8.18.2"
 known_good_version = "8.18.2"
 version_command = "gitleaks version"
 config_files = [".gitleaks.toml", ".gitleaks.config"]
-recommended = false
 
 [plugins.definitions.gitleaks.drivers.lint]
 script = "gitleaks detect --no-git --source=${target} --exit-code=101 -f sarif -r \"${tmpfile}\""

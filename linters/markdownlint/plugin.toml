@@ -9,7 +9,6 @@ suggested = "targets"
 latest_version = "0.39.0"
 known_good_version = "0.31.1"
 version_command = "markdownlint --version"
-recommended = true
 
 [plugins.definitions.markdownlint.drivers.lint]
 script = "markdownlint --json ${target}"

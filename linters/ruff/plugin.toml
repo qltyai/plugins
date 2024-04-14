@@ -9,7 +9,6 @@ latest_version = "0.3.7"
 known_good_version = "0.3.3"
 version_command = "ruff version"
 config_files = ["ruff.toml"]
-recommended = false
 issue_url_format = "https://docs.astral.sh/ruff/rules/${rule}"
 
 [plugins.definitions.ruff.drivers.format]

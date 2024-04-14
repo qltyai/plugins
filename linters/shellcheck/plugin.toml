@@ -13,7 +13,6 @@ suggested = "targets"
 latest_version = "0.10.0"
 known_good_version = "0.9.0"
 version_command = "shellcheck --version"
-recommended = true
 issue_url_format = "https://github.com/koalaman/shellcheck/wiki/SC${rule}"
 
 [plugins.definitions.shellcheck.drivers.lint]

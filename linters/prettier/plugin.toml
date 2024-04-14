@@ -19,9 +19,7 @@ suggested = "config"
 latest_version = "3.2.5"
 known_good_version = "2.8.4"
 version_command = "prettier --version"
-recommended = true
 config_files = [
-  ".prettierignore",
   ".prettierrc.cjs",
   ".prettierrc.js",
   ".prettierrc.json",
@@ -33,7 +31,7 @@ config_files = [
   "prettier.config.cjs",
   "prettier.config.js",
 ]
-affects_cache = ["package.json", ".editorconfig"]
+affects_cache = ["package.json", ".editorconfig", ".prettierignore"]
 
 [plugins.definitions.prettier.drivers.format]
 script = "prettier -w ${target}"

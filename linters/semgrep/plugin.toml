@@ -9,7 +9,6 @@ suggested = "config"
 latest_version = "1.68.0"
 known_good_version = "1.40.0"
 version_command = "semgrep --version"
-recommended = false
 
 [plugins.definitions.semgrep.drivers.lint]
 script = "semgrep --metrics=off --disable-version-check --config .semgrep.yaml --sarif --output=${tmpfile} ${target}"
