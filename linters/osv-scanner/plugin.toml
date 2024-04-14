@@ -54,11 +54,11 @@ config_files = ["osv-scanner.toml"]
 suggested = "targets"
 latest_version = "1.7.0"
 known_good_version = "1.7.0"
+file_types = ["osv-scanner"]
 version_command = "osv-scanner --version"
 issue_url_format = "https://osv.dev/${rule}"
 
 [plugins.definitions.osv-scanner.drivers.lint]
-file_types = ["osv-scanner"]
 script = "osv-scanner --lockfile=${target} --format sarif"
 success_codes = [0, 1, 128]
 output = "stdout"

@@ -14,6 +14,7 @@ known_good_version = "0.50.1"
 version_command = "trivy --version"
 
 [plugins.definitions.trivy.drivers.fs-vuln]
+# Defining file_types at driver level since each works with different files
 file_types = ["lockfile"]
 script = "trivy fs ${target} --scanners vuln --format sarif --no-progress"
 success_codes = [0]
@@ -23,6 +24,7 @@ cache_results = true
 batch = false
 
 [plugins.definitions.trivy.drivers.fs-secret]
+# Defining file_types at driver level since each works with different files
 file_types = ["ALL"]
 script = "trivy fs ${target} --scanners secret --format sarif --no-progress"
 success_codes = [0]
@@ -32,6 +34,7 @@ cache_results = true
 batch = false
 
 [plugins.definitions.trivy.drivers.config]
+# Defining file_types at driver level since each works with different files
 file_types = ["docker", "yaml", "terraform"]
 script = "trivy config ${target} --format sarif"
 success_codes = [0]
