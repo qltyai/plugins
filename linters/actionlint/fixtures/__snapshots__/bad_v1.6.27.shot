@@ -18,6 +18,7 @@ exports[`linter=actionlint fixture=bad version=1.6.27 1`] = `
       },
       "message": "invalid CRON format "0 */3 * *" in schedule event: expected exactly 5 fields, found 4: [0 */3 * *]",
       "ruleKey": "events",
+      "snippet": "    - cron: '0 */3 * *'",
       "tool": "actionlint",
     },
     {
@@ -35,6 +36,7 @@ exports[`linter=actionlint fixture=bad version=1.6.27 1`] = `
       },
       "message": "scheduled job runs too frequently. it runs once per 60 seconds. the shortest interval is once every 5 minutes",
       "ruleKey": "events",
+      "snippet": "    - cron: '* */3 * * *'",
       "tool": "actionlint",
     },
   ],

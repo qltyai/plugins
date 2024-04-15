@@ -17,6 +17,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       },
       "message": "Column expression without alias. Use explicit \`AS\` clause.",
       "ruleKey": "AL03",
+      "snippet": "SELECT",
       "tool": "sqlfluff",
     },
     {
@@ -33,6 +34,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       },
       "message": "Query produces an unknown number of result columns.",
       "ruleKey": "AM04",
+      "snippet": "SELECT",
       "tool": "sqlfluff",
     },
     {
@@ -49,6 +51,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       },
       "message": "Keywords must be consistently upper case.",
       "ruleKey": "CP01",
+      "snippet": "SELECT",
       "tool": "sqlfluff",
     },
     {
@@ -65,6 +68,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       },
       "message": "Keywords must be consistently upper case.",
       "ruleKey": "CP01",
+      "snippet": "SELECT",
       "tool": "sqlfluff",
     },
     {
@@ -81,6 +85,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       },
       "message": "Keywords must be consistently upper case.",
       "ruleKey": "CP01",
+      "snippet": "SELECT",
       "tool": "sqlfluff",
     },
     {
@@ -97,6 +102,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       },
       "message": "Unquoted identifiers must be consistently lower case.",
       "ruleKey": "CP02",
+      "snippet": "SELECT",
       "tool": "sqlfluff",
     },
     {
@@ -113,6 +119,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       },
       "message": "Unquoted identifiers must be consistently lower case.",
       "ruleKey": "CP02",
+      "snippet": "SELECT",
       "tool": "sqlfluff",
     },
     {
@@ -129,6 +136,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       },
       "message": "Unquoted identifiers must be consistently lower case.",
       "ruleKey": "CP02",
+      "snippet": "SELECT",
       "tool": "sqlfluff",
     },
     {
@@ -145,6 +153,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       },
       "message": "Expected only single space before 'from' keyword. Found '  '.",
       "ruleKey": "LT01",
+      "snippet": "SELECT",
       "tool": "sqlfluff",
     },
     {
@@ -161,6 +170,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       },
       "message": "Expected only single space before naked identifier. Found '  '.",
       "ruleKey": "LT01",
+      "snippet": "SELECT",
       "tool": "sqlfluff",
     },
     {
@@ -177,6 +187,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       },
       "message": "Expected only single space before star '*'. Found '  '.",
       "ruleKey": "LT01",
+      "snippet": "SELECT",
       "tool": "sqlfluff",
     },
     {
@@ -193,6 +204,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
       },
       "message": "Select targets should be on a new line unless there is only one select target.",
       "ruleKey": "LT09",
+      "snippet": "SELECT",
       "tool": "sqlfluff",
     },
     {

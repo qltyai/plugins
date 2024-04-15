@@ -17,6 +17,9 @@ exports[`linter=semgrep fixture=basic version=1.40.0 1`] = `
       },
       "message": "Derive the \`Clone\` trait for struct Foo if possible",
       "ruleKey": "derive-clone",
+      "snippet": "struct Foo {
+    bar: i32,
+}",
       "tool": "semgrep",
     },
   ],

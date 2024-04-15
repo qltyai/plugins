@@ -18,6 +18,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
       },
       "message": "ModuleImportNotAtTopOfFile",
       "ruleKey": "E402",
+      "snippet": "import sys",
       "tool": "ruff",
     },
     {
@@ -35,6 +36,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
       },
       "message": "ModuleImportNotAtTopOfFile",
       "ruleKey": "E402",
+      "snippet": "import json",
       "tool": "ruff",
     },
     {
@@ -52,6 +54,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
       },
       "message": "UnusedImport",
       "ruleKey": "F401",
+      "snippet": "import sys",
       "tool": "ruff",
     },
     {
@@ -69,6 +72,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
       },
       "message": "UnusedImport",
       "ruleKey": "F401",
+      "snippet": "import json",
       "tool": "ruff",
     },
   ],

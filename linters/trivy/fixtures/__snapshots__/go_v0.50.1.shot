@@ -7,6 +7,7 @@ Child Object Structure: {
   "message": "string",
   "level": "string",
   "category": "string",
+  "snippet": "string",
   "documentationUrl": "string",
   "location": {
     "path": "string",

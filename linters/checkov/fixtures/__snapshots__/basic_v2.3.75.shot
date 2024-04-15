@@ -17,6 +17,19 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure AWS IAM policy does not allow full IAM privileges",
       "ruleKey": "CKV2_AWS_40",
+      "snippet": "data "aws_iam_policy_document" "fail" {
+  version = "2012-10-17"
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -33,6 +46,19 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure IAM policies that allow full "*-*" administrative privileges are not created",
       "ruleKey": "CKV_AWS_1",
+      "snippet": "data "aws_iam_policy_document" "fail" {
+  version = "2012-10-17"
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -49,6 +75,18 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure IAM policies that allow full "*-*" administrative privileges are not created",
       "ruleKey": "CKV_AWS_1",
+      "snippet": "data "aws_iam_policy_document" "no_effect" {
+  version = "2012-10-17"
+
+  statement {
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -65,6 +103,19 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure IAM policies does not allow credentials exposure",
       "ruleKey": "CKV_AWS_107",
+      "snippet": "data "aws_iam_policy_document" "fail" {
+  version = "2012-10-17"
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -81,6 +132,18 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure IAM policies does not allow credentials exposure",
       "ruleKey": "CKV_AWS_107",
+      "snippet": "data "aws_iam_policy_document" "no_effect" {
+  version = "2012-10-17"
+
+  statement {
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -97,6 +160,19 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure IAM policies does not allow data exfiltration",
       "ruleKey": "CKV_AWS_108",
+      "snippet": "data "aws_iam_policy_document" "fail" {
+  version = "2012-10-17"
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -113,6 +189,18 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure IAM policies does not allow data exfiltration",
       "ruleKey": "CKV_AWS_108",
+      "snippet": "data "aws_iam_policy_document" "no_effect" {
+  version = "2012-10-17"
+
+  statement {
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -129,6 +217,19 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure IAM policies does not allow permissions management / resource exposure without constraints",
       "ruleKey": "CKV_AWS_109",
+      "snippet": "data "aws_iam_policy_document" "fail" {
+  version = "2012-10-17"
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -145,6 +246,18 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure IAM policies does not allow permissions management / resource exposure without constraints",
       "ruleKey": "CKV_AWS_109",
+      "snippet": "data "aws_iam_policy_document" "no_effect" {
+  version = "2012-10-17"
+
+  statement {
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -161,6 +274,19 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure IAM policies does not allow privilege escalation",
       "ruleKey": "CKV_AWS_110",
+      "snippet": "data "aws_iam_policy_document" "fail" {
+  version = "2012-10-17"
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -177,6 +303,18 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure IAM policies does not allow privilege escalation",
       "ruleKey": "CKV_AWS_110",
+      "snippet": "data "aws_iam_policy_document" "no_effect" {
+  version = "2012-10-17"
+
+  statement {
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -193,6 +331,19 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure IAM policies does not allow write access without constraints",
       "ruleKey": "CKV_AWS_111",
+      "snippet": "data "aws_iam_policy_document" "fail" {
+  version = "2012-10-17"
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -209,6 +360,18 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure IAM policies does not allow write access without constraints",
       "ruleKey": "CKV_AWS_111",
+      "snippet": "data "aws_iam_policy_document" "no_effect" {
+  version = "2012-10-17"
+
+  statement {
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -225,6 +388,19 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure no IAM policies documents allow "*" as a statement's actions",
       "ruleKey": "CKV_AWS_49",
+      "snippet": "data "aws_iam_policy_document" "fail" {
+  version = "2012-10-17"
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
     {
@@ -241,6 +417,18 @@ exports[`linter=checkov fixture=basic version=2.3.75 1`] = `
       },
       "message": "Ensure no IAM policies documents allow "*" as a statement's actions",
       "ruleKey": "CKV_AWS_49",
+      "snippet": "data "aws_iam_policy_document" "no_effect" {
+  version = "2012-10-17"
+
+  statement {
+    actions = [
+      "*"
+    ]
+    resources = [
+      "*",
+    ]
+  }
+}",
       "tool": "checkov",
     },
   ],
