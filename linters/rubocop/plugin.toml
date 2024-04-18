@@ -1,0 +1,27 @@
+config_version = "0"
+
+[plugins.definitions.rubocop]
+runtime = "ruby"
+package = "rubocop"
+file_types = ["ruby", "gemspec"]
+suggested = "config"
+latest_version = "1.63.2"
+known_good_version = "1.63.2"
+version_command = "rubocop --version"
+config_files = [".rubocop.yml"]
+
+[plugins.definitions.rubocop.drivers.lint]
+script = "rubocop --format json ${target}"
+success_codes = [0, 1]
+output = "stdout"
+output_format = "rubocop"
+batch = true
+cache_results = true
+
+[plugins.definitions.rubocop.drivers.format]
+script = "rubocop --fix-layout ${target}"
+success_codes = [0, 1]
+output = "rewrite"
+cache_results = true
+batch = true
+driver_type = "formatter"
