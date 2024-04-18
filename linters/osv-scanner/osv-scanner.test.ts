@@ -1,3 +1,3 @@
-import { linterCheckTest } from "tests";
+import { linterStructureTest } from "tests";
 
-linterCheckTest("osv-scanner", __dirname);
+linterStructureTest("osv-scanner", __dirname);
