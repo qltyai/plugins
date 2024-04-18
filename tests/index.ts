@@ -73,8 +73,13 @@ export const linterStructureTest = (
 ) => runLinterTest(linterName, dirname, (testRunResult, snapshotPath) => {
   addSerializer({
     test: () => true,
-    print: (val: any) =>
-      `Child Object Structure: ${serializeStructure(val[0])}`,
+    print: (val: any) => {
+      if (val[0]){
+        return `Child Object Structure: ${serializeStructure(val[0])}`
+      } else {
+        return 'No issues found.'
+      }
+    }
   });
 
   expect(
