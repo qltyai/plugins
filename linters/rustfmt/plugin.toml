@@ -1,0 +1,20 @@
+config_version = "0"
+
+[plugins.definitions.rustfmt]
+runtime = "rust"
+package = "rustfmt"
+file_types = ["rust"]
+suggested = "targets"
+latest_version = "1.7.0"
+known_good_version = "1.7.0"
+version_command = "rustfmt --version"
+config_files = ["rustfmt.toml", ".rustfmt.toml"]
+affects_cache = ["Cargo.toml", "Cargo.lock"]
+
+[plugins.definitions.rustfmt.drivers.format]
+script = "rustfmt ${target}"
+success_codes = [0]
+output = "rewrite"
+batch = true
+driver_type = "formatter"
+cache_results = true
