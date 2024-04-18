@@ -1,0 +1,22 @@
+config_version = "0"
+
+[plugins.releases.trufflehog]
+github = "trufflesecurity/trufflehog"
+download_type = "targz"
+strip_components = 0
+
+[plugins.definitions.trufflehog]
+releases = ["trufflehog"]
+file_types = ["ALL"]
+suggested = "targets"
+latest_version = "3.73.0"
+known_good_version = "3.73.0"
+version_command = "trufflehog --version"
+
+[plugins.definitions.trufflehog.drivers.lint]
+script = "trufflehog filesystem --json --fail --only-verified --no-update ${target}"
+success_codes = [0, 183]
+output = "stdout"
+output_format = "trufflehog"
+cache_results = true
+batch = true
