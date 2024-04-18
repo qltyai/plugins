@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest-16-cores, macos-latest-xlarge]
     runs-on: ${{ matrix.os }}
