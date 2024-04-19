@@ -17,6 +17,10 @@ exports[`linter=flake8 fixture=basic version=6.1.0 1`] = `
       "message": "expected 2 blank lines after class or function definition, found 1",
       "ruleKey": "E305",
       "snippet": "import foo",
+      "snippetWithContext": "def main():
+    pass
+
+import foo",
       "tool": "flake8",
     },
     {
@@ -33,6 +37,10 @@ exports[`linter=flake8 fixture=basic version=6.1.0 1`] = `
       "message": "module level import not at top of file",
       "ruleKey": "E402",
       "snippet": "import foo",
+      "snippetWithContext": "def main():
+    pass
+
+import foo",
       "tool": "flake8",
     },
     {
@@ -49,6 +57,10 @@ exports[`linter=flake8 fixture=basic version=6.1.0 1`] = `
       "message": "'foo' imported but unused",
       "ruleKey": "F401",
       "snippet": "import foo",
+      "snippetWithContext": "def main():
+    pass
+
+import foo",
       "tool": "flake8",
     },
   ],

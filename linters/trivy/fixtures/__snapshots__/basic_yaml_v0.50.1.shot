@@ -8,6 +8,7 @@ Child Object Structure: {
   "level": "string",
   "category": "string",
   "snippet": "string",
+  "snippetWithContext": "string",
   "documentationUrl": "string",
   "location": {
     "path": "string",
