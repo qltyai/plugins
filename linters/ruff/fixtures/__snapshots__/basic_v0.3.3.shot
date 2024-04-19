@@ -19,6 +19,23 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
       "message": "ModuleImportNotAtTopOfFile",
       "ruleKey": "E402",
       "snippet": "import sys",
+      "snippetWithContext": "def main():
+    try:
+        pass
+    except (Exception, TypeError):
+        pass
+
+import sys
+# trunk-ignore(ruff/F401)
+import json
+
+class NoDocstring(object):
+    def __init__(self, arg1):
+        self._attr1 = arg1
+
+class Globe(object):
+    def __init__(self):
+        self.shape = 'spheroid'",
       "tool": "ruff",
     },
     {
@@ -37,6 +54,23 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
       "message": "ModuleImportNotAtTopOfFile",
       "ruleKey": "E402",
       "snippet": "import json",
+      "snippetWithContext": "def main():
+    try:
+        pass
+    except (Exception, TypeError):
+        pass
+
+import sys
+# trunk-ignore(ruff/F401)
+import json
+
+class NoDocstring(object):
+    def __init__(self, arg1):
+        self._attr1 = arg1
+
+class Globe(object):
+    def __init__(self):
+        self.shape = 'spheroid'",
       "tool": "ruff",
     },
     {
@@ -55,6 +89,23 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
       "message": "UnusedImport",
       "ruleKey": "F401",
       "snippet": "import sys",
+      "snippetWithContext": "def main():
+    try:
+        pass
+    except (Exception, TypeError):
+        pass
+
+import sys
+# trunk-ignore(ruff/F401)
+import json
+
+class NoDocstring(object):
+    def __init__(self, arg1):
+        self._attr1 = arg1
+
+class Globe(object):
+    def __init__(self):
+        self.shape = 'spheroid'",
       "tool": "ruff",
     },
     {
@@ -73,6 +124,23 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
       "message": "UnusedImport",
       "ruleKey": "F401",
       "snippet": "import json",
+      "snippetWithContext": "def main():
+    try:
+        pass
+    except (Exception, TypeError):
+        pass
+
+import sys
+# trunk-ignore(ruff/F401)
+import json
+
+class NoDocstring(object):
+    def __init__(self, arg1):
+        self._attr1 = arg1
+
+class Globe(object):
+    def __init__(self):
+        self.shape = 'spheroid'",
       "tool": "ruff",
     },
   ],

@@ -19,6 +19,10 @@ exports[`linter=shellcheck fixture=basic version=0.8.0 1`] = `
       "message": "Double quote to prevent globbing and word splitting.",
       "ruleKey": "2086",
       "snippet": "echo $x",
+      "snippetWithContext": "#!/bin/sh
+
+x = 1
+echo $x",
       "tool": "shellcheck",
     },
     {
@@ -37,6 +41,10 @@ exports[`linter=shellcheck fixture=basic version=0.8.0 1`] = `
       "message": "x is referenced but not assigned.",
       "ruleKey": "2154",
       "snippet": "echo $x",
+      "snippetWithContext": "#!/bin/sh
+
+x = 1
+echo $x",
       "tool": "shellcheck",
     },
     {
@@ -55,6 +63,10 @@ exports[`linter=shellcheck fixture=basic version=0.8.0 1`] = `
       "message": "Remove spaces around = to assign (or use [ ] to compare, or quote '=' if literal).",
       "ruleKey": "2283",
       "snippet": "x = 1",
+      "snippetWithContext": "#!/bin/sh
+
+x = 1
+echo $x",
       "tool": "shellcheck",
     },
   ],

@@ -19,6 +19,11 @@ exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
       "message": "Expected a conditional expression and instead saw an assignment.",
       "ruleKey": "no-cond-assign",
       "snippet": "if (x = 2) {",
+      "snippetWithContext": "let x = 1;
+
+if (x = 2) {
+  console.log('hi');
+}",
       "tool": "eslint",
     },
     {
@@ -37,6 +42,11 @@ exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
       "message": "Unexpected constant condition.",
       "ruleKey": "no-constant-condition",
       "snippet": "if (x = 2) {",
+      "snippetWithContext": "let x = 1;
+
+if (x = 2) {
+  console.log('hi');
+}",
       "tool": "eslint",
     },
     {
@@ -55,6 +65,11 @@ exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
       "message": "'x' is assigned a value but never used.",
       "ruleKey": "no-unused-vars",
       "snippet": "if (x = 2) {",
+      "snippetWithContext": "let x = 1;
+
+if (x = 2) {
+  console.log('hi');
+}",
       "tool": "eslint",
     },
   ],

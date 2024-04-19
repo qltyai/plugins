@@ -20,6 +20,9 @@ exports[`linter=semgrep fixture=basic version=1.40.0 1`] = `
       "snippet": "struct Foo {
     bar: i32,
 }",
+      "snippetWithContext": "struct Foo {
+    bar: i32,
+}",
       "tool": "semgrep",
     },
   ],
