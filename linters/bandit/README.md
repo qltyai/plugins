@@ -24,7 +24,7 @@ bandit = "X.Y.Z"
 
 ## Auto-enabling
 
-Bandit will be automatically enabled by `qlty init` if a `.bandit` configuration file is present.
+Bandit will be automatically enabled when python files are present.
 
 ## Configuration files
 
