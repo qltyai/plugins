@@ -17,12 +17,17 @@ exports[`linter=rubocop fixture=basic version=1.63.2 1`] = `
       },
       "message": "Extra blank line detected.",
       "ruleKey": "Layout/EmptyLines",
-      "snippet": "  def smooth; end
-end",
-      "snippetWithContext": "class Plumbus
+      "snippet": "
+",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth; end
+
+
+
+
+
+ def smooth; end
 end
 
 Klass.(
@@ -45,12 +50,17 @@ Klass.(
       },
       "message": "Extra blank line detected.",
       "ruleKey": "Layout/EmptyLines",
-      "snippet": "end
+      "snippet": "
 ",
-      "snippetWithContext": "class Plumbus
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth; end
+
+
+
+
+
+ def smooth; end
 end
 
 Klass.(
@@ -74,11 +84,16 @@ Klass.(
       "message": "Extra blank line detected.",
       "ruleKey": "Layout/EmptyLines",
       "snippet": "
-Klass.(",
-      "snippetWithContext": "class Plumbus
+",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth; end
+
+
+
+
+
+ def smooth; end
 end
 
 Klass.(
@@ -101,12 +116,17 @@ Klass.(
       },
       "message": "Extra blank line detected.",
       "ruleKey": "Layout/EmptyLines",
-      "snippet": "Klass.(
-  key_1: 'hello',",
-      "snippetWithContext": "class Plumbus
+      "snippet": "
+",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth; end
+
+
+
+
+
+ def smooth; end
 end
 
 Klass.(
@@ -129,12 +149,17 @@ Klass.(
       },
       "message": "Extra blank line detected.",
       "ruleKey": "Layout/EmptyLines",
-      "snippet": "  key_1: 'hello',
-  key_2: 'world'",
-      "snippetWithContext": "class Plumbus
+      "snippet": "
+ def smooth; end",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth; end
+
+
+
+
+
+ def smooth; end
 end
 
 Klass.(
@@ -157,17 +182,18 @@ Klass.(
       },
       "message": "Unnecessary spacing detected.",
       "ruleKey": "Layout/ExtraSpacing",
-      "snippet": "class Plumbus",
-      "snippetWithContext": "class Plumbus
+      "snippet": "class        Plumbus",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth; end
-end
 
-Klass.(
-  key_1: 'hello',
-  key_2: 'world'
-)",
+
+
+
+
+ def smooth; end
+end
+",
       "tool": "rubocop",
     },
     {
@@ -184,11 +210,16 @@ Klass.(
       },
       "message": "Inconsistent indentation detected.",
       "ruleKey": "Layout/IndentationConsistency",
-      "snippet": "  key_2: 'world'",
-      "snippetWithContext": "class Plumbus
+      "snippet": " def smooth; end",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth; end
+
+
+
+
+
+ def smooth; end
 end
 
 Klass.(
@@ -211,11 +242,16 @@ Klass.(
       },
       "message": "Use 2 (not 1) spaces for indentation.",
       "ruleKey": "Layout/IndentationWidth",
-      "snippet": "  key_2: 'world'",
-      "snippetWithContext": "class Plumbus
+      "snippet": " def smooth; end",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth; end
+
+
+
+
+
+ def smooth; end
 end
 
 Klass.(
@@ -238,8 +274,14 @@ Klass.(
       },
       "message": "Use normalcase for symbol numbers.",
       "ruleKey": "Naming/VariableNumber",
+      "snippet": "  key_1: 'hello',",
       "snippetWithContext": "
-  def smooth; end
+
+
+
+
+
+ def smooth; end
 end
 
 Klass.(
@@ -262,7 +304,13 @@ Klass.(
       },
       "message": "Use normalcase for symbol numbers.",
       "ruleKey": "Naming/VariableNumber",
-      "snippetWithContext": "  def smooth; end
+      "snippet": "  key_2: 'world'",
+      "snippetWithContext": "
+
+
+
+
+ def smooth; end
 end
 
 Klass.(
@@ -285,17 +333,18 @@ Klass.(
       },
       "message": "Missing top-level documentation comment for \`class Plumbus\`.",
       "ruleKey": "Style/Documentation",
-      "snippet": "class Plumbus",
-      "snippetWithContext": "class Plumbus
+      "snippet": "class        Plumbus",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth; end
-end
 
-Klass.(
-  key_1: 'hello',
-  key_2: 'world'
-)",
+
+
+
+
+ def smooth; end
+end
+",
       "tool": "rubocop",
     },
     {
@@ -312,17 +361,18 @@ Klass.(
       },
       "message": "Missing frozen string literal comment.",
       "ruleKey": "Style/FrozenStringLiteralComment",
-      "snippet": "class Plumbus",
-      "snippetWithContext": "class Plumbus
+      "snippet": "class        Plumbus",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth; end
-end
 
-Klass.(
-  key_1: 'hello',
-  key_2: 'world'
-)",
+
+
+
+
+ def smooth; end
+end
+",
       "tool": "rubocop",
     },
     {
@@ -343,9 +393,18 @@ Klass.(
   key_2: 'world'
 )\`.",
       "ruleKey": "Style/LambdaCall",
+      "snippet": "Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "snippetWithContext": "  private
 
-  def smooth; end
+
+
+
+
+
+ def smooth; end
 end
 
 Klass.(

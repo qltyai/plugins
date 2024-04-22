@@ -17,17 +17,23 @@ exports[`linter=standardrb fixture=basic version=1.31.0 1`] = `
       },
       "message": "Extra blank line detected.",
       "ruleKey": "Layout/EmptyLines",
-      "snippet": "  def smooth
-  end",
-      "snippetWithContext": "class Plumbus
+      "snippet": "
+",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth
-  end
+
+
+
+
+
+ def smooth; end
 end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "tool": "rubocop",
     },
     {
@@ -44,17 +50,23 @@ Klass.call(key_1: "hello",
       },
       "message": "Extra blank line detected.",
       "ruleKey": "Layout/EmptyLines",
-      "snippet": "  end
-end",
-      "snippetWithContext": "class Plumbus
+      "snippet": "
+",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth
-  end
+
+
+
+
+
+ def smooth; end
 end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "tool": "rubocop",
     },
     {
@@ -71,17 +83,23 @@ Klass.call(key_1: "hello",
       },
       "message": "Extra blank line detected.",
       "ruleKey": "Layout/EmptyLines",
-      "snippet": "end
+      "snippet": "
 ",
-      "snippetWithContext": "class Plumbus
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth
-  end
+
+
+
+
+
+ def smooth; end
 end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "tool": "rubocop",
     },
     {
@@ -99,16 +117,22 @@ Klass.call(key_1: "hello",
       "message": "Extra blank line detected.",
       "ruleKey": "Layout/EmptyLines",
       "snippet": "
-Klass.call(key_1: "hello",",
-      "snippetWithContext": "class Plumbus
+",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth
-  end
+
+
+
+
+
+ def smooth; end
 end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "tool": "rubocop",
     },
     {
@@ -125,17 +149,23 @@ Klass.call(key_1: "hello",
       },
       "message": "Extra blank line detected.",
       "ruleKey": "Layout/EmptyLines",
-      "snippet": "Klass.call(key_1: "hello",
-  key_2: "world")",
-      "snippetWithContext": "class Plumbus
+      "snippet": "
+ def smooth; end",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth
-  end
+
+
+
+
+
+ def smooth; end
 end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "tool": "rubocop",
     },
     {
@@ -152,16 +182,18 @@ Klass.call(key_1: "hello",
       },
       "message": "Unnecessary spacing detected.",
       "ruleKey": "Layout/ExtraSpacing",
-      "snippet": "class Plumbus",
-      "snippetWithContext": "class Plumbus
+      "snippet": "class        Plumbus",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth
-  end
-end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+
+
+
+
+ def smooth; end
+end
+",
       "tool": "rubocop",
     },
     {
@@ -178,16 +210,22 @@ Klass.call(key_1: "hello",
       },
       "message": "Inconsistent indentation detected.",
       "ruleKey": "Layout/IndentationConsistency",
-      "snippet": "  key_2: "world")",
-      "snippetWithContext": "class Plumbus
+      "snippet": " def smooth; end",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth
-  end
+
+
+
+
+
+ def smooth; end
 end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "tool": "rubocop",
     },
     {
@@ -204,16 +242,22 @@ Klass.call(key_1: "hello",
       },
       "message": "Use 2 (not 1) spaces for indentation.",
       "ruleKey": "Layout/IndentationWidth",
-      "snippet": "  key_2: "world")",
-      "snippetWithContext": "class Plumbus
+      "snippet": " def smooth; end",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth
-  end
+
+
+
+
+
+ def smooth; end
 end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "tool": "rubocop",
     },
     {
@@ -230,16 +274,22 @@ Klass.call(key_1: "hello",
       },
       "message": "Put the \`end\` of empty method definitions on the next line.",
       "ruleKey": "Style/EmptyMethod",
-      "snippet": "  key_2: "world")",
-      "snippetWithContext": "class Plumbus
+      "snippet": " def smooth; end",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth
-  end
+
+
+
+
+
+ def smooth; end
 end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "tool": "rubocop",
     },
     {
@@ -260,14 +310,24 @@ Klass.call(key_1: "hello",
   key_2: 'world'
 )\`.",
       "ruleKey": "Style/LambdaCall",
+      "snippet": "Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "snippetWithContext": "  private
 
-  def smooth
-  end
+
+
+
+
+
+ def smooth; end
 end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "tool": "rubocop",
     },
     {
@@ -284,16 +344,22 @@ Klass.call(key_1: "hello",
       },
       "message": "Avoid single-line method definitions.",
       "ruleKey": "Style/SingleLineMethods",
-      "snippet": "  key_2: "world")",
-      "snippetWithContext": "class Plumbus
+      "snippet": " def smooth; end",
+      "snippetWithContext": "class        Plumbus
   private
 
-  def smooth
-  end
+
+
+
+
+
+ def smooth; end
 end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "tool": "rubocop",
     },
     {
@@ -310,13 +376,20 @@ Klass.call(key_1: "hello",
       },
       "message": "Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.",
       "ruleKey": "Style/StringLiterals",
+      "snippet": "  key_1: 'hello',",
       "snippetWithContext": "
-  def smooth
-  end
+
+
+
+
+
+ def smooth; end
 end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "tool": "rubocop",
     },
     {
@@ -333,12 +406,19 @@ Klass.call(key_1: "hello",
       },
       "message": "Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.",
       "ruleKey": "Style/StringLiterals",
-      "snippetWithContext": "  def smooth
-  end
+      "snippet": "  key_2: 'world'",
+      "snippetWithContext": "
+
+
+
+
+ def smooth; end
 end
 
-Klass.call(key_1: "hello",
-  key_2: "world")",
+Klass.(
+  key_1: 'hello',
+  key_2: 'world'
+)",
       "tool": "rubocop",
     },
     {

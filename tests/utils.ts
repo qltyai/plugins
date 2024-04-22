@@ -21,7 +21,7 @@ export const OPTIONS: EnvOptions = {
 };
 
 const extractStructure = (obj: any): Record<string, unknown> => {
-   const structure: Record<string, unknown> = {};
+  const structure: Record<string, unknown> = {};
   for (const [key, value] of Object.entries(obj)) {
       if (typeof value === 'object' && value !== null) {
           if (Array.isArray(value)) {
