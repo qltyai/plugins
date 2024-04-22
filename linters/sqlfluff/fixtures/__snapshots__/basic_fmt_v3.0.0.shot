@@ -17,12 +17,12 @@ exports[`linter=sqlfluff fixture=basic_fmt version=3.0.0 1`] = `
       },
       "message": "Expected only single space before 'AS' keyword. Found '   '.",
       "ruleKey": "LT01",
-      "snippet": "    COUNT(*) AS num,",
+      "snippet": "    COUNT(*)   AS   num,",
       "snippetWithContext": "SELECT
     col_a,
-    col_b,
-    COUNT(*) AS num,
-    SUM(num) OVER (
+      col_b,
+    COUNT(*)   AS   num,
+    SUM(num)   OVER   (
         PARTITION BY col_a
         ORDER BY col_b
     ) AS an_aggregate_function
@@ -44,12 +44,12 @@ GROUP BY 1, 2",
       },
       "message": "Expected only single space before 'OVER' keyword. Found '   '.",
       "ruleKey": "LT01",
-      "snippet": "    SUM(num) OVER (",
+      "snippet": "    SUM(num)   OVER   (",
       "snippetWithContext": "SELECT
     col_a,
-    col_b,
-    COUNT(*) AS num,
-    SUM(num) OVER (
+      col_b,
+    COUNT(*)   AS   num,
+    SUM(num)   OVER   (
         PARTITION BY col_a
         ORDER BY col_b
     ) AS an_aggregate_function
@@ -71,12 +71,12 @@ GROUP BY 1, 2",
       },
       "message": "Expected only single space before naked identifier. Found '   '.",
       "ruleKey": "LT01",
-      "snippet": "    COUNT(*) AS num,",
+      "snippet": "    COUNT(*)   AS   num,",
       "snippetWithContext": "SELECT
     col_a,
-    col_b,
-    COUNT(*) AS num,
-    SUM(num) OVER (
+      col_b,
+    COUNT(*)   AS   num,
+    SUM(num)   OVER   (
         PARTITION BY col_a
         ORDER BY col_b
     ) AS an_aggregate_function
@@ -98,12 +98,12 @@ GROUP BY 1, 2",
       },
       "message": "Expected only single space before start bracket '('. Found '   '.",
       "ruleKey": "LT01",
-      "snippet": "    SUM(num) OVER (",
+      "snippet": "    SUM(num)   OVER   (",
       "snippetWithContext": "SELECT
     col_a,
-    col_b,
-    COUNT(*) AS num,
-    SUM(num) OVER (
+      col_b,
+    COUNT(*)   AS   num,
+    SUM(num)   OVER   (
         PARTITION BY col_a
         ORDER BY col_b
     ) AS an_aggregate_function
@@ -125,12 +125,12 @@ GROUP BY 1, 2",
       },
       "message": "Expected indent of 4 spaces.",
       "ruleKey": "LT02",
-      "snippet": "    col_b,",
+      "snippet": "      col_b,",
       "snippetWithContext": "SELECT
     col_a,
-    col_b,
-    COUNT(*) AS num,
-    SUM(num) OVER (
+      col_b,
+    COUNT(*)   AS   num,
+    SUM(num)   OVER   (
         PARTITION BY col_a
         ORDER BY col_b
     ) AS an_aggregate_function
