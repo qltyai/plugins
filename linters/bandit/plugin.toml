@@ -1,0 +1,19 @@
+config_version = "0"
+
+[plugins.definitions.bandit]
+runtime = "python"
+package = "bandit"
+file_types = ["python"]
+suggested = "targets"
+latest_version = "1.7.8"
+known_good_version = "1.7.8"
+version_command = "bandit --version"
+config_files = [".bandit"]
+
+[plugins.definitions.bandit.drivers.lint]
+script = "bandit --exit-zero --ini .bandit --format json --output ${tmpfile} ${target}"
+success_codes = [0]
+output = "tmpfile"
+output_format = "bandit"
+cache_results = true
+batch = true
