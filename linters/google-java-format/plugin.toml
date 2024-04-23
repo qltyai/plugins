@@ -1,0 +1,22 @@
+config_version = "0"
+
+[plugins.releases.google-java-format]
+github = "google/google-java-format"
+download_type = "executable"
+strip_components = 0
+
+[plugins.definitions.google-java-format]
+releases = ["google-java-format"]
+runtime = "java"
+file_types = ["java"]
+suggested = "never"
+latest_version = "1.22.0"
+known_good_version = "1.22.0"
+version_command = "google-java-format --version"
+
+[plugins.definitions.google-java-format.drivers.format]
+script = "google-java-format --replace ${target}"
+success_codes = [0]
+output = "rewrite"
+batch = true
+driver_type = "formatter"
