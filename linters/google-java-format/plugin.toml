@@ -1,0 +1,17 @@
+config_version = "0"
+
+[plugins.definitions.google-java-format]
+jar = "https://github.com/google/google-java-format/releases/download/v${version}/google-java-format-${version}-all-deps.jar"
+runtime = "java"
+file_types = ["java"]
+suggested = "never"
+latest_version = "1.22.0"
+known_good_version = "1.22.0"
+version_command = "java -jar ${linter}/google-java-format.jar --version"
+
+[plugins.definitions.google-java-format.drivers.format]
+script = "java -jar ${linter}/google-java-format.jar --replace ${target}"
+success_codes = [0]
+output = "rewrite"
+batch = true
+driver_type = "formatter"
