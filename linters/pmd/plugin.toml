@@ -16,6 +16,7 @@ success_codes = [0, 4]
 output = "stdout"
 output_format = "sarif"
 file_types = ["java"]
+batch = true
 
 [plugins.definitions.pmd.drivers.lint-apex]
 script = "pmd check -R rulesets/apex/quickstart.xml -f sarif -d ${target}"
@@ -23,3 +24,4 @@ success_codes = [0, 4]
 output = "stdout"
 output_format = "sarif"
 file_types = ["apex"]
+batch = true
