@@ -1,0 +1,25 @@
+config_version = "0"
+
+[plugins.definitions.pmd]
+jar = "https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.0.0/pmd-dist-${version}-bin.zip"
+download_type = "zip"
+strip_components = 1
+runtime = "java"
+suggested = "never"
+latest_version = "7.0.0"
+known_good_version = "7.0.0"
+version_command = "pmd --version"
+
+[plugins.definitions.pmd.drivers.lint-java]
+script = "pmd check -R rulesets/java/quickstart.xml -f sarif -d ${target}"
+success_codes = [0, 4]
+output = "stdout"
+output_format = "sarif"
+file_types = ["java"]
+
+[plugins.definitions.pmd.drivers.lint-apex]
+script = "pmd check -R rulesets/apex/quickstart.xml -f sarif -d ${target}"
+success_codes = [0, 4]
+output = "stdout"
+output_format = "sarif"
+file_types = ["apex"]

@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=pmd fixture=apex version=7.0.0 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "apex.in.cls",
+        "range": {
+          "endColumn": 2,
+          "endLine": 5,
+          "startColumn": 8,
+          "startLine": 1,
+        },
+      },
+      "message": "Missing ApexDoc comment",
+      "ruleKey": "ApexDoc",
+      "snippet": "global class HelloWorld {
+public String hello() {
+return 'Hello World!';
+}
+}",
+      "snippetWithContext": "global class HelloWorld {
+public String hello() {
+return 'Hello World!';
+}
+}",
+      "tool": "pmd",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "apex.in.cls",
+        "range": {
+          "endColumn": 2,
+          "endLine": 4,
+          "startColumn": 8,
+          "startLine": 2,
+        },
+      },
+      "message": "Missing ApexDoc comment",
+      "ruleKey": "ApexDoc",
+      "snippet": "public String hello() {
+return 'Hello World!';
+}",
+      "snippetWithContext": "global class HelloWorld {
+public String hello() {
+return 'Hello World!';
+}
+}",
+      "tool": "pmd",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_LOW",
+      "location": {
+        "path": "apex.in.cls",
+        "range": {
+          "endColumn": 2,
+          "endLine": 5,
+          "startColumn": 8,
+          "startLine": 1,
+        },
+      },
+      "message": "Avoid using global modifier",
+      "ruleKey": "AvoidGlobalModifier",
+      "snippet": "global class HelloWorld {
+public String hello() {
+return 'Hello World!';
+}
+}",
+      "snippetWithContext": "global class HelloWorld {
+public String hello() {
+return 'Hello World!';
+}
+}",
+      "tool": "pmd",
+    },
+  ],
+}
+`;
