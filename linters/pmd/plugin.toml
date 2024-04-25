@@ -11,7 +11,7 @@ known_good_version = "7.0.0"
 version_command = "pmd --version"
 
 [plugins.definitions.pmd.drivers.lint-java]
-script = "pmd check -R rulesets/java/quickstart.xml -f sarif -d ${target}"
+script = "pmd check --rulesets rulesets/java/quickstart.xml --format sarif --dir ${target}"
 success_codes = [0, 4]
 output = "stdout"
 output_format = "sarif"
@@ -19,7 +19,7 @@ file_types = ["java"]
 batch = true
 
 [plugins.definitions.pmd.drivers.lint-apex]
-script = "pmd check -R rulesets/apex/quickstart.xml -f sarif -d ${target}"
+script = "pmd check --rulesets rulesets/apex/quickstart.xml --format sarif --dir ${target}"
 success_codes = [0, 4]
 output = "stdout"
 output_format = "sarif"
