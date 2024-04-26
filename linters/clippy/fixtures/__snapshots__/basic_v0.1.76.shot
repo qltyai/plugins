@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=clippy fixture=basic version=0.1.76 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 23,
+          "endLine": 13,
+          "startColumn": 8,
+          "startLine": 13,
+        },
+      },
+      "message": "warning: this binary expression can be simplified
+  --> src/main.rs:13:8
+   |
+13 |     if x == y || x < y {}
+   |        ^^^^^^^^^^^^^^^ help: try: \`x <= y\`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#double_comparisons
+   = note: \`#[warn(clippy::double_comparisons)]\` on by default
+
+",
+      "ruleKey": "clippy::double_comparisons",
+      "snippet": "    if x == y || x < y {}",
+      "snippetWithContext": "// be compiled to actually trigger it.
+pub enum Gibberish {
+    Foo(String),
+    #[doc(hidden)]
+    __Nonexhaustive,
+}
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+
+    // empty format literal
+    println!("{}", "empty format literal");
+
+    // needless range loop
+    let vec = vec!['a', 'b', 'c'];
+    for i in 0..vec.len() {
+        println!("{}", vec[i]);
+",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 2,
+          "endLine": 8,
+          "startColumn": 1,
+          "startLine": 4,
+        },
+      },
+      "message": "warning: this seems like a manual implementation of the non-exhaustive pattern
+ --> src/main.rs:4:1
+  |
+4 |   pub enum Gibberish {
+  |   ^-----------------
+  |   |
+  |  _help: add the attribute: \`#[non_exhaustive] pub enum Gibberish\`
+  | |
+5 | |     Foo(String),
+6 | |     #[doc(hidden)]
+7 | |     __Nonexhaustive,
+8 | | }
+  | |_^
+  |
+help: remove this variant
+ --> src/main.rs:7:5
+  |
+7 |     __Nonexhaustive,
+  |     ^^^^^^^^^^^^^^^
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#manual_non_exhaustive
+  = note: \`#[warn(clippy::manual_non_exhaustive)]\` on by default
+
+",
+      "ruleKey": "clippy::manual_non_exhaustive",
+      "snippet": "pub enum Gibberish {
+    Foo(String),
+    #[doc(hidden)]
+    __Nonexhaustive,
+}",
+      "snippetWithContext": "// clippy/manual_non_exhaustive has {"suggested_replacement": null} in its JSON, so we want to
+// explicitly test that. Note that a match {} block against this enum in the callgraph needs to
+// be compiled to actually trigger it.
+pub enum Gibberish {
+    Foo(String),
+    #[doc(hidden)]
+    __Nonexhaustive,
+}
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+
+    // empty format literal
+    println!("{}", "empty format literal");
+",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 26,
+          "endLine": 13,
+          "startColumn": 5,
+          "startLine": 13,
+        },
+      },
+      "message": "warning: this \`if\` branch is empty
+  --> src/main.rs:13:5
+   |
+13 |     if x == y || x < y {}
+   |     ^^^^^^^^^^^^^^^^^^^^^ help: you can remove it: \`x == y || x < y;\`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#needless_if
+   = note: \`#[warn(clippy::needless_if)]\` on by default
+
+",
+      "ruleKey": "clippy::needless_if",
+      "snippet": "    if x == y || x < y {}",
+      "snippetWithContext": "// be compiled to actually trigger it.
+pub enum Gibberish {
+    Foo(String),
+    #[doc(hidden)]
+    __Nonexhaustive,
+}
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+
+    // empty format literal
+    println!("{}", "empty format literal");
+
+    // needless range loop
+    let vec = vec!['a', 'b', 'c'];
+    for i in 0..vec.len() {
+        println!("{}", vec[i]);
+",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 26,
+          "endLine": 21,
+          "startColumn": 14,
+          "startLine": 21,
+        },
+      },
+      "message": "warning: the loop variable \`i\` is only used to index \`vec\`
+  --> src/main.rs:21:14
+   |
+21 |     for i in 0..vec.len() {
+   |              ^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#needless_range_loop
+   = note: \`#[warn(clippy::needless_range_loop)]\` on by default
+help: consider using an iterator
+   |
+21 |     for <item> in &vec {
+   |         ~~~~~~    ~~~~
+
+",
+      "ruleKey": "clippy::needless_range_loop",
+      "snippet": "    for i in 0..vec.len() {",
+      "snippetWithContext": "    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+
+    // empty format literal
+    println!("{}", "empty format literal");
+
+    // needless range loop
+    let vec = vec!['a', 'b', 'c'];
+    for i in 0..vec.len() {
+        println!("{}", vec[i]);
+
+    }
+    // manual nonexhaustive
+    let z = Gibberish::Foo("fizz".to_string());
+    println!("gibberish is {}", match z {
+        Gibberish::Foo(_) => "buzz",
+        Gibberish::__Nonexhaustive => unreachable!(),
+    });
+}",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 42,
+          "endLine": 17,
+          "startColumn": 20,
+          "startLine": 17,
+        },
+      },
+      "message": "warning: literal with an empty format string
+  --> src/main.rs:17:20
+   |
+17 |     println!("{}", "empty format literal");
+   |                    ^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#print_literal
+   = note: \`#[warn(clippy::print_literal)]\` on by default
+help: try
+   |
+17 -     println!("{}", "empty format literal");
+17 +     println!("empty format literal");
+   |
+
+",
+      "ruleKey": "clippy::print_literal",
+      "snippet": "    println!("{}", "empty format literal");",
+      "snippetWithContext": "    __Nonexhaustive,
+}
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+
+    // empty format literal
+    println!("{}", "empty format literal");
+
+    // needless range loop
+    let vec = vec!['a', 'b', 'c'];
+    for i in 0..vec.len() {
+        println!("{}", vec[i]);
+
+    }
+    // manual nonexhaustive
+    let z = Gibberish::Foo("fizz".to_string());
+    println!("gibberish is {}", match z {",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 34,
+          "endLine": 20,
+          "startColumn": 15,
+          "startLine": 20,
+        },
+      },
+      "message": "warning: useless use of \`vec!\`
+  --> src/main.rs:20:15
+   |
+20 |     let vec = vec!['a', 'b', 'c'];
+   |               ^^^^^^^^^^^^^^^^^^^ help: you can use an array directly: \`['a', 'b', 'c']\`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#useless_vec
+   = note: \`#[warn(clippy::useless_vec)]\` on by default
+
+",
+      "ruleKey": "clippy::useless_vec",
+      "snippet": "    let vec = vec!['a', 'b', 'c'];",
+      "snippetWithContext": "fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+
+    // empty format literal
+    println!("{}", "empty format literal");
+
+    // needless range loop
+    let vec = vec!['a', 'b', 'c'];
+    for i in 0..vec.len() {
+        println!("{}", vec[i]);
+
+    }
+    // manual nonexhaustive
+    let z = Gibberish::Foo("fizz".to_string());
+    println!("gibberish is {}", match z {
+        Gibberish::Foo(_) => "buzz",
+        Gibberish::__Nonexhaustive => unreachable!(),
+    });",
+      "tool": "clippy",
+    },
+  ],
+}
+`;
