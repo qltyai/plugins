@@ -5,7 +5,7 @@ exports[`linter=clippy fixture=multiple_files version=0.1.77 1`] = `
   "issues": [
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "src/main.rs",
         "range": {
@@ -15,15 +15,7 @@ exports[`linter=clippy fixture=multiple_files version=0.1.77 1`] = `
           "startLine": 2,
         },
       },
-      "message": "warning: this arithmetic operation will overflow
- --> src/high.rs:2:5
-  |
-2 |     100u8 << 10;
-  |     ^^^^^^^^^^^ attempt to shift left by \`10_i32\`, which would overflow
-  |
-  = note: \`#[warn(arithmetic_overflow)]\` on by default
-
-",
+      "message": "this arithmetic operation will overflow",
       "ruleKey": "arithmetic_overflow",
       "snippetWithContext": "mod high;
 
@@ -37,108 +29,7 @@ fn main() {
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
-      "location": {
-        "path": "src/main.rs",
-        "range": {
-          "endColumn": 23,
-          "endLine": 6,
-          "startColumn": 8,
-          "startLine": 6,
-        },
-      },
-      "message": "warning: this binary expression can be simplified
- --> src/main.rs:6:8
-  |
-6 |     if x == y || x < y {}
-  |        ^^^^^^^^^^^^^^^ help: try: \`x <= y\`
-  |
-  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#double_comparisons
-  = note: \`#[warn(clippy::double_comparisons)]\` on by default
-
-",
-      "ruleKey": "clippy::double_comparisons",
-      "snippet": "    if x == y || x < y {}",
-      "snippetWithContext": "mod high;
-
-fn main() {
-    let x = 1;
-    let y = 2;
-    if x == y || x < y {}
-    println!("Hello World");
-}",
-      "tool": "clippy",
-    },
-    {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
-      "location": {
-        "path": "src/main.rs",
-        "range": {
-          "endColumn": 26,
-          "endLine": 6,
-          "startColumn": 5,
-          "startLine": 6,
-        },
-      },
-      "message": "warning: this \`if\` branch is empty
- --> src/main.rs:6:5
-  |
-6 |     if x == y || x < y {}
-  |     ^^^^^^^^^^^^^^^^^^^^^ help: you can remove it: \`x == y || x < y;\`
-  |
-  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#needless_if
-  = note: \`#[warn(clippy::needless_if)]\` on by default
-
-",
-      "ruleKey": "clippy::needless_if",
-      "snippet": "    if x == y || x < y {}",
-      "snippetWithContext": "mod high;
-
-fn main() {
-    let x = 1;
-    let y = 2;
-    if x == y || x < y {}
-    println!("Hello World");
-}",
-      "tool": "clippy",
-    },
-    {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
-      "location": {
-        "path": "src/main.rs",
-        "range": {
-          "endColumn": 17,
-          "endLine": 2,
-          "startColumn": 5,
-          "startLine": 2,
-        },
-      },
-      "message": "warning: statement with no effect
- --> src/high.rs:2:5
-  |
-2 |     100u8 << 10;
-  |     ^^^^^^^^^^^^
-  |
-  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#no_effect
-  = note: \`#[warn(clippy::no_effect)]\` on by default
-
-",
-      "ruleKey": "clippy::no_effect",
-      "snippetWithContext": "mod high;
-
-fn main() {
-    let x = 1;
-    let y = 2;
-    if x == y || x < y {}
-    println!("Hello World");
-}",
-      "tool": "clippy",
-    },
-    {
-      "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "src/main.rs",
         "range": {
@@ -148,15 +39,7 @@ fn main() {
           "startLine": 1,
         },
       },
-      "message": "warning: function \`do_bad_math\` is never used
- --> src/high.rs:1:4
-  |
-1 | fn do_bad_math() {
-  |    ^^^^^^^^^^^
-  |
-  = note: \`#[warn(dead_code)]\` on by default
-
-",
+      "message": "function \`do_bad_math\` is never used",
       "ruleKey": "dead_code",
       "snippet": "mod high;",
       "snippetWithContext": "mod high;
@@ -171,7 +54,84 @@ fn main() {
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#double_comparisons",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 23,
+          "endLine": 6,
+          "startColumn": 8,
+          "startLine": 6,
+        },
+      },
+      "message": "this binary expression can be simplified",
+      "ruleKey": "double_comparisons",
+      "snippet": "    if x == y || x < y {}",
+      "snippetWithContext": "mod high;
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+}",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#needless_if",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 26,
+          "endLine": 6,
+          "startColumn": 5,
+          "startLine": 6,
+        },
+      },
+      "message": "this \`if\` branch is empty",
+      "ruleKey": "needless_if",
+      "snippet": "    if x == y || x < y {}",
+      "snippetWithContext": "mod high;
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+}",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#no_effect",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 17,
+          "endLine": 2,
+          "startColumn": 5,
+          "startLine": 2,
+        },
+      },
+      "message": "statement with no effect",
+      "ruleKey": "no_effect",
+      "snippetWithContext": "mod high;
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+}",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "src/main.rs",
         "range": {
@@ -181,19 +141,7 @@ fn main() {
           "startLine": 2,
         },
       },
-      "message": "warning: unused bitwise operation that must be used
- --> src/high.rs:2:5
-  |
-2 |     100u8 << 10;
-  |     ^^^^^^^^^^^ the bitwise operation produces a value
-  |
-  = note: \`#[warn(unused_must_use)]\` on by default
-help: use \`let _ = ...\` to ignore the resulting value
-  |
-2 |     let _ = 100u8 << 10;
-  |     +++++++
-
-",
+      "message": "unused bitwise operation that must be used",
       "ruleKey": "unused_must_use",
       "snippetWithContext": "mod high;
 
