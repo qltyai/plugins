@@ -13,8 +13,8 @@ affects_cache = ["Cargo.toml", "Cargo.lock"]
 
 [plugins.definitions.clippy.drivers.lint]
 script = "cargo clippy --message-format json --locked -- --cap-lints=warn --no-deps"
-target = "${parent_with(Cargo.toml)}"
-runs_from = "${target_directory}"
+target = { "target_type" = "parent_with", "path" = "Cargo.toml" }
+runs_from = "target_directory"
 success_codes = [0, 101, 383]
 output = "stdout"
 output_format = "clippy"
