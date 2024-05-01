@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`linter=clippy fixture=multiple_files version=0.1.76 1`] = `
+exports[`linter=clippy fixture=multiple_files version=0.1.77 1`] = `
 {
   "issues": [
     {

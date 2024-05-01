@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`linter=clippy fixture=nested_basic version=0.1.76 1`] = `
+exports[`linter=clippy fixture=basic version=0.1.77 1`] = `
 {
   "issues": [
     {
       "category": "CATEGORY_BUG",
       "level": "LEVEL_HIGH",
       "location": {
-        "path": "random_parent_dir/src/main.rs",
+        "path": "src/main.rs",
         "range": {
           "endColumn": 23,
           "endLine": 13,
@@ -54,7 +54,7 @@ fn main() {
       "category": "CATEGORY_BUG",
       "level": "LEVEL_HIGH",
       "location": {
-        "path": "random_parent_dir/src/main.rs",
+        "path": "src/main.rs",
         "range": {
           "endColumn": 2,
           "endLine": 8,
@@ -115,7 +115,7 @@ fn main() {
       "category": "CATEGORY_BUG",
       "level": "LEVEL_HIGH",
       "location": {
-        "path": "random_parent_dir/src/main.rs",
+        "path": "src/main.rs",
         "range": {
           "endColumn": 26,
           "endLine": 13,
@@ -162,7 +162,7 @@ fn main() {
       "category": "CATEGORY_BUG",
       "level": "LEVEL_HIGH",
       "location": {
-        "path": "random_parent_dir/src/main.rs",
+        "path": "src/main.rs",
         "range": {
           "endColumn": 26,
           "endLine": 21,
@@ -213,7 +213,7 @@ help: consider using an iterator
       "category": "CATEGORY_BUG",
       "level": "LEVEL_HIGH",
       "location": {
-        "path": "random_parent_dir/src/main.rs",
+        "path": "src/main.rs",
         "range": {
           "endColumn": 42,
           "endLine": 17,
@@ -265,7 +265,7 @@ fn main() {
       "category": "CATEGORY_BUG",
       "level": "LEVEL_HIGH",
       "location": {
-        "path": "random_parent_dir/src/main.rs",
+        "path": "src/main.rs",
         "range": {
           "endColumn": 34,
           "endLine": 20,
