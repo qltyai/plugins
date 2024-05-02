@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`linter=clippy fixture=basic version=0.1.77 1`] = `
+exports[`linter=clippy fixture=nested_basic version=1.77.2 1`] = `
 {
   "issues": [
     {
@@ -8,7 +8,7 @@ exports[`linter=clippy fixture=basic version=0.1.77 1`] = `
       "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#double_comparisons",
       "level": "LEVEL_MEDIUM",
       "location": {
-        "path": "src/main.rs",
+        "path": "random_parent_dir/src/main.rs",
         "range": {
           "endColumn": 23,
           "endLine": 13,
@@ -47,7 +47,7 @@ fn main() {
       "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#manual_non_exhaustive",
       "level": "LEVEL_MEDIUM",
       "location": {
-        "path": "src/main.rs",
+        "path": "random_parent_dir/src/main.rs",
         "range": {
           "endColumn": 2,
           "endLine": 8,
@@ -87,7 +87,7 @@ fn main() {
       "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#needless_if",
       "level": "LEVEL_MEDIUM",
       "location": {
-        "path": "src/main.rs",
+        "path": "random_parent_dir/src/main.rs",
         "range": {
           "endColumn": 26,
           "endLine": 13,
@@ -126,7 +126,7 @@ fn main() {
       "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#needless_range_loop",
       "level": "LEVEL_MEDIUM",
       "location": {
-        "path": "src/main.rs",
+        "path": "random_parent_dir/src/main.rs",
         "range": {
           "endColumn": 26,
           "endLine": 21,
@@ -165,7 +165,7 @@ fn main() {
       "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#print_literal",
       "level": "LEVEL_MEDIUM",
       "location": {
-        "path": "src/main.rs",
+        "path": "random_parent_dir/src/main.rs",
         "range": {
           "endColumn": 42,
           "endLine": 17,
@@ -204,7 +204,7 @@ fn main() {
       "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#useless_vec",
       "level": "LEVEL_MEDIUM",
       "location": {
-        "path": "src/main.rs",
+        "path": "random_parent_dir/src/main.rs",
         "range": {
           "endColumn": 34,
           "endLine": 20,
