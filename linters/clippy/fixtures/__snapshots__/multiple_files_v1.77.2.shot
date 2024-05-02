@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=clippy fixture=multiple_files version=1.77.2 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 16,
+          "endLine": 2,
+          "startColumn": 5,
+          "startLine": 2,
+        },
+      },
+      "message": "this arithmetic operation will overflow",
+      "ruleKey": "arithmetic_overflow",
+      "snippetWithContext": "mod high;
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+}",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 15,
+          "endLine": 1,
+          "startColumn": 4,
+          "startLine": 1,
+        },
+      },
+      "message": "function \`do_bad_math\` is never used",
+      "ruleKey": "dead_code",
+      "snippet": "mod high;",
+      "snippetWithContext": "mod high;
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+}",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#double_comparisons",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 23,
+          "endLine": 6,
+          "startColumn": 8,
+          "startLine": 6,
+        },
+      },
+      "message": "this binary expression can be simplified",
+      "ruleKey": "double_comparisons",
+      "snippet": "    if x == y || x < y {}",
+      "snippetWithContext": "mod high;
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+}",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#needless_if",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 26,
+          "endLine": 6,
+          "startColumn": 5,
+          "startLine": 6,
+        },
+      },
+      "message": "this \`if\` branch is empty",
+      "ruleKey": "needless_if",
+      "snippet": "    if x == y || x < y {}",
+      "snippetWithContext": "mod high;
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+}",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#no_effect",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 17,
+          "endLine": 2,
+          "startColumn": 5,
+          "startLine": 2,
+        },
+      },
+      "message": "statement with no effect",
+      "ruleKey": "no_effect",
+      "snippetWithContext": "mod high;
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+}",
+      "tool": "clippy",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "src/main.rs",
+        "range": {
+          "endColumn": 16,
+          "endLine": 2,
+          "startColumn": 5,
+          "startLine": 2,
+        },
+      },
+      "message": "unused bitwise operation that must be used",
+      "ruleKey": "unused_must_use",
+      "snippetWithContext": "mod high;
+
+fn main() {
+    let x = 1;
+    let y = 2;
+    if x == y || x < y {}
+    println!("Hello World");
+}",
+      "tool": "clippy",
+    },
+  ],
+}
+`;

@@ -5,9 +5,8 @@ runtime = "rust"
 package = "rustfmt"
 file_types = ["rust"]
 suggested = "targets"
-latest_version = "1.7.0"
-known_good_version = "1.7.0"
-version_command = "rustfmt --version"
+latest_version = "1.77.2"
+known_good_version = "1.77.2"
 config_files = ["rustfmt.toml", ".rustfmt.toml"]
 affects_cache = ["Cargo.toml", "Cargo.lock"]
 
