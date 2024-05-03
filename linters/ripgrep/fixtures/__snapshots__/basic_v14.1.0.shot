@@ -15,8 +15,8 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
           "startLine": 3,
         },
       },
-      "message": "FIXME found.",
-      "ruleKey": "match_text_found",
+      "message": "// FIXME TODO",
+      "ruleKey": "FIXME",
       "snippet": "    // FIXME TODO",
       "snippetWithContext": "fn main() {
     // NOTE
@@ -24,6 +24,33 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
     // HACK
     let note = 1; // doesn't capture lowercase note
     println!("note: {}", note);
+    // FIXME: This test fails on the first day of each month
+    println!("Hello, world!");
+}",
+      "tool": "ripgrep",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic.in.rs",
+        "range": {
+          "endColumn": 12,
+          "endLine": 7,
+          "startColumn": 7,
+          "startLine": 7,
+        },
+      },
+      "message": "// FIXME: This test fails on the first day of each month",
+      "ruleKey": "FIXME",
+      "snippet": "    // FIXME: This test fails on the first day of each month",
+      "snippetWithContext": "fn main() {
+    // NOTE
+    // FIXME TODO
+    // HACK
+    let note = 1; // doesn't capture lowercase note
+    println!("note: {}", note);
+    // FIXME: This test fails on the first day of each month
     println!("Hello, world!");
 }",
       "tool": "ripgrep",
@@ -40,8 +67,8 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
           "startLine": 4,
         },
       },
-      "message": "HACK found.",
-      "ruleKey": "match_text_found",
+      "message": "// HACK",
+      "ruleKey": "HACK",
       "snippet": "    // HACK",
       "snippetWithContext": "fn main() {
     // NOTE
@@ -49,6 +76,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
     // HACK
     let note = 1; // doesn't capture lowercase note
     println!("note: {}", note);
+    // FIXME: This test fails on the first day of each month
     println!("Hello, world!");
 }",
       "tool": "ripgrep",
@@ -65,8 +93,8 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
           "startLine": 2,
         },
       },
-      "message": "NOTE found.",
-      "ruleKey": "match_text_found",
+      "message": "// NOTE",
+      "ruleKey": "NOTE",
       "snippet": "    // NOTE",
       "snippetWithContext": "fn main() {
     // NOTE
@@ -74,6 +102,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
     // HACK
     let note = 1; // doesn't capture lowercase note
     println!("note: {}", note);
+    // FIXME: This test fails on the first day of each month
     println!("Hello, world!");
 }",
       "tool": "ripgrep",
@@ -90,8 +119,8 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
           "startLine": 3,
         },
       },
-      "message": "TODO found.",
-      "ruleKey": "match_text_found",
+      "message": "// FIXME TODO",
+      "ruleKey": "TODO",
       "snippet": "    // FIXME TODO",
       "snippetWithContext": "fn main() {
     // NOTE
@@ -99,6 +128,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
     // HACK
     let note = 1; // doesn't capture lowercase note
     println!("note: {}", note);
+    // FIXME: This test fails on the first day of each month
     println!("Hello, world!");
 }",
       "tool": "ripgrep",
