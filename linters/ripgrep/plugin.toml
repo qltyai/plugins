@@ -16,7 +16,7 @@ config_files = [".ripgreprc"]
 
 [plugins.definitions.ripgrep.drivers.lint-fixme]
 script = "rg \"NOTE|OPTIMIZE|TODO|HACK|XXX|FIXME|BUG\" ${target} --json --word-regexp --only-matching"
-success_codes = [0]
+success_codes = [0,1]
 output = "stdout"
 output_format = "ripgrep"
 batch = true
