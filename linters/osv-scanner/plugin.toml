@@ -60,7 +60,8 @@ issue_url_format = "https://osv.dev/${rule}"
 
 [plugins.definitions.osv-scanner.drivers.lint]
 script = "osv-scanner --lockfile=${target} --format sarif"
-success_codes = [0, 1, 128]
+success_codes = [0, 1]
+no_issue_codes = [128]
 output = "stdout"
 output_format = "sarif"
 output_category = "vulnerability"
