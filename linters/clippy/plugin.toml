@@ -21,3 +21,11 @@ output_format = "clippy"
 [[plugins.definitions.clippy.environment]]
 name = "PATH"
 list = ["${env.PATH}"]
+
+[[plugins.definitions.clippy.environment]]
+name = "CARGO_HOME"
+value = "${cachedir}/cargo_home"
+
+[[plugins.definitions.clippy.environment]]
+name = "CARGO_TARGET_DIR"
+value = "${cachedir}/cargo_target_dir"
