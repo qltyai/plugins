@@ -17,3 +17,15 @@ runs_from = "target_directory"
 success_codes = [0, 101, 383]
 output = "stdout"
 output_format = "clippy"
+
+[[plugins.definitions.clippy.environment]]
+name = "PATH"
+list = ["${runtime}/bin", "${env.PATH}"]
+
+[[plugins.definitions.clippy.environment]]
+name = "CARGO_HOME"
+value = "${cachedir}/cargo_home"
+
+[[plugins.definitions.clippy.environment]]
+name = "CARGO_TARGET_DIR"
+value = "${cachedir}/cargo_target_dir"
