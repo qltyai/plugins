@@ -20,7 +20,7 @@ output_format = "clippy"
 
 [[plugins.definitions.clippy.environment]]
 name = "PATH"
-list = ["${env.PATH}"]
+list = ["${runtime}/bin", "${env.PATH}"]
 
 [[plugins.definitions.clippy.environment]]
 name = "CARGO_HOME"
