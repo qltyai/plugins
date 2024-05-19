@@ -11,8 +11,9 @@ known_good_version = "1.11.1"
 config_files = ["phpstan.neon", "phpstan.neon.dist", "phpstan.dist.neon"]
 
 [plugins.definitions.phpstan.drivers.lint]
-script = "phpstan analyze \"${target}\" --error-format=json --level=9"
+script = "phpstan analyze ${target} --error-format=json --level=9"
 success_codes = [0, 1]
 output = "stdout"
 output_format = "phpstan"
 cache_results = true
+batch = true
