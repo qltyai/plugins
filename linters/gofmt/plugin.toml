@@ -8,6 +8,7 @@ suggested = "targets"
 latest_version = "1.22.0"
 known_good_version = "1.22.0"
 version_command = "go version"
+description = "Go lang formatter"
 
 [plugins.definitions.gofmt.drivers.format]
 script = "gofmt -w ${target}"

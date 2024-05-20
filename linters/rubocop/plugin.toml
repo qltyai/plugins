@@ -9,6 +9,7 @@ latest_version = "1.63.2"
 known_good_version = "1.63.2"
 version_command = "rubocop --version"
 config_files = [".rubocop.yml"]
+description = "Ruby linter and code formatter"
 
 [plugins.definitions.rubocop.drivers.lint]
 script = "rubocop --format json ${target}"

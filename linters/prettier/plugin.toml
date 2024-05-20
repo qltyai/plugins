@@ -32,6 +32,7 @@ config_files = [
   "prettier.config.js",
 ]
 affects_cache = ["package.json", ".editorconfig", ".prettierignore"]
+description = "JS, CSS, HTML, JSON, TS, GraphQL, MD and YML formatter"
 
 [plugins.definitions.prettier.drivers.format]
 script = "prettier -w ${target}"

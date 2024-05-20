@@ -17,6 +17,7 @@ suggested = "never" # ESLint is unlikely to work out-of-the-box
 latest_version = "9.0.0"
 known_good_version = "8.57.0"
 version_command = "eslint --version"
+description = "Javascript and ECMAScript linter"
 
 [plugins.definitions.eslint.drivers.lint]
 script = "eslint --output-file ${tmpfile} --format json ${target}"

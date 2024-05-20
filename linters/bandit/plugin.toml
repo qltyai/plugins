@@ -9,6 +9,8 @@ latest_version = "1.7.8"
 known_good_version = "1.7.8"
 version_command = "bandit --version"
 config_files = [".bandit"]
+description = "Tool designed to find common security issues in Python"
+security = true
 
 [plugins.definitions.bandit.drivers.lint]
 script = "bandit --exit-zero --ini .bandit --format json --output ${tmpfile} ${target}"
