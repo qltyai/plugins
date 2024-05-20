@@ -6,7 +6,7 @@ exports[`linter=phpstan fixture=basic version=1.11.1 1`] = `
     {
       "category": "CATEGORY_BUG",
       "documentationUrl": "https://phpstan.org/user-guide/discovering-symbols",
-      "level": "LEVEL_HIGH",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.php",
         "range": {
@@ -30,7 +30,7 @@ class HelloWorld
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_HIGH",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.php",
         "range": {
