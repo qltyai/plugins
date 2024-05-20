@@ -22,6 +22,10 @@ jobs:
       with:
         cache: 'npm'
 
+    - name: Setup PHP with PECL extension
+      uses: shivammathur/setup-php@v2
+      if: matrix.os == 'macos-latest-xlarge'
+
     - name: Install qlty CLI
       run: |
           curl https://qlty-releases.s3.amazonaws.com/qlty/install.sh | bash
