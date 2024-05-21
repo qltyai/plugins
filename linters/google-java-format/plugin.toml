@@ -1,7 +1,7 @@
 config_version = "0"
 
 [plugins.definitions.google-java-format]
-jar = "https://github.com/google/google-java-format/releases/download/v${version}/google-java-format-${version}-all-deps.jar"
+runnable_archive_url = "https://github.com/google/google-java-format/releases/download/v${version}/google-java-format-${version}-all-deps.jar"
 runtime = "java"
 file_types = ["java"]
 suggested = "never"
