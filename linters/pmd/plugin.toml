@@ -9,6 +9,7 @@ suggested = "never"
 latest_version = "7.0.0"
 known_good_version = "7.0.0"
 version_command = "pmd --version"
+description = "Java linter"
 
 [plugins.definitions.pmd.drivers.lint-java]
 script = "pmd check --rulesets rulesets/java/quickstart.xml --format sarif --dir ${target}"

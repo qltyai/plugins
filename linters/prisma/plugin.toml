@@ -7,6 +7,7 @@ file_types = ["prisma"]
 latest_version = "5.14.0"
 known_good_version = "5.14.0"
 version_command = "prisma version"
+description = "Prisma schema formatter"
 
 [plugins.definitions.prisma.drivers.format]
 script = "prisma format --schema=${target}"

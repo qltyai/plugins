@@ -9,6 +9,7 @@ suggested = "never"
 latest_version = "24.4.0"
 known_good_version = "22.3.0"
 version_command = "black --version"
+description = "Python formatter"
 
 [plugins.definitions.black.drivers.format]
 script = "black -q ${target}"

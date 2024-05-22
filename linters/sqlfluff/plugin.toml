@@ -10,6 +10,7 @@ known_good_version = "3.0.0"
 version_command = "sqlfluff --version"
 config_files = [".sqlfluff"]
 affects_cache = ["pyproject.toml"]
+description = "SQL linter and formatter"
 
 [plugins.definitions.sqlfluff.drivers.lint]
 script = "sqlfluff lint ${target} --format json --nofail --dialect ansi"
