@@ -17,6 +17,7 @@ exports[`linter=bandit fixture=basic version=1.7.8 1`] = `
         },
       },
       "message": "Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.",
+      "mode": "block",
       "ruleKey": "B301",
       "snippet": "print(dill.loads(pick))",
       "snippetWithContext": "import dill
@@ -43,6 +44,7 @@ dill.dump([1, 2, "3"], file_obj)",
         },
       },
       "message": "Consider possible security implications associated with dill module.",
+      "mode": "block",
       "ruleKey": "B403",
       "snippet": "import dill",
       "snippetWithContext": "import dill

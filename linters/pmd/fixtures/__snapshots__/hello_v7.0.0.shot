@@ -16,6 +16,7 @@ exports[`linter=pmd fixture=hello version=7.0.0 1`] = `
         },
       },
       "message": "All classes, interfaces, enums and annotations must belong to a named package",
+      "mode": "block",
       "ruleKey": "NoPackage",
       "snippet": "class HelloWorld {",
       "snippetWithContext": "// Your First Program
@@ -40,6 +41,7 @@ class HelloWorld {
         },
       },
       "message": "This utility class has a non-private constructor",
+      "mode": "block",
       "ruleKey": "UseUtilityClass",
       "snippet": "class HelloWorld {",
       "snippetWithContext": "// Your First Program

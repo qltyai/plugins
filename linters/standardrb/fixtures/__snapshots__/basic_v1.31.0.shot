@@ -428,6 +428,7 @@ Klass.(
         "path": "basic.in.rb",
       },
       "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
+      "mode": "block",
       "ruleKey": "fmt",
       "tool": "standardrb",
     },

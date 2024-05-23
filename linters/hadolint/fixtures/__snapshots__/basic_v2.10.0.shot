@@ -15,6 +15,7 @@ exports[`linter=hadolint fixture=basic version=2.10.0 1`] = `
         },
       },
       "message": "Use WORKDIR to switch to a directory",
+      "mode": "block",
       "ruleKey": "DL3003",
       "snippet": "RUN cd /tmp && echo "foo"",
       "snippetWithContext": "FROM ubuntu
@@ -34,6 +35,7 @@ RUN cd /tmp && echo "foo"",
         },
       },
       "message": "Always tag the version of an image explicitly",
+      "mode": "block",
       "ruleKey": "DL3006",
       "snippet": "FROM ubuntu",
       "snippetWithContext": "FROM ubuntu

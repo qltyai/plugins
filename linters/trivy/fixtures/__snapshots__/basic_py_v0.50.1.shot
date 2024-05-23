@@ -17,6 +17,7 @@ Child Object Structure: {
       "endLine": "number",
       "endColumn": "number"
     }
-  }
+  },
+  "mode": "string"
 }
 `;
