@@ -10,6 +10,7 @@ Child Object Structure: {
   "documentationUrl": "string",
   "location": {
     "path": "string"
-  }
+  },
+  "mode": "string"
 }
 `;

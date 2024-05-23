@@ -16,6 +16,7 @@ exports[`linter=stylelint fixture=basic version=14.6.1 1`] = `
         },
       },
       "message": "Unexpected empty block (block-no-empty)",
+      "mode": "block",
       "ruleKey": "block-no-empty",
       "snippet": "a {}",
       "snippetWithContext": "a {}",

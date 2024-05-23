@@ -17,6 +17,7 @@ exports[`linter=ruff fixture=basic version=0.3.3 1`] = `
         },
       },
       "message": "ModuleImportNotAtTopOfFile",
+      "mode": "block",
       "ruleKey": "E402",
       "snippet": "import sys",
       "snippetWithContext": "def main():
@@ -52,6 +53,7 @@ class Globe(object):
         },
       },
       "message": "ModuleImportNotAtTopOfFile",
+      "mode": "block",
       "ruleKey": "E402",
       "snippet": "import json",
       "snippetWithContext": "def main():
@@ -87,6 +89,7 @@ class Globe(object):
         },
       },
       "message": "UnusedImport",
+      "mode": "block",
       "ruleKey": "F401",
       "snippet": "import sys",
       "snippetWithContext": "def main():
@@ -122,6 +125,7 @@ class Globe(object):
         },
       },
       "message": "UnusedImport",
+      "mode": "block",
       "ruleKey": "F401",
       "snippet": "import json",
       "snippetWithContext": "def main():

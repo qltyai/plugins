@@ -10,6 +10,7 @@ exports[`linter=gofmt fixture=basic version=1.22.0 1`] = `
         "path": "basic.in.go",
       },
       "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
+      "mode": "block",
       "ruleKey": "fmt",
       "tool": "gofmt",
     },

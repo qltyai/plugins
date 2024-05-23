@@ -10,6 +10,7 @@ exports[`linter=rustfmt fixture=empty version=1.77.2 1`] = `
         "path": "empty.in.rs",
       },
       "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
+      "mode": "block",
       "ruleKey": "fmt",
       "tool": "rustfmt",
     },

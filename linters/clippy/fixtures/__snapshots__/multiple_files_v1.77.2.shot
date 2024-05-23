@@ -16,6 +16,7 @@ exports[`linter=clippy fixture=multiple_files version=1.77.2 1`] = `
         },
       },
       "message": "this arithmetic operation will overflow",
+      "mode": "block",
       "ruleKey": "arithmetic_overflow",
       "snippet": "    100u8 << 10;",
       "snippetWithContext": "fn do_bad_math() {
@@ -36,6 +37,7 @@ exports[`linter=clippy fixture=multiple_files version=1.77.2 1`] = `
         },
       },
       "message": "function \`do_bad_math\` is never used",
+      "mode": "block",
       "ruleKey": "dead_code",
       "snippet": "fn do_bad_math() {",
       "snippetWithContext": "fn do_bad_math() {
@@ -57,6 +59,7 @@ exports[`linter=clippy fixture=multiple_files version=1.77.2 1`] = `
         },
       },
       "message": "this binary expression can be simplified",
+      "mode": "block",
       "ruleKey": "double_comparisons",
       "snippet": "    if x == y || x < y {}",
       "snippetWithContext": "mod high;
@@ -83,6 +86,7 @@ fn main() {
         },
       },
       "message": "this \`if\` branch is empty",
+      "mode": "block",
       "ruleKey": "needless_if",
       "snippet": "    if x == y || x < y {}",
       "snippetWithContext": "mod high;
@@ -109,6 +113,7 @@ fn main() {
         },
       },
       "message": "statement with no effect",
+      "mode": "block",
       "ruleKey": "no_effect",
       "snippet": "    100u8 << 10;",
       "snippetWithContext": "fn do_bad_math() {
@@ -129,6 +134,7 @@ fn main() {
         },
       },
       "message": "unused bitwise operation that must be used",
+      "mode": "block",
       "ruleKey": "unused_must_use",
       "snippet": "    100u8 << 10;",
       "snippetWithContext": "fn do_bad_math() {
