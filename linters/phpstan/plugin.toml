@@ -9,7 +9,7 @@ suggested = "targets"
 latest_version = "1.11.1"
 known_good_version = "1.11.1"
 config_files = ["phpstan.neon", "phpstan.neon.dist", "phpstan.dist.neon"]
-description = "Php code linter"
+description = "PHP code linter"
 
 [plugins.definitions.phpstan.drivers.lint]
 script = "phpstan analyze ${target} --error-format=json --level=9"
