@@ -1,0 +1,20 @@
+config_version = "0"
+
+[plugins.definitions.php-codesniffer]
+runnable_archive_url = "https://github.com/PHPCSStandards/PHP_CodeSniffer/releases/download/${version}/phpcs.phar"
+strip_components = 0
+runtime = "php"
+file_types = ["php"]
+suggested = "targets"
+latest_version = "3.10.1"
+known_good_version = "3.10.1"
+version_command = "php-codesniffer --version"
+description = "Php code linter"
+
+[plugins.definitions.php-codesniffer.drivers.lint]
+script = "php-codesniffer --report=json ${target}"
+success_codes = [1, 2]
+output = "stdout"
+output_format = "php_codesniffer"
+cache_results = true
+batch = true
