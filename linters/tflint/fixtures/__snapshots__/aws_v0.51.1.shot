@@ -5,6 +5,7 @@ exports[`linter=tflint fixture=aws version=0.51.1 1`] = `
   "issues": [
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.7.0/docs/rules/terraform_typed_variables.md",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "aws.in.tf",
@@ -35,6 +36,7 @@ variable "foo" {
     },
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.7.0/docs/rules/terraform_unused_declarations.md",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "aws.in.tf",
@@ -65,6 +67,7 @@ variable "foo" {
     },
     {
       "category": "CATEGORY_BUG",
+      "documentationUrl": "https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.7.0/docs/rules/terraform_unused_declarations.md",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "aws.in.tf",
