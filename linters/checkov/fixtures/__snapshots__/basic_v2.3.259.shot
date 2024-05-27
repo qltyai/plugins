@@ -5,6 +5,7 @@ exports[`linter=checkov fixture=basic version=2.3.259 1`] = `
   "issues": [
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/bc-aws-2-40",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -68,6 +69,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/iam-23",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -131,6 +133,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/iam-23",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -184,6 +187,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-do-not-allow-credentials-exposure",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -247,6 +251,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-do-not-allow-credentials-exposure",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -300,6 +305,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-do-not-allow-data-exfiltration",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -363,6 +369,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-do-not-allow-data-exfiltration",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -416,6 +423,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -479,6 +487,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-do-not-allow-permissions-management-resource-exposure-without-constraint",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -532,6 +541,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-does-not-allow-privilege-escalation",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -595,6 +605,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-does-not-allow-privilege-escalation",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -648,6 +659,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-do-not-allow-write-access-without-constraint",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -711,6 +723,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/ensure-iam-policies-do-not-allow-write-access-without-constraint",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -764,6 +777,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/bc-aws-356",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -819,6 +833,7 @@ data "aws_iam_policy_document" "list" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/bc-aws-356",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -882,6 +897,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/bc-aws-356",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -935,6 +951,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/bc-aws-iam-43",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
@@ -998,6 +1015,7 @@ data "aws_iam_policy_document" "no_effect" {
     },
     {
       "category": "CATEGORY_VULNERABILITY",
+      "documentationUrl": "https://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-iam-policies/bc-aws-iam-43",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.tf",
