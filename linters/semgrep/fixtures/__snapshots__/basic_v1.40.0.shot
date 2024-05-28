@@ -5,7 +5,7 @@ exports[`linter=semgrep fixture=basic version=1.40.0 1`] = `
   "issues": [
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_LOW",
+      "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.rs",
         "range": {
