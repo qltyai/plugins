@@ -2,19 +2,77 @@ config_version = "0"
 
 [sources.default]
 repository = "https://github.com/qltyai/plugins.git"
-ref = "v0.18.0-pre"
+ref = "v0.36.0-pre"
 
-[runtimes.enabled]
-node = "19.6.0"
-python = "3.11.7"
+[[plugin]]
+name = "actionlint"
 
-[plugins.enabled]
-black = "23.1.0"
-flake8 = "6.0.0"
-hadolint = "2.12.0"
-markdownlint = "0.35.0"
-prettier = "2.8.4"
-shellcheck = "0.9.0"
+[[plugin]]
+name = "bandit"
+
+[[plugin]]
+name = "checkov"
+version = "3.2.49"
+
+[[plugin]]
+name = "clippy"
+
+[[plugin]]
+name = "dotenv-linter"
+
+[[plugin]]
+name = "flake8"
+version = "6.1.0"
+
+[[plugin]]
+name = "gofmt"
+
+[[plugin]]
+name = "hadolint"
+
+[[plugin]]
+name = "markdownlint"
+version = "0.31.1"
+
+[[plugin]]
+name = "osv-scanner"
+
+[[plugin]]
+name = "php-codesniffer"
+
+[[plugin]]
+name = "phpstan"
+
+[[plugin]]
+name = "prettier"
+version = "2.8.4"
+
+[[plugin]]
+name = "ripgrep"
+
+[[plugin]]
+name = "ruff"
+version = "0.3.3"
+
+[[plugin]]
+name = "shellcheck"
+version = "0.9.0"
+
+[[plugin]]
+name = "shfmt"
+
+[[plugin]]
+name = "stylelint"
+version = "14.6.1"
+
+[[plugin]]
+name = "trivy"
+
+[[plugin]]
+name = "trufflehog"
+
+[[plugin]]
+name = "yamllint"
 
 [[ignores]]
 plugins = ["ALL"]
