@@ -10,8 +10,10 @@ exports[`linter=clippy fixture=nested_basic version=1.77.2 1`] = `
       "location": {
         "path": "random_parent_dir/src/main.rs",
         "range": {
+          "endByte": 375,
           "endColumn": 23,
           "endLine": 13,
+          "startByte": 360,
           "startColumn": 8,
           "startLine": 13,
         },
@@ -41,6 +43,39 @@ fn main() {
     for i in 0..vec.len() {
         println!("{}", vec[i]);
 ",
+      "suggestions": [
+        {
+          "description": "try",
+          "patch": "--- original
++++ modified
+@@ -10,7 +10,7 @@
+ fn main() {
+     let x = 1;
+     let y = 2;
+-    if x == y || x < y {}
++    if x <= y {}
+     println!("Hello World");
+
+     // empty format literal
+",
+          "replacements": [
+            {
+              "data": "x <= y",
+              "location": {
+                "path": "random_parent_dir/src/main.rs",
+                "range": {
+                  "endByte": 375,
+                  "endColumn": 14,
+                  "endLine": 13,
+                  "startByte": 360,
+                  "startColumn": 8,
+                  "startLine": 13,
+                },
+              },
+            },
+          ],
+        },
+      ],
       "tool": "clippy",
     },
     {
@@ -50,8 +85,10 @@ fn main() {
       "location": {
         "path": "random_parent_dir/src/main.rs",
         "range": {
+          "endByte": 309,
           "endColumn": 2,
           "endLine": 8,
+          "startByte": 230,
           "startColumn": 1,
           "startLine": 4,
         },
@@ -91,8 +128,10 @@ fn main() {
       "location": {
         "path": "random_parent_dir/src/main.rs",
         "range": {
+          "endByte": 378,
           "endColumn": 26,
           "endLine": 13,
+          "startByte": 357,
           "startColumn": 5,
           "startLine": 13,
         },
@@ -122,6 +161,39 @@ fn main() {
     for i in 0..vec.len() {
         println!("{}", vec[i]);
 ",
+      "suggestions": [
+        {
+          "description": "you can remove it",
+          "patch": "--- original
++++ modified
+@@ -10,7 +10,7 @@
+ fn main() {
+     let x = 1;
+     let y = 2;
+-    if x == y || x < y {}
++    x == y || x < y;
+     println!("Hello World");
+
+     // empty format literal
+",
+          "replacements": [
+            {
+              "data": "x == y || x < y;",
+              "location": {
+                "path": "random_parent_dir/src/main.rs",
+                "range": {
+                  "endByte": 378,
+                  "endColumn": 21,
+                  "endLine": 13,
+                  "startByte": 357,
+                  "startColumn": 5,
+                  "startLine": 13,
+                },
+              },
+            },
+          ],
+        },
+      ],
       "tool": "clippy",
     },
     {
@@ -131,8 +203,10 @@ fn main() {
       "location": {
         "path": "random_parent_dir/src/main.rs",
         "range": {
+          "endByte": 569,
           "endColumn": 26,
           "endLine": 21,
+          "startByte": 557,
           "startColumn": 14,
           "startLine": 21,
         },
@@ -171,8 +245,10 @@ fn main() {
       "location": {
         "path": "random_parent_dir/src/main.rs",
         "range": {
+          "endByte": 478,
           "endColumn": 42,
           "endLine": 17,
+          "startByte": 456,
           "startColumn": 20,
           "startLine": 17,
         },
@@ -202,6 +278,52 @@ fn main() {
     // manual nonexhaustive
     let z = Gibberish::Foo("fizz".to_string());
     println!("gibberish is {}", match z {",
+      "suggestions": [
+        {
+          "description": "try",
+          "patch": "--- original
++++ modified
+@@ -14,7 +14,7 @@
+     println!("Hello World");
+
+     // empty format literal
+-    println!("{}", "empty format literal");
++    println!("empty format literal");
+
+     // needless range loop
+     let vec = vec!['a', 'b', 'c'];
+",
+          "replacements": [
+            {
+              "data": "empty format literal",
+              "location": {
+                "path": "random_parent_dir/src/main.rs",
+                "range": {
+                  "endByte": 453,
+                  "endColumn": 35,
+                  "endLine": 17,
+                  "startByte": 451,
+                  "startColumn": 15,
+                  "startLine": 17,
+                },
+              },
+            },
+            {
+              "location": {
+                "path": "random_parent_dir/src/main.rs",
+                "range": {
+                  "endByte": 478,
+                  "endColumn": 18,
+                  "endLine": 17,
+                  "startByte": 454,
+                  "startColumn": 18,
+                  "startLine": 17,
+                },
+              },
+            },
+          ],
+        },
+      ],
       "tool": "clippy",
     },
     {
@@ -211,8 +333,10 @@ fn main() {
       "location": {
         "path": "random_parent_dir/src/main.rs",
         "range": {
+          "endByte": 542,
           "endColumn": 34,
           "endLine": 20,
+          "startByte": 523,
           "startColumn": 15,
           "startLine": 20,
         },
@@ -242,6 +366,39 @@ fn main() {
         Gibberish::Foo(_) => "buzz",
         Gibberish::__Nonexhaustive => unreachable!(),
     });",
+      "suggestions": [
+        {
+          "description": "you can use an array directly",
+          "patch": "--- original
++++ modified
+@@ -17,7 +17,7 @@
+     println!("{}", "empty format literal");
+
+     // needless range loop
+-    let vec = vec!['a', 'b', 'c'];
++    let vec = ['a', 'b', 'c'];
+     for i in 0..vec.len() {
+         println!("{}", vec[i]);
+
+",
+          "replacements": [
+            {
+              "data": "['a', 'b', 'c']",
+              "location": {
+                "path": "random_parent_dir/src/main.rs",
+                "range": {
+                  "endByte": 542,
+                  "endColumn": 30,
+                  "endLine": 20,
+                  "startByte": 523,
+                  "startColumn": 15,
+                  "startLine": 20,
+                },
+              },
+            },
+          ],
+        },
+      ],
       "tool": "clippy",
     },
   ],

@@ -9,8 +9,10 @@ exports[`linter=clippy fixture=multiple_files version=1.77.2 1`] = `
       "location": {
         "path": "src/high.rs",
         "range": {
+          "endByte": 34,
           "endColumn": 16,
           "endLine": 2,
+          "startByte": 23,
           "startColumn": 5,
           "startLine": 2,
         },
@@ -30,8 +32,10 @@ exports[`linter=clippy fixture=multiple_files version=1.77.2 1`] = `
       "location": {
         "path": "src/high.rs",
         "range": {
+          "endByte": 14,
           "endColumn": 15,
           "endLine": 1,
+          "startByte": 3,
           "startColumn": 4,
           "startLine": 1,
         },
@@ -52,8 +56,10 @@ exports[`linter=clippy fixture=multiple_files version=1.77.2 1`] = `
       "location": {
         "path": "src/main.rs",
         "range": {
+          "endByte": 75,
           "endColumn": 23,
           "endLine": 6,
+          "startByte": 60,
           "startColumn": 8,
           "startLine": 6,
         },
@@ -70,6 +76,38 @@ fn main() {
     if x == y || x < y {}
     println!("Hello World");
 }",
+      "suggestions": [
+        {
+          "description": "try",
+          "patch": "--- original
++++ modified
+@@ -3,6 +3,6 @@
+ fn main() {
+     let x = 1;
+     let y = 2;
+-    if x == y || x < y {}
++    if x <= y {}
+     println!("Hello World");
+ }
+",
+          "replacements": [
+            {
+              "data": "x <= y",
+              "location": {
+                "path": "src/main.rs",
+                "range": {
+                  "endByte": 75,
+                  "endColumn": 14,
+                  "endLine": 6,
+                  "startByte": 60,
+                  "startColumn": 8,
+                  "startLine": 6,
+                },
+              },
+            },
+          ],
+        },
+      ],
       "tool": "clippy",
     },
     {
@@ -79,8 +117,10 @@ fn main() {
       "location": {
         "path": "src/main.rs",
         "range": {
+          "endByte": 78,
           "endColumn": 26,
           "endLine": 6,
+          "startByte": 57,
           "startColumn": 5,
           "startLine": 6,
         },
@@ -97,6 +137,38 @@ fn main() {
     if x == y || x < y {}
     println!("Hello World");
 }",
+      "suggestions": [
+        {
+          "description": "you can remove it",
+          "patch": "--- original
++++ modified
+@@ -3,6 +3,6 @@
+ fn main() {
+     let x = 1;
+     let y = 2;
+-    if x == y || x < y {}
++    x == y || x < y;
+     println!("Hello World");
+ }
+",
+          "replacements": [
+            {
+              "data": "x == y || x < y;",
+              "location": {
+                "path": "src/main.rs",
+                "range": {
+                  "endByte": 78,
+                  "endColumn": 21,
+                  "endLine": 6,
+                  "startByte": 57,
+                  "startColumn": 5,
+                  "startLine": 6,
+                },
+              },
+            },
+          ],
+        },
+      ],
       "tool": "clippy",
     },
     {
@@ -106,8 +178,10 @@ fn main() {
       "location": {
         "path": "src/high.rs",
         "range": {
+          "endByte": 35,
           "endColumn": 17,
           "endLine": 2,
+          "startByte": 23,
           "startColumn": 5,
           "startLine": 2,
         },
@@ -127,8 +201,10 @@ fn main() {
       "location": {
         "path": "src/high.rs",
         "range": {
+          "endByte": 34,
           "endColumn": 16,
           "endLine": 2,
+          "startByte": 23,
           "startColumn": 5,
           "startLine": 2,
         },
