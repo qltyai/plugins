@@ -78,7 +78,6 @@ fn main() {
 }",
       "suggestions": [
         {
-          "description": "try",
           "patch": "--- original
 +++ modified
 @@ -3,6 +3,6 @@
@@ -139,7 +138,6 @@ fn main() {
 }",
       "suggestions": [
         {
-          "description": "you can remove it",
           "patch": "--- original
 +++ modified
 @@ -3,6 +3,6 @@
