@@ -257,6 +257,13 @@ export class QltyDriver {
         return 0;
       });
 
+      // make results deterministic by removing the sandbox path
+      outputJson.forEach((issue: any) => {
+        if (issue.message.includes(sandboxPath)) {
+          issue.message = issue.message.replace(sandboxPath, "");
+        }
+      })
+
       return {
         issues: outputJson,
       };
