@@ -12,6 +12,9 @@ suggested = "targets"
 latest_version = "0.50.1"
 known_good_version = "0.50.1"
 version_command = "trivy --version"
+description = "Comprehensive and versatile security scanner"
+security = true
+idempotent = false
 
 [plugins.definitions.trivy.drivers.fs-vuln]
 # Defining file_types at driver level since each works with different files
@@ -22,9 +25,6 @@ output = "stdout"
 output_format = "trivy_sarif"
 cache_results = true
 batch = false
-description = "Comprehensive and versatile security scanner"
-security = true
-idempotent = false
 
 [plugins.definitions.trivy.drivers.fs-secret]
 # Defining file_types at driver level since each works with different files
