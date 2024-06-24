@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=knip fixture=basic_nested version=5.21.2 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "nested/index.js",
+      },
+      "message": "Unlisted dependency: src/mistake.js",
+      "mode": "block",
+      "ruleKey": "unlisted-dependency",
+      "tool": "knip",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "nested/package.json",
+      },
+      "message": "Unused dependency: @aws-sdk/client-batch",
+      "mode": "block",
+      "ruleKey": "unused-dependency",
+      "tool": "knip",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "nested/package.json",
+      },
+      "message": "Unused dependency: @aws-sdk/client-cloudwatch-logs",
+      "mode": "block",
+      "ruleKey": "unused-dependency",
+      "tool": "knip",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "nested/src/hello.js",
+      },
+      "message": "Unused file",
+      "mode": "block",
+      "ruleKey": "unused-file",
+      "tool": "knip",
+    },
+  ],
+}
+`;
