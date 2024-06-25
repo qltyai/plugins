@@ -288,7 +288,7 @@ ruby = "3.2.1"
 
   getGitIgnoreContents(): string {
     return `.qlty
-tmp
+./tmp
 `;
   }
 }
