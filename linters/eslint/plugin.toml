@@ -5,22 +5,20 @@ runtime = "node"
 package = "eslint"
 file_types = ["javascript", "typescript", "tsx"]
 config_files = [
-  ".eslintrc",
-  ".eslintrc.cjs",
-  ".eslintrc.js",
-  ".eslintrc.json",
-  ".eslintrc.yaml",
-  ".eslintrc.yml",
+  "eslint.config.mjs",
+  "eslint.config.cjs",
+  "eslint.config.js",
 ]
 affects_cache = [".eslintignore", "package.json", "tsconfig.json"]
 suggested = "never" # ESLint is unlikely to work out-of-the-box
-latest_version = "9.0.0"
-known_good_version = "8.57.0"
+latest_version = "9.5.0"
+known_good_version = "9.5.0"
 version_command = "eslint --version"
 description = "Javascript and ECMAScript linter"
 
 [plugins.definitions.eslint.drivers.lint]
 script = "eslint --output-file ${tmpfile} --format json ${target}"
+prepare_script = "npm install"
 error_codes = [2]
 success_codes = [0, 1]
 output = "tmpfile"
