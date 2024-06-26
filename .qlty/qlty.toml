@@ -74,6 +74,6 @@ name = "trufflehog"
 [[plugin]]
 name = "yamllint"
 
-[[ignores]]
+[[ignore]]
 plugins = ["ALL"]
-globs = ["**/fixtures/**", "**/tests/**"]
+file_patterns = ["**/fixtures/**", "**/tests/**"]
