@@ -14,6 +14,7 @@ exports[`linter=php-codesniffer fixture=basic version=3.10.1 1`] = `
         },
       },
       "message": "Spaces must be used to indent lines; tabs are not allowed",
+      "mode": "block",
       "ruleKey": "Generic.WhiteSpace.DisallowTabIndent.TabsUsed",
       "snippet": "	public function sayHello(DateTimeImutable $date): void",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -25,7 +26,7 @@ class HelloWorld
 		echo 'Hello, ' . $date->format('j. n. Y');
 	}
 }",
-      "tool": "php_codesniffer",
+      "tool": "php-codesniffer",
     },
     {
       "category": "CATEGORY_BUG",
@@ -38,6 +39,7 @@ class HelloWorld
         },
       },
       "message": "Spaces must be used to indent lines; tabs are not allowed",
+      "mode": "block",
       "ruleKey": "Generic.WhiteSpace.DisallowTabIndent.TabsUsed",
       "snippet": "	{",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -49,7 +51,7 @@ class HelloWorld
 		echo 'Hello, ' . $date->format('j. n. Y');
 	}
 }",
-      "tool": "php_codesniffer",
+      "tool": "php-codesniffer",
     },
     {
       "category": "CATEGORY_BUG",
@@ -62,6 +64,7 @@ class HelloWorld
         },
       },
       "message": "Spaces must be used to indent lines; tabs are not allowed",
+      "mode": "block",
       "ruleKey": "Generic.WhiteSpace.DisallowTabIndent.TabsUsed",
       "snippet": "		echo 'Hello, ' . $date->format('j. n. Y');",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -73,7 +76,7 @@ class HelloWorld
 		echo 'Hello, ' . $date->format('j. n. Y');
 	}
 }",
-      "tool": "php_codesniffer",
+      "tool": "php-codesniffer",
     },
     {
       "category": "CATEGORY_BUG",
@@ -86,6 +89,7 @@ class HelloWorld
         },
       },
       "message": "Spaces must be used to indent lines; tabs are not allowed",
+      "mode": "block",
       "ruleKey": "Generic.WhiteSpace.DisallowTabIndent.TabsUsed",
       "snippet": "	}",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -97,7 +101,7 @@ class HelloWorld
 		echo 'Hello, ' . $date->format('j. n. Y');
 	}
 }",
-      "tool": "php_codesniffer",
+      "tool": "php-codesniffer",
     },
     {
       "category": "CATEGORY_BUG",
@@ -110,6 +114,7 @@ class HelloWorld
         },
       },
       "message": "Missing doc comment for class HelloWorld",
+      "mode": "block",
       "ruleKey": "PEAR.Commenting.ClassComment.Missing",
       "snippet": "class HelloWorld",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -121,7 +126,7 @@ class HelloWorld
 		echo 'Hello, ' . $date->format('j. n. Y');
 	}
 }",
-      "tool": "php_codesniffer",
+      "tool": "php-codesniffer",
     },
     {
       "category": "CATEGORY_BUG",
@@ -134,6 +139,7 @@ class HelloWorld
         },
       },
       "message": "Missing file doc comment",
+      "mode": "block",
       "ruleKey": "PEAR.Commenting.FileComment.Missing",
       "snippet": "<?php declare(strict_types = 1);",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -145,7 +151,7 @@ class HelloWorld
 		echo 'Hello, ' . $date->format('j. n. Y');
 	}
 }",
-      "tool": "php_codesniffer",
+      "tool": "php-codesniffer",
     },
     {
       "category": "CATEGORY_BUG",
@@ -158,6 +164,7 @@ class HelloWorld
         },
       },
       "message": "Missing doc comment for function sayHello()",
+      "mode": "block",
       "ruleKey": "PEAR.Commenting.FunctionComment.Missing",
       "snippet": "	public function sayHello(DateTimeImutable $date): void",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -169,7 +176,7 @@ class HelloWorld
 		echo 'Hello, ' . $date->format('j. n. Y');
 	}
 }",
-      "tool": "php_codesniffer",
+      "tool": "php-codesniffer",
     },
     {
       "category": "CATEGORY_BUG",
@@ -182,6 +189,7 @@ class HelloWorld
         },
       },
       "message": "Line indented incorrectly; expected at least 4 spaces, found 1",
+      "mode": "block",
       "ruleKey": "PEAR.WhiteSpace.ScopeIndent.Incorrect",
       "snippet": "	{",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -193,7 +201,7 @@ class HelloWorld
 		echo 'Hello, ' . $date->format('j. n. Y');
 	}
 }",
-      "tool": "php_codesniffer",
+      "tool": "php-codesniffer",
     },
     {
       "category": "CATEGORY_BUG",
@@ -206,6 +214,7 @@ class HelloWorld
         },
       },
       "message": "Line indented incorrectly; expected at least 8 spaces, found 2",
+      "mode": "block",
       "ruleKey": "PEAR.WhiteSpace.ScopeIndent.Incorrect",
       "snippet": "		echo 'Hello, ' . $date->format('j. n. Y');",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -217,7 +226,7 @@ class HelloWorld
 		echo 'Hello, ' . $date->format('j. n. Y');
 	}
 }",
-      "tool": "php_codesniffer",
+      "tool": "php-codesniffer",
     },
     {
       "category": "CATEGORY_BUG",
@@ -230,6 +239,7 @@ class HelloWorld
         },
       },
       "message": "Line indented incorrectly; expected 4 spaces, found 1",
+      "mode": "block",
       "ruleKey": "PEAR.WhiteSpace.ScopeIndent.IncorrectExact",
       "snippet": "	public function sayHello(DateTimeImutable $date): void",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -241,7 +251,7 @@ class HelloWorld
 		echo 'Hello, ' . $date->format('j. n. Y');
 	}
 }",
-      "tool": "php_codesniffer",
+      "tool": "php-codesniffer",
     },
     {
       "category": "CATEGORY_BUG",
@@ -254,6 +264,7 @@ class HelloWorld
         },
       },
       "message": "Line indented incorrectly; expected 4 spaces, found 1",
+      "mode": "block",
       "ruleKey": "PEAR.WhiteSpace.ScopeIndent.IncorrectExact",
       "snippet": "	}",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -265,7 +276,7 @@ class HelloWorld
 		echo 'Hello, ' . $date->format('j. n. Y');
 	}
 }",
-      "tool": "php_codesniffer",
+      "tool": "php-codesniffer",
     },
   ],
 }

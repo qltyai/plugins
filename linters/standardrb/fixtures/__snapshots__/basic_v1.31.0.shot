@@ -16,6 +16,7 @@ exports[`linter=standardrb fixture=basic version=1.31.0 1`] = `
         },
       },
       "message": "Extra blank line detected.",
+      "mode": "block",
       "ruleKey": "Layout/EmptyLines",
       "snippet": "
 ",
@@ -34,7 +35,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_BUG",
@@ -49,6 +50,7 @@ Klass.(
         },
       },
       "message": "Extra blank line detected.",
+      "mode": "block",
       "ruleKey": "Layout/EmptyLines",
       "snippet": "
 ",
@@ -67,7 +69,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_BUG",
@@ -82,6 +84,7 @@ Klass.(
         },
       },
       "message": "Extra blank line detected.",
+      "mode": "block",
       "ruleKey": "Layout/EmptyLines",
       "snippet": "
 ",
@@ -100,7 +103,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_BUG",
@@ -115,6 +118,7 @@ Klass.(
         },
       },
       "message": "Extra blank line detected.",
+      "mode": "block",
       "ruleKey": "Layout/EmptyLines",
       "snippet": "
 ",
@@ -133,7 +137,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_BUG",
@@ -148,6 +152,7 @@ Klass.(
         },
       },
       "message": "Extra blank line detected.",
+      "mode": "block",
       "ruleKey": "Layout/EmptyLines",
       "snippet": "
  def smooth; end",
@@ -166,7 +171,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_BUG",
@@ -181,6 +186,7 @@ Klass.(
         },
       },
       "message": "Unnecessary spacing detected.",
+      "mode": "block",
       "ruleKey": "Layout/ExtraSpacing",
       "snippet": "class        Plumbus",
       "snippetWithContext": "class        Plumbus
@@ -194,7 +200,7 @@ Klass.(
  def smooth; end
 end
 ",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_BUG",
@@ -209,6 +215,7 @@ end
         },
       },
       "message": "Inconsistent indentation detected.",
+      "mode": "block",
       "ruleKey": "Layout/IndentationConsistency",
       "snippet": " def smooth; end",
       "snippetWithContext": "class        Plumbus
@@ -226,7 +233,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_BUG",
@@ -241,6 +248,7 @@ Klass.(
         },
       },
       "message": "Use 2 (not 1) spaces for indentation.",
+      "mode": "block",
       "ruleKey": "Layout/IndentationWidth",
       "snippet": " def smooth; end",
       "snippetWithContext": "class        Plumbus
@@ -258,7 +266,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_BUG",
@@ -273,6 +281,7 @@ Klass.(
         },
       },
       "message": "Put the \`end\` of empty method definitions on the next line.",
+      "mode": "block",
       "ruleKey": "Style/EmptyMethod",
       "snippet": " def smooth; end",
       "snippetWithContext": "class        Plumbus
@@ -290,7 +299,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_BUG",
@@ -309,6 +318,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )\`.",
+      "mode": "block",
       "ruleKey": "Style/LambdaCall",
       "snippet": "Klass.(
   key_1: 'hello',
@@ -328,7 +338,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_BUG",
@@ -343,6 +353,7 @@ Klass.(
         },
       },
       "message": "Avoid single-line method definitions.",
+      "mode": "block",
       "ruleKey": "Style/SingleLineMethods",
       "snippet": " def smooth; end",
       "snippetWithContext": "class        Plumbus
@@ -360,7 +371,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_BUG",
@@ -375,6 +386,7 @@ Klass.(
         },
       },
       "message": "Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.",
+      "mode": "block",
       "ruleKey": "Style/StringLiterals",
       "snippet": "  key_1: 'hello',",
       "snippetWithContext": "
@@ -390,7 +402,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_BUG",
@@ -405,6 +417,7 @@ Klass.(
         },
       },
       "message": "Prefer double-quoted strings unless you need single quotes to avoid extra backslashes for escaping.",
+      "mode": "block",
       "ruleKey": "Style/StringLiterals",
       "snippet": "  key_2: 'world'",
       "snippetWithContext": "
@@ -419,7 +432,7 @@ Klass.(
   key_1: 'hello',
   key_2: 'world'
 )",
-      "tool": "rubocop",
+      "tool": "standardrb",
     },
     {
       "category": "CATEGORY_STYLE",
