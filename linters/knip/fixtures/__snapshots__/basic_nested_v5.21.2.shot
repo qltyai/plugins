@@ -4,7 +4,7 @@ exports[`linter=knip fixture=basic_nested version=5.21.2 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_DEAD_CODE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "nested/index.js",
@@ -15,7 +15,7 @@ exports[`linter=knip fixture=basic_nested version=5.21.2 1`] = `
       "tool": "knip",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_DEAD_CODE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "nested/package.json",
@@ -26,7 +26,7 @@ exports[`linter=knip fixture=basic_nested version=5.21.2 1`] = `
       "tool": "knip",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_DEAD_CODE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "nested/package.json",
@@ -37,7 +37,7 @@ exports[`linter=knip fixture=basic_nested version=5.21.2 1`] = `
       "tool": "knip",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_DEAD_CODE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "nested/src/hello.js",
