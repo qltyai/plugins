@@ -8,6 +8,12 @@ config_files = [
   "eslint.config.mjs",
   "eslint.config.cjs",
   "eslint.config.js",
+  ".eslintrc",
+  ".eslintrc.cjs",
+  ".eslintrc.js",
+  ".eslintrc.json",
+  ".eslintrc.yaml",
+  ".eslintrc.yml",
 ]
 affects_cache = [".eslintignore", "package.json", "tsconfig.json"]
 suggested = "never" # ESLint is unlikely to work out-of-the-box

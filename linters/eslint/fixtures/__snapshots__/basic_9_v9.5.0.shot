@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`linter=eslint fixture=basic version=9.5.0 1`] = `
+exports[`linter=eslint fixture=basic_9 version=9.5.0 1`] = `
 {
   "issues": [
     {
