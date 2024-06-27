@@ -16,7 +16,8 @@ version_command = "tflint --version"
 description = "A pluggable Terraform linter"
 
 [plugins.definitions.tflint.drivers.lint]
-script = "tflint --init && tflint --format=sarif --force"
+script = "tflint --format=sarif --force"
+prepare_script = "tflint --init"
 success_codes = [0, 1, 2]
 output = "stdout"
 output_format = "sarif"
