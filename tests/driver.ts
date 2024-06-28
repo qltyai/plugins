@@ -92,10 +92,24 @@ export class QltyDriver {
       fs.mkdirSync(path.resolve(this.sandboxPath, ".qlty"), {});
     }
 
-    fs.writeFileSync(
-      path.resolve(this.sandboxPath, ".qlty/qlty.toml"),
-      this.getQltyTomlContents()
-    );
+    if (this.linterName == "eslint" && this.linterVersion == "9.5.0") {
+      fs.writeFileSync(
+        path.resolve(this.sandboxPath, ".qlty/qlty.toml"),
+        this.getESLintQltyTomlContents()
+      );
+      if (!fs.existsSync(path.resolve(path.resolve(this.sandboxPath, ".qlty", "configs")))) {
+        fs.mkdirSync(path.resolve(this.sandboxPath, ".qlty", "configs"), {});
+      }
+      fs.writeFileSync(
+        path.resolve(this.sandboxPath, ".qlty/configs/package.json"),
+        this.getESLintConfig()
+      );
+    } else {
+      fs.writeFileSync(
+        path.resolve(this.sandboxPath, ".qlty/qlty.toml"),
+        this.getQltyTomlContents()
+      );
+    }
 
     fs.writeFileSync(
       path.resolve(this.sandboxPath, ".gitignore"),
@@ -113,9 +127,13 @@ export class QltyDriver {
       .commit("first commit");
 
     await this.runQlty(["--help"]);
-    await this.runQltyCmd(
-      `plugins enable ${this.linterName}=${this.linterVersion}`
-    );
+
+    // Since we already have the eslint 9.5.0 plugin enabled in qlty.toml
+    if (!(this.linterName == "eslint" && this.linterVersion == "9.5.0")) {
+      await this.runQltyCmd(
+        `plugins enable ${this.linterName}=${this.linterVersion}`
+      );
+    }
   }
 
   tearDown() {
@@ -290,5 +308,34 @@ ruby = "3.2.1"
     return `.qlty
 /tmp/
 `;
+  }
+
+  getESLintQltyTomlContents(): string {
+  return `config_version = "0"
+
+[sources.default]
+directory = "${REPO_ROOT}"
+
+[runtimes.enabled]
+node = "19.6.0"
+go = "1.22.0"
+python = "3.11.7"
+ruby = "3.2.1"
+
+[[plugin]]
+name = "eslint"
+version = "9.5.0"
+package_file = ".qlty/configs/package.json"
+`;
+  }
+
+  getESLintConfig(): string {
+    return `{
+  "dependencies": {
+    "globals": "15.6.0",
+    "@eslint/js": "9.5.0",
+    "@eslint/eslintrc": "3.1.0"
+  }
+}`;
   }
 }

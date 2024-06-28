@@ -24,7 +24,6 @@ description = "Javascript and ECMAScript linter"
 
 [plugins.definitions.eslint.drivers.lint]
 script = "eslint --output-file ${tmpfile} --format json ${target}"
-prepare_script = "npm install"
 error_codes = [2]
 success_codes = [0, 1]
 output = "tmpfile"
