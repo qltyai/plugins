@@ -299,13 +299,12 @@ node = "19.6.0"
 go = "1.22.0"
 python = "3.11.7"
 ruby = "3.2.1"
-
-[plugins.enabled]
 `;
   }
 
   getGitIgnoreContents(): string {
-    return `.qlty
+    return `.qlty/logs/
+.qlty/out/
 /tmp/
 `;
   }
@@ -316,15 +315,9 @@ ruby = "3.2.1"
 [sources.default]
 directory = "${REPO_ROOT}"
 
-[runtimes.enabled]
-node = "19.6.0"
-go = "1.22.0"
-python = "3.11.7"
-ruby = "3.2.1"
-
 [[plugin]]
 name = "eslint"
-version = "9.5.0"
+version = "9.6.0"
 package_file = ".qlty/configs/package.json"
 `;
   }

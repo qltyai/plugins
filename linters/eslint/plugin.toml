@@ -17,13 +17,13 @@ config_files = [
 ]
 affects_cache = [".eslintignore", "package.json", "tsconfig.json"]
 suggested = "never" # ESLint is unlikely to work out-of-the-box
-latest_version = "9.5.0"
-known_good_version = "9.5.0"
+latest_version = "9.6.0"
+known_good_version = "9.6.0"
 version_command = "eslint --version"
 description = "Javascript and ECMAScript linter"
 
 [plugins.definitions.eslint.drivers.lint]
-script = "eslint --output-file ${tmpfile} --format json ${target}"
+script = "eslint --output-file ${tmpfile} --config ${config_file} --format json ${target}"
 error_codes = [2]
 success_codes = [0, 1]
 output = "tmpfile"
