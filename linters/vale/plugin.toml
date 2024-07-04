@@ -1,0 +1,25 @@
+config_version = "0"
+
+[plugins.releases.vale]
+github = "errata-ai/vale"
+download_type = "targz"
+strip_components = 0
+
+[plugins.definitions.vale]
+releases = ["vale"]
+config_files = [".vale.ini"]
+suggested = "config"
+file_types = ["ALL"]
+latest_version = "3.6.0"
+known_good_version = "3.6.0"
+version_command = "vale --version"
+description = "Static checker for GitHub Actions workflow files"
+
+[plugins.definitions.vale.drivers.lint]
+script = "vale --output=line ${target}"
+success_codes = [0, 1]
+output = "stdout"
+output_format = "regex"
+output_regex = "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+):(?P<code>[^:]+):(?P<message>.+))"
+cache_results = true
+batch = true
