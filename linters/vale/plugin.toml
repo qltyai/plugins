@@ -13,7 +13,7 @@ file_types = ["ALL"]
 latest_version = "3.6.0"
 known_good_version = "3.6.0"
 version_command = "vale --version"
-description = "Static checker for GitHub Actions workflow files"
+description = "Enforce editorial standards in your text documents"
 
 [plugins.definitions.vale.drivers.lint]
 script = "vale --output=line ${target}"
