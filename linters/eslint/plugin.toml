@@ -4,28 +4,44 @@ config_version = "0"
 runtime = "node"
 package = "eslint"
 file_types = ["javascript", "typescript", "tsx"]
+affects_cache = [".eslintignore", "package.json", "tsconfig.json"]
+suggested = "never" # ESLint is unlikely to work out-of-the-box
+latest_version = "9.0.0"
+known_good_version = "8.57.0"
+version_command = "eslint --version"
+description = "Javascript and ECMAScript linter"
+
+[[plugins.definitions.eslint.drivers.lint.version]]
+version_matcher = ">=9.0.0"
+script = "eslint --config ${config_file} --output-file ${tmpfile} --format json ${target}"
+copy_configs_into_tool_install = true
+error_codes = [2]
+success_codes = [0, 1]
 config_files = [
+  "eslint.config.js",
   "eslint.config.mjs",
   "eslint.config.cjs",
-  "eslint.config.js",
+]
+output = "tmpfile"
+output_format = "eslint"
+batch = true
+cache_results = true
+max_batch = 40
+
+[[plugins.definitions.eslint.drivers.lint.version]]
+version_matcher = "<=8.57.0"
+script = "eslint --output-file ${tmpfile} --format json ${target}"
+error_codes = [2]
+success_codes = [0, 1]
+config_files = [
   ".eslintrc",
   ".eslintrc.cjs",
+  ".eslintrc.mjs",
   ".eslintrc.js",
   ".eslintrc.json",
   ".eslintrc.yaml",
   ".eslintrc.yml",
 ]
-affects_cache = [".eslintignore", "package.json", "tsconfig.json"]
-suggested = "never" # ESLint is unlikely to work out-of-the-box
-latest_version = "9.6.0"
-known_good_version = "9.6.0"
-version_command = "eslint --version"
-description = "Javascript and ECMAScript linter"
-
-[plugins.definitions.eslint.drivers.lint]
-script = "eslint --output-file ${tmpfile} --config ${config_file} --format json ${target}"
-error_codes = [2]
-success_codes = [0, 1]
 output = "tmpfile"
 output_format = "eslint"
 batch = true
