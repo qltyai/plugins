@@ -4,7 +4,7 @@ exports[`linter=vale fixture=basic version=3.6.0 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.md",
@@ -22,7 +22,7 @@ Hallo, wurld?",
       "tool": "vale",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.md",

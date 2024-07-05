@@ -23,3 +23,4 @@ output_format = "regex"
 output_regex = "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+):(?P<code>[^:]+):(?P<message>.+))"
 cache_results = true
 batch = true
+output_category = "style"
