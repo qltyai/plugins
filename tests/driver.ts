@@ -38,8 +38,8 @@ const testCreationFilter = (input: string) => (file: string) => {
   }
 
   // Only copy the input file if it matches the target
-  const name = file.split('/').pop() || "";
-  if (name.includes(".in") && input != file.split('/').pop()) {
+  const name = file.split("/").pop() || "";
+  if (name.includes(".in") && input != file.split("/").pop()) {
     return false;
   }
 
@@ -142,7 +142,7 @@ export class QltyDriver {
   }
 
   async runCheck() {
-    const fullArgs = `check --all --format=json --no-fail --no-cache --no-progress --filter=${this.linterName}`;
+    const fullArgs = `check --all --json --no-fail --no-cache --no-progress --filter=${this.linterName}`;
 
     try {
       const { stdout, stderr } = await this.runQltyCmd(fullArgs);
@@ -262,12 +262,12 @@ export class QltyDriver {
         if (issue.message.includes(sandboxPath)) {
           issue.message = issue.message.replace(sandboxPath, "");
         }
-      })
+      });
 
       return {
         issues: outputJson,
       };
-    }
+    };
   }
 
   getQltyTomlContents(): string {
