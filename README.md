@@ -5,7 +5,7 @@ This is the official repository containing Qlty's integrations with linters, for
 ```toml
 [sources.default]
 repository = "https://github.com/qltyai/plugins.git"
-ref = "v0.13.0"
+tag = "v0.13.0"
 ```
 
 Plugins marked as `recommended = true` will be automatically enabled when setting up Qlty using the init command:

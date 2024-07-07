@@ -2,7 +2,7 @@ config_version = "0"
 
 [sources.default]
 repository = "https://github.com/qltyai/plugins.git"
-ref = "v0.36.0-pre"
+tag = "v0.36.0-pre"
 
 [[plugin]]
 name = "actionlint"
