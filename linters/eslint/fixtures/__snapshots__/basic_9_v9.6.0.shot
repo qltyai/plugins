@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
+exports[`linter=eslint fixture=basic_9 version=9.6.0 1`] = `
 {
   "issues": [
     {
@@ -8,7 +8,7 @@ exports[`linter=eslint fixture=basic version=8.10.0 1`] = `
       "documentationUrl": "https://eslint.org/docs/rules/no-cond-assign",
       "level": "LEVEL_MEDIUM",
       "location": {
-        "path": "basic.in.js",
+        "path": "basic.js",
         "range": {
           "endColumn": 10,
           "endLine": 3,
@@ -32,7 +32,7 @@ if (x = 2) {
       "documentationUrl": "https://eslint.org/docs/rules/no-constant-condition",
       "level": "LEVEL_MEDIUM",
       "location": {
-        "path": "basic.in.js",
+        "path": "basic.js",
         "range": {
           "endColumn": 10,
           "endLine": 3,
@@ -56,7 +56,7 @@ if (x = 2) {
       "documentationUrl": "https://eslint.org/docs/rules/no-unused-vars",
       "level": "LEVEL_MEDIUM",
       "location": {
-        "path": "basic.in.js",
+        "path": "basic.js",
         "range": {
           "endColumn": 6,
           "endLine": 3,

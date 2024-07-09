@@ -5,13 +5,7 @@ import Debug from "debug";
 import path from "path";
 import * as git from "simple-git";
 import * as util from "util";
-import {
-  ChildProcess,
-  execFile,
-  execFileSync,
-  ExecOptions,
-  execSync,
-} from "child_process";
+import { execFile, ExecOptions } from "child_process";
 import { OPTIONS } from "./utils";
 
 const execFilePromise = util.promisify(execFile);
@@ -113,6 +107,7 @@ export class QltyDriver {
       .commit("first commit");
 
     await this.runQlty(["--help"]);
+
     await this.runQltyCmd(
       `plugins enable ${this.linterName}=${this.linterVersion}`
     );
@@ -281,13 +276,12 @@ node = "19.6.0"
 go = "1.22.0"
 python = "3.11.7"
 ruby = "3.2.1"
-
-[plugins.enabled]
 `;
   }
 
   getGitIgnoreContents(): string {
-    return `.qlty
+    return `.qlty/logs/
+.qlty/out/
 /tmp/
 `;
   }
