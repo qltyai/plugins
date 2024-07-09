@@ -22,6 +22,14 @@ jobs:
       with:
         cache: 'npm'
 
+    - run: echo "CACHE_MONTH=$(date +'%Y-%m')" >> $GITHUB_ENV
+
+    - name: Cache qlty tools
+      uses: actions/cache@v3
+      with:
+        path: ~/.qlty
+        key: ${{ runner.os }}-qlty-${{ env.CACHE_MONTH }}
+
     - name: Setup PHP with PECL extension
       uses: shivammathur/setup-php@v2
       if: matrix.os == 'macos-latest-xlarge'
