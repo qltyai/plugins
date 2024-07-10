@@ -9,7 +9,7 @@ version_command = "tsc --version"
 [plugins.definitions.tsc.drivers.typecheck]
 script = "tsc"
 target = { type = "parent_with", path = "package.json" }
-runs_from = "target_directory"
+runs_from = { type = "target_directory" }
 success_codes = [0, 2]
 output = "stdout"
 output_format = "tsc"
