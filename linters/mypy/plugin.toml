@@ -16,7 +16,7 @@ issue_url_format = "https://mypy.readthedocs.io/en/stable/error_code_list.html"
 [plugins.definitions.mypy.drivers.format]
 script = "mypy --ignore-missing-imports --follow-imports=silent --show-error-codes --show-column-numbers ${target}"
 success_codes = [0, 1]
-runs_from = "root_or_parent_with_any_config"
+runs_from = { type = "root_or_parent_with_any_config" }
 output = "stdout"
 output_format = "mypy"
 cache_results = true
