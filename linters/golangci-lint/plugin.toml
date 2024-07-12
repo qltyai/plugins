@@ -7,6 +7,7 @@ strip_components = 1
 
 [plugins.definitions.golangci-lint]
 releases = ["golangci-lint"]
+runtime = "go"
 file_types = ["go"]
 suggested = "targets"
 latest_version = "1.59.1"
@@ -27,7 +28,7 @@ output_format = "sarif"
 
 [[plugins.definitions.golangci-lint.environment]]
 name = "PATH"
-list = ["${linter}", "${env.PATH}"]
+list = ["${linter}", "${env.PATH}", "${runtime}"]
 
 [[plugins.definitions.golangci-lint.environment]]
 name = "GOLANGCI_LINT_CACHE"
