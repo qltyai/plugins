@@ -6,8 +6,8 @@ package = "markdownlint-cli"
 file_types = ["markdown"]
 config_files = [".markdownlint.json"]
 suggested = "targets"
-latest_version = "0.39.0"
-known_good_version = "0.31.1"
+latest_version = "0.41.0"
+known_good_version = "0.41.0"
 version_command = "markdownlint --version"
 description = "Markdown file linter and formatter"
 

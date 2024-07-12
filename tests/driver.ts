@@ -270,12 +270,6 @@ export class QltyDriver {
 
 [sources.default]
 directory = "${REPO_ROOT}"
-
-[runtimes.enabled]
-node = "19.6.0"
-go = "1.22.0"
-python = "3.11.7"
-ruby = "3.2.1"
 `;
   }
 
