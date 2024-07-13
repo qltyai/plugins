@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`linter=markdownlint fixture=basic version=0.31.1 1`] = `
+exports[`linter=markdownlint fixture=basic version=0.41.0 1`] = `
 {
   "issues": [
     {
@@ -13,9 +13,9 @@ exports[`linter=markdownlint fixture=basic version=0.31.1 1`] = `
           "startLine": 5,
         },
       },
-      "message": "Heading levels should only increment by one level at a time (https://github.com/DavidAnson/markdownlint/blob/v0.25.1/doc/Rules.md#md001)",
+      "message": "Heading levels should only increment by one level at a time (https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md001.md)",
       "mode": "block",
-      "ruleKey": "MD001 - heading-increment - header-increment",
+      "ruleKey": "MD001 - heading-increment",
       "snippet": "#### Here",
       "snippetWithContext": "## Crazy
 
@@ -34,7 +34,7 @@ exports[`linter=markdownlint fixture=basic version=0.31.1 1`] = `
           "startLine": 1,
         },
       },
-      "message": "First line in a file should be a top-level heading (https://github.com/DavidAnson/markdownlint/blob/v0.25.1/doc/Rules.md#md041)",
+      "message": "First line in a file should be a top-level heading (https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md041.md)",
       "mode": "block",
       "ruleKey": "MD041 - first-line-heading - first-line-h1",
       "snippet": "## Crazy",
