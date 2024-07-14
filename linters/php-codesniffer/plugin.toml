@@ -12,7 +12,7 @@ version_command = "php-codesniffer --version"
 description = "PHP code linter"
 
 [plugins.definitions.php-codesniffer.drivers.lint]
-script = "php-codesniffer --report=json ${target}"
+script = "php ${linter}/php-codesniffer --report=json ${target}"
 success_codes = [0, 1, 2]
 output = "stdout"
 output_format = "php_codesniffer"
