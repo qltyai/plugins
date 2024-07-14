@@ -12,7 +12,7 @@ config_files = ["phpstan.neon", "phpstan.neon.dist", "phpstan.dist.neon"]
 description = "PHP code linter"
 
 [plugins.definitions.phpstan.drivers.lint]
-script = "phpstan analyze ${target} --error-format=json --level=9"
+script = "php ${linter}/phpstan analyze ${target} --error-format=json --level=9"
 success_codes = [0, 1]
 output = "stdout"
 output_format = "phpstan"
