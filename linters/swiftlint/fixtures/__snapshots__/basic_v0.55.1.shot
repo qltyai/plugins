@@ -4,7 +4,7 @@ exports[`linter=swiftlint fixture=basic version=0.55.1 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.swift",
@@ -30,7 +30,7 @@ let foo =",
       "tool": "swiftlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.swift",
@@ -56,7 +56,7 @@ let foo =",
       "tool": "swiftlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.swift",
@@ -82,7 +82,7 @@ let foo =",
       "tool": "swiftlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.swift",
