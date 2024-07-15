@@ -8,11 +8,11 @@ file_types = ["php"]
 suggested = "targets"
 latest_version = "3.10.1"
 known_good_version = "3.10.1"
-version_command = "php-codesniffer --version"
+version_command = "php ${linter}/php-codesniffer --version"
 description = "PHP code linter"
 
 [plugins.definitions.php-codesniffer.drivers.lint]
-script = "php-codesniffer --report=json ${target}"
+script = "php ${linter}/php-codesniffer --report=json ${target}"
 success_codes = [0, 1, 2]
 output = "stdout"
 output_format = "php_codesniffer"
