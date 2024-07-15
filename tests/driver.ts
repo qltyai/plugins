@@ -1,11 +1,10 @@
-import { Debugger } from "debug";
+import { execFile, ExecOptions } from "child_process";
+import Debug, { Debugger } from "debug";
 import * as fs from "fs";
 import * as os from "os";
-import Debug from "debug";
 import path from "path";
 import * as git from "simple-git";
 import * as util from "util";
-import { execFile, ExecOptions } from "child_process";
 import { OPTIONS } from "./utils";
 
 const execFilePromise = util.promisify(execFile);
@@ -269,7 +268,7 @@ export class QltyDriver {
     return `config_version = "0"
 
 [sources.default]
-directory = "${REPO_ROOT}"
+directory = ${JSON.stringify(REPO_ROOT)}
 `;
   }
 
