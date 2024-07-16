@@ -31,8 +31,8 @@ const testCreationFilter = (input: string) => (file: string) => {
   }
 
   // Only copy the input file if it matches the target
-  const name = file.split("/").pop() || "";
-  if (name.includes(".in") && input != file.split("/").pop()) {
+  const name = path.basename(file) || "";
+  if (name.includes(".in") && input != name) {
     return false;
   }
 
@@ -65,28 +65,27 @@ export class QltyDriver {
       this.fixturesDir
     );
 
-    const input_path = `${this.fixturesDir}/${input}`;
+    const input_path = path.join(this.fixturesDir, input);
 
     // Copy contents of input if it is a directory, otherwise copy the input file
-    fs.stat(input_path, (_, stats) => {
-      if (stats.isDirectory()) {
-        fs.cpSync(input_path, this.sandboxPath, {
-          recursive: true,
-        });
-      } else {
-        fs.cpSync(this.fixturesDir, this.sandboxPath, {
-          recursive: true,
-          filter: testCreationFilter(input),
-        });
-      }
-    });
+    const stats = fs.statSync(input_path);
+    if (stats.isDirectory()) {
+      fs.cpSync(input_path, this.sandboxPath, {
+        recursive: true,
+      });
+    } else {
+      fs.cpSync(this.fixturesDir, this.sandboxPath, {
+        recursive: true,
+        filter: testCreationFilter(input),
+      });
+    }
 
     if (!fs.existsSync(path.resolve(path.resolve(this.sandboxPath, ".qlty")))) {
       fs.mkdirSync(path.resolve(this.sandboxPath, ".qlty"), {});
     }
 
     fs.writeFileSync(
-      path.resolve(this.sandboxPath, ".qlty/qlty.toml"),
+      path.resolve(this.sandboxPath, ".qlty", "qlty.toml"),
       this.getQltyTomlContents()
     );
 
