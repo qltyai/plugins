@@ -5,7 +5,7 @@ import { QltyDriver } from "./driver";
 
 // Currently unsupported tools on Windows
 const SKIP_LINTERS = {
-  win32: ["brakeman", "rubocop", "standardrb", "semgrep"],
+  win32: ["semgrep"],
 } as { [key in NodeJS.Platform]: string[] };
 
 const detectTargets = (linterName: string, dirname: string): Target[] => {
