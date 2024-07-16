@@ -1,7 +1,12 @@
-import { Target, getVersionsForTarget, FIXTURES_DIR } from "tests";
-import { QltyDriver } from "./driver";
-import path from "path";
 import * as fs from "fs";
+import path from "path";
+import { FIXTURES_DIR, Target, getVersionsForTarget } from "tests";
+import { QltyDriver } from "./driver";
+
+// Currently unsupported tools on Windows
+const SKIP_LINTERS = {
+  win32: ["brakeman", "rubocop", "standardrb", "semgrep"],
+} as { [key in NodeJS.Platform]: string[] };
 
 const detectTargets = (linterName: string, dirname: string): Target[] => {
   const testDataDir = path.resolve(dirname, FIXTURES_DIR);
@@ -40,7 +45,12 @@ export const runLinterTest = (
 ) => {
   const targets = detectTargets(linterName, dirname);
 
-  describe(`linter=${linterName}`, () => {
+  // Skip tests for Windows for now
+  const suiteFn = SKIP_LINTERS[process.platform]?.includes(linterName)
+    ? describe.skip
+    : describe;
+
+  suiteFn(`linter=${linterName}`, () => {
     targets.forEach(({ prefix, input, linterVersions }) => {
       const fixtureBasename = input.split(".")[0];
 
