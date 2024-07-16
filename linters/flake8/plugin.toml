@@ -14,7 +14,7 @@ issue_url_format = "https://flake8.pycqa.org/en/latest/user/error-codes.html"
 description = "Python linter"
 
 [plugins.definitions.flake8.drivers.lint]
-script = "flake8 ${target} --output-file \"${tmpfile}\" --exit-zero"
+script = "flake8 ${target} --output-file ${tmpfile} --exit-zero"
 success_codes = [0]
 output = "tmpfile"
 output_format = "regex"
