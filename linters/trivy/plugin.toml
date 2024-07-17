@@ -45,3 +45,7 @@ output = "stdout"
 output_format = "trivy_sarif"
 cache_results = true
 batch = false
+
+[[plugins.definitions.trivy.environment]]
+name = "PATH"
+list = ["${linter}/bin", "${linter}", "${env.PATH}"]
