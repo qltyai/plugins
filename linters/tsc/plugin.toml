@@ -5,6 +5,7 @@ file_types = ["typescript", "tsx"]
 config_files = ["tsconfig.json"]
 affects_cache = ["package.json"]
 version_command = "tsc --version"
+hidden = true
 
 [plugins.definitions.tsc.drivers.typecheck]
 script = "tsc"
