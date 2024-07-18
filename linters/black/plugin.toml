@@ -5,7 +5,6 @@ runtime = "python"
 package = "black"
 file_types = ["python"]
 affects_cache = ["pyproject.toml"]
-suggested = "never"
 latest_version = "24.4.0"
 known_good_version = "22.3.0"
 version_command = "black --version"

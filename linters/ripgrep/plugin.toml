@@ -11,7 +11,7 @@ globs = [
   "*.js",
   "*.jsx",
   "*.kt",
-  "*.mjs", 
+  "*.mjs",
   "*.mts",
   "*.php",
   "*.py",
@@ -47,3 +47,4 @@ output = "stdout"
 output_format = "ripgrep"
 batch = true
 cache_results = true
+suggested = "targets"

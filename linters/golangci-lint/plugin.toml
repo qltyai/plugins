@@ -9,7 +9,6 @@ strip_components = 1
 releases = ["golangci-lint"]
 runtime = "go"
 file_types = ["go"]
-suggested = "targets"
 latest_version = "1.59.1"
 known_good_version = "1.59.1"
 version_command = "golangci-lint --version"
@@ -25,6 +24,7 @@ runs_from = { type = "root_or_parent_with", path = "go.mod" }
 success_codes = [0, 2, 7]
 output = "stdout"
 output_format = "sarif"
+suggested = "targets"
 
 [[plugins.definitions.golangci-lint.environment]]
 name = "PATH"

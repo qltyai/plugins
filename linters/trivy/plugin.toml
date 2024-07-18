@@ -8,7 +8,6 @@ strip_components = 0
 [plugins.definitions.trivy]
 releases = ["trivy"]
 config_files = ["trivy.yaml", "trivy-secret.yaml"]
-suggested = "targets"
 latest_version = "0.50.1"
 known_good_version = "0.50.1"
 version_command = "trivy --version"
@@ -25,6 +24,7 @@ output = "stdout"
 output_format = "trivy_sarif"
 cache_results = true
 batch = false
+suggested = "targets"
 
 [plugins.definitions.trivy.drivers.fs-secret]
 # Defining file_types at driver level since each works with different files
@@ -45,6 +45,7 @@ output = "stdout"
 output_format = "trivy_sarif"
 cache_results = true
 batch = false
+suggested = "targets"
 
 [[plugins.definitions.trivy.environment]]
 name = "PATH"

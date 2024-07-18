@@ -15,7 +15,6 @@ config_files = [
   "knip.config.js",
 ]
 affects_cache = ["package.json"]
-suggested = "never"
 latest_version = "5.21.2"
 known_good_version = "5.21.2"
 version_command = "knip --version"

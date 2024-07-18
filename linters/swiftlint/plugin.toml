@@ -18,7 +18,6 @@ url = "https://github.com/realm/SwiftLint/releases/download/${version}/portable_
 [plugins.definitions.swiftlint]
 downloads = ["swiftlint"]
 config_files = [".swiftlint.yml", ".swiftlint.yaml", ".swiftlint"]
-suggested = "config"
 file_types = ["swift"]
 latest_version = "0.55.1"
 known_good_version = "0.55.1"
@@ -34,3 +33,4 @@ output_regex = "(?P<path>.*?):(?P<line>\\d+):(?P<col>\\d+): (?P<severity>.*?): (
 batch = true
 cache_results = true
 output_category = "style"
+suggested = "config"

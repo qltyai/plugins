@@ -4,7 +4,6 @@ config_version = "0"
 package = "sqlfluff"
 runtime = "python"
 file_types = ["sql", "sql-j2", "dml", "ddl"]
-suggested = "never"
 latest_version = "3.0.4"
 known_good_version = "3.0.0"
 version_command = "sqlfluff --version"

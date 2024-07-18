@@ -4,7 +4,6 @@
 runtime = "python"
 package = "yamllint"
 file_types = ["yaml"]
-suggested = "targets"
 latest_version = "1.35.1"
 known_good_version = "1.35.1"
 version_command = "yamllint --version"
@@ -20,3 +19,4 @@ output_format = "regex"
 output_regex = "((?P<path>.*):(?P<line>\\d+):(?P<col>\\d+): \\[(?P<severity>.*)\\] (?P<message>.*) \\((?P<code>.*)\\))"
 cache_results = true
 batch = true
+suggested = "targets"

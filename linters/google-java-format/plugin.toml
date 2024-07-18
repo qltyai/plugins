@@ -4,7 +4,6 @@ config_version = "0"
 runnable_archive_url = "https://github.com/google/google-java-format/releases/download/v${version}/google-java-format-${version}-all-deps.jar"
 runtime = "java"
 file_types = ["java"]
-suggested = "never"
 latest_version = "1.22.0"
 known_good_version = "1.22.0"
 version_command = "java -jar ${linter}/google-java-format --version"

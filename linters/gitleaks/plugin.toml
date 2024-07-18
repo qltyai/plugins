@@ -8,7 +8,6 @@ strip_components = 0
 [plugins.definitions.gitleaks]
 releases = ["gitleaks"]
 file_types = ["ALL"]
-suggested = "config"
 latest_version = "8.18.2"
 known_good_version = "8.18.2"
 version_command = "gitleaks version"
@@ -25,3 +24,4 @@ output_category = "vulnerability"
 output_level = "high"
 cache_results = true
 batch = false
+suggested = "config"

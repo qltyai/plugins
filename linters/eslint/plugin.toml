@@ -5,7 +5,6 @@ runtime = "node"
 package = "eslint"
 file_types = ["javascript", "typescript", "tsx"]
 affects_cache = [".eslintignore", "package.json", "tsconfig.json"]
-suggested = "never" # ESLint is unlikely to work out-of-the-box
 latest_version = "9.0.0"
 known_good_version = "8.57.0"
 version_command = "eslint --version"

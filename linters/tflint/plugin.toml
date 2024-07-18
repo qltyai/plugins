@@ -8,7 +8,6 @@ strip_components = 0
 [plugins.definitions.tflint]
 releases = ["tflint"]
 config_files = [".tflint.hcl"]
-suggested = "targets"
 file_types = ["terraform"]
 latest_version = "0.51.1"
 known_good_version = "0.51.1"
@@ -23,3 +22,4 @@ output = "stdout"
 output_format = "sarif"
 target = { type = "parent" }
 runs_from = { type = "target_directory" }
+suggested = "targets"
