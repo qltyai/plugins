@@ -28,7 +28,7 @@ output_format = "sarif"
 
 [[plugins.definitions.golangci-lint.environment]]
 name = "PATH"
-list = ["${linter}", "${env.PATH}", "${runtime}"]
+list = ["${linter}", "${runtime}/bin", "${env.PATH}"]
 
 [[plugins.definitions.golangci-lint.environment]]
 name = "GOLANGCI_LINT_CACHE"
