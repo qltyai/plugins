@@ -1,4 +1,3 @@
-import FastGlob from "fast-glob";
 import * as fs from "fs";
 import path from "path";
 import { FIXTURES_DIR, Target, getVersionsForTarget } from "tests";
@@ -64,35 +63,18 @@ export const runLinterTest = (
           });
 
           test(`version=${linterVersion}`, async () => {
-            try {
-              const testRunResult = await driver.runCheck();
-              expect(testRunResult).toMatchObject({ success: true });
+            const testRunResult = await driver.runCheck();
+            expect(testRunResult).toMatchObject({
+              success: true,
+            });
 
-              const snapshotPath = driver.snapshotPath(prefix);
-              driver.debug("Using snapshot: %s", snapshotPath);
+            const snapshotPath = driver.snapshotPath(prefix);
+            driver.debug("Using snapshot: %s", snapshotPath);
 
-              assertFunction(testRunResult, snapshotPath);
-            } catch (error) {
-              const logFiles = await FastGlob(
-                [".qlty/logs/*", ".qlty/out/invocations/*.yaml"],
-                { cwd: path.join(driver.sandboxPath) }
-              );
-
-              console.log(
-                `[[linter=${linterName} fixture=${fixtureBasename} version=${linterVersion}]]:`
-              );
-              for (const logFile of logFiles) {
-                const logFilePath = path.join(driver.sandboxPath, logFile);
-                const logFileContents = fs.readFileSync(logFilePath, "utf8");
-                console.log(`[${logFilePath}]:\n${logFileContents}\n\n`);
-              }
-              console.log("[driver logs]:");
-              await driver.runCheck("--debug");
-              throw error;
-            }
+            assertFunction(testRunResult, snapshotPath);
           });
 
-          afterAll(() => {
+          afterAll(async () => {
             driver.tearDown();
           });
         });

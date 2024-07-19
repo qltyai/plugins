@@ -15,8 +15,8 @@ const TEMP_SUBDIR = "tmp";
 const SNAPSHOTS_DIR = "__snapshots__";
 export const REPO_ROOT = path.resolve(__dirname, "..");
 
-export const executionEnv = (sandbox: string): { [k: string]: string } => {
-  const { PWD, INIT_CWD, QLTY_LOG_STDOUT, ...strippedEnv } = process.env;
+export const executionEnv = (sandbox: string) => {
+  const { PWD, INIT_CWD, ...strippedEnv } = process.env;
   return {
     ...strippedEnv,
     // This is necessary to prevent launcher collision of non-atomic operations
@@ -134,30 +134,27 @@ export class QltyDriver {
     return path.resolve(this.fixturesDir, SNAPSHOTS_DIR, snapshotName);
   }
 
-  async runCheck(extra_args: string = "") {
-    const fullArgs = `check --all --json --no-fail --no-cache --no-progress --filter=${this.linterName} ${extra_args}`;
+  async runCheck() {
+    const fullArgs = `check --all --json --no-fail --no-cache --no-progress --filter=${this.linterName}`;
 
-    let output = { stdout: "", stderr: "" };
     try {
-      const env = {
-        ...executionEnv(this.sandboxPath ?? ""),
-        QLTY_LOG: "debug",
-        QLTY_TELEMETRY: "off",
-      };
-      output = await this.runQltyCmd(fullArgs, { env });
+      const { stdout, stderr } = await this.runQltyCmd(fullArgs);
 
       return this.parseRunResult({
-        ...output,
         exitCode: 0,
-        outputJson: JSON.parse(output.stdout),
+        stdout,
+        stderr,
+        outputJson: JSON.parse(stdout),
       });
     } catch (error: any) {
       let jsonContents = "{}";
-      console.log(output.stdout, output.stderr);
+      console.log(error.stdout as string);
+      console.log(error.stderr as string);
 
       const runResult = {
-        ...output,
         exitCode: error.code as number,
+        stdout: error.stdout as string,
+        stderr: error.stderr as string,
         outputJson: JSON.parse(jsonContents),
         error: error as Error,
       };
