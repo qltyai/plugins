@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=ruff fixture=basic version=0.5.3 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "basic.in.py",
+        "range": {
+          "endColumn": 11,
+          "endLine": 7,
+          "startColumn": 1,
+          "startLine": 7,
+        },
+      },
+      "message": "ModuleImportNotAtTopOfFile",
+      "mode": "block",
+      "ruleKey": "E402",
+      "snippet": "import sys",
+      "snippetWithContext": "def main():
+    try:
+        pass
+    except (Exception, TypeError):
+        pass
+
+import sys
+# trunk-ignore(ruff/F401)
+import json
+
+class NoDocstring(object):
+    def __init__(self, arg1):
+        self._attr1 = arg1
+
+class Globe(object):
+    def __init__(self):
+        self.shape = 'spheroid'",
+      "tool": "ruff",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "basic.in.py",
+        "range": {
+          "endColumn": 12,
+          "endLine": 9,
+          "startColumn": 1,
+          "startLine": 9,
+        },
+      },
+      "message": "ModuleImportNotAtTopOfFile",
+      "mode": "block",
+      "ruleKey": "E402",
+      "snippet": "import json",
+      "snippetWithContext": "def main():
+    try:
+        pass
+    except (Exception, TypeError):
+        pass
+
+import sys
+# trunk-ignore(ruff/F401)
+import json
+
+class NoDocstring(object):
+    def __init__(self, arg1):
+        self._attr1 = arg1
+
+class Globe(object):
+    def __init__(self):
+        self.shape = 'spheroid'",
+      "tool": "ruff",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://docs.astral.sh/ruff/rules/unused-import",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "basic.in.py",
+        "range": {
+          "endColumn": 11,
+          "endLine": 7,
+          "startColumn": 8,
+          "startLine": 7,
+        },
+      },
+      "message": "UnusedImport",
+      "mode": "block",
+      "ruleKey": "F401",
+      "snippet": "import sys",
+      "snippetWithContext": "def main():
+    try:
+        pass
+    except (Exception, TypeError):
+        pass
+
+import sys
+# trunk-ignore(ruff/F401)
+import json
+
+class NoDocstring(object):
+    def __init__(self, arg1):
+        self._attr1 = arg1
+
+class Globe(object):
+    def __init__(self):
+        self.shape = 'spheroid'",
+      "tool": "ruff",
+    },
+    {
+      "category": "CATEGORY_BUG",
+      "documentationUrl": "https://docs.astral.sh/ruff/rules/unused-import",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "basic.in.py",
+        "range": {
+          "endColumn": 12,
+          "endLine": 9,
+          "startColumn": 8,
+          "startLine": 9,
+        },
+      },
+      "message": "UnusedImport",
+      "mode": "block",
+      "ruleKey": "F401",
+      "snippet": "import json",
+      "snippetWithContext": "def main():
+    try:
+        pass
+    except (Exception, TypeError):
+        pass
+
+import sys
+# trunk-ignore(ruff/F401)
+import json
+
+class NoDocstring(object):
+    def __init__(self, arg1):
+        self._attr1 = arg1
+
+class Globe(object):
+    def __init__(self):
+        self.shape = 'spheroid'",
+      "tool": "ruff",
+    },
+  ],
+}
+`;

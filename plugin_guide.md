@@ -42,6 +42,13 @@ The tests are run in sandboxes and they contain plenty of information required t
 
 `QLTY_PLUGINS_SANDBOX_DEBUG` can be passed as an enviornment variable to prevent teardown of sandboxes after a test run.
 
+## Updating Versions
+
+You can update the versions of plugins easily by updating `latest_version` and `known_good_version` attributes in their plugin definitions.
+
+Also to test and add snapshots for the updated versions of the plugins, you can run the test suite with `QLTY_PLUGINS_LINTER_VERSION=KnownGoodVersion` flag, i-e `QLTY_PLUGINS_LINTER_VERSION=KnownGoodVersion npm test` and that will test with the updated `known_good_version` and add snapshots for it. (This currently does not fully support plugin drivers with multiple versions such as ESLint, as it will run all the drivers with `known_good_version`, so expect that test to fail.)
+
+NOTE: It will add snapshots in .shot files, but will not validate with older snapshot files.
 
 ### Some gachas and solutions
 
