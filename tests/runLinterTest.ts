@@ -1,6 +1,7 @@
+import debug from "debug";
 import * as fs from "fs";
 import path from "path";
-import { FIXTURES_DIR, Target, getVersionsForTarget } from "tests";
+import { FIXTURES_DIR, Target, getVersionsForTarget, testResults } from "tests";
 import { QltyDriver } from "./driver";
 
 // Currently unsupported tools on Windows
@@ -63,7 +64,18 @@ export const runLinterTest = (
           });
 
           test(`version=${linterVersion}`, async () => {
+            const logOutput = () => {
+              const stdout = debug(`qlty:${linterName}:stdout`);
+              const stderr = debug(`qlty:${linterName}:stderr`);
+              debug.enable(stdout.namespace);
+              debug.enable(stderr.namespace);
+              stdout(testRunResult.runResult.stdout);
+              stderr(testRunResult.runResult.stderr);
+            };
+
             const testRunResult = await driver.runCheck();
+
+            if (!testRunResult.success) logOutput();
             expect(testRunResult).toMatchObject({
               success: true,
             });
@@ -72,6 +84,8 @@ export const runLinterTest = (
             driver.debug("Using snapshot: %s", snapshotPath);
 
             assertFunction(testRunResult, snapshotPath);
+
+            if (!testResults[expect.getState().currentTestName!]) logOutput();
           });
 
           afterAll(async () => {

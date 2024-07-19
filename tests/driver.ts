@@ -137,24 +137,26 @@ export class QltyDriver {
   async runCheck() {
     const fullArgs = `check --all --json --no-fail --no-cache --no-progress --filter=${this.linterName}`;
 
+    let output = { stdout: "", stderr: "" };
     try {
-      const { stdout, stderr } = await this.runQltyCmd(fullArgs);
+      let env = {
+        ...executionEnv(this.sandboxPath ?? ""),
+        QLTY_LOG_STDERR: "1",
+        QLTY_LOG: "trace",
+      };
+      output = await this.runQltyCmd(fullArgs, { env });
 
       return this.parseRunResult({
+        ...output,
         exitCode: 0,
-        stdout,
-        stderr,
-        outputJson: JSON.parse(stdout),
+        outputJson: JSON.parse(output.stdout),
       });
     } catch (error: any) {
       let jsonContents = "{}";
-      console.log(error.stdout as string);
-      console.log(error.stderr as string);
 
       const runResult = {
+        ...output,
         exitCode: error.code as number,
-        stdout: error.stdout as string,
-        stderr: error.stderr as string,
         outputJson: JSON.parse(jsonContents),
         error: error as Error,
       };
@@ -197,14 +199,18 @@ export class QltyDriver {
       args.filter((arg) => arg.length > 0),
       {
         cwd: this.sandboxPath,
-        env: executionEnv(this.sandboxPath ?? ""),
         ...execOptions,
         windowsHide: true,
       },
     ];
   }
 
-  parseRunResult(runResult: any) {
+  parseRunResult(runResult: {
+    stdout: string;
+    stderr: string;
+    exitCode: number;
+    outputJson: any;
+  }) {
     return {
       success: [0].includes(runResult.exitCode),
       runResult,
