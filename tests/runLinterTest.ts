@@ -4,6 +4,8 @@ import path from "path";
 import { FIXTURES_DIR, Target, getVersionsForTarget, testResults } from "tests";
 import { QltyDriver } from "./driver";
 
+if (debug.inspectOpts) debug.inspectOpts.hideDate = true;
+
 // Currently unsupported tools on Windows
 const SKIP_LINTERS = {
   win32: ["semgrep"],
