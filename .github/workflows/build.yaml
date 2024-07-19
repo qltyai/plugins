@@ -2,9 +2,9 @@ name: Test
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -14,30 +14,34 @@ jobs:
         os: [ubuntu-latest-16-cores, macos-latest-xlarge]
     runs-on: ${{ matrix.os }}
     steps:
+      - uses: actions/checkout@v4
 
-    - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: "npm"
 
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        cache: 'npm'
+      - run: echo "CACHE_MONTH=$(date +'%Y-%m')" >> $GITHUB_ENV
 
-    - run: echo "CACHE_MONTH=$(date +'%Y-%m')" >> $GITHUB_ENV
+      - name: Cache qlty tools
+        uses: actions/cache@v3
+        with:
+          path: ~/.qlty
+          key: ${{ runner.os }}-qlty-${{ env.CACHE_MONTH }}
 
-    - name: Cache qlty tools
-      uses: actions/cache@v3
-      with:
-        path: ~/.qlty
-        key: ${{ runner.os }}-qlty-${{ env.CACHE_MONTH }}
+      - name: Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        if: matrix.os == 'macos-latest-xlarge'
 
-    - name: Setup PHP with PECL extension
-      uses: shivammathur/setup-php@v2
-      if: matrix.os == 'macos-latest-xlarge'
+      - name: Install qlty CLI
+        run: curl https://qlty-releases.s3.amazonaws.com/qlty/install.sh | bash
 
-    - name: Install qlty CLI
-      run: |
-          curl https://qlty-releases.s3.amazonaws.com/qlty/install.sh | bash
-          cp ~/.qlty/bin/qlty /usr/local/bin
+      - name: Setup PATH
+        run: echo "$HOME/.qlty/bin" >> $GITHUB_PATH
 
-    - run: npm ci
-    - run: npm test
+      - name: 🔍 Check qlty version
+        shell: bash
+        run: qlty --version
+
+      - run: npm ci
+      - run: npm test
