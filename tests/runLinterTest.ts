@@ -78,9 +78,7 @@ export const runLinterTest = (
             const testRunResult = await driver.runCheck();
 
             if (!testRunResult.success) logOutput();
-            expect(testRunResult).toMatchObject({
-              success: true,
-            });
+            expect(testRunResult).toMatchObject({ success: true });
 
             const snapshotPath = driver.snapshotPath(prefix);
             driver.debug("Using snapshot: %s", snapshotPath);
