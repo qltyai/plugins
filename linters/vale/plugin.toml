@@ -10,9 +10,10 @@ releases = ["vale"]
 config_files = [".vale.ini"]
 suggested = "config"
 file_types = ["ALL"]
-latest_version = "3.6.0"
-known_good_version = "3.6.0"
-version_command = "vale --version"
+latest_version = "3.6.1"
+known_good_version = "3.6.1"
+# v3.6.1 does not return a clean version but is needed for Windows support: https://github.com/errata-ai/vale/issues/863
+# # version_command = "vale --version"
 description = "Enforce editorial standards in your text documents"
 
 [plugins.definitions.vale.drivers.lint]

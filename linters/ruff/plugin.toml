@@ -13,7 +13,7 @@ issue_url_format = "https://docs.astral.sh/ruff/rules/${rule}"
 description = "Python code formatter"
 
 [plugins.definitions.ruff.drivers.format]
-script = "ruff check --exit-zero --output-format sarif --output-file \"${tmpfile}\"  ${target}"
+script = "ruff check --exit-zero --output-format sarif --output-file ${tmpfile} ${target}"
 success_codes = [0]
 output = "tmpfile"
 output_format = "sarif"

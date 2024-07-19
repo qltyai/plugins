@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`linter=vale fixture=basic version=3.6.0 1`] = `
+exports[`linter=vale fixture=basic version=3.6.1 1`] = `
 {
   "issues": [
     {

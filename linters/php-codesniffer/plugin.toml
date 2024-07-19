@@ -18,3 +18,7 @@ output = "stdout"
 output_format = "php_codesniffer"
 cache_results = true
 batch = true
+
+[[plugins.definitions.php-codesniffer.environment]]
+name = "PHP_INI_SCAN_DIR"
+value = "${env.PHP_INI_SCAN_DIR}"

@@ -17,7 +17,7 @@ description = "SAST tool for detecting and preventing hardcoded secrets like pas
 security = true
 
 [plugins.definitions.gitleaks.drivers.lint]
-script = "gitleaks detect --no-git --source=${target} --exit-code=101 -f sarif -r \"${tmpfile}\""
+script = "gitleaks detect --no-git --source=${target} --exit-code=101 -f sarif -r ${tmpfile}"
 success_codes = [0, 101]
 output = "tmpfile"
 output_format = "sarif"
