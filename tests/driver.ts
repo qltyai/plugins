@@ -15,12 +15,18 @@ const TEMP_SUBDIR = "tmp";
 const SNAPSHOTS_DIR = "__snapshots__";
 export const REPO_ROOT = path.resolve(__dirname, "..");
 
+let TMPDIR = os.tmpdir();
+if (process.platform === "win32") {
+  TMPDIR = path.join(process.env.LOCALAPPDATA!, "Temp");
+}
+
 export const executionEnv = (sandbox: string) => {
   const { PWD, INIT_CWD, ...strippedEnv } = process.env;
   return {
     ...strippedEnv,
     // This is necessary to prevent launcher collision of non-atomic operations
     TMPDIR: path.resolve(sandbox, TEMP_SUBDIR),
+    TEMP: path.resolve(sandbox, TEMP_SUBDIR),
   };
 };
 
@@ -52,7 +58,7 @@ export class QltyDriver {
     this.linterName = linterName;
     this.linterVersion = linterVersion;
     this.sandboxPath = fs.realpathSync(
-      fs.mkdtempSync(path.resolve(os.tmpdir(), TEMP_PREFIX))
+      fs.mkdtempSync(path.resolve(TMPDIR, TEMP_PREFIX))
     );
     this.debug = Debug(`qlty:${linterName}`);
   }

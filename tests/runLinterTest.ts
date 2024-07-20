@@ -105,7 +105,10 @@ export const runLinterTest = (
 
             assertFunction(testRunResult, snapshotPath);
 
-            if (!testResults[expect.getState().currentTestName!]) {
+            if (
+              !testResults[expect.getState().currentTestName!] ||
+              process.env.ALWAYS_LOG
+            ) {
               await logOutput();
             }
           });
