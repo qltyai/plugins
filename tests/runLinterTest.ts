@@ -1,10 +1,18 @@
-import debug from "debug";
+import FastGlob from "fast-glob";
 import * as fs from "fs";
 import path from "path";
 import { FIXTURES_DIR, Target, getVersionsForTarget, testResults } from "tests";
 import { QltyDriver } from "./driver";
 
-if (debug.inspectOpts) debug.inspectOpts.hideDate = true;
+function log(namespace: string, data: string) {
+  console.log(
+    data
+      .trim()
+      .split("\n")
+      .map((line) => `${namespace} |  ${line}`)
+      .join("\n")
+  );
+}
 
 // Currently unsupported tools on Windows
 const SKIP_LINTERS = {
@@ -66,18 +74,30 @@ export const runLinterTest = (
           });
 
           test(`version=${linterVersion}`, async () => {
-            const logOutput = () => {
-              const stdout = debug(`qlty:${linterName}:stdout`);
-              const stderr = debug(`qlty:${linterName}:stderr`);
-              debug.enable(stdout.namespace);
-              debug.enable(stderr.namespace);
-              stdout(testRunResult.runResult.stdout);
-              stderr(testRunResult.runResult.stderr);
+            const logOutput = async () => {
+              log(`${linterName}:json`, testRunResult.runResult.stdout);
+              log(`${linterName}:logs`, testRunResult.runResult.stderr);
+
+              const files = await FastGlob(
+                `${driver.sandboxPath}/.qlty/out/invocations/*.yaml`.replaceAll(
+                  "\\",
+                  "/"
+                )
+              );
+              for (const file of files) {
+                log(
+                  `${linterName}:${path
+                    .basename(file)
+                    .replace(".yaml", "")
+                    .replace("-", ":")}`,
+                  fs.readFileSync(file, "utf-8")
+                );
+              }
             };
 
             const testRunResult = await driver.runCheck();
 
-            if (!testRunResult.success) logOutput();
+            if (!testRunResult.success) await logOutput();
             expect(testRunResult).toMatchObject({ success: true });
 
             const snapshotPath = driver.snapshotPath(prefix);
@@ -85,7 +105,9 @@ export const runLinterTest = (
 
             assertFunction(testRunResult, snapshotPath);
 
-            if (!testResults[expect.getState().currentTestName!]) logOutput();
+            if (!testResults[expect.getState().currentTestName!]) {
+              await logOutput();
+            }
           });
 
           afterAll(async () => {
