@@ -17,6 +17,8 @@ export const REPO_ROOT = path.resolve(__dirname, "..");
 
 let TMPDIR = os.tmpdir();
 if (process.platform === "win32") {
+  // Manually override on Windows to avoid using 8.3 style paths, which throw off some snapshot comparisons
+  // when scrubbing the sandbox path from the output. See: https://stackoverflow.com/questions/56620398
   TMPDIR = path.join(process.env.LOCALAPPDATA!, "Temp");
 }
 
