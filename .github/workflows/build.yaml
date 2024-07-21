@@ -1,13 +1,17 @@
 name: Test
 
 on:
-  push
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
   build:
     strategy:
       fail-fast: false
-        # For these target platforms
+      # For these target platforms
+      matrix:
         include:
           - os: "macos-latest-xlarge"
             install-command: "curl https://qlty.ai/install.sh | bash"
@@ -51,6 +55,6 @@ jobs:
         run: echo "$HOME/.qlty/bin" >> $GITHUB_PATH
 
       - name: 🤔 Run Tests
-      - run: |
+        run: |
           npm ci
           npm test
