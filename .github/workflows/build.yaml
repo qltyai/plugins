@@ -39,7 +39,7 @@ jobs:
 
       - name: 📦 Setup PHP with PECL extension
         uses: shivammathur/setup-php@v2
-        if: matrix.os == 'macos-latest-xlarge'
+        if: matrix.os != 'windows-latest-16-cores'
 
       - name: 📦 Setup Ruby
         uses: ruby/setup-ruby@v1
