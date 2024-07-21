@@ -2,42 +2,58 @@ name: Test
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     strategy:
       fail-fast: false
-      matrix:
-        os: [ubuntu-latest-16-cores, macos-latest-xlarge]
+        # For these target platforms
+        include:
+          - os: "macos-latest-xlarge"
+            install-command: "curl https://qlty.ai/install.sh | bash"
+          - os: "ubuntu-latest-16-cores"
+            install-command: "curl https://qlty.ai/install.sh | bash"
+          - os: "windows-latest-16-cores"
+            install-command: "irm https://qlty.ai/install.ps1 | iex"
+
     runs-on: ${{ matrix.os }}
     steps:
+      - uses: actions/checkout@v4
 
-    - uses: actions/checkout@v4
+      - name: 📦 Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: "npm"
 
-    - name: Use Node.js
-      uses: actions/setup-node@v4
-      with:
-        cache: 'npm'
+      - run: echo "CACHE_MONTH=$(date +'%Y-%m')" >> $GITHUB_ENV
 
-    - run: echo "CACHE_MONTH=$(date +'%Y-%m')" >> $GITHUB_ENV
+      - name: 💾 Cache qlty tools
+        uses: actions/cache@v3
+        with:
+          path: ~/.qlty
+          key: ${{ runner.os }}-qlty-${{ env.CACHE_MONTH }}
 
-    - name: Cache qlty tools
-      uses: actions/cache@v3
-      with:
-        path: ~/.qlty
-        key: ${{ runner.os }}-qlty-${{ env.CACHE_MONTH }}
+      - name: 📦 Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        if: matrix.os == 'macos-latest-xlarge'
 
-    - name: Setup PHP with PECL extension
-      uses: shivammathur/setup-php@v2
-      if: matrix.os == 'macos-latest-xlarge'
+      - name: 📦 Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3.0
+        if: matrix.os == 'windows-latest-16-cores'
 
-    - name: Install qlty CLI
-      run: |
-          curl https://qlty-releases.s3.amazonaws.com/qlty/install.sh | bash
-          cp ~/.qlty/bin/qlty /usr/local/bin
+      - name: 📦 Install qlty CLI
+        run: ${{ matrix.install-command }}
 
-    - run: npm ci
-    - run: npm test
+      - name: ⤵️ Move `qlty` into PATH
+        shell: bash
+        run: echo "$HOME/.qlty/bin" >> $GITHUB_PATH
+
+      - name: 🤔 Run Tests
+      - run: |
+          npm ci
+          npm test
