@@ -26,6 +26,7 @@ export const executionEnv = (sandbox: string) => {
   const { PWD, INIT_CWD, ...strippedEnv } = process.env;
   return {
     ...strippedEnv,
+    QLTY_TELEMETRY: "off",
     // This is necessary to prevent launcher collision of non-atomic operations
     TMPDIR: path.resolve(sandbox, TEMP_SUBDIR),
     TEMP: path.resolve(sandbox, TEMP_SUBDIR),
