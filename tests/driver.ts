@@ -15,12 +15,20 @@ const TEMP_SUBDIR = "tmp";
 const SNAPSHOTS_DIR = "__snapshots__";
 export const REPO_ROOT = path.resolve(__dirname, "..");
 
+let TMPDIR = os.tmpdir();
+if (process.platform === "win32") {
+  // Manually override on Windows to avoid using 8.3 style paths, which throw off some snapshot comparisons
+  // when scrubbing the sandbox path from the output. See: https://stackoverflow.com/questions/56620398
+  TMPDIR = path.join(process.env.LOCALAPPDATA!, "Temp");
+}
+
 export const executionEnv = (sandbox: string) => {
   const { PWD, INIT_CWD, ...strippedEnv } = process.env;
   return {
     ...strippedEnv,
     // This is necessary to prevent launcher collision of non-atomic operations
     TMPDIR: path.resolve(sandbox, TEMP_SUBDIR),
+    TEMP: path.resolve(sandbox, TEMP_SUBDIR),
   };
 };
 
@@ -52,7 +60,7 @@ export class QltyDriver {
     this.linterName = linterName;
     this.linterVersion = linterVersion;
     this.sandboxPath = fs.realpathSync(
-      fs.mkdtempSync(path.resolve(os.tmpdir(), TEMP_PREFIX))
+      fs.mkdtempSync(path.resolve(TMPDIR, TEMP_PREFIX))
     );
     this.debug = Debug(`qlty:${linterName}`);
   }
@@ -137,24 +145,26 @@ export class QltyDriver {
   async runCheck() {
     const fullArgs = `check --all --json --no-fail --no-cache --no-progress --filter=${this.linterName}`;
 
+    let output = { stdout: "", stderr: "" };
     try {
-      const { stdout, stderr } = await this.runQltyCmd(fullArgs);
+      let env = {
+        ...executionEnv(this.sandboxPath ?? ""),
+        QLTY_LOG_STDERR: "1",
+        QLTY_LOG: "debug",
+      };
+      output = await this.runQltyCmd(fullArgs, { env });
 
       return this.parseRunResult({
+        ...output,
         exitCode: 0,
-        stdout,
-        stderr,
-        outputJson: JSON.parse(stdout),
+        outputJson: JSON.parse(output.stdout),
       });
     } catch (error: any) {
       let jsonContents = "{}";
-      console.log(error.stdout as string);
-      console.log(error.stderr as string);
 
       const runResult = {
+        ...output,
         exitCode: error.code as number,
-        stdout: error.stdout as string,
-        stderr: error.stderr as string,
         outputJson: JSON.parse(jsonContents),
         error: error as Error,
       };
@@ -197,14 +207,18 @@ export class QltyDriver {
       args.filter((arg) => arg.length > 0),
       {
         cwd: this.sandboxPath,
-        env: executionEnv(this.sandboxPath ?? ""),
         ...execOptions,
         windowsHide: true,
       },
     ];
   }
 
-  parseRunResult(runResult: any) {
+  parseRunResult(runResult: {
+    stdout: string;
+    stderr: string;
+    exitCode: number;
+    outputJson: any;
+  }) {
     return {
       success: [0].includes(runResult.exitCode),
       runResult,
