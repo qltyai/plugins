@@ -54,7 +54,12 @@ jobs:
         shell: bash
         run: echo "$HOME/.qlty/bin" >> $GITHUB_PATH
 
+      - name: 🔍 Check qlty version
+        shell: bash
+        run: qlty --version
+
       - name: 🤔 Run Tests
+        shell: bash
         run: |
           npm ci
           npm test
