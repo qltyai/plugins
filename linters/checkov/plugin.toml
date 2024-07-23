@@ -14,8 +14,10 @@ suggested = "targets"
 
 [plugins.definitions.checkov.drivers.format]
 # The comma after ${tmpfile} is absolutely necessary
-script = "checkov --output sarif --output-file-path ${tmpfile}, --soft-fail --quiet --compact --file ${target}"
+script = "checkov --output sarif --output-file-path ${tmpfile}, --soft-fail --quiet --compact --directory ${target}"
 success_codes = [0]
+target = { type = "literal", path = "." }
+runs_from = { type = "root_or_parent_with_any_config" }
 output = "tmpfile"
 output_format = "sarif"
 output_category = "vulnerability"
