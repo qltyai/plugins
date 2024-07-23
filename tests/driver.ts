@@ -148,11 +148,13 @@ export class QltyDriver {
 
     let output = { stdout: "", stderr: "" };
     try {
-      let env = {
-        ...executionEnv(this.sandboxPath ?? ""),
-        QLTY_LOG_STDERR: "1",
-        QLTY_LOG: "debug",
-      };
+      let env = executionEnv(this.sandboxPath ?? "") as any;
+
+      if (process.env.CI === "true") {
+        env.QLTY_LOG_STDERR = "1";
+        env.QLTY_LOG = "debug";
+      }
+
       output = await this.runQltyCmd(fullArgs, { env });
 
       return this.parseRunResult({
