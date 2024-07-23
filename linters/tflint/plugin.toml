@@ -13,7 +13,7 @@ latest_version = "0.52.0"
 known_good_version = "0.52.0"
 version_command = "tflint --version"
 description = "A pluggable Terraform linter"
-suggested = "targets"
+suggested = "config"
 
 [plugins.definitions.tflint.drivers.lint]
 script = "tflint --format=sarif --force"
@@ -23,4 +23,4 @@ output = "stdout"
 output_format = "sarif"
 target = { type = "parent" }
 runs_from = { type = "target_directory" }
-suggested = "targets"
+suggested = "config"
