@@ -21,6 +21,7 @@ idempotent = false
 file_types = ["lockfile"]
 script = "trivy fs ${target} --scanners vuln --format sarif --no-progress"
 success_codes = [0]
+runs_from = { type = "root_or_parent_with_any_config" }
 output = "stdout"
 output_format = "trivy_sarif"
 cache_results = true
@@ -31,6 +32,7 @@ batch = false
 file_types = ["ALL"]
 script = "trivy fs ${target} --scanners secret --format sarif --no-progress"
 success_codes = [0]
+runs_from = { type = "root_or_parent_with_any_config" }
 output = "stdout"
 output_format = "trivy_sarif"
 cache_results = true
@@ -41,6 +43,7 @@ batch = false
 file_types = ["docker", "yaml", "terraform"]
 script = "trivy config ${target} --format sarif"
 success_codes = [0]
+runs_from = { type = "root_or_parent_with_any_config" }
 output = "stdout"
 output_format = "trivy_sarif"
 cache_results = true
