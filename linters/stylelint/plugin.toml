@@ -16,6 +16,7 @@ latest_version = "16.3.1"
 known_good_version = "14.6.1"
 version_command = "stylelint --version"
 description = "CSS and SASS linter and code formatter"
+suggested = "config"
 
 [plugins.definitions.stylelint.drivers.lint]
 script = "stylelint --formatter json ${target}"

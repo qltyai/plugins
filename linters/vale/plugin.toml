@@ -14,6 +14,7 @@ known_good_version = "3.6.1"
 # v3.6.1 does not return a clean version but is needed for Windows support: https://github.com/errata-ai/vale/issues/863
 # # version_command = "vale --version"
 description = "Enforce editorial standards in your text documents"
+suggested = "config"
 
 [plugins.definitions.vale.drivers.lint]
 script = "vale --output=line ${target}"

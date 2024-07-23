@@ -10,6 +10,7 @@ latest_version = "1.8.3"
 known_good_version = "1.8.3"
 version_command = "biome --version"
 description = "A static analyzer for web projects"
+suggested = "config"
 
 [plugins.definitions.biome.drivers.lint]
 script = "biome check --reporter=github ${target}"

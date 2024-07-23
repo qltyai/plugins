@@ -12,6 +12,7 @@ latest_version = "3.3.0"
 known_good_version = "3.3.0"
 version_command = "dotenv-linter --version"
 description = "Dotenv file linter"
+suggested = "targets"
 
 [plugins.definitions.dotenv-linter.drivers.format]
 script = "dotenv-linter fix --quiet ${target}"

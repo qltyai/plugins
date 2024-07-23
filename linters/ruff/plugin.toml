@@ -10,6 +10,7 @@ version_command = "ruff version"
 config_files = ["ruff.toml"]
 issue_url_format = "https://docs.astral.sh/ruff/rules/${rule}"
 description = "Python code formatter"
+suggested = "targets"
 
 [plugins.definitions.ruff.drivers.format]
 script = "ruff check --exit-zero --output-format sarif --output-file ${tmpfile} ${target}"
