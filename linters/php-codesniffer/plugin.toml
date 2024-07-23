@@ -9,6 +9,7 @@ latest_version = "3.10.1"
 known_good_version = "3.10.1"
 version_command = "php ${linter}/php-codesniffer --version"
 description = "PHP code linter"
+suggested = "targets"
 
 [plugins.definitions.php-codesniffer.drivers.lint]
 script = "php ${linter}/php-codesniffer --report=json ${target}"
