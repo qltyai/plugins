@@ -2,19 +2,10 @@ import FastGlob from "fast-glob";
 import * as fs from "fs";
 import path from "path";
 import { QltyDriver } from "./driver";
+import Debug from "debug";
 import { OPTIONS } from "./utils";
 import toml from "toml";
 import { testResults } from "tests";
-
-function log(namespace: string, data: string) {
-  console.log(
-    data
-      .trim()
-      .split("\n")
-      .map((line) => `${namespace} |  ${line}`)
-      .join("\n")
-  );
-}
 
 // Currently unsupported tools on Windows
 const SKIP_LINTERS = {
@@ -151,8 +142,12 @@ export const runLinterTest = (
 
           test(`version=${linterVersion}`, async () => {
             const logOutput = async () => {
-              log(`${linterName}:json`, testRunResult.runResult.stdout);
-              log(`${linterName}:logs`, testRunResult.runResult.stderr);
+              Debug(`qlty:${linterName}:stdout`)(
+                testRunResult.runResult.stdout
+              );
+              Debug(`qlty:${linterName}:stderr`)(
+                testRunResult.runResult.stderr
+              );
 
               const files = await FastGlob(
                 `${driver.sandboxPath}/.qlty/out/invocations/*.yaml`.replaceAll(
@@ -161,11 +156,15 @@ export const runLinterTest = (
                 )
               );
               for (const file of files) {
-                log(
-                  `${linterName}:${path
-                    .basename(file)
-                    .replace(".yaml", "")
-                    .replace("-", ":")}`,
+                const logStreamName = path
+                  .basename(file)
+                  .replace(".yaml", "")
+                  .replace("-", ":")
+                  .split(":")
+                  .reverse()
+                  .join(":");
+
+                Debug(`${logStreamName}:${linterName}`)(
                   fs.readFileSync(file, "utf-8")
                 );
               }
