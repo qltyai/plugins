@@ -1,8 +1,10 @@
 import FastGlob from "fast-glob";
 import * as fs from "fs";
 import path from "path";
-import { FIXTURES_DIR, Target, getVersionsForTarget, testResults } from "tests";
 import { QltyDriver } from "./driver";
+import { OPTIONS } from "./utils";
+import toml from "toml";
+import { testResults } from "tests";
 
 function log(namespace: string, data: string) {
   console.log(
@@ -18,6 +20,80 @@ function log(namespace: string, data: string) {
 const SKIP_LINTERS = {
   win32: ["semgrep"],
 } as { [key in NodeJS.Platform]: string[] };
+
+const FIXTURES_DIR = "fixtures";
+const SNAPSHOTS_DIR = "__snapshots__";
+
+type Target = {
+  prefix: string;
+  input: string;
+  linterVersions: any[];
+};
+
+export const getVersionsForTarget = (
+  dirname: string,
+  linterName: string,
+  prefix: string
+) => {
+  let matchExists = false;
+  const snapshotsDir = path.resolve(dirname, FIXTURES_DIR, SNAPSHOTS_DIR);
+
+  if (!fs.existsSync(snapshotsDir)) {
+    fs.mkdirSync(snapshotsDir);
+  }
+
+  const versionsList = fs
+    .readdirSync(snapshotsDir)
+    .map((file) => {
+      const fileMatch = file.match(getSnapshotRegex(prefix));
+
+      if (fileMatch) {
+        matchExists = true;
+        return fileMatch.groups?.version;
+      }
+    })
+    .filter(Boolean);
+
+  const uniqueVersionsList = Array.from(new Set(versionsList)).sort();
+
+  if (OPTIONS.linterVersion == "KnownGoodVersion") {
+    const knownGoodVersion = getKnownGoodVersion(dirname, linterName);
+
+    console.log(
+      "Running test for ",
+      linterName,
+      " with known good version: ",
+      knownGoodVersion
+    );
+
+    return [knownGoodVersion];
+  } else if (OPTIONS.linterVersion) {
+    return [OPTIONS.linterVersion];
+  } else {
+    // Check if no snapshots exist yet. If this is the case, run with KnownGoodVersion and Latest, and print advisory text.
+    if (!matchExists && !OPTIONS.linterVersion) {
+      console.log(
+        `No snapshots detected for ${linterName} ${prefix} test. Running test against KnownGoodVersion. See tests/readme.md for more information.`
+      );
+      return [getKnownGoodVersion(dirname, linterName)];
+    }
+
+    return uniqueVersionsList;
+  }
+};
+
+const getKnownGoodVersion = (dirname: string, linterName: string) => {
+  const plugin_file = fs.readFileSync(
+    path.resolve(dirname, "plugin.toml"),
+    "utf8"
+  );
+
+  const plugin_toml = toml.parse(plugin_file);
+  return plugin_toml.plugins.definitions[linterName].known_good_version;
+};
+
+const getSnapshotRegex = (prefix: string) =>
+  `${prefix}(_v(?<version>[^_]+))?.shot`;
 
 const detectTargets = (linterName: string, dirname: string): Target[] => {
   const testDataDir = path.resolve(dirname, FIXTURES_DIR);
