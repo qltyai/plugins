@@ -57,14 +57,7 @@ export const getVersionsForTarget = (
   const uniqueVersionsList = Array.from(new Set(versionsList)).sort();
 
   if (OPTIONS.linterVersion == "KnownGoodVersion") {
-    const plugin_file = fs.readFileSync(
-      path.resolve(dirname, "plugin.toml"),
-      "utf8"
-    );
-
-    const plugin_toml = toml.parse(plugin_file);
-    const knownGoodVersion: string =
-      plugin_toml["plugins"]["definitions"][linterName]["known_good_version"];
+    const knownGoodVersion = getKnownGoodVersion(dirname, linterName);
 
     console.log(
       "Running test for ",
@@ -77,15 +70,26 @@ export const getVersionsForTarget = (
   } else if (OPTIONS.linterVersion) {
     return [OPTIONS.linterVersion];
   } else {
-    // // Check if no snapshots exist yet. If this is the case, run with KnownGoodVersion and Latest, and print advisory text.
-    // if (!matchExists && !OPTIONS.linterVersion) {
-    //   console.log(
-    //     `No snapshots detected for ${linterName} ${prefix} test. Running test against KnownGoodVersion. See tests/readme.md for more information.`,
-    //   );
-    //   return ["KnownGoodVersion"];
-    // }
+    // Check if no snapshots exist yet. If this is the case, run with KnownGoodVersion and Latest, and print advisory text.
+    if (!matchExists && !OPTIONS.linterVersion) {
+      console.log(
+        `No snapshots detected for ${linterName} ${prefix} test. Running test against KnownGoodVersion. See tests/readme.md for more information.`
+      );
+      return [getKnownGoodVersion(dirname, linterName)];
+    }
+
     return uniqueVersionsList;
   }
+};
+
+const getKnownGoodVersion = (dirname: string, linterName: string) => {
+  const plugin_file = fs.readFileSync(
+    path.resolve(dirname, "plugin.toml"),
+    "utf8"
+  );
+
+  const plugin_toml = toml.parse(plugin_file);
+  return plugin_toml.plugins.definitions[linterName].known_good_version;
 };
 
 const getSnapshotRegex = (prefix: string) =>
