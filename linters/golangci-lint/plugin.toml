@@ -9,7 +9,6 @@ strip_components = 1
 releases = ["golangci-lint"]
 runtime = "go"
 file_types = ["go"]
-suggested = "targets"
 latest_version = "1.59.1"
 known_good_version = "1.59.1"
 version_command = "golangci-lint --version"
@@ -17,6 +16,7 @@ config_files = [".golangci.json", ".golangci.toml", ".golangci.yaml", ".golangci
 affects_cache = ["go.mod", "go.sum"]
 description = "A powerful Go linter runner"
 security = true
+suggested = "targets"
 
 [plugins.definitions.golangci-lint.drivers.lint]
 script = "golangci-lint run --out-format sarif --timeout 10m --concurrency 1 --exclude gofmt --allow-parallel-runners --issues-exit-code 0 ${target}"
@@ -25,6 +25,7 @@ runs_from = { type = "root_or_parent_with", path = "go.mod" }
 success_codes = [0, 2, 7]
 output = "stdout"
 output_format = "sarif"
+suggested = "targets"
 
 [[plugins.definitions.golangci-lint.environment]]
 name = "PATH"

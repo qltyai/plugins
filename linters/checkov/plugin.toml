@@ -4,13 +4,13 @@ config_version = "0"
 runtime = "python"
 package = "checkov"
 file_types = ["docker", "terraform", "yaml", "json"]
-suggested = "targets"
 latest_version = "3.2.60"
 known_good_version = "3.2.49"
 version_command = "checkov --version"
 config_files = [".checkov.yml", ".checkov.yaml"]
 description = "Static code analysis tool for infrastructure as code (IaC) and also a software composition analysis (SCA) tool for images and open source packages"
 security = true
+suggested = "targets"
 
 [plugins.definitions.checkov.drivers.format]
 # The comma after ${tmpfile} is absolutely necessary
@@ -22,3 +22,4 @@ output_category = "vulnerability"
 output_level = "medium"
 batch = false
 cache_results = true
+suggested = "targets"

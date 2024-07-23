@@ -4,12 +4,12 @@ config_version = "0"
 runtime = "ruby"
 package = "standard"
 file_types = ["ruby", "gemspec"]
-suggested = "config"
 latest_version = "1.31.0"
 known_good_version = "1.31.0"
 version_command = "standardrb --version"
 config_files = [".standard.yml"]
 description = "Ruby linter and code formatter"
+suggested = "config"
 
 [plugins.definitions.standardrb.drivers.lint]
 script = "standardrb ${target} --format json"
@@ -19,6 +19,7 @@ output = "stdout"
 output_format = "rubocop"
 batch = true
 cache_results = true
+suggested = "config"
 
 [plugins.definitions.standardrb.drivers.format]
 script = "standardrb ${target} --fix"
@@ -27,3 +28,4 @@ output = "rewrite"
 cache_results = true
 batch = true
 driver_type = "formatter"
+suggested = "config"

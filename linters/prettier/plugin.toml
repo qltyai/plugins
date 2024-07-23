@@ -15,7 +15,6 @@ file_types = [
   "typescript",
   "yaml",
 ]
-suggested = "targets"
 latest_version = "3.2.5"
 known_good_version = "2.8.4"
 version_command = "prettier --version"
@@ -33,6 +32,7 @@ config_files = [
 ]
 affects_cache = ["package.json", ".editorconfig", ".prettierignore"]
 description = "JS, CSS, HTML, JSON, TS, GraphQL, MD and YML formatter"
+suggested = "targets"
 
 [plugins.definitions.prettier.drivers.format]
 script = "prettier -w ${target}"
@@ -41,3 +41,4 @@ cache_results = true
 output = "rewrite"
 batch = true
 driver_type = "formatter"
+suggested = "targets"

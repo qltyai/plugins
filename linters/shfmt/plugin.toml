@@ -4,12 +4,12 @@ config_version = "0"
 package = "mvdan.cc/sh/v${major_version}/cmd/shfmt"
 runtime = "go"
 file_types = ["shell"]
-suggested = "targets"
 latest_version = "3.8.0"
 known_good_version = "3.8.0"
 version_command = "shfmt --version"
 affects_cache = [".editorconfig"]
 description = "Shell code formatter"
+suggested = "targets"
 
 [plugins.definitions.shfmt.drivers.format]
 script = "shfmt -w -s ${target}"
@@ -18,3 +18,4 @@ output = "rewrite"
 cache_results = true
 batch = true
 driver_type = "formatter"
+suggested = "targets"

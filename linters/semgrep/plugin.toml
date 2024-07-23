@@ -5,11 +5,11 @@ runtime = "python"
 package = "semgrep"
 file_types = ["ALL"]
 config_files = [".semgrep.yaml", ".semgrepignore", ".semgrep"]
-suggested = "config"
 latest_version = "1.68.0"
 known_good_version = "1.40.0"
 version_command = "semgrep --version"
 description = "Static analysis tool for searching code, finding bugs, and enforcing code standards"
+suggested = "config"
 
 [plugins.definitions.semgrep.drivers.lint]
 script = "semgrep --metrics=off --disable-version-check --config .semgrep.yaml --sarif --output=${tmpfile} ${target}"
@@ -18,3 +18,4 @@ output = "tmpfile"
 output_format = "sarif"
 cache_results = true
 batch = true
+suggested = "config"

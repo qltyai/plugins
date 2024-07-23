@@ -51,7 +51,6 @@ strip_components = 0
 [plugins.definitions.osv-scanner]
 releases = ["osv-scanner"]
 config_files = ["osv-scanner.toml"]
-suggested = "targets"
 latest_version = "1.7.0"
 known_good_version = "1.7.0"
 file_types = ["osv-scanner"]
@@ -60,6 +59,7 @@ issue_url_format = "https://osv.dev/${rule}"
 description = "Vulnerability scanner for lockfiles"
 security = true
 idempotent = false
+suggested = "targets"
 
 [plugins.definitions.osv-scanner.drivers.lint]
 script = "osv-scanner --lockfile=${target} --format sarif"
@@ -71,3 +71,4 @@ output_category = "vulnerability"
 cache_results = true
 batch = false
 skip_upstream = true
+suggested = "targets"

@@ -8,13 +8,13 @@ strip_components = 0
 [plugins.definitions.actionlint]
 releases = ["actionlint"]
 config_files = [".github/actionlint.yaml", ".github/actionlint.yml"]
-suggested = "targets"
 file_types = ["github-workflow"]
 latest_version = "1.6.27"
 known_good_version = "1.6.27"
 version_command = "actionlint --version"
 issue_url_format = "https://github.com/rhysd/actionlint/blob/main/docs/checks.md"
 description = "Static checker for GitHub Actions workflow files"
+suggested = "targets"
 
 [plugins.definitions.actionlint.drivers.lint]
 script = "actionlint -format \"{{json .}}\" ${target}"
@@ -23,3 +23,4 @@ output = "stdout"
 output_format = "actionlint"
 cache_results = true
 batch = true
+suggested = "targets"

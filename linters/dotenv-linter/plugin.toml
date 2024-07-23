@@ -8,11 +8,11 @@ strip_components = 0
 [plugins.definitions.dotenv-linter]
 releases = ["dotenv-linter"]
 file_types = ["dotenv"]
-suggested = "targets"
 latest_version = "3.3.0"
 known_good_version = "3.3.0"
 version_command = "dotenv-linter --version"
 description = "Dotenv file linter"
+suggested = "targets"
 
 [plugins.definitions.dotenv-linter.drivers.format]
 script = "dotenv-linter fix --quiet ${target}"
@@ -21,3 +21,4 @@ output = "rewrite"
 cache_results = true
 batch = true
 driver_type = "formatter"
+suggested = "targets"

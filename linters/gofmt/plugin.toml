@@ -4,11 +4,11 @@ config_version = "0"
 package = "gofmt"
 runtime = "go"
 file_types = ["go"]
-suggested = "targets"
 latest_version = "1.22.0"
 known_good_version = "1.22.0"
 version_command = "go version"
 description = "Go lang formatter"
+suggested = "targets"
 
 [plugins.definitions.gofmt.drivers.format]
 script = "gofmt -w ${target}"
@@ -17,3 +17,4 @@ output = "rewrite"
 cache_results = true
 batch = true
 driver_type = "formatter"
+suggested = "targets"

@@ -8,13 +8,13 @@ strip_components = 0
 [plugins.definitions.gitleaks]
 releases = ["gitleaks"]
 file_types = ["ALL"]
-suggested = "config"
 latest_version = "8.18.2"
 known_good_version = "8.18.2"
 version_command = "gitleaks version"
 config_files = [".gitleaks.toml", ".gitleaks.config"]
 description = "SAST tool for detecting and preventing hardcoded secrets like passwords, api keys, and tokens in git repos"
 security = true
+suggested = "config"
 
 [plugins.definitions.gitleaks.drivers.lint]
 script = "gitleaks detect --no-git --source=${target} --exit-code=101 -f sarif -r ${tmpfile}"
@@ -25,3 +25,4 @@ output_category = "vulnerability"
 output_level = "high"
 cache_results = true
 batch = false
+suggested = "config"
