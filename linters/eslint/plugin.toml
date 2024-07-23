@@ -5,8 +5,8 @@ runtime = "node"
 package = "eslint"
 file_types = ["javascript", "typescript", "tsx"]
 affects_cache = [".eslintignore", "package.json", "tsconfig.json"]
-latest_version = "9.0.0"
-known_good_version = "8.57.0"
+latest_version = "9.7.0"
+known_good_version = "9.7.0"
 version_command = "eslint --version"
 description = "Javascript and ECMAScript linter"
 
