@@ -7,19 +7,23 @@ strip_components = 1
 
 [plugins.definitions.golangci-lint]
 releases = ["golangci-lint"]
-runtime = "go"
 file_types = ["go"]
 latest_version = "1.59.1"
 known_good_version = "1.59.1"
 version_command = "golangci-lint --version"
-config_files = [".golangci.json", ".golangci.toml", ".golangci.yaml", ".golangci.yml"]
+config_files = [
+  ".golangci.json",
+  ".golangci.toml",
+  ".golangci.yaml",
+  ".golangci.yml",
+]
 affects_cache = ["go.mod", "go.sum"]
 description = "A powerful Go linter runner"
 security = true
 suggested = "targets"
 
 [plugins.definitions.golangci-lint.drivers.lint]
-script = "golangci-lint run --out-format sarif --timeout 10m --concurrency 1 --exclude gofmt --allow-parallel-runners --issues-exit-code 0 ${target}"
+script = "golangci-lint run --out-format sarif --timeout 10m --exclude gofmt --allow-parallel-runners --issues-exit-code 0 ./..."
 target = { type = "parent" }
 runs_from = { type = "root_or_parent_with", path = "go.mod" }
 success_codes = [0, 2, 7]
