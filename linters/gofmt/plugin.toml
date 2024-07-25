@@ -6,7 +6,6 @@ runtime = "go"
 file_types = ["go"]
 latest_version = "1.22.0"
 known_good_version = "1.22.0"
-version_command = "go version"
 description = "Go lang formatter"
 suggested = "targets"
 
