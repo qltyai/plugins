@@ -23,8 +23,8 @@ security = true
 suggested = "targets"
 
 [plugins.definitions.golangci-lint.drivers.lint]
-script = "golangci-lint run --out-format sarif --timeout 10m --exclude gofmt --allow-parallel-runners --issues-exit-code 0 ./..."
-target = { type = "parent" }
+script = "golangci-lint run --out-format sarif --timeout 10m --exclude gofmt --allow-parallel-runners --issues-exit-code 0 ${target}"
+target = { type = "literal", path = "./..." }
 runs_from = { type = "root_or_parent_with", path = "go.mod" }
 success_codes = [0, 2, 7]
 output = "stdout"
