@@ -94,11 +94,6 @@ export class QltyDriver {
     }
 
     fs.writeFileSync(
-      path.resolve(this.sandboxPath, ".qlty", "qlty.toml"),
-      this.getQltyTomlContents()
-    );
-
-    fs.writeFileSync(
       path.resolve(this.sandboxPath, ".gitignore"),
       this.getGitIgnoreContents()
     );
@@ -115,9 +110,17 @@ export class QltyDriver {
 
     await this.runQlty(["--help"]);
 
-    await this.runQltyCmd(
-      `plugins enable ${this.linterName}=${this.linterVersion}`
-    );
+    const qltyTomlPath = path.resolve(this.sandboxPath, ".qlty", "qlty.toml");
+    const qltyTomlExists = fs.existsSync(qltyTomlPath);
+    if (!qltyTomlExists) {
+      fs.writeFileSync(qltyTomlPath, this.qltyTomlConfigVersion());
+    }
+    fs.appendFileSync(qltyTomlPath, this.qltyTomlSource());
+    if (!qltyTomlExists) {
+      await this.runQltyCmd(
+        `plugins enable ${this.linterName}=${this.linterVersion}`
+      );
+    }
   }
 
   tearDown() {
@@ -275,10 +278,13 @@ export class QltyDriver {
     };
   }
 
-  getQltyTomlContents(): string {
-    return `config_version = "0"
+  qltyTomlConfigVersion() {
+    return `config_version = "0"\n`;
+  }
 
-[sources.default]
+  qltyTomlSource() {
+    return `[[source]]
+name = "default"
 directory = ${JSON.stringify(REPO_ROOT)}
 `;
   }

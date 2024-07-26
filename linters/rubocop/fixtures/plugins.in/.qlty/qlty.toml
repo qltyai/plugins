@@ -1,0 +1,5 @@
+config_version = "0"
+
+[[plugin]]
+name = "rubocop"
+package_file = "Gemfile.qlty"
