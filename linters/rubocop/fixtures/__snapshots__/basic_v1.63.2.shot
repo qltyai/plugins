@@ -5,7 +5,7 @@ exports[`linter=rubocop fixture=basic version=1.63.2 1`] = `
   "issues": [
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
@@ -39,7 +39,7 @@ Klass.(
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
@@ -73,7 +73,7 @@ Klass.(
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
@@ -107,7 +107,7 @@ Klass.(
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
@@ -141,7 +141,7 @@ Klass.(
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
@@ -175,7 +175,7 @@ Klass.(
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
@@ -204,7 +204,7 @@ end
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
@@ -237,7 +237,7 @@ Klass.(
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
@@ -270,7 +270,7 @@ Klass.(
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
@@ -301,7 +301,7 @@ Klass.(
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
@@ -331,7 +331,7 @@ Klass.(
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
@@ -360,7 +360,7 @@ end
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
@@ -389,7 +389,7 @@ end
     },
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
