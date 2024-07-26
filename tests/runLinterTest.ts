@@ -1,11 +1,13 @@
+import Debug from "debug";
 import FastGlob from "fast-glob";
 import * as fs from "fs";
 import path from "path";
-import { QltyDriver } from "./driver";
-import Debug from "debug";
-import { OPTIONS } from "./utils";
-import toml from "toml";
 import { testResults } from "tests";
+import toml from "toml";
+import { QltyDriver } from "./driver";
+import { OPTIONS } from "./utils";
+
+Debug.inspectOpts!.hideDate = true;
 
 // Currently unsupported tools on Windows
 const SKIP_LINTERS = {
@@ -142,12 +144,15 @@ export const runLinterTest = (
 
           test(`version=${linterVersion}`, async () => {
             const logOutput = async () => {
-              Debug(`qlty:${linterName}:stdout`)(
-                testRunResult.runResult.stdout
-              );
-              Debug(`qlty:${linterName}:stderr`)(
-                testRunResult.runResult.stderr
-              );
+              const namespace = `linter:${linterName}:${fixtureBasename}`;
+
+              if (process.env.CI) {
+                Debug.enable(`${namespace}:stdout`);
+                Debug.enable(`${namespace}:stderr`);
+              }
+
+              Debug(`${namespace}:stdout`)(testRunResult.runResult.stdout);
+              Debug(`${namespace}:stderr`)(testRunResult.runResult.stderr);
 
               const files = await FastGlob(
                 `${driver.sandboxPath}/.qlty/out/invocations/*.yaml`.replaceAll(
@@ -156,17 +161,16 @@ export const runLinterTest = (
                 )
               );
               for (const file of files) {
-                const logStreamName = path
+                const invocationId = path
                   .basename(file)
-                  .replace(".yaml", "")
-                  .replace("-", ":")
-                  .split(":")
-                  .reverse()
-                  .join(":");
-
-                Debug(`${logStreamName}:${linterName}`)(
-                  fs.readFileSync(file, "utf-8")
-                );
+                  .split(".")[0]
+                  .split("-")
+                  .reverse()[0];
+                const logNamespace = `${namespace}:invoke:${invocationId}`;
+                if (process.env.CI) {
+                  Debug.enable(logNamespace);
+                }
+                Debug(logNamespace)(fs.readFileSync(file, "utf-8"));
               }
             };
 

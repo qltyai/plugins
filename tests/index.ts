@@ -1,7 +1,6 @@
 import { addSerializer, toMatchSpecificSnapshot } from "jest-specific-snapshot";
-import specific_snapshot = require("jest-specific-snapshot");
-import { serializeStructure } from "./utils";
 import { runLinterTest } from "./runLinterTest";
+import { serializeStructure } from "./utils";
 
 export const testResults: { [k: string]: boolean } = {};
 

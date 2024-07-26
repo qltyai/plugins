@@ -147,40 +147,30 @@ export class QltyDriver {
     const fullArgs = `check --all --json --no-fail --no-cache --no-progress --filter=${this.linterName}`;
 
     let output = { stdout: "", stderr: "" };
+    let exitCode = 0;
     try {
-      let env = executionEnv(this.sandboxPath ?? "") as any;
-
-      if (process.env.CI === "true") {
-        env.QLTY_LOG_STDERR = "1";
-        env.QLTY_LOG = "debug";
-      }
-
-      output = await this.runQltyCmd(fullArgs, { env });
-
-      return this.parseRunResult({
-        ...output,
-        exitCode: 0,
-        outputJson: JSON.parse(output.stdout),
-      });
-    } catch (error: any) {
-      let jsonContents = "{}";
-
-      const runResult = {
-        ...output,
-        exitCode: error.code as number,
-        outputJson: JSON.parse(jsonContents),
-        error: error as Error,
+      let env = {
+        ...executionEnv(this.sandboxPath ?? ""),
+        QLTY_LOG_STDERR: "1",
+        QLTY_LOG: process.env.QLTY_LOG ?? "debug",
       };
 
-      if (runResult.exitCode != 1) {
-        console.log(
-          `${error.code as number} Failure running 'qlty check'`,
-          error
-        );
-      }
-
-      return this.parseRunResult(runResult);
+      output = await this.runQltyCmd(fullArgs, { env });
+    } catch (error: any) {
+      const err: {
+        code: number;
+        stdout?: string;
+        stderr?: string;
+      } = error;
+      output = { stdout: err.stdout ?? "", stderr: err.stderr ?? "" };
+      exitCode = err.code;
     }
+
+    return this.parseRunResult({
+      ...output,
+      exitCode,
+      outputJson: JSON.parse(output.stdout),
+    });
   }
 
   async runQltyCmd(
