@@ -169,10 +169,15 @@ export class QltyDriver {
       exitCode = err.code;
     }
 
+    let outputJson = [];
+    try {
+      outputJson = JSON.parse(output.stdout);
+    } catch {}
+
     return this.parseRunResult({
-      ...output,
       exitCode,
-      outputJson: JSON.parse(output.stdout),
+      outputJson,
+      ...output,
     });
   }
 
