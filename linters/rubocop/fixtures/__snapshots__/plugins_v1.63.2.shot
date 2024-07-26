@@ -5,7 +5,7 @@ exports[`linter=rubocop fixture=plugins version=1.63.2 1`] = `
   "issues": [
     {
       "category": "CATEGORY_BUG",
-      "level": "LEVEL_FMT",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
         "range": {
