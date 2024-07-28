@@ -8,6 +8,7 @@ runtime = "java"
 latest_version = "1.0.1"
 known_good_version = "1.0.1"
 description = "Java linter"
+file_types = ["java"]
 suggested = "targets"
 
 [plugins.definitions.radarlint.drivers.lint-java]
@@ -15,6 +16,5 @@ script = "java -jar ${linter}/radarlint.jar ${target}"
 success_codes = [0]
 output = "stdout"
 output_format = "radarlint"
-file_types = ["java"]
 batch = true
 cache_results = true
