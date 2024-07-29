@@ -9,7 +9,6 @@ latest_version = "1.0.1"
 known_good_version = "1.0.1"
 description = "Java linter"
 file_types = ["java"]
-suggested = "targets"
 
 [plugins.definitions.radarlint.drivers.lint-java]
 script = "java -jar ${linter}/radarlint.jar ${target}"
@@ -18,3 +17,4 @@ output = "stdout"
 output_format = "radarlint"
 batch = true
 cache_results = true
+suggested = "targets"
