@@ -10,7 +10,7 @@ exports[`linter=prisma fixture=basic version=5.14.0 1`] = `
         "path": "basic.in.prisma",
       },
       "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "fmt",
       "tool": "prisma",
     },

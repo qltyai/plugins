@@ -11,7 +11,7 @@ exports[`linter=tflint fixture=aws_nested version=0.52.0 1`] = `
         "path": "nested/aws.in.tf",
       },
       "message": "terraform "required_version" attribute is required",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "terraform_required_version",
       "tool": "tflint",
     },
@@ -29,7 +29,7 @@ exports[`linter=tflint fixture=aws_nested version=0.52.0 1`] = `
         },
       },
       "message": "\`foo\` variable has no type",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "terraform_typed_variables",
       "snippet": "variable "foo" {",
       "snippetWithContext": "variable "region" {
@@ -60,7 +60,7 @@ variable "foo" {
         },
       },
       "message": "variable "foo" is declared but not used",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "terraform_unused_declarations",
       "snippet": "variable "foo" {",
       "snippetWithContext": "variable "region" {
@@ -91,7 +91,7 @@ variable "foo" {
         },
       },
       "message": "variable "region" is declared but not used",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "terraform_unused_declarations",
       "snippet": "variable "region" {",
       "snippetWithContext": "variable "region" {

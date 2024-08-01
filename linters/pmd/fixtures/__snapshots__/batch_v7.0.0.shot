@@ -17,7 +17,7 @@ exports[`linter=pmd fixture=batch version=7.0.0 1`] = `
         },
       },
       "message": "All classes, interfaces, enums and annotations must belong to a named package",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "NoPackage",
       "snippet": "class HelloWorld {",
       "snippetWithContext": "// Your First Program
@@ -43,7 +43,7 @@ class HelloWorld {
         },
       },
       "message": "All classes, interfaces, enums and annotations must belong to a named package",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "NoPackage",
       "snippet": "class HelloWorld {",
       "snippetWithContext": "// Your First Program
@@ -69,7 +69,7 @@ class HelloWorld {
         },
       },
       "message": "This utility class has a non-private constructor",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "UseUtilityClass",
       "snippet": "class HelloWorld {",
       "snippetWithContext": "// Your First Program
@@ -95,7 +95,7 @@ class HelloWorld {
         },
       },
       "message": "This utility class has a non-private constructor",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "UseUtilityClass",
       "snippet": "class HelloWorld {",
       "snippetWithContext": "// Your First Program

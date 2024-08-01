@@ -17,7 +17,7 @@ exports[`linter=pmd fixture=apex version=7.0.0 1`] = `
         },
       },
       "message": "Missing ApexDoc comment",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "ApexDoc",
       "snippet": "global class HelloWorld {
 public String hello() {
@@ -45,7 +45,7 @@ return 'Hello World!';
         },
       },
       "message": "Missing ApexDoc comment",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "ApexDoc",
       "snippet": "public String hello() {
 return 'Hello World!';
@@ -71,7 +71,7 @@ return 'Hello World!';
         },
       },
       "message": "Avoid using global modifier",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "AvoidGlobalModifier",
       "snippet": "global class HelloWorld {
 public String hello() {

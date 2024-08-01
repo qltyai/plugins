@@ -10,7 +10,7 @@ exports[`linter=shfmt fixture=empty version=3.8.0 1`] = `
         "path": "empty.in.sh",
       },
       "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "fmt",
       "tool": "shfmt",
     },

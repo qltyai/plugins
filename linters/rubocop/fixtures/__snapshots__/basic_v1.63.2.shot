@@ -16,7 +16,7 @@ exports[`linter=rubocop fixture=basic version=1.63.2 1`] = `
         },
       },
       "message": "Extra blank line detected.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Layout/EmptyLines",
       "snippet": "
 ",
@@ -50,7 +50,7 @@ Klass.(
         },
       },
       "message": "Extra blank line detected.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Layout/EmptyLines",
       "snippet": "
 ",
@@ -84,7 +84,7 @@ Klass.(
         },
       },
       "message": "Extra blank line detected.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Layout/EmptyLines",
       "snippet": "
 ",
@@ -118,7 +118,7 @@ Klass.(
         },
       },
       "message": "Extra blank line detected.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Layout/EmptyLines",
       "snippet": "
 ",
@@ -152,7 +152,7 @@ Klass.(
         },
       },
       "message": "Extra blank line detected.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Layout/EmptyLines",
       "snippet": "
  def smooth; end",
@@ -186,7 +186,7 @@ Klass.(
         },
       },
       "message": "Unnecessary spacing detected.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Layout/ExtraSpacing",
       "snippet": "class        Plumbus",
       "snippetWithContext": "class        Plumbus
@@ -215,7 +215,7 @@ end
         },
       },
       "message": "Inconsistent indentation detected.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Layout/IndentationConsistency",
       "snippet": " def smooth; end",
       "snippetWithContext": "class        Plumbus
@@ -248,7 +248,7 @@ Klass.(
         },
       },
       "message": "Use 2 (not 1) spaces for indentation.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Layout/IndentationWidth",
       "snippet": " def smooth; end",
       "snippetWithContext": "class        Plumbus
@@ -281,7 +281,7 @@ Klass.(
         },
       },
       "message": "Use normalcase for symbol numbers.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Naming/VariableNumber",
       "snippet": "  key_1: 'hello',",
       "snippetWithContext": "
@@ -312,7 +312,7 @@ Klass.(
         },
       },
       "message": "Use normalcase for symbol numbers.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Naming/VariableNumber",
       "snippet": "  key_2: 'world'",
       "snippetWithContext": "
@@ -342,7 +342,7 @@ Klass.(
         },
       },
       "message": "Missing top-level documentation comment for \`class Plumbus\`.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Style/Documentation",
       "snippet": "class        Plumbus",
       "snippetWithContext": "class        Plumbus
@@ -371,7 +371,7 @@ end
         },
       },
       "message": "Missing frozen string literal comment.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Style/FrozenStringLiteralComment",
       "snippet": "class        Plumbus",
       "snippetWithContext": "class        Plumbus
@@ -404,7 +404,7 @@ end
   key_1: 'hello',
   key_2: 'world'
 )\`.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Style/LambdaCall",
       "snippet": "Klass.(
   key_1: 'hello',
@@ -433,7 +433,7 @@ Klass.(
         "path": "basic.in.rb",
       },
       "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "fmt",
       "tool": "rubocop",
     },

@@ -16,7 +16,7 @@ exports[`linter=gitleaks fixture=basic version=8.8.7 1`] = `
         },
       },
       "message": "aws-access-token has detected secret for file basic.in.py.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "aws-access-token",
       "snippetWithContext": "aws_secret = "AKIAIMNOJVGFDXXXE4OA"",
       "tool": "gitleaks",

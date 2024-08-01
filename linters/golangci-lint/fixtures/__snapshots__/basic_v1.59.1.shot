@@ -16,7 +16,7 @@ exports[`linter=golangci-lint fixture=basic version=1.59.1 1`] = `
         },
       },
       "message": "Error return value of \`time.Parse\` is not checked",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "errcheck",
       "snippet": "	time.Parse("asdf", "")",
       "snippetWithContext": "package main
@@ -43,7 +43,7 @@ func main() {
         },
       },
       "message": "Comment should end in a period",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "godot",
       "snippet": "// this is the main function 🏃",
       "snippetWithContext": "package main

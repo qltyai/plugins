@@ -10,7 +10,7 @@ exports[`linter=biome fixture=basic version=1.8.3 1`] = `
         "path": "basic.in.ts",
       },
       "message": "Incorrect formatting, autoformat by running \`qlty fmt\`.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "fmt",
       "tool": "biome",
     },
@@ -27,7 +27,7 @@ exports[`linter=biome fixture=basic version=1.8.3 1`] = `
         },
       },
       "message": "This block statement doesn't serve any purpose and can be safely removed.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "lint/complexity/noUselessLoneBlockStatements",
       "snippet": "  { !foo ? null : 1 }",
       "snippetWithContext": "
@@ -57,7 +57,7 @@ const foo = (bar: Bar) => {
         },
       },
       "message": "This enum declaration contains members that are implicitly initialized.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "lint/style/useEnumInitializers",
       "snippet": "enum Bar { Baz };",
       "snippetWithContext": "const foobar = () => { }

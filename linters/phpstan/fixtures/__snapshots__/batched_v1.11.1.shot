@@ -15,7 +15,7 @@ exports[`linter=phpstan fixture=batched version=1.11.1 1`] = `
         },
       },
       "message": "Call to method format() on an unknown class DateTimeImutable.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "class.notFound",
       "snippet": "		echo 'Hello, ' . $date->format('j. n. Y');",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -41,7 +41,7 @@ class HelloWorld
         },
       },
       "message": "Call to method format() on an unknown class DateTimeImutable.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "class.notFound",
       "snippet": "		echo 'Hello, ' . $date->format('j. n. Y');",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -66,7 +66,7 @@ class HelloWorld
         },
       },
       "message": "Parameter $date of method HelloWorld::sayHello() has invalid type DateTimeImutable.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "class.notFound",
       "snippet": "	public function sayHello(DateTimeImutable $date): void",
       "snippetWithContext": "<?php declare(strict_types = 1);
@@ -91,7 +91,7 @@ class HelloWorld
         },
       },
       "message": "Parameter $date of method HelloWorld::sayHello() has invalid type DateTimeImutable.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "class.notFound",
       "snippet": "	public function sayHello(DateTimeImutable $date): void",
       "snippetWithContext": "<?php declare(strict_types = 1);

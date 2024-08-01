@@ -16,7 +16,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
         },
       },
       "message": "// FIXME TODO",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "FIXME",
       "snippet": "    // FIXME TODO",
       "snippetWithContext": "fn main() {
@@ -43,7 +43,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
         },
       },
       "message": "// FIXME: This test fails on the first day of each month",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "FIXME",
       "snippet": "    // FIXME: This test fails on the first day of each month",
       "snippetWithContext": "fn main() {
@@ -70,7 +70,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
         },
       },
       "message": "// HACK",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "HACK",
       "snippet": "    // HACK",
       "snippetWithContext": "fn main() {
@@ -97,7 +97,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
         },
       },
       "message": "// NOTE",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "NOTE",
       "snippet": "    // NOTE",
       "snippetWithContext": "fn main() {
@@ -124,7 +124,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
         },
       },
       "message": "// FIXME TODO",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "TODO",
       "snippet": "    // FIXME TODO",
       "snippetWithContext": "fn main() {
