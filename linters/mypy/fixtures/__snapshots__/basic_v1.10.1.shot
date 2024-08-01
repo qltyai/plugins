@@ -15,7 +15,7 @@ exports[`linter=mypy fixture=basic version=1.10.1 1`] = `
         },
       },
       "message": "Argument 1 to "greeting" has incompatible type "bytes"; expected "str"",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "arg-type",
       "snippet": "greeting(b"Alice")",
       "snippetWithContext": "
@@ -50,7 +50,7 @@ def bad_foo(bar: Bar) -> str:
         },
       },
       "message": "Argument 1 to "greeting" has incompatible type "int"; expected "str"",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "arg-type",
       "snippet": "greeting(3)",
       "snippetWithContext": "from . import mypy_import2
@@ -86,7 +86,7 @@ def bad_foo(bar: Bar) -> str:
         },
       },
       "message": "Incompatible types in assignment (expression has type "int", variable has type "str")",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "assignment",
       "snippet": "c: str = 4",
       "snippetWithContext": "    return "Hello " + name
@@ -119,7 +119,7 @@ def bad_foo(bar: Bar) -> str:
         },
       },
       "message": ""printer" does not return a value (it only ever returns None)",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "func-returns-value",
       "snippet": "a = printer()",
       "snippetWithContext": "def greeting(name: str) -> str:
@@ -153,7 +153,7 @@ def bad_foo(bar: Bar) -> str:
         },
       },
       "message": "Library stubs not installed for "google.protobuf"",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "import-untyped",
       "snippet": "import google.protobuf.descriptor_pb2 as d",
       "snippetWithContext": "import google.protobuf.descriptor_pb2 as d
@@ -181,7 +181,7 @@ def printer() -> None:
         },
       },
       "message": "Library stubs not installed for "google.protobuf.descriptor_pb2"",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "import-untyped",
       "snippet": "import google.protobuf.descriptor_pb2 as d",
       "snippetWithContext": "import google.protobuf.descriptor_pb2 as d
@@ -209,7 +209,7 @@ def printer() -> None:
         },
       },
       "message": "Hint: "python3 -m pip install types-protobuf" (or run "mypy --install-types" to install all missing stub packages) See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "note",
       "snippet": "import google.protobuf.descriptor_pb2 as d",
       "snippetWithContext": "import google.protobuf.descriptor_pb2 as d

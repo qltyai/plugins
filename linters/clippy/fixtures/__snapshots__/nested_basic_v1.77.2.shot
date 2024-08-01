@@ -19,7 +19,7 @@ exports[`linter=clippy fixture=nested_basic version=1.77.2 1`] = `
         },
       },
       "message": "this binary expression can be simplified",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "double_comparisons",
       "snippet": "    if x == y || x < y {}",
       "snippetWithContext": "// be compiled to actually trigger it.
@@ -93,7 +93,7 @@ fn main() {
         },
       },
       "message": "this seems like a manual implementation of the non-exhaustive pattern",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "manual_non_exhaustive",
       "snippet": "pub enum Gibberish {
     Foo(String),
@@ -136,7 +136,7 @@ fn main() {
         },
       },
       "message": "this \`if\` branch is empty",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "needless_if",
       "snippet": "    if x == y || x < y {}",
       "snippetWithContext": "// be compiled to actually trigger it.
@@ -210,7 +210,7 @@ fn main() {
         },
       },
       "message": "the loop variable \`i\` is only used to index \`vec\`",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "needless_range_loop",
       "snippet": "    for i in 0..vec.len() {",
       "snippetWithContext": "    let x = 1;
@@ -252,7 +252,7 @@ fn main() {
         },
       },
       "message": "literal with an empty format string",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "print_literal",
       "snippet": "    println!("{}", "empty format literal");",
       "snippetWithContext": "    __Nonexhaustive,
@@ -339,7 +339,7 @@ fn main() {
         },
       },
       "message": "useless use of \`vec!\`",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "useless_vec",
       "snippet": "    let vec = vec!['a', 'b', 'c'];",
       "snippetWithContext": "fn main() {

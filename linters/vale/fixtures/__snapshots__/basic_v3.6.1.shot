@@ -14,7 +14,7 @@ exports[`linter=vale fixture=basic version=3.6.1 1`] = `
         },
       },
       "message": "Did you really mean 'Hallo'?",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Vale.Spelling",
       "snippet": "Hallo, wurld?",
       "snippetWithContext": "Hello world!
@@ -32,7 +32,7 @@ Hallo, wurld?",
         },
       },
       "message": "Did you really mean 'wurld'?",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Vale.Spelling",
       "snippet": "Hallo, wurld?",
       "snippetWithContext": "Hello world!

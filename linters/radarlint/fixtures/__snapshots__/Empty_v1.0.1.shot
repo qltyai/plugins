@@ -11,7 +11,7 @@ exports[`linter=radarlint fixture=Empty version=1.0.1 1`] = `
         "range": {},
       },
       "message": "Move this file to a named package.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "java:S1220",
       "tool": "radarlint",
     },

@@ -17,7 +17,7 @@ exports[`linter=actionlint fixture=empty version=1.6.27 1`] = `
         },
       },
       "message": "workflow is empty",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "syntax-check",
       "tool": "actionlint",
     },

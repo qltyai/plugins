@@ -17,7 +17,7 @@ exports[`linter=eslint fixture=basic_9 version=9.6.0 1`] = `
         },
       },
       "message": "Expected a conditional expression and instead saw an assignment.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "no-cond-assign",
       "snippet": "if (x = 2) {",
       "snippetWithContext": "let x = 1;
@@ -41,7 +41,7 @@ if (x = 2) {
         },
       },
       "message": "Unexpected constant condition.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "no-constant-condition",
       "snippet": "if (x = 2) {",
       "snippetWithContext": "let x = 1;
@@ -65,7 +65,7 @@ if (x = 2) {
         },
       },
       "message": "'x' is assigned a value but never used.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "no-unused-vars",
       "snippet": "if (x = 2) {",
       "snippetWithContext": "let x = 1;

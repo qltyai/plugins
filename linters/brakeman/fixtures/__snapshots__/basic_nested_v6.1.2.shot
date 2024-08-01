@@ -17,7 +17,7 @@ exports[`linter=brakeman fixture=basic_nested version=6.1.2 1`] = `
         },
       },
       "message": "User input in eval.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "BRAKE0013",
       "snippet": "    eval(params[:x])",
       "snippetWithContext": "module UsersHelper

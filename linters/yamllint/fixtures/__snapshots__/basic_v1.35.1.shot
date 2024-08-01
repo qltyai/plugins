@@ -15,7 +15,7 @@ exports[`linter=yamllint fixture=basic version=1.35.1 1`] = `
         },
       },
       "message": "string value is redundantly quoted with any quotes",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "quoted-strings",
       "snippet": "foo: 'bar'",
       "snippetWithContext": "object: {True: 1, 1: True}

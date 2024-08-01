@@ -14,7 +14,7 @@ exports[`linter=markdownlint fixture=basic version=0.41.0 1`] = `
         },
       },
       "message": "Heading levels should only increment by one level at a time (https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md001.md)",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "MD001 - heading-increment",
       "snippet": "#### Here",
       "snippetWithContext": "## Crazy
@@ -35,7 +35,7 @@ exports[`linter=markdownlint fixture=basic version=0.41.0 1`] = `
         },
       },
       "message": "First line in a file should be a top-level heading (https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md041.md)",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "MD041 - first-line-heading - first-line-h1",
       "snippet": "## Crazy",
       "snippetWithContext": "## Crazy

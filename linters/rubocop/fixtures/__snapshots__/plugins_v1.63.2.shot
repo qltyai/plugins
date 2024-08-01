@@ -16,7 +16,7 @@ exports[`linter=rubocop fixture=plugins version=1.63.2 1`] = `
         },
       },
       "message": "Use \`value.blank?\` instead of \`value.nil? || value.empty?\`.",
-      "mode": "block",
+      "mode": "MODE_BLOCK",
       "ruleKey": "Rails/Blank",
       "snippet": "  value.nil? || value.empty?",
       "snippetWithContext": "# frozen_string_literal: true
