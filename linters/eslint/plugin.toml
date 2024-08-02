@@ -9,6 +9,7 @@ latest_version = "9.7.0"
 known_good_version = "9.7.0"
 version_command = "eslint --version"
 description = "Javascript and ECMAScript linter"
+package_file_candidate = "package.json"
 
 [[plugins.definitions.eslint.drivers.lint.version]]
 version_matcher = ">=9.0.0"
