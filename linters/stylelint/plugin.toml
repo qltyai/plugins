@@ -9,8 +9,21 @@ config_files = [
   ".stylelintrc.cjs",
   ".stylelintrc.js",
   ".stylelintrc.json",
+  ".stylelintrc.mjs",
   ".stylelintrc.yaml",
   ".stylelintrc.yml",
+  ".stylelintrc.*.cjs",
+  ".stylelintrc.*.js",
+  ".stylelintrc.*.json",
+  ".stylelintrc.*.mjs",
+  ".stylelintrc.*.yaml",
+  ".stylelintrc.*.yml",
+  "stylelintrc.*.cjs",
+  "stylelintrc.*.js",
+  "stylelintrc.*.json",
+  "stylelintrc.*.mjs",
+  "stylelintrc.*.yaml",
+  "stylelintrc.*.yml",
 ]
 latest_version = "16.3.1"
 known_good_version = "14.6.1"
