@@ -15,6 +15,16 @@ cpu = "aarch64"
 os = "macos"
 url = "https://github.com/realm/SwiftLint/releases/download/${version}/portable_swiftlint.zip"
 
+[[plugins.downloads.swiftlint.system]]
+cpu = "x86_64"
+os = "linux"
+url = "https://github.com/realm/SwiftLint/releases/download/${version}/swiftlint_linux.zip"
+
+[[plugins.downloads.swiftlint.system]]
+cpu = "aarch64"
+os = "linux"
+url = "https://github.com/realm/SwiftLint/releases/download/${version}/swiftlint_linux.zip"
+
 [plugins.definitions.swiftlint]
 downloads = ["swiftlint"]
 config_files = [".swiftlint.yml", ".swiftlint.yaml", ".swiftlint"]
