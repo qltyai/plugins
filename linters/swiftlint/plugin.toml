@@ -33,7 +33,7 @@ latest_version = "0.55.1"
 known_good_version = "0.55.1"
 version_command = "swiftlint --version"
 description = "Enforces Swift style and conventions"
-suggested = "config"
+suggested = "never"
 
 [plugins.definitions.swiftlint.drivers.lint]
 script = "swiftlint --quiet ${target}"
@@ -44,4 +44,4 @@ output_regex = "(?P<path>.*?):(?P<line>\\d+):(?P<col>\\d+): (?P<severity>.*?): (
 batch = true
 cache_results = true
 output_category = "style"
-suggested = "config"
+suggested = "never"
