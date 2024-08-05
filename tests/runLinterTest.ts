@@ -11,7 +11,7 @@ Debug.inspectOpts!.hideDate = true;
 
 // Currently unsupported tools on Windows
 const SKIP_LINTERS = {
-  win32: ["semgrep"],
+  win32: ["semgrep", "swiftlint"],
 } as { [key in NodeJS.Platform]: string[] };
 
 const FIXTURES_DIR = "fixtures";
