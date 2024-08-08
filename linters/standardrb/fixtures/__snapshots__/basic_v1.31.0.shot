@@ -4,7 +4,7 @@ exports[`linter=standardrb fixture=basic version=1.31.0 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -38,7 +38,7 @@ Klass.(
       "tool": "standardrb",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -72,7 +72,7 @@ Klass.(
       "tool": "standardrb",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -106,7 +106,7 @@ Klass.(
       "tool": "standardrb",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -140,7 +140,7 @@ Klass.(
       "tool": "standardrb",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -174,7 +174,7 @@ Klass.(
       "tool": "standardrb",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -203,7 +203,7 @@ end
       "tool": "standardrb",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -236,7 +236,7 @@ Klass.(
       "tool": "standardrb",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -269,7 +269,7 @@ Klass.(
       "tool": "standardrb",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -302,7 +302,7 @@ Klass.(
       "tool": "standardrb",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -341,7 +341,7 @@ Klass.(
       "tool": "standardrb",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -374,7 +374,7 @@ Klass.(
       "tool": "standardrb",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -405,7 +405,7 @@ Klass.(
       "tool": "standardrb",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
