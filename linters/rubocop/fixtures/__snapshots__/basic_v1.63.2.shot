@@ -4,7 +4,7 @@ exports[`linter=rubocop fixture=basic version=1.63.2 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -38,7 +38,7 @@ Klass.(
       "tool": "rubocop",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -72,7 +72,7 @@ Klass.(
       "tool": "rubocop",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -106,7 +106,7 @@ Klass.(
       "tool": "rubocop",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -140,7 +140,7 @@ Klass.(
       "tool": "rubocop",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -174,7 +174,7 @@ Klass.(
       "tool": "rubocop",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -203,7 +203,7 @@ end
       "tool": "rubocop",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -236,7 +236,7 @@ Klass.(
       "tool": "rubocop",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -330,7 +330,7 @@ Klass.(
       "tool": "rubocop",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -359,7 +359,7 @@ end
       "tool": "rubocop",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
@@ -388,7 +388,7 @@ end
       "tool": "rubocop",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_STYLE",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rb",
