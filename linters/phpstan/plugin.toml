@@ -12,7 +12,7 @@ description = "PHP code linter"
 suggested = "targets"
 
 [plugins.definitions.phpstan.drivers.lint]
-script = "php ${linter}/phpstan analyze ${target} --error-format=json --level=9"
+script = "php -d memory_limit=-1 ${linter}/phpstan analyze ${target} --error-format=json --level=9"
 success_codes = [0, 1]
 output = "stdout"
 output_format = "phpstan"
