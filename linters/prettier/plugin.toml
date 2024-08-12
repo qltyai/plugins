@@ -38,7 +38,8 @@ package_file_candidate_filters = ["prettier"]
 
 
 [plugins.definitions.prettier.drivers.format]
-script = "prettier -w ${target}"
+script = "prettier --config ${config_file} -w ${target}"
+runs_from = { type = "tool_directory" }
 success_codes = [0, 2]
 cache_results = true
 output = "rewrite"
