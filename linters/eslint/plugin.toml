@@ -15,6 +15,7 @@ package_file_candidate_filters = ["eslint", "jest", "prettier"]
 [[plugins.definitions.eslint.drivers.lint.version]]
 version_matcher = ">=9.0.0"
 script = "eslint --config ${config_file} --output-file ${tmpfile} --format json ${target}"
+batch_by = "config_file"
 copy_configs_into_tool_install = true
 error_codes = [2]
 success_codes = [0, 1]
@@ -33,6 +34,7 @@ suggested = "config"
 [[plugins.definitions.eslint.drivers.lint.version]]
 version_matcher = "<9.0.0"
 script = "eslint --output-file ${tmpfile} --format json ${target}"
+batch_by = "config_file"
 error_codes = [2]
 success_codes = [0, 1]
 config_files = [
