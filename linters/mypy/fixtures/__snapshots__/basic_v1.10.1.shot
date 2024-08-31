@@ -4,7 +4,7 @@ exports[`linter=mypy fixture=basic version=1.10.1 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://mypy.readthedocs.io/en/stable/error_code_list.html",
       "level": "LEVEL_HIGH",
       "location": {
@@ -39,7 +39,7 @@ def bad_foo(bar: Bar) -> str:
       "tool": "mypy",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://mypy.readthedocs.io/en/stable/error_code_list.html",
       "level": "LEVEL_HIGH",
       "location": {
@@ -75,7 +75,7 @@ def bad_foo(bar: Bar) -> str:
       "tool": "mypy",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://mypy.readthedocs.io/en/stable/error_code_list.html",
       "level": "LEVEL_HIGH",
       "location": {
@@ -108,7 +108,7 @@ def bad_foo(bar: Bar) -> str:
       "tool": "mypy",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://mypy.readthedocs.io/en/stable/error_code_list.html",
       "level": "LEVEL_HIGH",
       "location": {
@@ -142,7 +142,7 @@ def bad_foo(bar: Bar) -> str:
       "tool": "mypy",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://mypy.readthedocs.io/en/stable/error_code_list.html",
       "level": "LEVEL_HIGH",
       "location": {
@@ -170,7 +170,7 @@ def printer() -> None:
       "tool": "mypy",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://mypy.readthedocs.io/en/stable/error_code_list.html",
       "level": "LEVEL_HIGH",
       "location": {
@@ -198,7 +198,7 @@ def printer() -> None:
       "tool": "mypy",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://mypy.readthedocs.io/en/stable/error_code_list.html",
       "level": "LEVEL_LOW",
       "location": {

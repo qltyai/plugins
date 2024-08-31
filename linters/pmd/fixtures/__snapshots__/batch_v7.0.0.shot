@@ -4,7 +4,7 @@ exports[`linter=pmd fixture=batch version=7.0.0 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_codestyle.html#nopackage",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -30,7 +30,7 @@ class HelloWorld {
       "tool": "pmd",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_codestyle.html#nopackage",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -56,7 +56,7 @@ class HelloWorld {
       "tool": "pmd",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#useutilityclass",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -82,7 +82,7 @@ class HelloWorld {
       "tool": "pmd",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://docs.pmd-code.org/pmd-doc-7.0.0/pmd_rules_java_design.html#useutilityclass",
       "level": "LEVEL_MEDIUM",
       "location": {

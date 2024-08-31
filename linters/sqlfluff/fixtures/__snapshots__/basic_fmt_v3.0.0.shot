@@ -4,7 +4,7 @@ exports[`linter=sqlfluff fixture=basic_fmt version=3.0.0 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_fmt.in.sql",
@@ -32,7 +32,7 @@ GROUP BY 1, 2",
       "tool": "sqlfluff",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_fmt.in.sql",
@@ -60,7 +60,7 @@ GROUP BY 1, 2",
       "tool": "sqlfluff",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_fmt.in.sql",
@@ -88,7 +88,7 @@ GROUP BY 1, 2",
       "tool": "sqlfluff",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_fmt.in.sql",
@@ -116,7 +116,7 @@ GROUP BY 1, 2",
       "tool": "sqlfluff",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic_fmt.in.sql",

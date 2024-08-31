@@ -4,7 +4,7 @@ exports[`linter=clippy fixture=multiple_files version=1.77.2 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "src/high.rs",
@@ -27,7 +27,7 @@ exports[`linter=clippy fixture=multiple_files version=1.77.2 1`] = `
       "tool": "clippy",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "src/high.rs",
@@ -50,7 +50,7 @@ exports[`linter=clippy fixture=multiple_files version=1.77.2 1`] = `
       "tool": "clippy",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#double_comparisons",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -110,7 +110,7 @@ fn main() {
       "tool": "clippy",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#needless_if",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -170,7 +170,7 @@ fn main() {
       "tool": "clippy",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://rust-lang.github.io/rust-clippy/master/index.html#no_effect",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -194,7 +194,7 @@ fn main() {
       "tool": "clippy",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "src/high.rs",

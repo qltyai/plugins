@@ -33,7 +33,7 @@ class boaConstrictor",
       "tool": "coffeelint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "second.coffee",
@@ -64,7 +64,7 @@ throw getSomeString()",
       "tool": "coffeelint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "second.coffee",

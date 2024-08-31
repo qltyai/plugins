@@ -4,7 +4,7 @@ exports[`linter=flake8 fixture=basic version=6.0.0 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://flake8.pycqa.org/en/latest/user/error-codes.html",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -25,7 +25,7 @@ import foo",
       "tool": "flake8",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://flake8.pycqa.org/en/latest/user/error-codes.html",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -46,7 +46,7 @@ import foo",
       "tool": "flake8",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://flake8.pycqa.org/en/latest/user/error-codes.html",
       "level": "LEVEL_MEDIUM",
       "location": {

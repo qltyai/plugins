@@ -4,7 +4,7 @@ exports[`linter=php-codesniffer fixture=empty version=3.10.1 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "empty.in.php",
