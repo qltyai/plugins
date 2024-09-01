@@ -4,7 +4,7 @@ exports[`linter=hadolint fixture=basic version=2.10.0 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://github.com/hadolint/hadolint/wiki/DL3003",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -24,7 +24,7 @@ RUN cd /tmp && echo "foo"",
       "tool": "hadolint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://github.com/hadolint/hadolint/wiki/DL3006",
       "level": "LEVEL_MEDIUM",
       "location": {

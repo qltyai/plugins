@@ -4,7 +4,7 @@ exports[`linter=eslint fixture=basic_9 version=9.6.0 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://eslint.org/docs/rules/no-cond-assign",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -28,7 +28,7 @@ if (x = 2) {
       "tool": "eslint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://eslint.org/docs/rules/no-constant-condition",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -52,7 +52,7 @@ if (x = 2) {
       "tool": "eslint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://eslint.org/docs/rules/no-unused-vars",
       "level": "LEVEL_MEDIUM",
       "location": {

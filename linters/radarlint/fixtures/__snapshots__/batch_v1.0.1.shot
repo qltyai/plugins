@@ -4,7 +4,7 @@ exports[`linter=radarlint fixture=batch version=1.0.1 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_LOW",
       "location": {
         "path": "Foo.java",
@@ -36,7 +36,7 @@ public class Foo {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_LOW",
       "location": {
         "path": "Foo.java",
@@ -69,7 +69,7 @@ public class Foo {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "Foo.java",
@@ -101,7 +101,7 @@ public class Foo {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "HasIssue.java",
@@ -136,7 +136,7 @@ class HasIssue {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "Foo.java",
@@ -171,7 +171,7 @@ public class Foo {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_LOW",
       "location": {
         "path": "HasIssue.java",
@@ -200,7 +200,7 @@ class HasIssue {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "HasIssue.java",
@@ -234,7 +234,7 @@ class HasIssue {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "Foo.java",
@@ -263,7 +263,7 @@ public class Foo {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "HasIssue.java",
@@ -292,7 +292,7 @@ class HasIssue {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "HasIssue.java",

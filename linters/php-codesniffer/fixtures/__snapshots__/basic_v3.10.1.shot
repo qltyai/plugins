@@ -4,7 +4,7 @@ exports[`linter=php-codesniffer fixture=basic version=3.10.1 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.php",
@@ -29,7 +29,7 @@ class HelloWorld
       "tool": "php-codesniffer",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.php",
@@ -54,7 +54,7 @@ class HelloWorld
       "tool": "php-codesniffer",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.php",
@@ -79,7 +79,7 @@ class HelloWorld
       "tool": "php-codesniffer",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.php",
@@ -104,7 +104,7 @@ class HelloWorld
       "tool": "php-codesniffer",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.php",
@@ -129,7 +129,7 @@ class HelloWorld
       "tool": "php-codesniffer",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.php",
@@ -154,7 +154,7 @@ class HelloWorld
       "tool": "php-codesniffer",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.php",
@@ -179,7 +179,7 @@ class HelloWorld
       "tool": "php-codesniffer",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.php",
@@ -204,7 +204,7 @@ class HelloWorld
       "tool": "php-codesniffer",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.php",
@@ -229,7 +229,7 @@ class HelloWorld
       "tool": "php-codesniffer",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.php",
@@ -254,7 +254,7 @@ class HelloWorld
       "tool": "php-codesniffer",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.php",

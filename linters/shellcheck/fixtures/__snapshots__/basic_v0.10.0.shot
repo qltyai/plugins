@@ -4,7 +4,7 @@ exports[`linter=shellcheck fixture=basic version=0.10.0 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://github.com/koalaman/shellcheck/wiki/SC2086",
       "level": "LEVEL_LOW",
       "location": {
@@ -27,7 +27,7 @@ echo $x",
       "tool": "shellcheck",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://github.com/koalaman/shellcheck/wiki/SC2154",
       "level": "LEVEL_MEDIUM",
       "location": {
@@ -50,7 +50,7 @@ echo $x",
       "tool": "shellcheck",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://github.com/koalaman/shellcheck/wiki/SC2283",
       "level": "LEVEL_HIGH",
       "location": {

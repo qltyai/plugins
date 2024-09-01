@@ -4,7 +4,7 @@ exports[`linter=radarlint fixture=Empty version=1.0.1 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_LOW",
       "location": {
         "path": "Empty.in.java",

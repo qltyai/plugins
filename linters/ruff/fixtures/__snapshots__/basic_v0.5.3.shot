@@ -4,7 +4,7 @@ exports[`linter=ruff fixture=basic version=0.5.3 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file",
       "level": "LEVEL_HIGH",
       "location": {
@@ -40,7 +40,7 @@ class Globe(object):
       "tool": "ruff",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file",
       "level": "LEVEL_HIGH",
       "location": {
@@ -76,7 +76,7 @@ class Globe(object):
       "tool": "ruff",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://docs.astral.sh/ruff/rules/unused-import",
       "level": "LEVEL_HIGH",
       "location": {
@@ -112,7 +112,7 @@ class Globe(object):
       "tool": "ruff",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "documentationUrl": "https://docs.astral.sh/ruff/rules/unused-import",
       "level": "LEVEL_HIGH",
       "location": {

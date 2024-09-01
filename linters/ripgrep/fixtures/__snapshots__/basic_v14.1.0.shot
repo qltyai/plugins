@@ -4,7 +4,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rs",
@@ -31,7 +31,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
       "tool": "ripgrep",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rs",
@@ -58,7 +58,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
       "tool": "ripgrep",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rs",
@@ -85,7 +85,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
       "tool": "ripgrep",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rs",
@@ -112,7 +112,7 @@ exports[`linter=ripgrep fixture=basic version=14.1.0 1`] = `
       "tool": "ripgrep",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.rs",

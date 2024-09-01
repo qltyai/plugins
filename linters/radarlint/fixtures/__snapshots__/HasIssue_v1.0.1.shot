@@ -4,7 +4,7 @@ exports[`linter=radarlint fixture=HasIssue version=1.0.1 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "HasIssue.in.java",
@@ -39,7 +39,7 @@ class HasIssue {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_LOW",
       "location": {
         "path": "HasIssue.in.java",
@@ -68,7 +68,7 @@ class HasIssue {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "HasIssue.in.java",
@@ -102,7 +102,7 @@ class HasIssue {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "HasIssue.in.java",
@@ -131,7 +131,7 @@ class HasIssue {
       "tool": "radarlint",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_MEDIUM",
       "location": {
         "path": "HasIssue.in.java",

@@ -4,7 +4,7 @@ exports[`linter=redocly fixture=openapi version=1.18.1 1`] = `
 {
   "issues": [
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "openapi.in.yaml",
@@ -33,7 +33,7 @@ components:
       "tool": "redocly",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "openapi.in.yaml",
@@ -64,7 +64,7 @@ components:
       "tool": "redocly",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "openapi.in.yaml",
@@ -107,7 +107,7 @@ components:
       "tool": "redocly",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "openapi.in.yaml",

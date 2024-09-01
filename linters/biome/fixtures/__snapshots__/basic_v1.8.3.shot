@@ -15,7 +15,7 @@ exports[`linter=biome fixture=basic version=1.8.3 1`] = `
       "tool": "biome",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.ts",
@@ -45,7 +45,7 @@ const foo = (bar: Bar) => {
       "tool": "biome",
     },
     {
-      "category": "CATEGORY_BUG",
+      "category": "CATEGORY_LINT",
       "level": "LEVEL_HIGH",
       "location": {
         "path": "basic.in.ts",
