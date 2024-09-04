@@ -59,6 +59,7 @@ jobs:
       - name: Create a new branch
         id: create_branch
         run: |
+          git fetch origin main
           git checkout main
           git checkout -b update-linter-versions
           git add .
