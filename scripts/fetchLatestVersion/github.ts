@@ -26,10 +26,7 @@ export async function fetchLatestVersionFromGithub(
     throw new Error("No tag_name found");
   }
 
-  console.log(`"${tag}"`);
-
   const match = tag.match(VERSION_REGEX);
-  console.log(match);
   if (match) {
     return match[1];
   } else {
