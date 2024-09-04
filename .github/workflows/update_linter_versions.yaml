@@ -51,13 +51,18 @@ jobs:
       - name: Run update-linter-versions script
         run: npm run update-linter-versions
 
+      - name: Set Git config
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+
       - name: Create a new branch
         id: create_branch
         run: |
-          git checkout -b my-changes-branch
+          git checkout -b update-linter-versions
           git add .
-          git commit -m "Automated changes"
-          git push origin my-changes-branch
+          git commit -m "Update linter versions"
+          git push origin update-linter-versions
 
       - name: Install GitHub CLI
         run: sudo apt-get install gh
@@ -65,7 +70,7 @@ jobs:
       - name: Create Pull Request
         run: |
           gh auth login --with-token ${{ secrets.GITHUB_TOKEN }}
-          gh pr create --base main --head my-changes-branch --title "Automated PR with changes" --body "This pull request was automatically created by GitHub Actions."
+          gh pr create --base main --head update-linter-versions --title "chore: Update linter versions" --body "This pull request was automatically created by GitHub Actions to update linter versions."
 
       # - name: Commit changes
       #   uses: stefanzweifel/git-auto-commit-action@v5
