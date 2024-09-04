@@ -31,6 +31,8 @@ jobs:
 
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3
 
       - name: Install Dependencies
         run: npm install
