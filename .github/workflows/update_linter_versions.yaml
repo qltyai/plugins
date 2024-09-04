@@ -1,0 +1,102 @@
+name: Update linter versions
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * 2" # every Tuesday at 12:00
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/update_linter_versions.yml'
+      - 'scripts/updateLinterVersions.ts'
+      - 'scripts/fetchLatestVersion/*.ts'
+
+permissions:
+  contents: write
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: 📦 Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: "npm"
+
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: 📦 Install qlty CLI
+        run: "curl https://qlty.ai/install.sh | bash"
+
+      - name: ⤵️ Move `qlty` into PATH
+        shell: bash
+        run: echo "$HOME/.qlty/bin" >> $GITHUB_PATH
+
+      - name: 🔍 Check qlty version
+        shell: bash
+        run: qlty --version
+
+      - name: Run update-linter-versions script
+        run: npm run update-linter-versions
+
+      - name: Create a new branch
+        id: create_branch
+        run: |
+          git checkout -b my-changes-branch
+          git add .
+          git commit -m "Automated changes"
+          git push origin my-changes-branch
+
+      - name: Create Pull Request
+        uses: octokit/request-action@v2
+        with:
+          route: POST /repos/{owner}/{repo}/pulls
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.repository }}
+          title: "Update Linter Versions"
+          head: update-linter-versions
+          base: main
+          body: |
+            This pull request was automatically created to update linter versions.
+
+      # - name: Commit changes
+      #   uses: stefanzweifel/git-auto-commit-action@v5
+      #   with:
+      #     commit_message: "chore: update linter versions"
+      #     branch: ${{ github.head_ref }}
+
+
+      - name: Read Issues and Create in GitHub
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            // Path to the JSON file containing the issues
+            const filePath = path.join(process.env.GITHUB_WORKSPACE, 'github_issues.json');
+            const issuesData = fs.readFileSync(filePath, 'utf8');
+            const issues = JSON.parse(issuesData);
+
+            // Loop through each issue object and create it
+            for (const issue of issues) {
+              const { title, body, assignees } = issue;
+              console.log(`Creating issue: ${title}`);
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                assignees: assignees
+              });

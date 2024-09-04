@@ -49,7 +49,7 @@ export const getVersionsForTarget = (
 
   const uniqueVersionsList = Array.from(new Set(versionsList)).sort();
 
-  if (OPTIONS.linterVersion == "KnownGoodVersion") {
+  if (OPTIONS.linterVersion == "KnownGoodVersion" || OPTIONS.testAgainstKnownGoodVersion) {
     const knownGoodVersion = getKnownGoodVersion(dirname, linterName);
 
     console.log(
@@ -75,7 +75,7 @@ export const getVersionsForTarget = (
   }
 };
 
-const getKnownGoodVersion = (dirname: string, linterName: string) => {
+export const getKnownGoodVersion = (dirname: string, linterName: string) => {
   const plugin_file = fs.readFileSync(
     path.resolve(dirname, "plugin.toml"),
     "utf8"
