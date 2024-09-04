@@ -59,10 +59,11 @@ jobs:
       - name: Create a new branch
         id: create_branch
         run: |
+          git checkout main
           git checkout -b update-linter-versions
           git add .
           git commit -m "Update linter versions"
-          git push origin update-linter-versions
+          git push origin update-linter-versions --force
 
       - name: Install GitHub CLI
         run: sudo apt-get install gh
