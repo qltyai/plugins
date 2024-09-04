@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 jobs:
-  format:
+  update-linter-versions:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -49,32 +49,11 @@ jobs:
       - name: Run update-linter-versions script
         run: npm run update-linter-versions
 
-      - name: Create a new branch
-        id: create_branch
-        run: |
-          git checkout -b my-changes-branch
-          git add .
-          git commit -m "Automated changes"
-          git push origin my-changes-branch
-
-      - name: Create Pull Request
-        uses: octokit/request-action@v2
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          route: POST /repos/{owner}/{repo}/pulls
-          owner: ${{ github.repository_owner }}
-          repo: ${{ github.repository }}
-          title: "Update Linter Versions"
-          head: update-linter-versions
-          base: main
-          body: |
-            This pull request was automatically created to update linter versions.
-
-      # - name: Commit changes
-      #   uses: stefanzweifel/git-auto-commit-action@v5
-      #   with:
-      #     commit_message: "chore: update linter versions"
-      #     branch: ${{ github.head_ref }}
-
+          commit_message: "chore: update linter versions"
+          branch: ${{ github.head_ref }}
 
       - name: Read Issues and Create in GitHub
         uses: actions/github-script@v6
