@@ -64,7 +64,7 @@ jobs:
           git fetch origin main
           git checkout main
           git checkout -b update-linter-versions
-          git add .
+          git add --all ':!github_issues.json'
           git commit -m "Update linter versions"
           git push origin update-linter-versions --force
 
@@ -75,13 +75,6 @@ jobs:
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
           gh pr create --base main --head update-linter-versions --title "chore: Update linter versions" --body "This pull request was automatically created by GitHub Actions to update linter versions."
-
-      # - name: Commit changes
-      #   uses: stefanzweifel/git-auto-commit-action@v5
-      #   with:
-      #     commit_message: "chore: update linter versions"
-      #     branch: ${{ github.head_ref }}
-
 
       - name: Read Issues and Create in GitHub
         uses: actions/github-script@v6

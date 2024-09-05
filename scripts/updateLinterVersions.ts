@@ -125,13 +125,11 @@ async function main(): Promise<void> {
       try {
         console.log(`Testing ${linterLabel}...`);
         execSync(
-          `QLTY_PLUGINS_LINTER_VERSION=${latestLinterVersion} QLTY_PLUGINS_TEST_AGAINST_KNOWN_GOOD_VERSION=true npm test ${linter}.test.ts`,
-          { stdio: "inherit" }
+          `QLTY_PLUGINS_LINTER_VERSION=${latestLinterVersion} QLTY_PLUGINS_TEST_AGAINST_KNOWN_GOOD_VERSION=true npm test ${linter}.test.ts`
         );
 
         execSync(
-          `QLTY_PLUGINS_LINTER_VERSION=${latestLinterVersion} npm test ${linter}.test.ts -- --updateSnapshot`,
-          { stdio: "inherit" }
+          `QLTY_PLUGINS_LINTER_VERSION=${latestLinterVersion} npm test ${linter}.test.ts -- --updateSnapshot`
         );
 
         console.log(`Yay! ${linterLabel} passed the tests!`);
