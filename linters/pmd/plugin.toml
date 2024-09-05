@@ -1,7 +1,7 @@
 config_version = "0"
 
 [plugins.definitions.pmd]
-runnable_archive_url = "https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.0.0/pmd-dist-${version}-bin.zip"
+runnable_archive_url = "https://github.com/pmd/pmd/releases/download/pmd_releases%2F${version}/pmd-dist-${version}-bin.zip"
 download_type = "zip"
 strip_components = 1
 runtime = "java"
