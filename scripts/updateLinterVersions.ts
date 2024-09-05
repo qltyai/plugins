@@ -149,7 +149,7 @@ async function main(): Promise<void> {
           // Push to githubIssues
           githubIssues.push({
             title: `Tests failed for ${linterLabel}`,
-            body: `Error encountered:\n${errorMessage}`,
+            body: `Error encountered:\n${error.message}`,
             assignees: ["marschattha"],
           });
         } else {
