@@ -13,7 +13,7 @@ interface LinterDefinition {
     releases: {
       [key: string]: {
         github: string;
-      }
+      };
     };
     definitions: {
       [key: string]: {
@@ -42,11 +42,10 @@ const getLintersList = async (): Promise<string[]> => {
   try {
     const dirContents = await fs.promises.readdir(LINTERS_PATH);
     const folders = await Promise.all(
-      dirContents
-        .filter(async (dirContent) => {
-          const linterPath = path.join(LINTERS_PATH, dirContent);
-          return (await fs.promises.stat(linterPath)).isDirectory();
-        })
+      dirContents.filter(async (dirContent) => {
+        const linterPath = path.join(LINTERS_PATH, dirContent);
+        return (await fs.promises.stat(linterPath)).isDirectory();
+      })
     );
     return folders;
   } catch (err) {
@@ -107,7 +106,9 @@ async function main(): Promise<void> {
       try {
         latestLinterVersion = await fetchLatestVersion(linter);
       } catch (error) {
-        console.error(`Failed to get the latest version for ${linter}. Skipping...`);
+        console.error(
+          `Failed to get the latest version for ${linter}. Skipping...`
+        );
         console.error(error);
         failedLinter.set(linter, error as string);
         continue; // Move to the next linter
@@ -117,7 +118,9 @@ async function main(): Promise<void> {
       const currentKnownGoodVersion = getKnownGoodVersion(linter);
 
       if (currentKnownGoodVersion === latestLinterVersion) {
-        console.log(`The linter ${linter} is already at the latest version: ${latestLinterVersion}. Skipping...`);
+        console.log(
+          `The linter ${linter} is already at the latest version: ${latestLinterVersion}. Skipping...`
+        );
         latestLinters.push(linter);
         continue; // Move to the next linter
       }
@@ -125,11 +128,13 @@ async function main(): Promise<void> {
       try {
         console.log(`Testing ${linterLabel}...`);
         execSync(
-          `QLTY_PLUGINS_LINTER_VERSION=${latestLinterVersion} QLTY_PLUGINS_TEST_AGAINST_KNOWN_GOOD_VERSION=true npm test ${linter}.test.ts`
+          `QLTY_PLUGINS_LINTER_VERSION=${latestLinterVersion} QLTY_PLUGINS_TEST_AGAINST_KNOWN_GOOD_VERSION=true npm test ${linter}.test.ts`,
+          { stdio: "inherit" }
         );
 
         execSync(
-          `QLTY_PLUGINS_LINTER_VERSION=${latestLinterVersion} npm test ${linter}.test.ts -- --updateSnapshot`
+          `QLTY_PLUGINS_LINTER_VERSION=${latestLinterVersion} npm test ${linter}.test.ts -- --updateSnapshot`,
+          { stdio: "inherit" }
         );
 
         console.log(`Yay! ${linterLabel} passed the tests!`);
@@ -141,20 +146,13 @@ async function main(): Promise<void> {
 
         updateLinterTomlVersions(linter, latestLinterVersion, false);
 
-        if (error instanceof Error) {
-          const err = error as { stdout?: Buffer; stderr?: Buffer };
-          const errorMessage = `${error.message}\n${err.stdout?.toString() ?? 'No stdout'}\n${err.stderr?.toString() ?? 'No stderr'}`;
-          failedLinter.set(linter, errorMessage);
+        failedLinter.set(linter, error as string);
 
-          // Push to githubIssues
-          githubIssues.push({
-            title: `Tests failed for ${linterLabel}`,
-            body: `Error encountered:\n${error.message}`,
-            assignees: ["marschattha"],
-          });
-        } else {
-          console.error('An unknown error occurred:', error);
-        }
+        githubIssues.push({
+          title: `Tests failed for ${linterLabel}`,
+          body: `Error encountered:\n${error}`,
+          assignees: ["marschattha"],
+        });
       }
     }
 
