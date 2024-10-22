@@ -86,6 +86,5 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const path = require('path');
-            const createGithubIssues = require(path.join(process.env.GITHUB_WORKSPACE, '.github/workflows/scripts/createGithubIssues.js'));
+            const createGithubIssues = require('/home/runner/work/plugins/.github/workflows/scripts/createGithubIssues.js');
             await createGithubIssues(github, context);
