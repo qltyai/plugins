@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`linter=brakeman fixture=basic version=6.2.2 1`] = `
+{
+  "issues": [
+    {
+      "category": "CATEGORY_LINT",
+      "documentationUrl": "https://brakemanscanner.org/docs/warning_types/dangerous_eval/",
+      "level": "LEVEL_HIGH",
+      "location": {
+        "path": "app/helpers/users_helper.rb",
+        "range": {
+          "endColumn": 1,
+          "endLine": 3,
+          "startColumn": 1,
+          "startLine": 3,
+        },
+      },
+      "message": "User input in eval.",
+      "mode": "MODE_BLOCK",
+      "ruleKey": "BRAKE0013",
+      "snippet": "    eval(params[:x])",
+      "snippetWithContext": "module UsersHelper
+  def bad_helper
+    eval(params[:x])
+  end
+end",
+      "tool": "brakeman",
+    },
+  ],
+}
+`;
