@@ -6,6 +6,7 @@ import path from "path";
 import * as git from "simple-git";
 import * as util from "util";
 import { OPTIONS } from "./utils";
+import { getKnownGoodVersion } from "./runLinterTest";
 
 const execFilePromise = util.promisify(execFile);
 
@@ -53,11 +54,12 @@ export class QltyDriver {
   sandboxPath: string;
   linterName: string;
   linterVersion: string;
+  pluginDir: string;
   debug: Debugger;
 
   constructor(linterName: string, linterVersion: string) {
-    const pluginDir = path.resolve(REPO_ROOT, "linters", linterName);
-    this.fixturesDir = path.resolve(pluginDir, FIXTURES_DIR);
+    this.pluginDir = path.resolve(REPO_ROOT, "linters", linterName);
+    this.fixturesDir = path.resolve(this.pluginDir, FIXTURES_DIR);
     this.linterName = linterName;
     this.linterVersion = linterVersion;
     this.sandboxPath = fs.realpathSync(
@@ -117,8 +119,10 @@ export class QltyDriver {
     }
     fs.appendFileSync(qltyTomlPath, this.qltyTomlSource());
     if (!qltyTomlExists) {
+      const linterVersion = OPTIONS.linterVersion ? OPTIONS.linterVersion : this.linterVersion;
+
       await this.runQltyCmd(
-        `plugins enable ${this.linterName}=${this.linterVersion}`
+        `plugins enable ${this.linterName}=${linterVersion}`
       );
     }
   }
@@ -142,6 +146,13 @@ export class QltyDriver {
   }
 
   snapshotPath(prefix: string): string {
+    if (OPTIONS.testAgainstKnownGoodVersion) {
+      const knownGoodVersion = getKnownGoodVersion(this.pluginDir, this.linterName);
+      const knownGoodSnapshot = path.resolve(this.fixturesDir, SNAPSHOTS_DIR, `${prefix}_v${knownGoodVersion}.shot`);
+
+      return knownGoodSnapshot;
+    }
+
     const snapshotName = `${prefix}_v${this.linterVersion}.shot`;
     return path.resolve(this.fixturesDir, SNAPSHOTS_DIR, snapshotName);
   }
