@@ -12,7 +12,8 @@ description = "PHP code linter"
 suggested = "targets"
 
 [plugins.definitions.php-codesniffer.drivers.lint]
-script = "php -d memory_limit=-1 ${linter}/php-codesniffer --report=json ${target}"
+script = "php -d memory_limit=-1 ${linter}/php-codesniffer --report=json -q ${autoload_script} ${target}"
+autoload_script = "--bootstrap=${linter}/vendor/autoload.php"
 success_codes = [0, 1, 2]
 output = "stdout"
 output_format = "php_codesniffer"
