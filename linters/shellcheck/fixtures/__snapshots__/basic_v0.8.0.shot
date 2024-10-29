@@ -24,6 +24,37 @@ exports[`linter=shellcheck fixture=basic version=0.8.0 1`] = `
 
 x = 1
 echo $x",
+      "suggestions": [
+        {
+          "replacements": [
+            {
+              "data": """,
+              "location": {
+                "path": "basic.in.sh",
+                "range": {
+                  "endColumn": 6,
+                  "endLine": 4,
+                  "startColumn": 6,
+                  "startLine": 4,
+                },
+              },
+            },
+            {
+              "data": """,
+              "location": {
+                "path": "basic.in.sh",
+                "range": {
+                  "endColumn": 8,
+                  "endLine": 4,
+                  "startColumn": 8,
+                  "startLine": 4,
+                },
+              },
+            },
+          ],
+          "source": "SUGGESTION_SOURCE_TOOL",
+        },
+      ],
       "tool": "shellcheck",
     },
     {
