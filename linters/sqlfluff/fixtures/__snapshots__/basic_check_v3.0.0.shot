@@ -75,6 +75,7 @@ exports[`linter=sqlfluff fixture=basic_check version=3.0.0 1`] = `
                   "endByte": 6,
                   "endColumn": 7,
                   "endLine": 1,
+                  "startByte": 0,
                   "startColumn": 1,
                   "startLine": 1,
                 },
