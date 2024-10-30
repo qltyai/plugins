@@ -29,6 +29,39 @@ exports[`linter=sqlfluff fixture=basic_fmt version=3.2.4 1`] = `
     ) AS an_aggregate_function
 FROM tbl_a
 GROUP BY 1, 2",
+      "suggestions": [
+        {
+          "patch": "--- original
++++ modified
+@@ -1,7 +1,7 @@
+ SELECT
+     col_a,
+       col_b,
+-    COUNT(*)   AS   num,
++    COUNT(*) AS   num,
+     SUM(num)   OVER   (
+         PARTITION BY col_a
+         ORDER BY col_b
+",
+          "replacements": [
+            {
+              "data": " ",
+              "location": {
+                "path": "basic_fmt.in.sql",
+                "range": {
+                  "endByte": 46,
+                  "endColumn": 16,
+                  "endLine": 4,
+                  "startByte": 43,
+                  "startColumn": 13,
+                  "startLine": 4,
+                },
+              },
+            },
+          ],
+          "source": "SUGGESTION_SOURCE_TOOL",
+        },
+      ],
       "tool": "sqlfluff",
     },
     {
@@ -57,6 +90,39 @@ GROUP BY 1, 2",
     ) AS an_aggregate_function
 FROM tbl_a
 GROUP BY 1, 2",
+      "suggestions": [
+        {
+          "patch": "--- original
++++ modified
+@@ -2,7 +2,7 @@
+     col_a,
+       col_b,
+     COUNT(*)   AS   num,
+-    SUM(num)   OVER   (
++    SUM(num) OVER   (
+         PARTITION BY col_a
+         ORDER BY col_b
+     ) AS an_aggregate_function
+",
+          "replacements": [
+            {
+              "data": " ",
+              "location": {
+                "path": "basic_fmt.in.sql",
+                "range": {
+                  "endByte": 71,
+                  "endColumn": 16,
+                  "endLine": 5,
+                  "startByte": 68,
+                  "startColumn": 13,
+                  "startLine": 5,
+                },
+              },
+            },
+          ],
+          "source": "SUGGESTION_SOURCE_TOOL",
+        },
+      ],
       "tool": "sqlfluff",
     },
     {
@@ -85,6 +151,39 @@ GROUP BY 1, 2",
     ) AS an_aggregate_function
 FROM tbl_a
 GROUP BY 1, 2",
+      "suggestions": [
+        {
+          "patch": "--- original
++++ modified
+@@ -1,7 +1,7 @@
+ SELECT
+     col_a,
+       col_b,
+-    COUNT(*)   AS   num,
++    COUNT(*)   AS num,
+     SUM(num)   OVER   (
+         PARTITION BY col_a
+         ORDER BY col_b
+",
+          "replacements": [
+            {
+              "data": " ",
+              "location": {
+                "path": "basic_fmt.in.sql",
+                "range": {
+                  "endByte": 51,
+                  "endColumn": 21,
+                  "endLine": 4,
+                  "startByte": 48,
+                  "startColumn": 18,
+                  "startLine": 4,
+                },
+              },
+            },
+          ],
+          "source": "SUGGESTION_SOURCE_TOOL",
+        },
+      ],
       "tool": "sqlfluff",
     },
     {
@@ -113,6 +212,39 @@ GROUP BY 1, 2",
     ) AS an_aggregate_function
 FROM tbl_a
 GROUP BY 1, 2",
+      "suggestions": [
+        {
+          "patch": "--- original
++++ modified
+@@ -2,7 +2,7 @@
+     col_a,
+       col_b,
+     COUNT(*)   AS   num,
+-    SUM(num)   OVER   (
++    SUM(num)   OVER (
+         PARTITION BY col_a
+         ORDER BY col_b
+     ) AS an_aggregate_function
+",
+          "replacements": [
+            {
+              "data": " ",
+              "location": {
+                "path": "basic_fmt.in.sql",
+                "range": {
+                  "endByte": 78,
+                  "endColumn": 23,
+                  "endLine": 5,
+                  "startByte": 75,
+                  "startColumn": 20,
+                  "startLine": 5,
+                },
+              },
+            },
+          ],
+          "source": "SUGGESTION_SOURCE_TOOL",
+        },
+      ],
       "tool": "sqlfluff",
     },
     {
@@ -141,6 +273,38 @@ GROUP BY 1, 2",
     ) AS an_aggregate_function
 FROM tbl_a
 GROUP BY 1, 2",
+      "suggestions": [
+        {
+          "patch": "--- original
++++ modified
+@@ -1,6 +1,6 @@
+ SELECT
+     col_a,
+-      col_b,
++    col_b,
+     COUNT(*)   AS   num,
+     SUM(num)   OVER   (
+         PARTITION BY col_a
+",
+          "replacements": [
+            {
+              "data": "    ",
+              "location": {
+                "path": "basic_fmt.in.sql",
+                "range": {
+                  "endByte": 24,
+                  "endColumn": 7,
+                  "endLine": 3,
+                  "startByte": 18,
+                  "startColumn": 1,
+                  "startLine": 3,
+                },
+              },
+            },
+          ],
+          "source": "SUGGESTION_SOURCE_TOOL",
+        },
+      ],
       "tool": "sqlfluff",
     },
     {
