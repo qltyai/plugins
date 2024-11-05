@@ -40,7 +40,7 @@ jobs:
         run: npm install
 
       - name: 📦 Install qlty CLI
-        run: "curl https://qlty.ai/install.sh | bash"
+        run: "curl https://qlty.sh/install.sh | bash"
 
       - name: ⤵️ Move `qlty` into PATH
         shell: bash

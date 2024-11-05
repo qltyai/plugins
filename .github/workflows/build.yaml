@@ -14,11 +14,11 @@ jobs:
       matrix:
         include:
           - os: "macos-latest-xlarge"
-            install-command: "curl https://qlty.ai/install.sh | bash"
+            install-command: "curl https://qlty.sh/install.sh | bash"
           - os: "ubuntu-latest-16-cores"
-            install-command: "curl https://qlty.ai/install.sh | bash"
+            install-command: "curl https://qlty.sh/install.sh | bash"
           - os: "windows-latest-16-cores"
-            install-command: "irm https://qlty.ai/install.ps1 | iex"
+            install-command: "irm https://qlty.sh/install.ps1 | iex"
 
     runs-on: ${{ matrix.os }}
     steps:
