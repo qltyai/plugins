@@ -6,7 +6,7 @@ exports[`linter=ruff fixture=basic version=0.5.3 1`] = `
     {
       "category": "CATEGORY_LINT",
       "documentationUrl": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file",
-      "level": "LEVEL_HIGH",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.py",
         "range": {
@@ -16,7 +16,7 @@ exports[`linter=ruff fixture=basic version=0.5.3 1`] = `
           "startLine": 7,
         },
       },
-      "message": "ModuleImportNotAtTopOfFile",
+      "message": "Module level import not at top of file",
       "mode": "MODE_BLOCK",
       "ruleKey": "E402",
       "snippet": "import sys",
@@ -42,7 +42,7 @@ class Globe(object):
     {
       "category": "CATEGORY_LINT",
       "documentationUrl": "https://docs.astral.sh/ruff/rules/module-import-not-at-top-of-file",
-      "level": "LEVEL_HIGH",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.py",
         "range": {
@@ -52,7 +52,7 @@ class Globe(object):
           "startLine": 9,
         },
       },
-      "message": "ModuleImportNotAtTopOfFile",
+      "message": "Module level import not at top of file",
       "mode": "MODE_BLOCK",
       "ruleKey": "E402",
       "snippet": "import json",
@@ -78,43 +78,7 @@ class Globe(object):
     {
       "category": "CATEGORY_LINT",
       "documentationUrl": "https://docs.astral.sh/ruff/rules/unused-import",
-      "level": "LEVEL_HIGH",
-      "location": {
-        "path": "basic.in.py",
-        "range": {
-          "endColumn": 11,
-          "endLine": 7,
-          "startColumn": 8,
-          "startLine": 7,
-        },
-      },
-      "message": "UnusedImport",
-      "mode": "MODE_BLOCK",
-      "ruleKey": "F401",
-      "snippet": "import sys",
-      "snippetWithContext": "def main():
-    try:
-        pass
-    except (Exception, TypeError):
-        pass
-
-import sys
-# trunk-ignore(ruff/F401)
-import json
-
-class NoDocstring(object):
-    def __init__(self, arg1):
-        self._attr1 = arg1
-
-class Globe(object):
-    def __init__(self):
-        self.shape = 'spheroid'",
-      "tool": "ruff",
-    },
-    {
-      "category": "CATEGORY_LINT",
-      "documentationUrl": "https://docs.astral.sh/ruff/rules/unused-import",
-      "level": "LEVEL_HIGH",
+      "level": "LEVEL_MEDIUM",
       "location": {
         "path": "basic.in.py",
         "range": {
@@ -124,7 +88,7 @@ class Globe(object):
           "startLine": 9,
         },
       },
-      "message": "UnusedImport",
+      "message": "\`json\` imported but unused",
       "mode": "MODE_BLOCK",
       "ruleKey": "F401",
       "snippet": "import json",
@@ -145,6 +109,100 @@ class NoDocstring(object):
 class Globe(object):
     def __init__(self):
         self.shape = 'spheroid'",
+      "suggestions": [
+        {
+          "patch": "--- original
++++ modified
+@@ -6,7 +6,6 @@
+
+ import sys
+ # trunk-ignore(ruff/F401)
+-import json
+
+ class NoDocstring(object):
+     def __init__(self, arg1):
+",
+          "replacements": [
+            {
+              "location": {
+                "path": "basic.in.py",
+                "range": {
+                  "endColumn": 1,
+                  "endLine": 10,
+                  "startColumn": 1,
+                  "startLine": 9,
+                },
+              },
+            },
+          ],
+          "source": "SUGGESTION_SOURCE_TOOL",
+        },
+      ],
+      "tool": "ruff",
+    },
+    {
+      "category": "CATEGORY_LINT",
+      "documentationUrl": "https://docs.astral.sh/ruff/rules/unused-import",
+      "level": "LEVEL_MEDIUM",
+      "location": {
+        "path": "basic.in.py",
+        "range": {
+          "endColumn": 11,
+          "endLine": 7,
+          "startColumn": 8,
+          "startLine": 7,
+        },
+      },
+      "message": "\`sys\` imported but unused",
+      "mode": "MODE_BLOCK",
+      "ruleKey": "F401",
+      "snippet": "import sys",
+      "snippetWithContext": "def main():
+    try:
+        pass
+    except (Exception, TypeError):
+        pass
+
+import sys
+# trunk-ignore(ruff/F401)
+import json
+
+class NoDocstring(object):
+    def __init__(self, arg1):
+        self._attr1 = arg1
+
+class Globe(object):
+    def __init__(self):
+        self.shape = 'spheroid'",
+      "suggestions": [
+        {
+          "patch": "--- original
++++ modified
+@@ -4,7 +4,6 @@
+     except (Exception, TypeError):
+         pass
+
+-import sys
+ # trunk-ignore(ruff/F401)
+ import json
+
+",
+          "replacements": [
+            {
+              "location": {
+                "path": "basic.in.py",
+                "range": {
+                  "endColumn": 1,
+                  "endLine": 8,
+                  "startColumn": 1,
+                  "startLine": 7,
+                },
+              },
+            },
+          ],
+          "source": "SUGGESTION_SOURCE_TOOL",
+        },
+      ],
       "tool": "ruff",
     },
   ],
