@@ -1,0 +1,23 @@
+config_version = "0"
+
+[plugins.definitions.oxc]
+runtime = "node"
+package = "oxlint"
+file_types = ["javascript", "typescript", "tsx"]
+affects_cache = ["package.json", "tsconfig.json"]
+latest_version = "0.11.1"
+known_good_version = "0.11.1"
+version_command = "oxlint --version"
+description = "Javascript linter"
+
+[plugins.definitions.oxc.drivers.lint]
+script = "oxlint --format github ${target}"
+success_codes = [0, 1]
+error_codes = [2]
+config_files = ["oxlintrc.json"]
+output = "stdout"
+output_format = "regex"
+output_regex = "::(?P<severity>[^ ]+) file=(?P<path>[^,]+),line=(?P<line>\\d+),endLine=(?P<end_line>\\d+),col=(?P<col>\\d+),endColumn=(?P<end_col>\\d+),title=oxlint::(?P<code>[^ ]+) (?P<message>.+)"
+batch = true
+cache_results = true
+max_batch = 40
