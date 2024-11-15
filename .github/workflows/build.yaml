@@ -29,6 +29,7 @@ jobs:
         run: |
           brew install --cask docker
           open /Applications/Docker.app
+          sleep 10
 
       - name: 📦 Use Node.js
         uses: actions/setup-node@v4
