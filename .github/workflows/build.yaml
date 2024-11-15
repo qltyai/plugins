@@ -24,6 +24,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install Docker
+        if: matrix.os == 'macos-latest-xlarge'
+        run: |
+          brew install --cask docker
+          open /Applications/Docker.app
+
       - name: 📦 Use Node.js
         uses: actions/setup-node@v4
         with:
