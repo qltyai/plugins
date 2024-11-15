@@ -24,13 +24,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install and start Colima
-        if: matrix.os == 'macos-latest-xlarge'
-        run: |
-          brew install docker qemu colima
-          colima version
-          colima start --cpu 3 --memory 6 --disk 100 --vm-type=qemu --mount-type=sshfs --dns=1.1.1.1
-
       - name: 📦 Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -77,6 +70,8 @@ jobs:
 
       # Login to the GitHub Container Registry to reduce trivy rate limiting errors
       - name: Log in to registry
+        # macOS does not support Docker
+        if: matrix.os != 'macos-latest-xlarge'
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: 🤔 Run Tests
