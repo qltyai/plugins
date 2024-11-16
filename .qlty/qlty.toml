@@ -1,0 +1,79 @@
+config_version = "0"
+
+[sources.default]
+repository = "https://github.com/qltyai/plugins.git"
+tag = "v0.36.0-pre"
+
+[[plugin]]
+name = "actionlint"
+
+[[plugin]]
+name = "bandit"
+
+[[plugin]]
+name = "checkov"
+version = "3.2.49"
+
+[[plugin]]
+name = "clippy"
+
+[[plugin]]
+name = "dotenv-linter"
+
+[[plugin]]
+name = "flake8"
+version = "6.1.0"
+
+[[plugin]]
+name = "gofmt"
+
+[[plugin]]
+name = "hadolint"
+
+[[plugin]]
+name = "markdownlint"
+version = "0.31.1"
+
+[[plugin]]
+name = "osv-scanner"
+
+[[plugin]]
+name = "php-codesniffer"
+
+[[plugin]]
+name = "phpstan"
+
+[[plugin]]
+name = "prettier"
+version = "2.8.4"
+
+[[plugin]]
+name = "ripgrep"
+
+[[plugin]]
+name = "ruff"
+version = "0.3.3"
+
+[[plugin]]
+name = "shellcheck"
+version = "0.9.0"
+
+[[plugin]]
+name = "shfmt"
+
+[[plugin]]
+name = "stylelint"
+version = "14.6.1"
+
+[[plugin]]
+name = "trivy"
+
+[[plugin]]
+name = "trufflehog"
+
+[[plugin]]
+name = "yamllint"
+
+[[ignore]]
+plugins = ["ALL"]
+file_patterns = ["**/fixtures/**", "**/tests/**"]

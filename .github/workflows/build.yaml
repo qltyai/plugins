@@ -1,0 +1,81 @@
+name: Test
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      # For these target platforms
+      matrix:
+        include:
+          - os: "macos-latest-xlarge"
+            install-command: "curl https://qlty.sh/install.sh | bash"
+          - os: "ubuntu-latest-16-cores"
+            install-command: "curl https://qlty.sh/install.sh | bash"
+          - os: "windows-latest-16-cores"
+            install-command: "irm https://qlty.sh/install.ps1 | iex"
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 📦 Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: "npm"
+
+      # Generate Cache key for Linux/macOS
+      - name: Set CACHE_MONTH on Linux/macOS
+        if: runner.os != 'Windows'
+        run: echo "CACHE_MONTH=$(date +'%Y-%m')" >> $GITHUB_ENV
+
+      # Generate Cache key for windows
+      - name: Set CACHE_MONTH on Windows
+        if: runner.os == 'Windows'
+        run: |
+          $env:CACHE_MONTH = (Get-Date -Format 'yyyy-MM')
+          echo "CACHE_MONTH=$env:CACHE_MONTH" >> $env:GITHUB_ENV
+
+      - name: 💾 Cache qlty tools
+        uses: actions/cache@v3
+        with:
+          path: ~/.qlty
+          key: ${{ runner.os }}-qlty-${{ env.CACHE_MONTH }}
+
+      - name: 📦 Setup PHP with PECL extension
+        uses: shivammathur/setup-php@v2
+        if: matrix.os == 'macos-latest-xlarge'
+
+      - name: 📦 Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3.0
+        if: matrix.os == 'windows-latest-16-cores'
+
+      - name: 📦 Install qlty CLI
+        run: ${{ matrix.install-command }}
+
+      - name: ⤵️ Move `qlty` into PATH
+        shell: bash
+        run: echo "$HOME/.qlty/bin" >> $GITHUB_PATH
+
+      - name: 🔍 Check qlty version
+        shell: bash
+        run: qlty --version
+
+      # Login to the GitHub Container Registry to reduce trivy rate limiting errors
+      - name: Log in to registry
+        # macOS does not support Docker
+        if: matrix.os != 'macos-latest-xlarge'
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: 🤔 Run Tests
+        shell: bash
+        run: |
+          npm ci
+          npm test

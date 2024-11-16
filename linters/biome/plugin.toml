@@ -1,0 +1,32 @@
+config_version = "0"
+
+[plugins.definitions.biome]
+runtime = "node"
+package = "@biomejs/biome"
+file_types = ["typescript", "javascript", "json"]
+config_files = ["biome.json"]
+affects_cache = ["package.json", ".editorconfig"]
+latest_version = "1.9.4"
+known_good_version = "1.8.3"
+version_command = "biome --version"
+description = "A static analyzer for web projects"
+suggested = "config"
+
+[plugins.definitions.biome.drivers.lint]
+script = "biome check --reporter=github ${target}"
+success_codes = [0, 1]
+output = "stdout"
+output_format = "regex"
+output_regex = "::(?P<severity>[^ ]+) title=(?P<code>[^,]+),file=(?P<path>[^,]+),line=(?P<line>\\d+),endLine=(?P<end_line>\\d+),col=(?P<col>\\d+),endColumn=(?P<end_col>\\d+)::(?P<message>.+)"
+batch = true
+cache_results = true
+suggested = "config"
+
+[plugins.definitions.biome.drivers.format]
+script = "biome format --write ${target}"
+success_codes = [0, 1]
+output = "rewrite"
+batch = true
+cache_results = true
+driver_type = "formatter"
+suggested = "config"

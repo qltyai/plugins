@@ -1,0 +1,30 @@
+config_version = "0"
+
+[plugins.definitions.knip]
+runtime = "node"
+package = "knip"
+file_types = ["javascript", "typescript", "tsx"]
+config_files = [
+  "knip.json",
+  "knip.jsonc",
+  ".knip.json",
+  ".knip.jsonc",
+  "knip.ts",
+  "knip.js",
+  "knip.config.js",
+  "knip.config.js",
+]
+affects_cache = ["package.json"]
+latest_version = "5.33.3"
+known_good_version = "5.21.2"
+version_command = "knip --version"
+description = "Find unused files, dependencies, and exports in JavaScript and TypeScript projects"
+
+[plugins.definitions.knip.drivers.lint]
+script = "knip --no-progress --reporter json"
+target = { type = "parent_with", path = "package.json" }
+runs_from = { type = "target_directory" }
+success_codes = [0, 1]
+output = "stdout"
+output_format = "knip"
+skip_upstream = true
